@@ -1621,6 +1621,7 @@
 
       <div class="talisman-serial-bar">
         <span id="oracleSerial">SEAL NO. CL-2026-8842</span>
+        <span id="oracleLucky" style="display:none"></span>
         <span>CONJURER LAB · 召唤师实验室</span>
       </div>
 
@@ -1827,6 +1828,90 @@
         title: "隐藏法印 · 绝对松弛结界",
         zh: "今日凡是消耗你心神的人与事，统统在心里对它默念一道 Cmd + Z 逆转咒，不留半点法术残影。",
         en: "Hidden Ward Unlocked: Absolute Ease. Anything that drains your spirit today gets an instant Cmd + Z reversal spell in your mind."
+      },
+      {
+        badge: "INSPIRATION · 灵感签",
+        title: "灵感签 · 小东西会长大",
+        zh: "你今天会召唤一个小东西，它会长大。",
+        en: "You will summon something small today, and it will grow.",
+        lucky: 7
+      },
+      {
+        badge: "INSPIRATION · 灵感签",
+        title: "灵感签 · 十分钟后的想法",
+        zh: "你的下一个想法，已经在接下来十分钟的活里等你了。",
+        en: "Your next idea is already waiting in the next ten minutes of work.",
+        lucky: 3
+      },
+      {
+        badge: "INSPIRATION · 灵感签",
+        title: "灵感签 · 别盯着空白页",
+        zh: "别盯着空白页，灵感怕被盯着看。",
+        en: "Don't stare at the blank page. Inspiration hates being watched.",
+        lucky: 11
+      },
+      {
+        badge: "COURAGE · 勇气签",
+        title: "勇气签 · 先小后大",
+        zh: "先召唤一个小东西，再召唤大的。",
+        en: "Summon something small first. Then summon something big.",
+        lucky: 1
+      },
+      {
+        badge: "COURAGE · 勇气签",
+        title: "勇气签 · 更清楚的愿望",
+        zh: "你不需要更强的咒语，只需要更清楚的愿望。",
+        en: "You don't need a stronger spell. You need a clearer wish.",
+        lucky: 5
+      },
+      {
+        badge: "COURAGE · 勇气签",
+        title: "勇气签 · 今天宜开始",
+        zh: "今天宜开始，不宜等一个完美的开始。",
+        en: "Today is a good day to begin — not to wait for a perfect beginning.",
+        lucky: 9
+      },
+      {
+        badge: "ALLY · 帮手签",
+        title: "帮手签 · 你是召唤的人",
+        zh: "AI 是镜子，不是答案；召唤的人是你。",
+        en: "AI is the mirror, not the answer. You are the one who summons.",
+        lucky: 2
+      },
+      {
+        badge: "ALLY · 帮手签",
+        title: "帮手签 · 半步先行者",
+        zh: "去找一个比你先走半步的人，问他半步是怎么走的。",
+        en: "Find someone half a step ahead of you, and ask how they took that half step.",
+        lucky: 8
+      },
+      {
+        badge: "TOOL · 工具签",
+        title: "工具签 · 每天的十分钟",
+        zh: "魔法不在咒语里，在你每天回来的那十分钟里。",
+        en: "The magic isn't in the spell. It's in the ten minutes you come back to every day.",
+        lucky: 10
+      },
+      {
+        badge: "TOOL · 工具签",
+        title: "工具签 · 留给明天的你",
+        zh: "把今天做的事留下来，明天的你会谢你。",
+        en: "Leave today's work where tomorrow's you can find it. She'll thank you.",
+        lucky: 4
+      },
+      {
+        badge: "MEMORY · 记忆签",
+        title: "记忆签 · 今日宜召唤",
+        zh: "以好奇为引，以耐心为环，今日宜召唤。",
+        en: "Lead with curiosity, circle with patience. Today is a good day to summon.",
+        lucky: 6
+      },
+      {
+        badge: "MEMORY · 记忆签",
+        title: "记忆签 · 留白有座",
+        zh: "留白不是空，是给灵感留的座位。",
+        en: "Emptiness isn't empty. It's the seat you saved for inspiration.",
+        lucky: 12
       }
     ];
 
@@ -2893,6 +2978,13 @@
       document.getElementById('oracleZh').textContent = slip.zh;
       document.getElementById('oracleEn').textContent = slip.en;
       document.getElementById('oracleSerial').textContent = slip.serial;
+      const luckyEl = document.getElementById('oracleLucky');
+      if (slip.lucky) {
+        luckyEl.textContent = '幸运数字 · ' + slip.lucky;
+        luckyEl.style.display = '';
+      } else {
+        luckyEl.style.display = 'none';
+      }
       document.getElementById('oracleBackdrop').classList.add('open');
     }
 
@@ -2906,6 +2998,7 @@
         title: base.title,
         zh: base.zh,
         en: base.en,
+        lucky: base.lucky,
         serial: `SEAL NO. CL-2026-${randomNum}`
       };
       renderTalismanModal(slip);
@@ -3007,6 +3100,12 @@
       ctx.stroke();
 
       ctx.font = '500 15px "DM Mono", monospace';
+      if (currentTalisman.lucky) {
+        ctx.textAlign = 'center';
+        ctx.font = '600 18px "DM Mono", monospace';
+        ctx.fillStyle = '#F0A832';
+        ctx.fillText('幸运数字 · ' + currentTalisman.lucky, 500, 612);
+      }
       ctx.fillStyle = '#8C7A5B';
       ctx.textAlign = 'left';
       ctx.fillText(currentTalisman.serial, 80, 612);
@@ -3028,7 +3127,8 @@
 
     function copyTalismanText() {
       if (!currentTalisman) return;
-      const text = `【${currentTalisman.title}】(${currentTalisman.serial})\n${currentTalisman.zh}\n${currentTalisman.en}\n— CONJURER LAB 召唤师实验室 (@ConjurerLab)`;
+      const luckyLine = currentTalisman.lucky ? `\n幸运数字：${currentTalisman.lucky}` : '';
+      const text = `【${currentTalisman.title}】(${currentTalisman.serial})\n${currentTalisman.zh}\n${currentTalisman.en}${luckyLine}\n— CONJURER LAB 召唤师实验室 (@ConjurerLab)`;
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text);
       }
