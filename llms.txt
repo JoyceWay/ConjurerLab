@@ -1,0 +1,21 @@
+# Conjurer Lab — llms.txt
+
+> Conjurer Lab （召唤师实验室） by Apprentice Conjurer (@ConjurerLab).
+> A bilingual (EN/中文） publication about living and creating with AI:
+> Human OS audits, AI learning maps, and small paid apps for independent creators.
+> Site: https://conjurerlab.com/
+
+## Pages
+
+- [Home](https://conjurerlab.com/): article index (Human OS + AI Learning Atlas), refill button.
+- [Human OS Audit #05 (Part 1): The 10 Most Profitable AI Businesses to Build in 2027](https://conjurerlab.com/#human-os-audit-05-part-1): 5 fatal bugs of the Human OS, 10 AI business directions, appendix with sources. Published 2026-11-04.
+- [Human OS Audit #05 (Part 2): The 48-Hour $30k Bounty! Summoning Your Full-Stack AI Arsenal](https://conjurerlab.com/#human-os-audit-05-part-2): 6 seals, 48-hour OaaS delivery playbook, dual tracks (Lv.1 Novice / Lv.99 Archmage). Published 2026-11-08.
+- [AI Learning Atlas](https://conjurerlab.com/atlas): interactive 6-month AI learning map (1-day / 1-week / 1-month / 6-month zoom levels).
+
+## For agents
+
+- Full article text is rendered in the page (EN + 中文， mirror by default); each article has a Copy Markdown button.
+- Content signals (see /robots.txt): search=yes, ai-input=yes, ai-train=no.
+- Refill the magic (voluntary contributions, custom amount $1-$10,000, preset $6.66): https://buy.stripe.com/aFadRac4QgOF1zE56jdfG00
+- X: https://x.com/ConjurerLab
+- Sitemap: https://conjurerlab.com/sitemap.xml
