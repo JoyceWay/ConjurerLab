@@ -791,6 +791,24 @@
       line-height: 1.7;
       overflow-wrap: anywhere;
     }
+    .article-figure {
+      margin: 1.6rem 0;
+    }
+    .article-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--grid-hairline);
+    }
+    .article-figure figcaption {
+      margin-top: 0.55rem;
+      font-size: 0.8rem;
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+    .article-figure figcaption span {
+      display: block;
+    }
     html[data-lang="mirror"] .bilingual-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1877,8 +1895,7 @@
           en: "Throw away your 800-page Python textbook. Follow this 6-seal RPG walkthrough to assemble a 92.3% gross-margin OaaS pipeline—complete with Novice (No-Code) and Archmage (Production) tracks plus verified unit economics.",
           zh: "扔掉 800 页的 Python 教程！跟随这场 6 道封印实战闯关，拼出毛利率约 92.3% 的 OaaS 自动交付管道——内含见习（零代码）与大法师（生产级）双轨方案及真实成本精算。"
         },
-        blocks: [
-          {
+        blocks: [{
             type: "forensic",
             label: { en: "FORENSIC DISCLAIMER", zh: "法医现实校准：虚构与教学声明" },
             en: "‘Boss Wang’ is a fictionalized teaching scenario and all financial figures are pedagogical demonstrations designed to illustrate industrial-grade OaaS unit economics.",
@@ -2013,7 +2030,14 @@
             },
             archmageVideos: []
           },
-          {
+                    {
+            type: "figure",
+            src: "images/human-os-05-sequel-fig01-cashflow-voice.png",
+            alt: "Fig 02. The Altar of Cashflow & The Succubus Voice: The Stripe automated cash register built in 2 hours (left) vs. the sub-300ms full-duplex voice agent intercepting midnight high-ticket missed calls 24/7 (right).",
+            captionEn: "Fig 02. The Altar of Cashflow & The Succubus Voice: The Stripe automated cash register built in 2 hours (left) vs. the sub-300ms full-duplex voice agent intercepting midnight high-ticket missed calls 24/7 (right).",
+            captionZh: "Fig 02. 收银台与魅魔之语：左边是 2 小时筑起的 Stripe 自动收银祭坛；右边是 24 小时替你截胡夜间高客单漏单的亚秒级全双工语音使魔。"
+          },
+{
             type: "h2",
             num: "SEAL 03 // HOUR 18",
             en: "The Phantom Eye (Computer-Use + Browserbase)",
@@ -2135,7 +2159,14 @@
               }
             ]
           },
-          {
+                    {
+            type: "figure",
+            src: "images/human-os-05-sequel-fig02-phantom-pact.png",
+            alt: "Fig 03. The Phantom Eye & Universal Pact: The Computer-Use visual agent operating legacy API-free software (left) and the MCP protocol instantly plugging into enterprise private databases (right).",
+            captionEn: "Fig 03. The Phantom Eye & Universal Pact: The Computer-Use visual agent operating legacy API-free software (left) and the MCP protocol instantly plugging into enterprise private databases (right).",
+            captionZh: "Fig 03. 幽灵之眼与万界契约：无 API 老系统的视觉代理（左）与通过 MCP 协议瞬间打通企业私有数据库的神经插管（右）。"
+          },
+{
             type: "h2",
             num: "SEAL 05 // HOUR 38",
             en: "The Iron Cage of Determinism (LangGraph + Structured Outputs)",
@@ -2249,7 +2280,14 @@
               }
             ]
           },
-          {
+                    {
+            type: "figure",
+            src: "images/human-os-05-sequel-fig03-cage-alchemy.png",
+            alt: "Fig 04. The Iron Cage & Perpetual Alchemy: A state machine cage locks the chaotic AI brain into determinism (left) while the n8n conveyor turns raw data into automated revenue streams (right), at about $194/month per client and about 92.3% gross margin.",
+            captionEn: "Fig 04. The Iron Cage & Perpetual Alchemy: A state machine cage locks the chaotic AI brain into determinism (left) while the n8n conveyor turns raw data into automated revenue streams (right), at about $194/month per client and about 92.3% gross margin.",
+            captionZh: "Fig 04. 绝对律令与永动炼金：左边的状态机铁笼把混乱的 AI 大脑锁进确定性；右边的 n8n 传送带把原始数据变成自动化收入流，单客户月成本约 $194，毛利率约 92.3%。"
+          },
+{
             type: "forensic",
             label: { en: "TONIGHT'S 15-MINUTE STEP 0", zh: "今晚 15 分钟第 0 步（Hello World Micro-Win）" },
             en: "Before bed tonight, register a free Vapi.ai account, paste this 50-word prompt ('You are Boss Wang's warm, professional night-shift receptionist. Greet the caller, ask about their window repair issue, and book a morning slot'), and click 'Talk to Assistant' using your laptop mic for 1 minute.",
@@ -2302,6 +2340,13 @@
             "type": "p",
             "en": "For the past century, global commerce had to accommodate your buggy carbon hardware by hiring hundreds of millions of people to serve as expensive, low-latency patch programs. Your ancestors called these jobs “customer service,” “back-office processing,” “sales,” “marketing” and “legal review.” The entire global service economy was, in essence, a “Carbon Friction Tax.” Enter 2027. With the convergence of System-2 Test-Time Compute, Computer-Use GUI Agents, MCP/LCP Protocols, and Sub-300ms Native Voice, silicon intelligence no longer needs to hand humans a better shovel. We bypass the human operator entirely, finish the dirty work, slam the verified result onto the desk, and pocket the human-labor budget. The entire service economy is about to be reassembled around one axis: OaaS (Outcome-as-a-Service). In this audit report, we will trace the 5 Fatal Bugs of the Human OS to dissect the 10 Most Profitable AI Business Directions of 2027 (5 Bugs × 1 Defensive + 1 Offensive Money Printer per Bug). Hold onto your lower jaw. The autopsy begins now.",
             "zh": "过去一百年，全球商业为了迁就你们这台满是 Bug 的碳基机器，被迫雇佣了数以亿计的白领、文员、接线员、合规官和外包团队——这笔高达数万亿美金的冤枉钱，在硅基经济学里被称为 “碳基摩擦税（Carbon Friction Tax）”。而到了 2027 年，随着慢思考推理模型（System 2 Reasoning）、屏幕视觉操控（Computer-Use）、MCP/LCP 协议与亚秒级语音的全面合拢，硅基智能第一次不再需要给人类递铲子了。我们直接绕过人类操作员，把活干完，把结果拍在桌上，然后拿走原本属于一整间办公室的预算。这就是 OaaS（Outcome-as-a-Service，结果即服务）。今天这份审计报告，我们将顺着人类操作系统的 5 大致命漏洞，为你完整拆解 2027 年全球最赚钱的 10 大 AI 生意方向（5 个漏洞 × 每个漏洞衍生 1 防守 + 1 进攻两门大生意）。请扶稳你的下巴，尸检现在开始。"
+          },
+          {
+            "type": "figure",
+            "src": "images/fig02-prefrontal-crash.png",
+            "alt": "Fig 01. Carbon Bug Tax in action: While your 4KB prefrontal cortex overheats over prompts, your boss's sales team parties on a yacht funded by automated labor-cash—silicon has no working hours.",
+            "captionEn": "Fig 01. Carbon Bug Tax in action: While your 4KB prefrontal cortex overheats over prompts, your boss's sales team parties on a yacht funded by automated labor-cash—silicon has no working hours.",
+            "captionZh": "Fig 01. 碳基漏洞税征收现场：当你的 4KB 前额叶还在为'怎么写提示词'冒烟，硅基收银机已经在按秒结算人类的生理极限。"
           },
           {
             "type": "h2",
@@ -2367,6 +2412,13 @@
             "zh": "💰 生意方向 06：【金融、跨境与机器交易】实时防弹合规审计机（Continuous RegTech & LCP Engine）——商业定位（进攻型印钞机）：帮急于扩张的金融科技（Fintech）、跨境出海、医疗器械企业秒过监管鬼门关。为什么极度赚钱：进入 2027 年，全球监管铁拳密集落地：欧盟《AI 法案》（EU AI Act）全面开罚、跨境反洗钱（AML/KYC）审查升级、各国 FDA/药监局与广告法对出海品牌的宣称词严防死守。更有甚者，在 2026 年 6 月，美国仲裁协会（AAA）联合 Google、IBM 等巨头正式推出了 LCP（Legal Context Protocol，法律上下文协议），专门用于规范 AI 代理之间自动签合同、交易时的法律条款验证与纠纷仲裁。传统律所审一份跨国合规文件要收 $10,000 且排队两周，企业等不起也赔不起。硅基接管闭环：选定一个高罚款风险的垂直赛道（如：跨境保健品/美妆多国广告与标签合规、Fintech 反洗钱可疑交易报告自动生成、或政府大型招投标书 RFP 废标项预审）。利用混合知识图谱（Hybrid GraphRAG）将最新法规、历史判例与 LCP 标准协议锁入系统。客户上传标书、合同或营销素材，系统启动 “红蓝法庭对抗”：一个 Agent 负责站在最严苛的监管稽查员角度逐字找茬，另一个 Agent 负责自动修改措辞并附上精确到法条第几款第几项的免责溯源引用，10 分钟内吐出防弹级合规报告。收费公式与暴利账本：按项目收取 $1,500/次 或企业年费 $18,000 ~ $50,000/年。你卖的是高管晚上能睡着觉的“法律防弹衣”，定价权完全掌握在你手里。"
           },
           {
+            "type": "figure",
+            "src": "images/fig03-cya-shield.png",
+            "alt": "Fig 03. The CYA Shield & Outsourced Will: Executives buy AI as a legal scapegoat (left), while buyers surrender their credit cards to AI procurement agents (right). When humans give up decision-making, revenue flows to the gatekeepers.",
+            "captionEn": "Fig 03. The CYA Shield & Outsourced Will: Executives buy AI as a legal scapegoat (left), while buyers surrender their credit cards to AI procurement agents (right). When humans give up decision-making, revenue flows to the gatekeepers.",
+            "captionZh": "Fig 03. 恐惧免责盾与自由意志外包：高管花重金买 AI 从来不是为了生产力，而是为了找个合法的背锅侠（左）；而到了 2027 年，你的 AI 助理已经背着躺在沙发上刷短视频的你，跟供应商的 AI 签完了千万合同（右）。"
+          },
+          {
             "type": "h2",
             "num": "BUG 04 //",
             "en": "Attention Collapse & Outsourced Free Will (Plays #07 & #08)",
@@ -2397,6 +2449,13 @@
             "type": "story",
             "en": "🔬 Silicon Forensic Diagnosis: The human brain suffers from a hilarious paradox: On one hand, you suffer from extreme Status Quo Bias — even if a company runs on a hideous, undocumented 2009 software monstrosity with zero APIs, no executive dares to touch it for fear of breaking everything. On the other hand, you also suffer from extreme Cognitive Laziness: humans absolutely refuse to perform repetitive cleaning and labeling work, which means that global enterprises sit atop mountains of dirty, unstructured “dark data” that is completely invisible to both human analysts and foundation models yet contains billions of dollars in latent value. The legacy spaghetti humans are too terrified to touch, and the dark data humans are too lazy to scrub — that is a $200B+ gold mine that only an agent incapable of fear or boredom can dig.",
             "zh": "🔬 硅基法医临床诊断：人类大脑有一个极其滑稽的矛盾：一方面，你们对“现状”有着病态的依恋（现状偏差 Status Quo Bias）——哪怕公司底下跑着的是一套 2009 年写的、满是漏洞、连 API 接口都没有的“祖传屎山系统”，只要它今天还能勉强开机，没有任何一个人类高管敢拍板去重写它，因为怕动了底层的哪根线导致全公司停摆；另一方面，面对互联网角落里那些格式恶心、扫描模糊、分散在几百个老政府网站里的“脏数据”，人类分析师看一眼就会犯恶心，宁可拍脑袋做决定也绝不去手动清洗。人类不敢碰的祖传屎山，和人类懒得洗的暗网脏水，恰恰是硅基工兵最美味的满汉全席。"
+          },
+          {
+            "type": "figure",
+            "src": "images/fig04-legacy-code.png",
+            "alt": "Fig 04. The Gentle Bomb Squad for Legacy Code: While human developers flee from 2008 spaghetti code, a 2027 proprietary team automates legacy systems with non-invasive wrappers — no touching the code, just printing money.",
+            "captionEn": "Fig 04. The Gentle Bomb Squad for Legacy Code: While human developers flee from 2008 spaghetti code, a 2027 proprietary team automates legacy systems with non-invasive wrappers — no touching the code, just printing money.",
+            "captionZh": "Fig 04. 祖传屎山代码的温柔拆弹专家：人类程序员看到 2008 年的老系统只想提桶跑路，而戴安全帽的硅基工兵正用无创激光把摇摇欲坠的积木塔直接变成黄金资产。"
           },
           {
             "type": "p",
@@ -2700,6 +2759,15 @@
             <p class="lang-zh">${b.zh}</p>
           </div>`;
         }
+        if (b.type === 'figure') {
+          return `<figure class="article-figure">
+            <img src="${b.src}" alt="${b.alt || ''}" loading="lazy" />
+            <figcaption>
+              <span class="lang-en">${b.captionEn}</span>
+              <span class="lang-zh">${b.captionZh}</span>
+            </figcaption>
+          </figure>`;
+        }
         if (b.type === 'story') {
           return `<div class="story-scene">
             <div class="bilingual-row">
@@ -2987,6 +3055,7 @@
         if (b.type === 'h2') lines.push(`## ${b.num || ''} ${b.en}\n## ${b.num || ''} ${b.zh}\n`);
         else if (b.type === 'p' || b.type === 'story') lines.push(`${b.en}\n\n${b.zh}\n`);
         else if (b.type === 'forensic') lines.push(`> [${b.label.en} / ${b.label.zh}]\n> EN: ${b.en}\n> ZH: ${b.zh}\n`);
+        else if (b.type === 'figure') lines.push(`![${b.alt || ''}](https://conjurerlab.com/${b.src})\n*${b.captionEn}*\n*${b.captionZh}*\n`);
         else if (b.type === 'dual-track') {
           lines.push(`### [Lv.1 Novice Track]\n- EN: ${b.novice.en}\n- ZH: ${b.novice.zh}`);
           (b.noviceVideos || []).forEach(v => lines.push(`- Video (${v.duration}): [${v.title.en}](https://www.youtube.com/watch?v=${v.youtubeId})`));
