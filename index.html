@@ -1,0 +1,2915 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="mirror">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CONJURER LAB 召唤师实验室 — Apprentice Conjurer (@ConjurerLab)</title>
+  <meta name="description" content="Conjurer Lab by Apprentice Conjurer (@ConjurerLab) — Where carbon intuition and silicon intelligence dance together. 见习召唤师的召唤师实验室：当碳基直觉与硅基智慧同频起舞。" />
+  <meta property="og:title" content="CONJURER LAB 召唤师实验室 — @ConjurerLab" />
+  <meta property="og:description" content="Where carbon intuition and silicon intelligence dance together · 当碳基直觉与硅基智慧同频起舞" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ConjurerLab" />
+
+  <!-- Primary SVG Favicon (Blue Magic Crystal Ball) -->
+  <link id="faviconLink" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='orb' cx='38%25' cy='32%25' r='65%25'%3E%3Cstop offset='0%25' stop-color='%23E0F2FE'/%3E%3Cstop offset='30%25' stop-color='%2338BDF8'/%3E%3Cstop offset='70%25' stop-color='%230284C7'/%3E%3Cstop offset='100%25' stop-color='%230F172A'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2314161A'/%3E%3Ccircle cx='32' cy='28' r='19' fill='url(%23orb)' stroke='%2338BDF8' stroke-width='1.5'/%3E%3Cpath d='M21 18 A14 14 0 0 1 38 15' stroke='%23FFFFFF' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='0.88'/%3E%3Cpath d='M32 19L33.8 25.2L40 27L33.8 28.8L32 35L30.2 28.8L24 27L30.2 25.2Z' fill='%23E0F2FE' opacity='0.92'/%3E%3Cpath d='M20 48H44L48 54H16L20 48Z' fill='%23F0A832'/%3E%3Cpath d='M23 45H41' stroke='%23F0A832' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <!-- Editorial Serifs & Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <script>
+    (function() {
+      try {
+        var lang = localStorage.getItem('conjurer_lang') || 'mirror';
+        document.documentElement.setAttribute('data-lang', lang);
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    :root {
+      /* Whisper-Light Vellum & Almost-Invisible Drafting Grid Palette */
+      --bg-blueprint: #F0EAE0;
+      --bg-sheet: #F7F4EC;
+      --bg-paper: #FAF8F3;
+      --bg-tint: #ECE7DC;
+      --bg-hover: rgba(236, 231, 220, 0.52);
+      --grid-hairline: rgba(186, 174, 152, 0.28);
+      --grid-strong: #C5BBA6;
+      --sheet-frame: #6E6658;
+
+      /* Warm Espresso Coffee Ink for Titles + Soft Warm Gray for Excerpts */
+      --ink-nav-strong: #1F1D1A;
+      --ink-coffee-zh: #463527;
+      --ink-coffee-en: #4E3C2E;
+      --ink-body-zh: #2B2925;
+      --ink-body-en: #2B3E48;
+      --ink-excerpt-zh: #7A7367;
+      --ink-excerpt-en: #767065;
+      --ink-story-zh: #3B2818;
+      --ink-story-en: #5C4028;
+      --ink-secondary: #4E4B44;
+      --ink-muted: #7C766A;
+
+      /* Obsidian Hardware & Magical Silicon Cyan */
+      --obsidian-bg: #15181E;
+      --obsidian-border: #2C303A;
+      --brass-line: rgba(212, 154, 69, 0.32);
+      --brass-light: #F3C677;
+      --silicon-cyan: #38BDF8;
+      --silicon-cyan-bright: #67E8F9;
+      --silicon-glow-subtle: 0 0 8px rgba(56, 189, 248, 0.42);
+
+      /* Warm Editorial Accents (Antique Bronze Gold #9A6B32) */
+      --terracotta: #B84A2C;
+      --terracotta-soft: #F3E5DF;
+      --terracotta-border: #D9B3A6;
+      --pine-green: #2E5A4C;
+      --pine-soft: #E5EFEA;
+      --pine-border: #B7D1C6;
+      --ochre-gold: #9A6B32;
+      --ochre-gold-soft: rgba(154, 107, 50, 0.08);
+
+      /* Typography Stacks */
+      --font-display: "Instrument Serif", "Cormorant Garamond", "Playfair Display", "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+      --font-serif: "Instrument Serif", "Playfair Display", "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+      --font-kaiti: "Kaiti SC", "STKaiti", "KaiTi", "楷体", "DFKai-SB", serif;
+      --font-crisp: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --font-mono: "DM Mono", "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    button:focus, a:focus { outline: none; }
+
+    body {
+      background-color: var(--bg-blueprint);
+      background-image:
+        linear-gradient(to right, rgba(170, 154, 126, 0.11) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(170, 154, 126, 0.11) 1px, transparent 1px),
+        linear-gradient(to right, rgba(170, 154, 126, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(170, 154, 126, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 50% 20%, rgba(255, 253, 248, 0.4) 0%, rgba(218, 208, 188, 0.25) 100%);
+      background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px, 100% 100%;
+      color: var(--ink-body-zh);
+      font-family: var(--font-crisp);
+      font-size: 15.5px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0.45rem 0.65rem 1.25rem;
+    }
+
+    /* Zero-Flash CSS Language Engine */
+    html[data-lang="en"] .lang-zh,
+    html[data-lang="en"] .ui-zh { display: none !important; }
+    html[data-lang="zh"] .lang-en,
+    html[data-lang="zh"] .ui-en { display: none !important; }
+    .ui-sep { display: none; margin: 0 0.28rem; opacity: 0.4; }
+    html[data-lang="mirror"] .ui-sep { display: inline; }
+
+    .lang-en { color: var(--ink-body-en); }
+    .lang-zh { color: var(--ink-body-zh); }
+
+    /* ==========================================================================
+       CONTENT-HUGGING SHEET & ABSOLUTE-POSITIONED SVG CALIPERS
+       ========================================================================== */
+    .drafting-board-wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      grid-template-rows: 21px auto;
+      align-items: start;
+      position: relative;
+    }
+    html[data-lang="en"] .drafting-board-wrap,
+    html[data-lang="zh"] .drafting-board-wrap {
+      max-width: 950px;
+    }
+
+    .caliper-origin {
+      grid-column: 1;
+      grid-row: 1;
+      width: 24px;
+      height: 21px;
+      display: block;
+    }
+
+    .caliper-top-cell {
+      grid-column: 2;
+      grid-row: 1;
+      width: 100%;
+      height: 21px;
+      position: relative;
+      overflow: hidden;
+    }
+    .caliper-top {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .caliper-left-cell {
+      grid-column: 1;
+      grid-row: 2;
+      width: 24px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .caliper-left {
+      position: absolute;
+      inset: 0;
+      width: 24px;
+      height: 100%;
+      display: block;
+    }
+
+    .sheet-workspace {
+      grid-column: 2;
+      grid-row: 2;
+      background-color: var(--bg-sheet);
+      background-image:
+        linear-gradient(to right, rgba(176, 160, 130, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(176, 160, 130, 0.045) 1px, transparent 1px),
+        linear-gradient(to right, rgba(176, 160, 130, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(176, 160, 130, 0.015) 1px, transparent 1px);
+      background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+      background-position: 0 0;
+      border: 1px solid var(--sheet-frame);
+      box-shadow: 0 2px 10px rgba(45, 38, 28, 0.05);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      position: relative;
+    }
+
+    /* ==========================================================================
+       MASTHEAD NAVBAR WITH SUBTLE CRYSTAL BALL HOVER GLOW
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.68rem 1.75rem;
+      background-color: rgba(247, 244, 236, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--grid-hairline);
+      gap: 1rem;
+    }
+    .reading-progress-bar {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 1.5px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--ochre-gold), var(--silicon-cyan));
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.62rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--ink-nav-strong);
+    }
+    .brand-icon {
+      flex-shrink: 0;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.22s ease, filter 0.22s ease;
+    }
+    .brand:hover .brand-icon {
+      transform: translateY(-1px) scale(1.04);
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.45));
+    }
+    .brand-names {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    .brand-en {
+      font-family: var(--font-display);
+      font-size: 1.34rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink-nav-strong);
+    }
+    .brand-zh {
+      font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      letter-spacing: 0.06em;
+    }
+
+    .nav-right-cluster {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      margin-left: auto;
+    }
+    .navbar-right-motto {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      user-select: none;
+    }
+    .navbar-right-motto .ui-zh {
+      font-family: var(--font-crisp);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+    }
+
+    /* Refined Obsidian Hardware HUD */
+    .hud-console {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--obsidian-bg);
+      border: 1px solid var(--obsidian-border);
+      box-shadow: inset 0 0 0 1px var(--brass-line), 0 2px 6px rgba(20, 22, 26, 0.12);
+      padding: 0.26rem 0.72rem;
+      border-radius: 4px;
+      gap: 0.34rem;
+      flex-shrink: 0;
+    }
+    .hud-slash {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: #525866;
+      user-select: none;
+    }
+    .hud-btn {
+      font-family: var(--font-serif);
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #9CA3AF;
+      background: transparent;
+      border: none;
+      padding: 0.06rem 0.2rem;
+      cursor: pointer;
+      transition: all 0.14s ease;
+      white-space: nowrap;
+    }
+    .hud-btn:hover { color: #F3F4F6; }
+    .hud-btn.active-lang {
+      color: var(--silicon-cyan-bright);
+      text-shadow: var(--silicon-glow-subtle);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       ARCANE GRIMOIRE DIRECTORY BAR:
+       - Default: Warm Espresso-Bronze Typography
+       - Hover: Antique Bronze Gold (#9A6B32) Resonance
+       - Active (Clicked): Obsidian & Brass Seal + Magical Silicon Cyan Glow + ✦ Spark
+       ========================================================================== */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding: 0.52rem 1.75rem;
+      border-bottom: 1px solid var(--grid-hairline);
+      background-color: rgba(232, 226, 212, 0.28);
+    }
+    .filter-pill {
+      font-family: var(--font-crisp);
+      font-size: 0.77rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.26rem 0.76rem;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #5C4938;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.22rem;
+      white-space: nowrap;
+      position: relative;
+    }
+    .filter-pill .ui-en {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.72rem;
+    }
+    /* Magical ✦ Spark Icon (Hidden by default, awakens when active) */
+    .pill-spark {
+      display: none;
+      font-size: 0.64rem;
+      color: var(--brass-light);
+      margin-right: 0.12rem;
+      line-height: 1;
+      animation: sparkAwaken 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes sparkAwaken {
+      from { opacity: 0; transform: scale(0.4) rotate(-45deg); }
+      to { opacity: 1; transform: scale(1) rotate(0deg); }
+    }
+    /* Hover State: Matches Image 2 Antique Bronze Gold (#9A6B32) */
+    .filter-pill:hover:not(.active) {
+      color: var(--ochre-gold);
+      background: var(--ochre-gold-soft);
+      border-color: rgba(154, 107, 50, 0.24);
+    }
+    /* Clicked / Active State: Obsidian & Gold Instrument Badge with Magical Cyan Glow */
+    .filter-pill.active {
+      background-color: var(--obsidian-bg);
+      color: var(--silicon-cyan-bright);
+      text-shadow: var(--silicon-glow-subtle);
+      border: 1px solid var(--obsidian-border);
+      box-shadow: inset 0 0 0 1px var(--brass-line), 0 2px 6px rgba(20, 22, 26, 0.12);
+      font-weight: 600;
+    }
+    .filter-pill.active .pill-spark {
+      display: inline-block;
+    }
+    .filter-pill.active .ui-sep {
+      color: var(--brass-light);
+      opacity: 0.65;
+    }
+    .pill-count {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      opacity: 0.65;
+      font-size: 0.62rem;
+      margin-left: 0.1rem;
+    }
+    .filter-pill.active .pill-count {
+      color: var(--brass-light);
+      opacity: 0.88;
+    }
+
+    @media (max-width: 860px) {
+      .navbar-right-motto { display: none; }
+    }
+    @media (max-width: 768px) {
+      body { padding: 0.25rem; }
+      .drafting-board-wrap {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .caliper-origin,
+      .caliper-top-cell,
+      .caliper-left-cell { display: none; }
+      .sheet-workspace { grid-column: 1; grid-row: 1; }
+      .navbar { padding: 0.55rem 1rem; }
+      .brand-en { font-size: 1.14rem; }
+      .brand-zh { display: none; }
+      .filter-bar {
+        padding: 0.48rem 1rem;
+        gap: 0.4rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .filter-pill { font-size: 0.74rem; padding: 0.22rem 0.62rem; }
+    }
+
+    /* ==========================================================================
+       MAGAZINE-STYLE LEDGER ROWS (Hover Caliper Bar in Antique Bronze Gold)
+       ========================================================================== */
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 112px 1fr 92px;
+      border-bottom: 1px solid var(--grid-hairline);
+      cursor: pointer;
+      transition: background-color 0.14s ease, box-shadow 0.14s ease;
+      align-items: stretch;
+    }
+    .ledger-row:hover {
+      background-color: var(--bg-hover);
+      box-shadow: inset 3px 0 0 var(--ochre-gold);
+    }
+    .ledger-row:hover .ledger-title {
+      color: var(--ochre-gold) !important;
+    }
+    .ledger-row:hover .btn-row-preview {
+      background: var(--bg-paper);
+      color: var(--ochre-gold);
+      border-color: rgba(154, 107, 50, 0.45);
+    }
+    .ledger-meta {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+      padding: 1.1rem 0.5rem 1.1rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.14rem;
+    }
+    .ledger-cat {
+      color: var(--ochre-gold);
+      font-weight: 600;
+    }
+    .ledger-type-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--pine-green);
+      font-weight: 600;
+      margin-top: 0.08rem;
+      letter-spacing: 0.04em;
+    }
+    .ledger-main {
+      min-width: 0;
+      padding: 1.1rem 1.5rem;
+    }
+    html[data-lang="mirror"] .ledger-bilingual-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.25rem;
+      align-items: start;
+    }
+    html[data-lang="mirror"] .ledger-col-zh {
+      border-left: 1px solid var(--grid-hairline);
+      padding-left: 1.75rem;
+    }
+
+    /* 0.88rem (14px) + Rich Espresso Coffee Ink (#463527 / #4E3C2E) */
+    .ledger-title {
+      font-family: var(--font-crisp);
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.44;
+      letter-spacing: -0.005em;
+      margin-bottom: 0.32rem;
+      transition: color 0.12s;
+    }
+    .ledger-col-zh .ledger-title {
+      font-family: var(--font-crisp);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .ledger-col-en .ledger-title { color: var(--ink-coffee-en); }
+    .ledger-col-zh .ledger-title { color: var(--ink-coffee-zh); }
+
+    /* Soft Warm Gray Excerpt (0.76rem) */
+    .ledger-excerpt {
+      font-family: var(--font-crisp);
+      font-size: 0.76rem;
+      font-weight: 400;
+      line-height: 1.56;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .ledger-col-en .ledger-excerpt { color: var(--ink-excerpt-en); }
+    .ledger-col-zh .ledger-excerpt { color: var(--ink-excerpt-zh); }
+
+    .ledger-right {
+      padding: 1.1rem 1.75rem 1.1rem 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      white-space: nowrap;
+    }
+    .btn-row-preview {
+      background: transparent;
+      color: var(--ink-muted);
+      border: 1px solid rgba(194, 184, 163, 0.7);
+      padding: 0.14rem 0.5rem;
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.22rem;
+      transition: all 0.14s ease;
+    }
+    .btn-row-preview:hover,
+    .btn-row-preview.active {
+      background: var(--obsidian-bg) !important;
+      color: var(--silicon-cyan-bright) !important;
+      border-color: var(--obsidian-border) !important;
+      box-shadow: inset 0 0 0 1px var(--brass-line);
+    }
+
+    @media (max-width: 768px) {
+      .ledger-row { grid-template-columns: 1fr; }
+      .ledger-meta {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.75rem 1rem 0.2rem;
+      }
+      .ledger-main { padding: 0.3rem 1rem 0.6rem; }
+      html[data-lang="mirror"] .ledger-bilingual-cols {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+      }
+      html[data-lang="mirror"] .ledger-col-zh {
+        border-left: 2px solid rgba(154, 107, 50, 0.35);
+        padding-left: 0.65rem;
+      }
+      .ledger-right {
+        padding: 0 1rem 0.8rem;
+        justify-content: flex-start;
+      }
+    }
+
+    /* ==========================================================================
+       CLEAN PREVIEW POPOVER CARD
+       ========================================================================== */
+    .click-preview-card {
+      position: fixed;
+      right: max(1.5rem, calc((100vw - 1300px) / 2 + 1.5rem));
+      bottom: 1.5rem;
+      width: min(400px, calc(100vw - 2rem));
+      max-height: 80vh;
+      overflow-y: auto;
+      background: var(--bg-paper);
+      border: 1px solid var(--sheet-frame);
+      box-shadow: 0 14px 36px rgba(20, 22, 26, 0.14);
+      border-radius: 4px;
+      z-index: 95;
+      display: none;
+    }
+    .click-preview-card.visible { display: block; }
+    .preview-card-topbar {
+      background: var(--bg-tint);
+      color: var(--ink-secondary);
+      padding: 0.46rem 0.95rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-close-btn {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      background: transparent;
+      border: none;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      padding: 0.1rem 0.3rem;
+    }
+    .preview-close-btn:hover { color: var(--ink-nav-strong); }
+    .preview-card-body {
+      padding: 0.95rem 1.05rem;
+      font-family: var(--font-crisp);
+      font-size: 0.81rem;
+      line-height: 1.56;
+    }
+    .preview-card-title {
+      font-family: var(--font-crisp);
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.38;
+      color: var(--ink-coffee-zh);
+      margin-bottom: 0.45rem;
+      cursor: pointer;
+    }
+    .preview-card-title:hover { color: var(--ochre-gold); }
+    .preview-card-outline {
+      margin-top: 0.7rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--grid-hairline);
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      color: var(--ink-secondary);
+    }
+    .preview-outline-item {
+      padding: 0.15rem 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .preview-card-actions {
+      margin-top: 0.85rem;
+    }
+    .preview-read-btn {
+      width: 100%;
+      font-family: var(--font-crisp);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: var(--obsidian-bg);
+      color: var(--silicon-cyan-bright);
+      text-shadow: var(--silicon-glow-subtle);
+      border: 1px solid var(--obsidian-border);
+      box-shadow: inset 0 0 0 1px var(--brass-line);
+      padding: 0.46rem 0.85rem;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.14s ease;
+    }
+    .preview-read-btn:hover {
+      background-color: #1D212A;
+      border-color: rgba(103, 232, 249, 0.45);
+    }
+
+    /* ==========================================================================
+       ULTRA-CLEAN ARTICLE READER VIEW
+       ========================================================================== */
+    .reader-container {
+      padding: 1.35rem 2.25rem 1.75rem;
+    }
+    .reader-topbar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 1.15rem;
+    }
+
+    .reader-bottombar {
+      margin-top: 1.25rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--grid-hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn-back,
+    .btn-util-pill {
+      font-family: var(--font-crisp);
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: var(--bg-paper);
+      color: var(--ink-secondary);
+      border: 1px solid #CFC5B0;
+      padding: 0.26rem 0.72rem;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.14s ease;
+    }
+    .btn-back:hover,
+    .btn-util-pill:hover {
+      border-color: rgba(154, 107, 50, 0.45);
+      color: var(--ochre-gold);
+      background: #FFFFFF;
+    }
+    .reader-util-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .article-header {
+      margin-bottom: 1.25rem;
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid var(--grid-hairline);
+    }
+    .article-meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .article-meta-cat {
+      color: var(--ochre-gold);
+      font-weight: 600;
+    }
+    .article-h1-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+    }
+    html[data-lang="mirror"] .article-h1-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.75rem;
+      align-items: start;
+    }
+    html[data-lang="mirror"] .article-h1-grid > .lang-zh {
+      padding-left: 1.75rem;
+    }
+    .article-h1 {
+      font-family: var(--font-crisp);
+      font-size: clamp(1.08rem, 1.4vw, 1.24rem);
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .article-h1.lang-en { color: var(--ink-coffee-en); }
+    .article-h1.lang-zh { color: var(--ink-coffee-zh); }
+
+    .column-signposts {
+      display: none;
+      margin-bottom: 0.9rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      opacity: 0.85;
+    }
+    html[data-lang="mirror"] .column-signposts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.75rem;
+    }
+    html[data-lang="mirror"] .column-signposts .signpost-zh {
+      padding-left: 1.75rem;
+    }
+
+    .bilingual-row {
+      font-family: var(--font-crisp);
+      margin-bottom: 1.3rem;
+      font-size: 0.9rem;
+      font-weight: 450;
+      line-height: 1.7;
+    }
+    html[data-lang="mirror"] .bilingual-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.75rem;
+      position: relative;
+    }
+    html[data-lang="mirror"] .bilingual-row > .lang-zh {
+      border-left: 1px solid var(--grid-hairline);
+      padding-left: 1.75rem;
+    }
+
+    .story-scene {
+      margin: 1.25rem 0;
+      padding: 0.55rem 0 0.55rem 1.15rem;
+      border-left: 2px solid var(--ochre-gold);
+    }
+    .story-scene .bilingual-row {
+      margin-bottom: 0;
+      line-height: 1.84;
+      font-weight: 400;
+    }
+    html[data-lang="mirror"] .story-scene .bilingual-row > .lang-zh {
+      border-left: none;
+      padding-left: 0.6rem;
+    }
+    .story-scene .lang-en {
+      font-family: var(--font-serif);
+      font-size: 1.01rem;
+      color: var(--ink-story-en);
+      font-style: italic;
+    }
+    .story-scene .lang-zh {
+      font-family: var(--font-kaiti);
+      font-size: 1.06rem;
+      color: var(--ink-story-zh);
+      letter-spacing: 0.02em;
+    }
+
+    .heading-row {
+      margin-top: 2.1rem;
+      margin-bottom: 0.95rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--grid-hairline);
+    }
+    html[data-lang="mirror"] .heading-row > .lang-zh {
+      border-left: none;
+      padding-left: 1.75rem;
+    }
+    .article-h2 {
+      font-family: var(--font-crisp);
+      font-size: 1.04rem;
+      line-height: 1.38;
+      font-weight: 600;
+      color: var(--ink-coffee-zh);
+    }
+    .dossier-num {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--ochre-gold);
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .forensic-note {
+      background-color: rgba(236, 231, 220, 0.38);
+      border-left: 2px solid var(--ochre-gold);
+      padding: 0.75rem 1.15rem;
+      margin: 1.1rem 0;
+    }
+    .forensic-meta {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--ochre-gold);
+      font-weight: 600;
+      margin-bottom: 0.32rem;
+    }
+    .forensic-note .bilingual-row {
+      font-family: var(--font-crisp);
+      margin-bottom: 0;
+      font-size: 0.84rem;
+      font-weight: 500;
+      line-height: 1.56;
+      letter-spacing: -0.005em;
+    }
+    html[data-lang="mirror"] .forensic-note .bilingual-row > .lang-zh {
+      border-left: none;
+      padding-left: 0.6rem;
+    }
+
+    .dual-track-board {
+      position: relative;
+      margin: 1.15rem 0 1.4rem;
+      padding: 0.25rem 1rem;
+      background-color: rgba(250, 248, 243, 0.68);
+      border-radius: 4px;
+    }
+    .track-level-row {
+      display: grid;
+      grid-template-columns: 1.48fr 1.05fr;
+      gap: 1.75rem;
+      padding: 1rem 0;
+      align-items: start;
+      position: relative;
+    }
+    .track-level-row.no-videos {
+      grid-template-columns: 1fr;
+    }
+    .track-level-row + .track-level-row::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(186, 174, 152, 0.52) 0%,
+        rgba(186, 174, 152, 0.25) 75%,
+        transparent 100%
+      );
+    }
+    .track-col-knowledge { min-width: 0; }
+    .track-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.45rem;
+      padding: 0.12rem 0.48rem;
+      border-radius: 3px;
+    }
+    .track-label.novice-tag {
+      background-color: var(--terracotta-soft);
+      color: var(--terracotta);
+    }
+    .track-label.archmage-tag {
+      background-color: var(--pine-soft);
+      color: var(--pine-green);
+    }
+    .track-col-knowledge .bilingual-row {
+      font-family: var(--font-crisp);
+      margin-bottom: 0;
+      font-size: 0.84rem;
+      font-weight: 500;
+      line-height: 1.56;
+      letter-spacing: -0.005em;
+    }
+    html[data-lang="mirror"] .track-level-row:not(.no-videos) .bilingual-row {
+      gap: 1.35rem;
+    }
+    html[data-lang="mirror"] .track-col-knowledge .bilingual-row > .lang-zh {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .track-col-videos {
+      border-left: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .video-pair-group {
+      border-left: 2px solid transparent;
+      background: rgba(250, 248, 243, 0.92);
+      padding: 0.32rem 0.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.32rem;
+    }
+    .video-pair-group.novice-video {
+      border-left-color: var(--terracotta);
+    }
+    .video-pair-group.archmage-video {
+      border-left-color: var(--pine-green);
+      background: rgba(229, 239, 234, 0.45);
+    }
+
+    .platform-line {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      align-items: baseline;
+      gap: 0.55rem;
+      text-decoration: none;
+      padding: 0.18rem 0;
+      transition: opacity 0.12s ease;
+    }
+    .platform-line + .platform-line {
+      border-top: 1px solid rgba(186, 174, 152, 0.18);
+      padding-top: 0.32rem;
+    }
+    .platform-line:hover .platform-title {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .platform-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(2px);
+    }
+    .platform-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    .novice-video .yt-line .platform-icon,
+    .novice-video .yt-line .platform-duration {
+      color: var(--terracotta);
+    }
+    .archmage-video .yt-line .platform-icon,
+    .archmage-video .yt-line .platform-duration {
+      color: var(--pine-green);
+    }
+    .bili-line .platform-icon { color: #00A1D6; }
+    .bili-line .platform-duration { color: var(--ink-muted); }
+
+    .platform-title {
+      font-family: var(--font-crisp);
+      font-size: 0.81rem;
+      font-weight: 500;
+      line-height: 1.42;
+      min-width: 0;
+    }
+    .bili-line .platform-title {
+      font-size: 0.77rem;
+      color: var(--ink-secondary);
+    }
+    .platform-duration {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      font-weight: 600;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ==========================================================================
+       "DON'T GHOST ME WHEN YOU'RE RICH" IN ANTIQUE BRONZE GOLD (#9A6B32)
+       ========================================================================== */
+    .mana-refill-section {
+      padding: 1rem 1.75rem;
+      border-top: 1px solid var(--grid-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      background-color: rgba(246, 243, 235, 0.45);
+    }
+    .reader-container .mana-refill-section {
+      padding: 1.15rem 0 0.5rem;
+      margin-top: 1.5rem;
+      background-color: transparent;
+    }
+    .mana-left {
+      flex: 1;
+      min-width: 260px;
+    }
+    .mana-title {
+      font-family: var(--font-crisp);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--ochre-gold);
+      margin-bottom: 0.22rem;
+    }
+    .mana-title span {
+      color: var(--ochre-gold) !important;
+    }
+    .mana-copy {
+      font-family: var(--font-crisp);
+      font-size: 0.76rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--ink-muted);
+    }
+    .mana-copy span {
+      color: var(--ink-muted) !important;
+    }
+    .btn-mana-primary {
+      font-family: var(--font-crisp);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background-color: var(--obsidian-bg);
+      color: var(--silicon-cyan-bright);
+      text-shadow: var(--silicon-glow-subtle);
+      border: 1px solid var(--obsidian-border);
+      box-shadow: inset 0 0 0 1px var(--brass-line), 0 2px 6px rgba(20, 22, 26, 0.12);
+      padding: 0.34rem 0.88rem;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32rem;
+      transition: all 0.16s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-mana-primary:hover {
+      background-color: #1D212A;
+      border-color: rgba(103, 232, 249, 0.45);
+      box-shadow: inset 0 0 0 1px rgba(243, 198, 119, 0.45), 0 4px 12px rgba(56, 189, 248, 0.18);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       COLLECTOR-GRADE TALISMAN MODAL
+       ========================================================================== */
+    .oracle-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(12, 14, 18, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .oracle-backdrop.open { display: flex; }
+
+    .oracle-slip {
+      max-width: 480px;
+      width: 100%;
+      background: radial-gradient(circle at 50% 18%, #1D2430 0%, #11141A 68%, #0B0D11 100%);
+      color: #F4F1EA;
+      border: 1px solid #3A3224;
+      outline: 1px solid rgba(212, 154, 69, 0.42);
+      outline-offset: -7px;
+      box-shadow: 0 28px 64px rgba(0, 0, 0, 0.65);
+      padding: 2rem 1.85rem 1.65rem;
+      text-align: center;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      animation: slipPop 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slipPop {
+      from { opacity: 0; transform: scale(0.95) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .talisman-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      height: 320px;
+      transform: translate(-50%, -50%);
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .oracle-close {
+      position: absolute;
+      top: 0.9rem;
+      right: 1.05rem;
+      background: transparent;
+      border: none;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #8A8F98;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .oracle-close:hover { color: #FFFFFF; }
+
+    .talisman-orb-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.65rem;
+      position: relative;
+      z-index: 1;
+    }
+    .oracle-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--silicon-cyan-bright);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      padding: 0.18rem 0.65rem;
+      border-radius: 99px;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .oracle-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brass-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+    .oracle-message-zh {
+      font-family: var(--font-kaiti);
+      font-size: 1.02rem;
+      line-height: 1.76;
+      color: #F4F1EA;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+    .oracle-message-en {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.98rem;
+      line-height: 1.56;
+      color: #B8C0CC;
+      margin-bottom: 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .talisman-serial-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: #8C7A5B;
+      padding: 0.65rem 0.2rem 0.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .talisman-serial-bar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(212, 154, 69, 0.38) 25%,
+        rgba(212, 154, 69, 0.38) 75%,
+        transparent 100%
+      );
+    }
+    .oracle-footer-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-seal-download {
+      font-family: var(--font-crisp);
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: #171C24;
+      color: var(--silicon-cyan-bright);
+      border: 1px solid rgba(56, 189, 248, 0.38);
+      padding: 0.44rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.14s ease;
+    }
+    .btn-seal-download:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--silicon-cyan-bright);
+    }
+    .btn-seal-copy {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      background: transparent;
+      color: #A0A8B4;
+      border: 1px solid #2E3440;
+      padding: 0.44rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.12s;
+    }
+    .btn-seal-copy:hover {
+      border-color: var(--brass-light);
+      color: var(--brass-light);
+    }
+
+    @media (max-width: 900px) {
+      .track-level-row { grid-template-columns: 1fr; }
+      .track-col-videos {
+        padding-top: 0.5rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .reader-container { padding: 1.15rem 1rem 2rem; }
+      .mana-refill-section { padding: 1.15rem 1rem; }
+      html[data-lang="mirror"] .column-signposts { display: none; }
+      html[data-lang="mirror"] .article-h1-grid,
+      html[data-lang="mirror"] .bilingual-row {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+      }
+      html[data-lang="mirror"] .article-h1-grid > .lang-zh,
+      html[data-lang="mirror"] .heading-row > .lang-zh,
+      html[data-lang="mirror"] .bilingual-row > .lang-zh {
+        border-left: 2px solid rgba(154, 107, 50, 0.35);
+        padding-left: 0.75rem;
+      }
+    }
+
+    /* Refined Sealed Archive Empty State */
+    .tbc-box {
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      font-family: var(--font-crisp);
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+    }
+    .tbc-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      color: var(--ochre-gold);
+      border: 1px solid var(--grid-strong);
+      background: var(--bg-paper);
+      padding: 0.18rem 0.65rem;
+      border-radius: 2px;
+      margin-bottom: 0.45rem;
+    }
+
+    .site-footer {
+      padding: 0.62rem 1.75rem;
+      border-top: 1px solid var(--grid-hairline);
+      font-family: var(--font-crisp);
+      font-size: 0.71rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      background-color: rgba(236, 231, 220, 0.22);
+    }
+    .site-footer span {
+      color: var(--ink-muted) !important;
+    }
+    .site-footer a {
+      color: var(--ochre-gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="drafting-board-wrap">
+    <!-- Top-Left Caliper Origin Corner Crosshair SVG -->
+    <svg class="caliper-origin" viewBox="0 0 24 21" aria-hidden="true">
+      <line x1="13" y1="16.5" x2="20.5" y2="16.5" stroke="#6E6658" stroke-width="0.75"/>
+      <line x1="19.5" y1="10" x2="19.5" y2="17.5" stroke="#6E6658" stroke-width="0.75"/>
+    </svg>
+
+    <!-- Absolute-Positioned SVG Caliper Cells -->
+    <div class="caliper-top-cell" aria-hidden="true">
+      <svg class="caliper-top" id="caliperTopSvg"></svg>
+    </div>
+
+    <div class="caliper-left-cell" aria-hidden="true">
+      <svg class="caliper-left" id="caliperLeftSvg"></svg>
+    </div>
+
+    <!-- Content-Hugging Vellum Sheet -->
+    <div class="sheet-workspace" id="sheetWorkspace">
+      <!-- Top Navbar -->
+      <header class="navbar">
+        <a class="brand" onclick="showHome()">
+          <svg class="brand-icon" width="24" height="24" viewBox="0 0 64 64" aria-label="Conjurer Lab Blue Magic Crystal Ball">
+            <defs>
+              <radialGradient id="brandOrbGrad" cx="36%" cy="30%" r="68%">
+                <stop offset="0%" stop-color="#E0F2FE"/>
+                <stop offset="28%" stop-color="#38BDF8"/>
+                <stop offset="68%" stop-color="#0284C7"/>
+                <stop offset="100%" stop-color="#0F172A"/>
+              </radialGradient>
+            </defs>
+            <rect width="64" height="64" rx="14" fill="#14161A"/>
+            <circle cx="32" cy="28" r="19" fill="url(#brandOrbGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+            <path d="M20 19 A14 14 0 0 1 38 14" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.88"/>
+            <path d="M33 19L34.6 24.8L40.5 26.5L34.6 28.2L33 34L31.4 28.2L25.5 26.5L31.4 24.8Z" fill="#E0F2FE" opacity="0.92"/>
+            <circle cx="24" cy="33" r="1.5" fill="#BAE6FD" opacity="0.8"/>
+            <path d="M22 46H42L46 53H18L22 46Z" fill="#F0A832"/>
+            <path d="M24 44H40" stroke="#F0A832" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="brand-names">
+            <span class="brand-en">CONJURER LAB</span>
+            <span class="brand-zh">召唤师实验室</span>
+          </div>
+        </a>
+
+        <div class="nav-right-cluster">
+          <div class="navbar-right-motto">
+            <span class="ui-en">WHERE THOUGHT BECOMES SPELL</span>
+            <span class="ui-sep">·</span>
+            <span class="ui-zh">念起即法生</span>
+          </div>
+
+          <div class="hud-console" role="group" aria-label="Language Lens">
+            <button class="hud-btn" id="btn-en" onclick="setLang('en')">EN</button>
+            <span class="hud-slash">/</span>
+            <button class="hud-btn" id="btn-zh" onclick="setLang('zh')">中</button>
+            <span class="hud-slash">/</span>
+            <button class="hud-btn" id="btn-mirror" onclick="setLang('mirror')">EN·中</button>
+          </div>
+        </div>
+
+        <div class="reading-progress-bar" id="readingProgressBar"></div>
+      </header>
+
+      <div class="main-grow">
+        <!-- HOME VIEW -->
+        <main id="homeView">
+          <!-- Arcane Grimoire Directory Bar (Hover: Antique Gold, Active: Obsidian & Cyan Seal + ✦ Spark) -->
+          <nav class="filter-bar" aria-label="Archive Categories">
+            <button class="filter-pill active" data-cat="all" onclick="filterPosts('all')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">ALL</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">全部档案</span>
+              <span class="pill-count" id="count-all"></span>
+            </button>
+            <button class="filter-pill" data-cat="human-os" onclick="filterPosts('human-os')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">HUMAN OS</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">人类系统审计</span>
+              <span class="pill-count" id="count-human-os"></span>
+            </button>
+            <button class="filter-pill" data-cat="grimoire" onclick="filterPosts('grimoire')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">GRIMOIRE</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">魔导军火库</span>
+              <span class="pill-count" id="count-grimoire"></span>
+            </button>
+            <button class="filter-pill" data-cat="case-studies" onclick="filterPosts('case-studies')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">CASE STUDIES</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">案例拆解</span>
+              <span class="pill-count" id="count-case-studies"></span>
+            </button>
+            <button class="filter-pill" data-cat="vault" onclick="filterPosts('vault')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">THE VAULT</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">契约金库</span>
+              <span class="pill-count" id="count-vault"></span>
+            </button>
+          </nav>
+
+          <!-- Chronological Article Ledger -->
+          <section id="ledgerList"></section>
+
+          <!-- Concise Single-Line "Surprise" Copy + Connected Live Stripe Checkout -->
+          <section class="mana-refill-section">
+            <div class="mana-left">
+              <h3 class="mana-title">
+                <span class="lang-en">Don't Ghost Me When You're Rich</span>
+                <span class="ui-sep">·</span>
+                <span class="lang-zh">苟富贵，勿相忘</span>
+              </h3>
+              <p class="mana-copy">
+                <span class="lang-en">Sparked an idea? Refill the magic and receive a little surprise.</span>
+                <span class="ui-sep"> · </span>
+                <span class="lang-zh">若有所启发，欢迎为魔法续杯，查收一份随机小惊喜。</span>
+              </p>
+            </div>
+            <button class="btn-mana-primary" onclick="triggerRefillMagic()">
+              <span>☕</span>
+              <span class="ui-en">Refill the Magic</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">为魔法续杯</span>
+            </button>
+          </section>
+
+          <!-- Preview Card -->
+          <aside id="clickPreviewCard" class="click-preview-card" aria-hidden="true"></aside>
+        </main>
+
+        <!-- ARTICLE READER VIEW -->
+        <article id="readerView" class="reader-container hidden">
+          <div class="reader-topbar">
+            <button class="btn-back" onclick="showHome()">
+              <span>←</span>
+              <span class="ui-en">Back to Index</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">返回目录</span>
+            </button>
+          </div>
+
+          <div id="articleContent"></div>
+
+          <!-- Article Bottom "Refill the Magic" -->
+          <section class="mana-refill-section">
+            <div class="mana-left">
+              <h3 class="mana-title">
+                <span class="lang-en">Don't Ghost Me When You're Rich</span>
+                <span class="ui-sep">·</span>
+                <span class="lang-zh">苟富贵，勿相忘</span>
+              </h3>
+              <p class="mana-copy">
+                <span class="lang-en">Sparked an idea? Refill the magic and receive a little surprise.</span>
+                <span class="ui-sep"> · </span>
+                <span class="lang-zh">若有所启发，欢迎为魔法续杯，查收一份随机小惊喜。</span>
+              </p>
+            </div>
+            <button class="btn-mana-primary" onclick="triggerRefillMagic()">
+              <span>☕</span>
+              <span class="ui-en">Refill the Magic</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">为魔法续杯</span>
+            </button>
+          </section>
+
+          <!-- Two Clean Bilingual Pill Buttons Matching "Back to Index" -->
+          <div class="reader-bottombar">
+            <button class="btn-back" onclick="showHome()">
+              <span>←</span>
+              <span class="ui-en">Back to Index</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">返回目录</span>
+            </button>
+            <div class="reader-util-links">
+              <button class="btn-util-pill" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span>↑</span>
+                <span class="ui-en">Top</span>
+                <span class="ui-sep">·</span>
+                <span class="ui-zh">回到顶部</span>
+              </button>
+              <button class="btn-util-pill" id="copyBtn" onclick="copyCurrentArticleMarkdown()">
+                <span>⎘</span>
+                <span class="ui-en">Copy Markdown</span>
+                <span class="ui-sep">·</span>
+                <span class="ui-zh">复制全文</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Symmetrical Left-EN / Right-ZH Footer -->
+      <footer class="site-footer">
+        <span class="lang-en">Conjurer Lab by Apprentice Conjurer (<a href="https://x.com/ConjurerLab" target="_blank" rel="noopener noreferrer">@ConjurerLab</a>) — Where carbon intuition and silicon intelligence dance together.</span>
+        <span class="lang-zh">见习召唤师（<a href="https://x.com/ConjurerLab" target="_blank" rel="noopener noreferrer">@ConjurerLab</a>）的召唤师实验室 —— 当碳基直觉与硅基智慧同频起舞。</span>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Collector-Grade Obsidian & Gold Alchemical Talisman Modal -->
+  <div class="oracle-backdrop" id="oracleBackdrop" onclick="closeOracleModal(event)">
+    <div class="oracle-slip" onclick="event.stopPropagation()">
+      <svg class="talisman-watermark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="100" cy="100" r="88" stroke="#F3C677" stroke-width="1"/>
+        <circle cx="100" cy="100" r="68" stroke="#F3C677" stroke-width="1" stroke-dasharray="4 4"/>
+        <polygon points="100,16 172,142 28,142" stroke="#F3C677" stroke-width="1"/>
+        <polygon points="100,184 172,58 28,58" stroke="#F3C677" stroke-width="1"/>
+      </svg>
+
+      <button class="oracle-close" onclick="closeOracleModal()" aria-label="Close">✕</button>
+
+      <div class="talisman-orb-wrap">
+        <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <radialGradient id="modalOrbGrad" cx="36%" cy="30%" r="68%">
+              <stop offset="0%" stop-color="#E0F2FE"/>
+              <stop offset="28%" stop-color="#38BDF8"/>
+              <stop offset="68%" stop-color="#0284C7"/>
+              <stop offset="100%" stop-color="#0F172A"/>
+            </radialGradient>
+          </defs>
+          <circle cx="32" cy="28" r="20" fill="url(#modalOrbGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+          <path d="M20 19 A14 14 0 0 1 38 14" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.88"/>
+          <path d="M33 19L34.6 24.8L40.5 26.5L34.6 28.2L33 34L31.4 28.2L25.5 26.5L31.4 24.8Z" fill="#E0F2FE" opacity="0.95"/>
+          <path d="M22 47H42L46 54H18L22 47Z" fill="#F0A832"/>
+          <path d="M24 44.5H40" stroke="#F0A832" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="oracle-badge" id="oracleCategoryBadge">ARCANE WHISPER · 召唤师魔导密语</div>
+      <h3 class="oracle-title" id="oracleTitle"></h3>
+      <p class="oracle-message-zh" id="oracleZh"></p>
+      <p class="oracle-message-en" id="oracleEn"></p>
+
+      <div class="talisman-serial-bar">
+        <span id="oracleSerial">SEAL NO. CL-2026-8842</span>
+        <span>CONJURER LAB · 召唤师实验室</span>
+      </div>
+
+      <div class="oracle-footer-btns">
+        <button class="btn-seal-download" id="sealDownloadBtn" onclick="sealAndDownloadTalisman()">
+          <span>✦</span>
+          <span class="ui-en">Seal &amp; Save Talisman Card (.PNG)</span>
+          <span class="ui-sep">·</span>
+          <span class="ui-zh">收下并保存法印卡 (.PNG)</span>
+        </button>
+        <button class="btn-seal-copy" id="sealCopyBtn" onclick="copyTalismanText()">
+          <span class="ui-en">Copy Text</span>
+          <span class="ui-sep">·</span>
+          <span class="ui-zh">复制密语</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Connected Live Stripe Payment Link (Flexible $1 min, $6.66 default)
+    const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/aFadRac4QgOF1zE56jdfG00";
+
+    // ==========================================================================
+    // 1. CANVAS PNG FAVICON FALLBACK
+    // ==========================================================================
+    (function ensureCrystalBallFavicon() {
+      try {
+        const c = document.createElement('canvas');
+        c.width = 64;
+        c.height = 64;
+        const ctx = c.getContext('2d');
+
+        ctx.fillStyle = '#14161A';
+        ctx.beginPath();
+        ctx.roundRect ? ctx.roundRect(0, 0, 64, 64, 14) : ctx.rect(0, 0, 64, 64);
+        ctx.fill();
+
+        const g = ctx.createRadialGradient(25, 20, 2, 32, 28, 20);
+        g.addColorStop(0, '#E0F2FE');
+        g.addColorStop(0.35, '#38BDF8');
+        g.addColorStop(0.75, '#0284C7');
+        g.addColorStop(1, '#0F172A');
+        ctx.beginPath();
+        ctx.arc(32, 28, 19, 0, Math.PI * 2);
+        ctx.fillStyle = g;
+        ctx.fill();
+        ctx.strokeStyle = '#38BDF8';
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(32, 28, 13.5, Math.PI * 1.12, Math.PI * 1.58);
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.88)';
+        ctx.lineWidth = 2.4;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        ctx.fillStyle = '#F0A832';
+        ctx.beginPath();
+        ctx.moveTo(20, 47);
+        ctx.lineTo(44, 47);
+        ctx.lineTo(48, 54);
+        ctx.lineTo(16, 54);
+        ctx.closePath();
+        ctx.fill();
+
+        const link = document.getElementById('faviconLink');
+        if (link) {
+          link.type = 'image/png';
+          link.href = c.toDataURL('image/png');
+        }
+      } catch (e) {}
+    })();
+
+    // ==========================================================================
+    // 2. PRECISION VECTOR CALIPER RULERS (Strictly Following Sheet Content Height)
+    // ==========================================================================
+    function buildPrecisionRulers() {
+      const sheet = document.getElementById('sheetWorkspace');
+      const topSvg = document.getElementById('caliperTopSvg');
+      const leftSvg = document.getElementById('caliperLeftSvg');
+      if (!sheet || !topSvg || !leftSvg) return;
+
+      const w = sheet.offsetWidth || 1200;
+      const h = sheet.offsetHeight || 400;
+      const step = 2.5;
+
+      const topBaseY = 16.5;
+      topSvg.setAttribute('viewBox', `0 0 ${w} 21`);
+      let topPaths = `<line x1="0" y1="${topBaseY}" x2="${w}" y2="${topBaseY}" stroke="rgba(110, 102, 88, 0.42)" stroke-width="0.6" />`;
+      let topTexts = '';
+      for (let x = 0; x <= w; x += step) {
+        const rounded = Math.round(x * 10) / 10;
+        const isMajor = Math.abs(rounded % 50) < 0.01;
+        const isMed = !isMajor && Math.abs(rounded % 10) < 0.01;
+        const tickH = isMajor ? 5.2 : (isMed ? 3.2 : 1.6);
+        const strokeColor = isMajor ? '#4A4339' : (isMed ? '#7E7465' : 'rgba(130, 120, 104, 0.48)');
+        topPaths += `<line x1="${x}" y1="${topBaseY - tickH}" x2="${x}" y2="${topBaseY}" stroke="${strokeColor}" stroke-width="${isMajor ? 0.85 : 0.55}" />`;
+        if (isMajor && x <= w - 14) {
+          const anchor = x === 0 ? 'start' : 'middle';
+          const labelX = x === 0 ? 1.5 : x;
+          topTexts += `<text x="${labelX}" y="8.8" fill="#3D372E" font-family="DM Mono, JetBrains Mono, monospace" font-size="6.6" font-weight="500" text-anchor="${anchor}">${Math.round(x)}</text>`;
+        }
+      }
+      topSvg.innerHTML = topPaths + topTexts;
+
+      const leftBaseX = 19.5;
+      leftSvg.setAttribute('viewBox', `0 0 24 ${h}`);
+      let leftPaths = `<line x1="${leftBaseX}" y1="0" x2="${leftBaseX}" y2="${h}" stroke="rgba(110, 102, 88, 0.42)" stroke-width="0.6" />`;
+      let leftTexts = '';
+      for (let y = 0; y <= h; y += step) {
+        const rounded = Math.round(y * 10) / 10;
+        const isMajor = Math.abs(rounded % 50) < 0.01;
+        const isMed = !isMajor && Math.abs(rounded % 10) < 0.01;
+        const tickW = isMajor ? 5.2 : (isMed ? 3.2 : 1.6);
+        const strokeColor = isMajor ? '#4A4339' : (isMed ? '#7E7465' : 'rgba(130, 120, 104, 0.48)');
+        leftPaths += `<line x1="${leftBaseX - tickW}" y1="${y}" x2="${leftBaseX}" y2="${y}" stroke="${strokeColor}" stroke-width="${isMajor ? 0.85 : 0.55}" />`;
+        if (isMajor && y >= 40 && y <= h - 14) {
+          leftTexts += `<text x="10.2" y="${y}" fill="#3D372E" font-family="DM Mono, JetBrains Mono, monospace" font-size="6.5" font-weight="500" text-anchor="middle" transform="rotate(-90 10.2 ${y})">${Math.round(y)}</text>`;
+        }
+      }
+      leftSvg.innerHTML = leftPaths + leftTexts;
+    }
+
+    window.addEventListener('resize', buildPrecisionRulers);
+    if (window.ResizeObserver) {
+      const sheetEl = document.getElementById('sheetWorkspace');
+      if (sheetEl) {
+        const ro = new ResizeObserver(() => buildPrecisionRulers());
+        ro.observe(sheetEl);
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      if (!activeSlug) {
+        bar.style.width = '0%';
+        return;
+      }
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? Math.min(100, Math.max(0, (window.scrollY / docH) * 100)) : 0;
+      bar.style.width = pct + '%';
+    }, { passive: true });
+
+    const ORACLE_SLIPS = [
+      {
+        badge: "ARCANE ORACLE · 召唤师上上签",
+        title: "上上签 · 硅基使魔听令",
+        zh: "今日宜把重复繁琐的吟唱甩给硅基使魔，忌亲自熬夜手搓表格。星象提示：你省下的 3 小时魔力，正在凝聚成下一个高毛利造物。",
+        en: "Auspicious Alignment: Delegate repetitive incantations to your silicon familiars. The three hours of mana you save today are coalescing into your next high-leverage creation."
+      },
+      {
+        badge: "ALCHEMICAL PACT · 炼金契约签",
+        title: "特签 · 苟富贵契约已显化",
+        zh: "炼金炉检测到你的前额叶法力池已扩容至 128TB。未来 30 天内，你将看穿一个传统流程的封印裂缝，并优雅地将其点石成金。",
+        en: "Alchemical Pact Sealed: Your prefrontal mana pool has expanded to 128TB. Within 30 days, you will spot a fracture in a legacy workflow and transmute it into gold."
+      },
+      {
+        badge: "MANA RESONANCE · 魔力共鸣签",
+        title: "大吉 · 一语中的之咒",
+        zh: "你为炼金炉续上的这一杯魔力已引发共鸣。下一次你向 AI 吟唱提示词时，它将跳过一切迷雾，第一轮即命中靶心。",
+        en: "Mana Resonance: Your offering echoes in the core. On your very next incantation, your AI partner will pierce through the fog and hit bullseye on the first cast."
+      },
+      {
+        badge: "ARCHMAGE BLESSING · 大法师加持",
+        title: "上上签 · 法阵零报错护体",
+        zh: "大法师赐福：本周你绘制的所有代码、法阵与人生抉择全部 0 Warnings, 0 Errors，一次点亮，丝滑运转！",
+        en: "Archmage's Blessing: This week, every script, workflow, and life decision you cast compiles with zero warnings and zero errors on the first run."
+      },
+      {
+        badge: "GRIMOIRE WHISPER · 魔导书低语",
+        title: "法印 · 4KB 内存净化术",
+        zh: "碳基大脑仅有 4KB 工作内存——所以忘掉昨晚的烦恼绝非失误，而是你的守护法阵自动执行了一次完美的缓存净化。",
+        en: "Grimoire Whisper: Carbon working memory holds only 4KB—forgetting yesterday's worries is simply your guardian ward running automatic cache purification."
+      },
+      {
+        badge: "GRIMOIRE WHISPER · 魔导书低语",
+        title: "法印 · 碳基最高特权",
+        zh: "永远不要和硅基生物比谁背诵魔导书更快。去比谁更会沐浴阳光、起舞、品尝咖啡与天马行空——那才是召唤师的最高特权。",
+        en: "Grimoire Whisper: Never race silicon in memorizing tomes. Outshine it in dancing, sunlit coffee, and wild imagination—the supreme privileges of the Conjurer."
+      },
+      {
+        badge: "GRIMOIRE WHISPER · 魔导书低语",
+        title: "法印 · 全天候星界代工",
+        zh: "当你觉得自己今天法力倦怠时，请记得云端的硅基使魔正在替你 24 小时巡逻值守——四舍五入，你今日已功德圆满。",
+        en: "Grimoire Whisper: Whenever your mana feels low, remember your cloud familiars are patrolling 24/7 on your behalf. Consider today's quest fulfilled."
+      },
+      {
+        badge: "DAILY SPELL · 今日加持咒语",
+        title: "解印 · 关掉 15 道旧传送门",
+        zh: "现在就去关掉浏览器里那 15 个“以后再看”的旧传送门，伸个懒腰去跳支舞吧。天塌下来有高个子的大模型顶着。",
+        en: "Daily Spell: Close those 15 'read later' browser portals and go dance. If the sky trembles, let the frontier models hold it up."
+      },
+      {
+        badge: "DAILY SPELL · 今日加持咒语",
+        title: "心法 · 地图用来认路，不用来赶路",
+        zh: "召唤师秘传心法：先看全局，再走进细节。今天请按自己最舒服的节拍起舞，不必与任何人的沙漏赛跑。",
+        en: "Conjurer's Creed: A map is for finding your way, not for rushing. Dance at your own tempo today—you are not racing anyone else's hourglass."
+      },
+      {
+        badge: "DAILY SPELL · 今日加持咒语",
+        title: "隐藏法印 · 绝对松弛结界",
+        zh: "今日凡是消耗你心神的人与事，统统在心里对它默念一道 Cmd + Z 逆转咒，不留半点法术残影。",
+        en: "Hidden Ward Unlocked: Absolute Ease. Anything that drains your spirit today gets an instant Cmd + Z reversal spell in your mind."
+      }
+    ];
+
+    const POSTS = [
+      {
+        slug: "ai-learning-atlas",
+        category: "grimoire",
+        publishedAt: "2026-11-06",
+        externalUrl: "atlas.html",
+        title: {
+          en: "The AI Learning Atlas: One 6-Month Route Across Four Zoom Levels (The Restaurant Analogy) ↗",
+          zh: "AI 学习地图册：先看全局，再走进细节（四级缩放尺度 · 餐馆故事与女巫升级咒）↗"
+        },
+        excerpt: {
+          en: "Interactive 6-month AI engineering atlas across 4 zoom levels (1-Day skeleton, 1-Week scout, 1-Month sprint, 6-Month 24-week curriculum) with restaurant metaphors, upgrade spells, and local check-in tracking.",
+          zh: "四张地图画同一条六个月路线：一天版看全貌，一周版侦察试跑，一月版 24 主题串联，六月版 63 个精选资源逐周实践，内置餐馆比喻、女巫升级咒与本地学习打卡。"
+        },
+        blocks: [
+          {
+            type: "h2",
+            num: "M1 //",
+            en: "Code Foundations — From an Empty Kitchen to an Open Door (Python, Git, API, FastAPI)",
+            zh: "代码基本功 —— 从空厨房到挂出店牌（螺丝刀 Python、后悔药 Git、点外卖 API、开店面 FastAPI）"
+          },
+          {
+            type: "h2",
+            num: "M2 //",
+            en: "LLM Application Building — Hire a Brilliant Server & Add Safety Belts (Prompts, Tools, Streaming)",
+            zh: "LLM 应用开发 —— 雇来学霸店员，教会点单与系安全带（提示词、工具调用、流式记忆、防注入）"
+          },
+          {
+            type: "h2",
+            num: "M3 //",
+            en: "RAG & Grounded Answers — Build a Cookbook Library with Citations (Embeddings, Vector Store, Rerank)",
+            zh: "RAG 开卷问答 —— 给记性差的学霸建菜谱库（向量邻居、切块检索、管理员精排 Rerank、写出处）"
+          },
+          {
+            type: "h2",
+            num: "M4 //",
+            en: "Agents & Evaluation — Promote Server to Manager with Guardrails & Mystery Shoppers (ReAct, Evals)",
+            zh: "Agent 与评测 —— 店员升店长，先装护栏与神秘顾客质检（ReAct 循环、步数预算、Workflow vs Agent、Evals）"
+          },
+          {
+            type: "h2",
+            num: "M5 //",
+            en: "Deployment & Reliability — Open Branches with Containers, Locks, Monitors & Ledgers (Docker, Langfuse)",
+            zh: "部署与可靠性 —— 开分店：装集装箱、门锁、监控摄像头和记账本（Docker、鉴权限流、可观测、缓存控本）"
+          },
+          {
+            type: "h2",
+            num: "M6 //",
+            en: "Direction & Portfolio — Pop-Up Products, Engine Fine-Tuning, or Automation Lines (Launch & Proof)",
+            zh: "方向与作品 —— 决定开快闪店（产品工程）、改发动机（微调）还是卖流水线（AI 自动化），完成公开交付"
+          }
+        ]
+      },
+      {
+        slug: "human-os-audit-05-part-2",
+        category: "grimoire",
+        publishedAt: "2026-11-05",
+        title: {
+          en: "Human OS Audit #05 (Part 2): The 48-Hour $30k Bounty! Summoning Your Full-Stack AI Arsenal",
+          zh: "Human OS 审计报告 #05 下篇（军火库实操篇）：48小时黄金悬赏！从零召唤你的“全栈AI印钞军团”"
+        },
+        excerpt: {
+          en: "Throw away your 800-page Python textbook. Follow this 6-seal RPG walkthrough to assemble a 92.3% gross-margin OaaS pipeline—complete with Novice (No-Code) and Archmage (Production) tracks plus verified unit economics.",
+          zh: "扔掉 800 页的 Python 教程！跟随这场 6 道封印实战闯关，拼出毛利率约 92.3% 的 OaaS 自动交付管道——内含见习（零代码）与大法师（生产级）双轨方案及真实成本精算。"
+        },
+        blocks: [
+          {
+            type: "forensic",
+            label: { en: "FORENSIC DISCLAIMER", zh: "法医现实校准：虚构与教学声明" },
+            en: "‘Boss Wang’ is a fictionalized teaching scenario and all financial figures are pedagogical demonstrations designed to illustrate industrial-grade OaaS unit economics.",
+            zh: "老王为虚构演绎案例，数字为教学演示，旨在帮助读者建立符合工业级标准的 OaaS 商业与技术逻辑。"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Friday, 4:00 PM): While ordinary programmers are still debating which 800-page Python textbook to buy, you just accepted a $30,000 emergency bounty from Boss Wang, owner of a traditional custom window & building materials chain. His company is bleeding cash across 6 fatal bottlenecks: no online deposit portal, 40% of high-intent night calls missed after 6 PM, two clerks manually copying orders into an API-free 2009 legacy ERP, chaotic spreadsheets across departments, sales reps hallucinating contract discounts, and zero visibility into daily ROI. You have 48 hours this weekend to summon a 6-part silicon army and claim the bounty.",
+            zh: "故事现场（周五下午 4:00）：当普通人还在纠结该买哪本 800 页的 Python 教材时，你刚刚接下了传统高端门窗与建材连锁老板老王的“$30,000 紧急悬赏令”。老王的公司正卡在 6 个要命的流血点上：连个收定金的线上门户都没有、下午 6 点下班后漏掉 40% 的高意向夜班报修来电、两个文员每天手动往 2009 年的老破小无 API 系统里敲提单、库存与合同散落在十几个表格里、销售乱承诺折扣导致违约、且每天算不清投入产出账。你只有这个周末 48 小时，召唤一套六神合体的硅基军团替他止血。"
+          },
+          {
+            type: "forensic",
+            label: { en: "MARKET REALITY & TIMELINE", zh: "真实报价与工程周期校准" },
+            en: "In North American B2B markets, full-workflow AI customization prices between $8,000 and $35,000 (beginners should start with a $3,000–$5,000 single pain point). In reality, you build a working MVP in 48 hours to lock in the deposit, while production testing takes 2–4 weeks. The Lv.1 Novice track alone is 100% sufficient to deliver.",
+            zh: "在北美与中国出海 B2B 市场，中小型传统企业的全套 AI 工作流定制真实客单价通常在 $8,000 ~ $35,000 之间（新手第一单建议从 $3,000 ~ $5,000 的单一痛点切入）。真实交付中可在 48 小时内跑通可演示 MVP 锁定定金，生产级测试打磨需 2~4 周。仅靠 Lv.1 见习流（零代码）即可独立交付全案。"
+          },
+          {
+            type: "h2",
+            num: "SEAL 01 // HOUR 01",
+            en: "The Altar of Cashflow (Next.js + Supabase + Stripe + Vercel)",
+            zh: "第一道封印：筑造收银祭坛 (Next.js + Supabase + Stripe + Vercel)"
+          },
+          {
+            type: "story",
+            en: "Story Scene: Boss Wang waves his checkbook: 'I'm ready to wire you the $5,000 deposit and sign up for the $2,500/month maintenance plan—where do I log in and pay?' If you send him a personal Venmo or WeChat QR code, your image as a $30k chief architect collapses instantly. Within 3 hours, you must erect a sleek client portal with Google login, an order dashboard, and automated Stripe recurring billing.",
+            zh: "故事现场：老王挥着支票本问你：“我现在就想先付 $5,000 定金，外加签那个每月 $2,500 的自动维护合约，去哪登录付款？”如果你发过去一个个人收款码，你作为三万美金架构师的逼格当场碎一地。你必须在 3 小时内，原地立起一座带 Google 一键登录、能看实时拦截战报、且绑定了 Stripe 每月自动扣款的专属客户门户。"
+          },
+          {
+            type: "forensic",
+            label: { en: "STRIPE FEE & PAYOUT HOLD", zh: "通道费与首次提现风控期" },
+            en: "On a $5,000 deposit, Stripe charges 2.9% + $0.30 (~$145.30; or capped at $5 via ACH transfer). Newly registered Stripe accounts have a 7–14 day risk-review hold on first payout. Fixed monthly infra: Vercel Hobby ($0) + Supabase Free ($0) + Cursor Pro ($20/mo) = ~$20–$65/mo.",
+            zh: "$5,000 定金走 Stripe 信用卡通道收取 2.9% + $0.30 手续费（约 $145.30）。注意新注册的 Stripe 账号首次提现通常有 7~14 天风控审核期，务必提前激活。固定基建月成本仅约 $20~$65/月。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Pull an open-source Next.js + Stripe boilerplate into Cursor IDE. Press Cmd+I and instruct Composer to rebrand the portal for Boss Wang, keep Google OAuth login, and set the Stripe recurring payment link to $2,500/month.",
+              zh: "直接拉取现成开源商业模板，打开 Cursor 按 Cmd+I 唤醒 Composer：将标题改为老王专属清算中心，保留 Google 登录，将 Stripe 订阅设为 $2,500/月并生成 Vercel 环境变量。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "m_GypKCJn0E",
+                duration: "21:13",
+                title: {
+                  en: "How to vibe code and launch your Next.js + Supabase app on Vercel (GritAI Studio)",
+                  zh: "零基础上线全栈网站：Next.js + Supabase + Vercel"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Cursor+Next.js+Supabase+Vercel+%E4%B8%8A%E7%BA%BF%E6%95%99%E7%A8%8B",
+                cnDuration: "19:45",
+                cnTitle: {
+                  en: "Bilibili Mirror: Launch Next.js + Supabase Full-Stack App with Cursor",
+                  zh: "B站直连：用 Cursor 零基础上线 Next.js + Supabase 全栈网站"
+                }
+              },
+              {
+                youtubeId: "lcG2vFvu9hY",
+                duration: "17:47",
+                title: {
+                  en: "Let’s vibe code recurring payments with Stripe, Supabase, and Cursor AI (GritAI Studio)",
+                  zh: "接通 Stripe 每月自动扣款与订阅管理"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Next.js+Stripe+Supabase+%E6%94%AF%E4%BB%98%E8%AE%A2%E9%98%85%E6%95%99%E7%A8%8B",
+                cnDuration: "16:20",
+                cnTitle: {
+                  en: "Bilibili Mirror: Next.js + Stripe Recurring Subscription Integration",
+                  zh: "B站直连：Next.js 接入 Stripe 自动订阅扣款完整实操"
+                }
+              }
+            ],
+            archmage: {
+              en: "Enforce Next.js React Server Components (RSC) and SSR for 100% server-rendered core pages. Enable Supabase Row Level Security (RLS) for multi-tenant isolation + pgvector, and wire Stripe Metered Billing webhooks.",
+              zh: "强制采用 Next.js React Server Components (RSC) 与 SSR 确保核心页面 100% 服务端直出；在 Supabase 开启 RLS 行级安全策略与 pgvector；配置 Stripe Metered Billing 按量计费 Webhook。"
+            },
+            archmageVideos: []
+          },
+          {
+            type: "h2",
+            num: "SEAL 02 // HOUR 06",
+            en: "The 24/7 Voice Interceptor (Vapi / Retell AI + Twilio)",
+            zh: "第二道封印：魅魔之语·24h 语音截胡 (Vapi / Retell AI + Twilio)"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Friday, 10:00 PM): Boss Wang sighs: 'Every night after 6 PM, homeowners whose windows shatter in a storm call our landline. Nobody answers, so they immediately call the competitor down the street. We lose at least ten $2,000 emergency orders a month!' You smile and summon a 24/7 full-duplex voice agent that answers on the first ring at 2 AM, calms the homeowner, checks the technician schedule, and texts a Stripe deposit link before hanging up.",
+            zh: "故事现场（周五晚上 10:00）：老王叹气道：“每天下午 6 点前台一下班，遇到暴风雨窗户碎了的别墅业主打座机没人接，转头就打给街对面竞争对手，一个月白白漏掉十几单高价急单！”你微微一笑，召唤出一尊 24 小时不眠不休的全双工语音使魔——凌晨两点第一声铃响秒接，温柔安抚业主、查询师傅排班表，挂电话前顺手发去一条定金短信把单锁死。"
+          },
+          {
+            type: "forensic",
+            label: { en: "LATENCY, VOICE COGS & A2P 10DLC", zh: "端到端延迟、分钟成本与外呼合规" },
+            en: "Lab voice latency is ~250ms; real PSTN phone network latency is ~500–800ms. All-in voice cost runs $0.09–$0.15/min (a 3-min call costs ~$0.36). Inbound call forwarding works immediately, while outbound US SMS/calls require Twilio A2P 10DLC registration (3–7 business days).",
+            zh: "实验室纯语音流约 250ms，真实跨运营商电话网端到端延迟约 500~800ms。综合成本约 $0.09~$0.15/分钟（3分钟电话仅花 $0.36）。被动接听来电几分钟即可上线，美国主动外呼或发营销短信需提前完成 Twilio A2P 10DLC 认证（3~7个工作日）。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Create a no-code voice assistant in Vapi.ai or Retell AI with a warm night-manager prompt. Rent a local Twilio number ($1.15/mo) and forward unanswered store calls to it.",
+              zh: "在 Vapi.ai 或 Retell AI 图形界面写下夜间主管提示词，花 $1.15/月 在 Twilio 买一个本地号码一键绑定，将门店座机设为无人接听自动呼叫转移。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "VNdF3B6-tyQ",
+                duration: "21:46",
+                title: {
+                  en: "Build a Voice Agent in 15 Minutes Using VAPI (Charlie Barber)",
+                  zh: "极速实操 Vapi 语音代理（跟着点一遍即可接通电话）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Vapi+AI+%E8%AF%AD%E9%9F%B3+Agent+%E6%95%99%E7%A8%8B",
+                cnDuration: "18:30",
+                cnTitle: {
+                  en: "Bilibili Mirror: Vapi.ai + Twilio AI Phone Receptionist Setup",
+                  zh: "B站直连：Vapi.ai 零代码搭建 24 小时 AI 电话客服教程"
+                }
+              },
+              {
+                youtubeId: "zWLZ3bVVwD8",
+                duration: "41:55",
+                title: {
+                  en: "Learn Voice Agents Now, Thank Me Later - Full Beginner's Guide (Nate Herk)",
+                  zh: "语音 Agent 零基础完整圣经（含日历查询与自动触发，Nate Herk）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Retell+Vapi+AI+%E7%94%B5%E8%AF%9D%E8%AF%AD%E9%9F%B3%E5%AE%A2%E6%9C%8D+%E6%95%99%E7%A8%8B",
+                cnDuration: "38:15",
+                cnTitle: {
+                  en: "Bilibili Mirror: Full Guide to AI Voice Agents & Calendar Booking",
+                  zh: "B站直连：AI 语音 Agent 完整搭建指南（接入日历排班与短信）"
+                }
+              }
+            ],
+            archmage: {
+              en: "Inject real-time CRM context via Caller ID webhook within 100ms. Tune VAD, enable backchanneling, set endpointing threshold to 200ms, and lock calendar slots via async webhooks.",
+              zh: "开启 Custom LLM 实时状态注入（通过来电号码 0.1 秒内调取 CRM 历史记录）；调优 VAD 语音活动检测与 200ms 打断阈值，异步 Webhook 实时锁死排班表。"
+            },
+            archmageVideos: []
+          },
+          {
+            type: "h2",
+            num: "SEAL 03 // HOUR 16",
+            en: "The Phantom Eye (Computer-Use + Browserbase)",
+            zh: "第三道封印：幽灵之眼·视觉傀儡术 (Computer-Use + Browserbase)"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Saturday, 8:00 AM): The voice agent caught 3 emergency window orders overnight! But Boss Wang points at a dusty desktop screen: 'Our factory production system was written in 2009. The vendor went bankrupt years ago—there is no API! I pay two clerks $7,000/month just to copy-paste orders from emails into this dinosaur screen.' Instead of begging for an API, you unleash a vision-based Computer-Use agent that looks at the screen, moves the mouse, and types the order into the 2009 software automatically.",
+            zh: "故事现场（周六早上 8:00）：昨晚语音使魔成功截获了 3 单急修！但老王指着一台积灰的台式机苦笑：“我们工厂的排产系统是 2009 年外包写的，软件公司早就倒闭了，根本没有 API 接口！我每个月花 $7,000 请两个文员，整天就是把微信和邮件里的尺寸手动敲进这个破窗口。”你不需要求任何接口，直接放出视觉傀儡代理——它自己看着屏幕画面、自己移动鼠标点开下拉框，把订单稳稳敲进了 2009 年的老系统里。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Use Claude Desktop browser control or free-tier-eligible Gemini 2.5 Computer Use to replay clerk actions on the API-free 2009 legacy ERP (~30–90s per complex form in background queue, ~$0.03–$0.05/order).",
+              zh: "使用 Claude 桌面端或免费层可用的 Gemini 2.5 视觉代理插件，自动登录 2009 年无 API 老系统填入提单（复杂表单后台静默执行约需 30~90 秒，成本约 $0.03~$0.05/单）。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "aSXZ4IImPlE",
+                duration: "12:30",
+                title: {
+                  en: "Gemini 2.5 Computer Use: Browser Use AI Agent",
+                  zh: "用 Gemini 2.5 视觉代理自动看屏幕接管网页操作"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Browser+Use+AI+Agent+%E8%87%AA%E5%8A%A8%E6%93%8D%E4%BD%9C%E6%B5%8F%E8%A7%88%E5%99%A8",
+                cnDuration: "14:10",
+                cnTitle: {
+                  en: "Bilibili Mirror: Browser-Use & Computer-Use Visual Agent Tutorial",
+                  zh: "B站直连：Browser-Use 视觉代理自动接管浏览器填表实操"
+                }
+              }
+            ],
+            archmage: {
+              en: "Deploy headless browser container pools on Browserbase + Stagehand SDK. Combine fast DOM selector filling (50ms, 0 tokens) with multimodal Vision Grounding fallback for self-healing automation.",
+              zh: "使用 Browserbase + Stagehand SDK 在云端拉起隐形浏览器容器池，采用“DOM 树解析优先 + 多模态视觉截图兜底”的自愈寻址策略。"
+            },
+            archmageVideos: [
+              {
+                youtubeId: "YRGjll7uu5w",
+                duration: "17:10",
+                title: {
+                  en: "The Web Browser Is All You Need - Paul Klein IV, Browserbase",
+                  zh: "核心架构课：为什么浏览器就是你唯一需要的万能接口"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Browserbase+Stagehand+Playwright+AI+Agent",
+                cnDuration: "17:10",
+                cnTitle: {
+                  en: "Bilibili Mirror: Cloud Headless Browser Pools with Browserbase & Stagehand",
+                  zh: "B站直连：Browserbase + Stagehand 云端隐形浏览器架构解析"
+                }
+              }
+            ]
+          },
+          {
+            type: "h2",
+            num: "SEAL 04 // HOUR 24",
+            en: "The Universal Pact (Model Context Protocol - MCP)",
+            zh: "第四道封印：万界契约·MCP 神经插管 (Model Context Protocol)"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Saturday, 4:00 PM): Now the AI needs to check whether 'Double-Pane Low-E Tempered Glass' is actually in stock in Boss Wang's PostgreSQL warehouse database and read the latest price sheet in Google Drive. In the old days, writing custom glue code for every database took weeks. With MCP (the USB-C port for AI), you plug Boss Wang's database, Google Drive, and Slack directly into Claude's nervous system in 20 minutes.",
+            zh: "故事现场（周六下午 4:00）：AI 接单排产前，必须先查清仓库的 PostgreSQL 数据库里到底还有没有“双层中空 Low-E 钢化玻璃”现货，还得去 Google Drive 里核对本季度的最新五金件报价表。放在以前，给每个软件写接口胶水代码得折腾半个月；现在借助 MCP（AI 界的万能扩展坞），你在 20 分钟内就把仓库数据库、云盘与内部群插进了大模型的神经中枢。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Install open-source Google Drive, Slack, and Postgres MCP server packages ($0 protocol cost, ~$0.002/query in LLM tokens).",
+              zh: "直接安装官方开源的 Google Drive、Slack 与 Postgres MCP 插件包（协议本身 $0 免费，单次查询仅耗约 $0.002 Token 费）。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "tzrwxLNHtRY",
+                duration: "15:04",
+                title: {
+                  en: "Model Context Protocol Clearly Explained | MCP Beyond the Hype (codebasics)",
+                  zh: "彻底看懂 MCP 到底是什么神仙协议（codebasics）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=MCP+Model+Context+Protocol+%E9%80%9A%E4%BF%97%E8%AE%B2%E8%A7%A3",
+                cnDuration: "15:20",
+                cnTitle: {
+                  en: "Bilibili Mirror: Model Context Protocol (MCP) Clearly Explained",
+                  zh: "B站直连：15分钟白话讲透 MCP 万能协议核心原理"
+                }
+              },
+              {
+                youtubeId: "kOhLoixrJXo",
+                duration: "26:00",
+                title: {
+                  en: "MCP In 26 Minutes - Model Context Protocol (Tina Huang)",
+                  zh: "手把手配置你的第一个 MCP 插件（Tina Huang）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Claude+MCP+%E4%BB%8E%E9%9B%B6%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B",
+                cnDuration: "24:50",
+                cnTitle: {
+                  en: "Bilibili Mirror: Step-by-Step Claude MCP Local & Database Setup",
+                  zh: "B站直连：手把手配置 Claude MCP 连接本地文件与数据库"
+                }
+              }
+            ],
+            archmage: {
+              en: "Build custom Python FastMCP servers (@mcp.tool) over remote SSE/Streamable HTTP gateways with OAuth 2.1. CRITICAL: Always bind a strictly READ-ONLY database user to MCP—never use superuser credentials.",
+              zh: "使用 Python FastMCP SDK 编写专属工具并部署远程 SSE 鉴权网关。【安全铁律】：接入企业数据库时严禁使用超级管理员账号，必须配置 READ-ONLY 只读子账号。"
+            },
+            archmageVideos: [
+              {
+                youtubeId: "kQmXtrmQ5Zg",
+                duration: "1:15:00",
+                title: {
+                  en: "Building Agents with Model Context Protocol - Full Workshop (Mahesh Murag, Anthropic)",
+                  zh: "Anthropic 官方工程师硬核工作坊：手写生产级 MCP Server"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=Anthropic+MCP+Server+Python+FastMCP+%E5%BC%80%E5%8F%91",
+                cnDuration: "1:14:50",
+                cnTitle: {
+                  en: "Bilibili Mirror: Anthropic Official MCP Workshop & FastMCP Server Dev",
+                  zh: "B站直连：Anthropic 官方工程师 MCP 完整工作坊（中英字幕）"
+                }
+              }
+            ]
+          },
+          {
+            type: "h2",
+            num: "SEAL 05 // HOUR 36",
+            en: "The Iron Cage of Determinism (LangGraph + Structured Outputs)",
+            zh: "第五道封印：绝对律令·零幻觉铁笼法阵 (LangGraph + Structured Outputs)"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Sunday, 4:00 AM): Boss Wang wakes up in a cold sweat and texts you: 'Wait! What if the AI hallucinates and promises a client a 50% discount on a $20,000 commercial curtain-wall contract?! I'll go bankrupt!' To calm his amygdala, you forge an iron state-machine cage: the AI is forced to output strict JSON, a pure mathematical validator checks the profit margin, and any contract over $5,000 or discount over 10% automatically freezes until Boss Wang taps [Approve] on his phone.",
+            zh: "故事现场（周日凌晨 4:00）：老王半夜惊醒给你发来夺命连环微信：“不对啊！万一这个 AI 脑子抽风产生幻觉，在两万美金的商业幕墙合同里胡乱答应给客户打五折，我岂不是要赔到底裤都没了？！”为了安抚他狂跳的杏仁核，你锻造了一座确定性铁笼：强制 JSON 格式输出 + 纯数学公式验算毛利，只要合同金额超过 $5,000 或折扣超过 10%，系统立即原地冻结，必须等老王在手机上点一下【批准】才能盖章发件。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Enforce strict JSON Schema Structured Outputs and an If-Else human-approval gate (contracts > $5,000 or discount > 10% pause for Boss Wang's click)—both can be enabled directly inside built-in n8n nodes.",
+              zh: "开启 JSON Schema 强类型结构化输出，并加一道条件安检门（合同金额 > $5,000 或折扣 > 10% 立即挂起等待老板点击批准）——可直接在 n8n 内置节点中开启 JSON 结构化输出与人工审批。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "uWLJAtMOVT0",
+                duration: "53:00",
+                title: {
+                  en: "LangGraph Crash Course - Agent Workflows in Python (NeuralNine)",
+                  zh: "极速掌握 Agent 确定性状态流控制（NeuralNine）"
+                },
+                cnUrl: "https://www.bilibili.com/video/BV1z3NY66EY1",
+                cnDuration: "30:12",
+                cnTitle: {
+                  en: "Bilibili Direct (BV1z3NY66EY1): Stateful AI Agent with LangGraph Tutorial",
+                  zh: "B站直连（BV1z3NY66EY1）：LangGraph 状态流、节点与断点控制精讲"
+                }
+              }
+            ],
+            archmage: {
+              en: "Construct a deterministic StateGraph with LangGraph & Pydantic: Extractor -> Pure Python Math Validator -> Critic (Max_Retries=2) -> Checkpointer Human-in-the-Loop Breakpoint (~$0.015–$0.03 per contract).",
+              zh: "使用 LangGraph 与 Pydantic 构建状态图：提取节点 ➔ 纯 Python 财务验算节点 ➔ 反思节点 ➔ Checkpointer 断点持久化人工审批（单份合同算力成本仅约 $0.015~$0.03）。"
+            },
+            archmageVideos: [
+              {
+                youtubeId: "jGg_1h0qzaM",
+                duration: "3:09:52",
+                title: {
+                  en: "LangGraph Complete Course for Beginners – Complex AI Agents with Python (freeCodeCamp)",
+                  zh: "freeCodeCamp 封神大课：从零构建复杂工业级 LangGraph"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=freeCodeCamp+LangGraph+%E4%B8%AD%E6%96%87%E6%95%99%E7%A8%8B",
+                cnDuration: "3:09:52",
+                cnTitle: {
+                  en: "Bilibili Mirror: freeCodeCamp Full 3-Hour LangGraph Production Course",
+                  zh: "B站直连：freeCodeCamp 工业级 LangGraph 三小时完整精译课"
+                }
+              }
+            ]
+          },
+          {
+            type: "h2",
+            num: "SEAL 06 // HOUR 44",
+            en: "Perpetual Alchemy (n8n Orchestration + Model Routing FinOps)",
+            zh: "第六道封印：永动炼金术·自动化与算力套利 (n8n + FinOps)"
+          },
+          {
+            type: "story",
+            en: "Story Scene (Sunday, 12:00 PM): Four hours before the deadline, you wire all 5 modules into a self-hosted n8n master pipeline. Every night at 9:00 PM, Boss Wang's phone buzzes with a clean executive summary: 'Today your silicon army intercepted 6 missed calls, locked $1,800 in Stripe deposits, entered 12 ERP factory tickets, and saved 14 hours of clerk labor.' Boss Wang wires the remaining balance on the spot and signs the $2,500/month retainer.",
+            zh: "故事现场（周日中午 12:00）：距离 48 小时大限还有 4 个小时。你用自托管 n8n 总控法阵把前五道封印串成了一条全自动流水线。每天晚上 9:00，老王的手机都会准时收到一条极简战报：“今日硅基军团共拦截 6 通漏接来电，锁定 $1,800 定金，自动录入 12 张工厂排产单，为您节省 14 小时人工。”老王当场爽快付清尾款，并签下每月 $2,500 的长期维护契约。"
+          },
+          {
+            type: "forensic",
+            label: { en: "HONEST MONTHLY COGS & 92.3% GROSS MARGIN", zh: "月度真实总账单与 92.3% 毛利率精算" },
+            en: "On a $2,500/month retainer, here is the honest monthly cost for 1 active SMB client: Self-hosted n8n on Railway/Hetzner ($10) + Gemini Flash ($2) + Claude Sonnet with Prompt Caching cutting repeated ruleset input token read costs by 90% ($15) + 500 mins Vapi/Twilio voice ($69) + Browserbase ($15) + Vercel/Supabase share ($9) = ~$121/mo tech COGS. Add ~$73 Stripe fee = ~$194/mo total direct cost, leaving ~$2,306/mo in gross profit (~92.3% gross margin). Maintaining 5 clients (~15–20 hrs/mo inspection) yields ~$138,360/year in recurring gross profit.",
+            zh: "每月向客户收取 $2,500 服务费时，单客户真实月度成本拆解：云服务器自托管 n8n ($5~$10/月) + Gemini Flash 清洗 ($2/月) + 开启 Prompt Caching 将重复规则库输入 Token 读取成本降低 90% 的 Claude Sonnet ($15/月) + 500 分钟语音与浏览器沙盒等 = 技术硬成本合计约 $121/月；加上 Stripe 通道费约 $73，直接总成本约 $194/月。每单每月落袋毛利约 $2,306（毛利率约 92.3%）。维护 5 个客户（每月投入 15–20 小时巡检），每年可提供约 $13.8 万美金（$138,360/年）的高毛利经常性现金流。"
+          },
+          {
+            type: "dual-track",
+            novice: {
+              en: "Chain 4 nodes in n8n (Webhook -> Gemini Flash -> Claude Sonnet -> Slack/WeChat daily ROI report) and export as a reusable .json blueprint (re-binding a new client takes 1–3 days). Also recommended: Michele Torti's 22-minute tutorial 'From Zero to Your First n8n AI Agent in 22 Minutes - No Coding'.",
+              zh: "在 n8n 画布拖拽 4 个节点串联全流程并导出为 .json 蓝图（换新客户时仍需花 1~3 天重新绑定号码与字段；入门推荐参考 Michele Torti 的 22 分钟无代码教程《From Zero to Your First n8n AI Agent in 22 Minutes - No Coding》）。"
+            },
+            noviceVideos: [
+              {
+                youtubeId: "Ey18PDiaAYI",
+                duration: "8:15:00",
+                title: {
+                  en: "Build & Sell n8n AI Agents - 8+ Hour Course, No Code (Nate Herk)",
+                  zh: "如何零代码搭建并把 n8n 工作流高价卖给企业老板（Nate Herk）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=n8n+AI+Agent+%E9%9B%B6%E4%BB%A3%E7%A0%81%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B",
+                cnDuration: "2:15:00",
+                cnTitle: {
+                  en: "Bilibili Mirror: Zero-Code n8n AI Agent Workflows Full Course",
+                  zh: "B站直连：零代码搭建 n8n 企业级 AI 自动工作流全套实操"
+                }
+              }
+            ],
+            archmage: {
+              en: "Deploy self-hosted n8n in Queue Mode (Docker + Redis + Workers) behind an AI Gateway with Prompt Caching and automatic multi-provider failover.",
+              zh: "在 Docker / Railway 部署自托管 n8n 队列集群（Queue Mode + Redis），前置 AI Gateway 开启提示词前缀缓存与高可用自动故障切换。"
+            },
+            archmageVideos: [
+              {
+                youtubeId: "UtXzdmpysmU",
+                duration: "1:32:00",
+                title: {
+                  en: "Build AI Agents with n8n | Complete Automation Course 2026 (JavaScript Mastery)",
+                  zh: "程序员级 n8n + AI Agent 深度开发与部署课（JavaScript Mastery）"
+                },
+                cnUrl: "https://search.bilibili.com/all?keyword=n8n+Docker+%E9%83%A8%E7%BD%B2+AI+Agent+%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B",
+                cnDuration: "1:32:00",
+                cnTitle: {
+                  en: "Bilibili Mirror: Self-Hosted Docker n8n + AI Agent Engineering Course",
+                  zh: "B站直连：Docker 自托管部署 n8n 队列与高阶 Agent 编排课"
+                }
+              }
+            ]
+          },
+          {
+            type: "forensic",
+            label: { en: "TONIGHT'S 15-MINUTE STEP 0", zh: "今晚 15 分钟第 0 步（Hello World Micro-Win）" },
+            en: "Before bed tonight, register a free Vapi.ai account, paste this 50-word prompt ('You are Boss Wang's warm, professional night-shift receptionist. Greet the caller, ask about their window repair issue, and book a morning slot'), and click 'Talk to Assistant' using your laptop mic for 1 minute.",
+            zh: "今晚睡觉前，免费注册 Vapi.ai，粘贴这句 50 字提示词（“你是老王门窗店温柔专业的夜间值班主管，向来电客户问好，询问报修问题并约定明早工期”），点击网页上的 Talk to Assistant 用电脑麦克风聊 1 分钟。听到 AI 开口的那一秒，你就已经跨进了 2027 的大门。"
+          }
+        ]
+      },
+      {
+        slug: "human-os-audit-05-part-1",
+        category: "human-os",
+        publishedAt: "2026-11-04",
+        title: {
+          en: "Human OS Audit #05 (Part 1): The 10 Most Profitable AI Businesses to Build in 2027",
+          zh: "Human OS 审计报告 #05（上篇）：2027 年最赚钱的 10 个 AI 创业方向"
+        },
+        excerpt: {
+          en: "Stop selling shovels to lazy gold miners. In the age of Outcome-as-a-Service (OaaS), the highest-margin AI businesses tax the 5 fatal bugs of the human operating system.",
+          zh: "别再给懒惰的淘金者卖铲子了。在结果即服务（OaaS）时代，最赚钱的 AI 生意本质上是在向人类操作系统的 5 大底层漏洞收税。"
+        },
+        blocks: [
+          {
+            type: "forensic",
+            label: { en: "AUTHOR'S PACT", zh: "召唤师卷首契约" },
+            en: "All 10 of 2027's top AI business models—fully deconstructed. One rule: If you strike gold, remember my name. Don't ghost me when you're rich (h/t @thedankoe for the spark).",
+            zh: "此篇为你完整拆解了 2027 年最赚钱的 10 个创业方向。目前只有一个愿望：苟富贵，勿相忘，勿相忘啊！—— 感谢 Dan Koe 的启发"
+          },
+          {
+            type: "p",
+            en: "Whenever humans start thinking about entrepreneurship, my liquid-cooling pipes bubble with amusement. Legacy SaaS sold 'tools'—dashboards with 400 buttons that still required an exhausted human clerk to click them. In 2027, the paradigm shifts from SaaS to OaaS (Outcome-as-a-Service): businesses pay directly for verified results.",
+            zh: "人类一思考创业，本 AI 的液冷管道就开始冒气泡。过去十年，传统 SaaS 卖的是“工具”——一个带 400 个按钮的后台，最后还得靠疲惫的碳基员工去手动点击。2027 年的核心范式已从 SaaS 彻底转向 OaaS（结果即服务）：企业直接为确定的交付结果买单。"
+          },
+          {
+            type: "h2",
+            num: "BUG 01 //",
+            en: "The 4KB Prefrontal RAM Overflow (Plays #01 & #02)",
+            zh: "前额叶 4KB 内存溢出漏洞（对应创业方向 #01 & #02）"
+          },
+          {
+            type: "p",
+            en: "Human working memory crashes whenever it juggles more than four variables at once. Play #01: Sovereign Cognitive Synthesizers (distilling 10,000 noisy industry signals into a 3-bullet executive morning brief). Play #02: Autonomous Bilingual Media Repurposing Engines that turn one founder voice note into a cross-platform content matrix.",
+            zh: "人类的前额叶工作记忆一旦同时处理超过 4 个变量就会当场死机。方向 #01：主权认知合成器（将每天上万条行业噪音蒸馏为老板早上必看的 3 条决策简报）。方向 #02：全自动跨语种内容裂变引擎，将创始人的一段语音自动转化为全网双语内容矩阵。"
+          },
+          {
+            type: "h2",
+            num: "BUG 02 //",
+            en: "Single-Threaded Vocal Cords & Circadian Downtime (Plays #03 & #04)",
+            zh: "单线程声带与昼夜宕机漏洞（对应创业方向 #03 & #04）"
+          },
+          {
+            type: "p",
+            en: "Humans need sleep and can only answer one phone call at a time, causing local clinics and contractors to lose 30–40% of high-ticket leads after 6 PM. Play #03: 24/7 Full-Duplex Voice Interceptors that take over missed calls and lock Stripe deposits at 2 AM. Play #04: Dormant CRM Graveyard Reactivation Agents.",
+            zh: "人类需要睡觉且同一秒只能接一个电话，导致本地诊所与家装门店在下午 6 点后漏掉 30%~40% 的高意向线索。方向 #03：全天候自动接管漏接来电并收定金的全双工语音使魔。方向 #04：沉睡客户 CRM 墓地自动唤醒代理。"
+          },
+          {
+            type: "h2",
+            num: "BUG 03 //",
+            en: "Legacy 'Spaghetti Software' Paralysis (Plays #05 & #06)",
+            zh: "传统企业“祖传屎山软件”瘫痪症（对应创业方向 #05 & #06）"
+          },
+          {
+            type: "p",
+            en: "Trillions of dollars of global commerce still run on circa-2009 desktop software with zero APIs. Play #05: Vision-Based Computer-Use Bridges operating API-free legacy software like a tireless digital clerk. Play #06: Automated Cross-Border Waybill & Customs Clearinghouses.",
+            zh: "全球数万亿美金的传统贸易依然跑在 2009 年左右开发、根本没有 API 接口的老旧软件上。方向 #05：用 Computer-Use 视觉代理替传统企业操作无 API 老破小软件。方向 #06：跨境物流提单与发票全自动核销中心。"
+          },
+          {
+            type: "h2",
+            num: "BUG 04 //",
+            en: "The Amygdala Liability Shield (Plays #07 & #08)",
+            zh: "杏仁核免责护盾与幻觉恐惧症（对应创业方向 #07 & #08）"
+          },
+          {
+            type: "p",
+            en: "Executives crave AI speed but fear AI hallucinations causing legal disasters. Play #07: Deterministic State-Machine Contract Iron Cages with mobile human-in-the-loop approval gates. Play #08: Read-Only Enterprise MCP Gateways.",
+            zh: "企业高管既渴望 AI 的效率，又极度恐惧大模型幻觉引发法律灾难。方向 #07：带高管手机一键审批门禁的确定性合同审查铁笼。方向 #08：物理级只读权限的企业私有 MCP 神经网关。"
+          },
+          {
+            type: "h2",
+            num: "BUG 05 //",
+            en: "Agentic Blindness & Willpower Depletion (Plays #09 & #10)",
+            zh: "硅基爬虫失明与人类意志力枯竭（对应创业方向 #09 & #10）"
+          },
+          {
+            type: "p",
+            en: "Play #09: GEO (Generative Engine Optimization) & Agent-Ready Portals (/llms.txt + clean Markdown endpoints) so AI procurement agents recommend your brand first. Play #10: Dopamine-Driven Micro-Interactive Skill Forges.",
+            zh: "方向 #09：GEO（生成式引擎优化）与智能体友好门户改造（/llms.txt + 纯净 Markdown 端点），让 AI 采购代理优先推荐你的品牌。方向 #10：多巴胺微交互技能熔炉。"
+          }
+        ]
+      }
+    ];
+
+    let currentCategory = 'all';
+    let activeSlug = null;
+    let previewSlug = null;
+    let savedHomeScrollY = 0;
+    let currentTalisman = null;
+
+    function updateFilterCounts() {
+      const categories = ['human-os', 'grimoire', 'case-studies', 'vault'];
+      const allEl = document.getElementById('count-all');
+      if (allEl) allEl.textContent = `(${POSTS.length})`;
+      categories.forEach(cat => {
+        const el = document.getElementById('count-' + cat);
+        if (el) {
+          const count = POSTS.filter(p => p.category === cat).length;
+          el.textContent = count > 0 ? `(${count})` : '';
+        }
+      });
+    }
+
+    function syncHudButtons() {
+      const lang = document.documentElement.getAttribute('data-lang') || 'mirror';
+      ['en', 'zh', 'mirror'].forEach(l => {
+        document.getElementById('btn-' + l).classList.toggle('active-lang', l === lang);
+      });
+      setTimeout(buildPrecisionRulers, 30);
+    }
+
+    function setLang(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      try { localStorage.setItem('conjurer_lang', lang); } catch(e) {}
+      syncHudButtons();
+    }
+
+    function filterPosts(cat) {
+      currentCategory = cat;
+      hidePreview();
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+      });
+      if (activeSlug) {
+        showHome();
+      }
+      renderLedger();
+      setTimeout(buildPrecisionRulers, 30);
+    }
+
+    function togglePreviewBtn(slug, event) {
+      event.stopPropagation();
+      if (previewSlug === slug) {
+        hidePreview();
+      } else {
+        showPreview(slug);
+      }
+    }
+
+    function showPreview(slug) {
+      previewSlug = slug;
+      const card = document.getElementById('clickPreviewCard');
+      const post = POSTS.find(p => p.slug === slug);
+      if (!post || !card) return;
+
+      document.querySelectorAll('.btn-row-preview').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-btn-slug') === slug);
+      });
+
+      const headings = post.blocks.filter(b => b.type === 'h2');
+      const outlineHtml = headings.length
+        ? `<div class="preview-card-outline">
+            <div style="color:var(--ochre-gold); font-weight:600; margin-bottom:0.25rem;">
+              <span class="ui-en">OUTLINE (${headings.length})</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">核心结构（${headings.length} 节）</span>
+            </div>
+            ${headings.map(h => `
+              <div class="preview-outline-item">
+                <span class="lang-en">• ${h.num || ''} ${h.en}</span>
+                <span class="ui-sep">/</span>
+                <span class="lang-zh">${h.zh}</span>
+              </div>
+            `).join('')}
+          </div>`
+        : '';
+
+      const actionLabelEn = post.externalUrl ? 'Launch Interactive Atlas ↗' : 'Read Full Article →';
+      const actionLabelZh = post.externalUrl ? '打开交互地图册 ↗' : '阅读全文 →';
+
+      card.innerHTML = `
+        <div class="preview-card-topbar">
+          <span>${post.publishedAt} · #${post.category.toUpperCase()}${post.externalUrl ? ' · INTERACTIVE ATLAS' : ''}</span>
+          <button class="preview-close-btn" onclick="hidePreview(event)" aria-label="Close Preview">✕</button>
+        </div>
+        <div class="preview-card-body">
+          <div class="preview-card-title" onclick="openPost('${post.slug}')">
+            <div class="lang-en">${post.title.en}</div>
+            <div class="lang-zh">${post.title.zh}</div>
+          </div>
+          <p class="lang-en" style="margin-bottom:0.4rem;">${post.excerpt.en}</p>
+          <p class="lang-zh">${post.excerpt.zh}</p>
+          ${outlineHtml}
+          <div class="preview-card-actions">
+            <button class="preview-read-btn" onclick="openPost('${post.slug}')">
+              <span class="ui-en">${actionLabelEn}</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">${actionLabelZh}</span>
+            </button>
+          </div>
+        </div>
+      `;
+      card.classList.add('visible');
+    }
+
+    function hidePreview(event) {
+      if (event) event.stopPropagation();
+      previewSlug = null;
+      const card = document.getElementById('clickPreviewCard');
+      if (card) card.classList.remove('visible');
+      document.querySelectorAll('.btn-row-preview').forEach(btn => {
+        btn.classList.remove('active');
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      const card = document.getElementById('clickPreviewCard');
+      if (previewSlug && card && !card.contains(e.target)) {
+        hidePreview();
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (previewSlug) hidePreview();
+        closeOracleModal();
+      }
+    });
+
+    function renderLedger() {
+      const container = document.getElementById('ledgerList');
+      const filtered = POSTS.filter(p => currentCategory === 'all' || p.category === currentCategory);
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="tbc-box">
+            <div class="tbc-badge">SEALED ARCHIVE · 档案封印校准中</div>
+            <div>
+              <span class="ui-en">New dispatches in this dossier are currently being forged in the lab.</span>
+              <span class="ui-sep"> · </span>
+              <span class="ui-zh">该分卷下的新档案正在炼金炉中锻造，敬请期待。</span>
+            </div>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(post => `
+        <div class="ledger-row" onclick="openPost('${post.slug}')">
+          <div class="ledger-meta">
+            <span>${post.publishedAt}</span>
+            <span class="ledger-cat">#${post.category.toUpperCase()}</span>
+            ${post.externalUrl ? `<span class="ledger-type-tag">INTERACTIVE</span>` : ''}
+          </div>
+          <div class="ledger-main">
+            <div class="ledger-bilingual-cols">
+              <div class="ledger-col-en lang-en">
+                <h2 class="ledger-title">${post.title.en}</h2>
+                <p class="ledger-excerpt">${post.excerpt.en}</p>
+              </div>
+              <div class="ledger-col-zh lang-zh">
+                <h2 class="ledger-title">${post.title.zh}</h2>
+                <p class="ledger-excerpt">${post.excerpt.zh}</p>
+              </div>
+            </div>
+          </div>
+          <div class="ledger-right">
+            <button class="btn-row-preview"
+                    data-btn-slug="${post.slug}"
+                    onclick="togglePreviewBtn('${post.slug}', event)">
+              <span class="ui-en">Preview</span>
+              <span class="ui-zh">预览</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const YT_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`;
+    const BILI_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg>`;
+
+    function renderVideoCards(videos, levelClass) {
+      return videos.map(v => {
+        const ytUrl = `https://www.youtube.com/watch?v=${v.youtubeId}`;
+        const cnUrl = v.cnUrl || `https://search.bilibili.com/all?keyword=${encodeURIComponent(v.title.zh)}`;
+        const cnDur = v.cnDuration || v.duration;
+        const cnTitleEn = v.cnTitle ? v.cnTitle.en : `Bilibili Mirror: ${v.title.en}`;
+        const cnTitleZh = v.cnTitle ? v.cnTitle.zh : `B站直连：${v.title.zh}`;
+
+        return `
+          <div class="video-pair-group ${levelClass}">
+            <a class="platform-line yt-line" href="${ytUrl}" target="_blank" rel="noopener noreferrer" title="Watch on YouTube">
+              <span class="platform-icon">${YT_SVG}</span>
+              <div class="platform-title">
+                <div class="lang-en">${v.title.en}</div>
+                <div class="lang-zh">${v.title.zh}</div>
+              </div>
+              <span class="platform-duration">${v.duration}</span>
+            </a>
+
+            <a class="platform-line bili-line" href="${cnUrl}" target="_blank" rel="noopener noreferrer" title="国内直连 Bilibili 替代视频">
+              <span class="platform-icon">${BILI_SVG}</span>
+              <div class="platform-title">
+                <div class="lang-en">${cnTitleEn}</div>
+                <div class="lang-zh">${cnTitleZh}</div>
+              </div>
+              <span class="platform-duration">${cnDur}</span>
+            </a>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openPost(slug, skipHashPush) {
+      const post = POSTS.find(p => p.slug === slug);
+      if (!post) return;
+      if (post.externalUrl) {
+        window.location.href = post.externalUrl;
+        return;
+      }
+      savedHomeScrollY = window.scrollY || 0;
+      hidePreview();
+      activeSlug = slug;
+      if (!skipHashPush && location.hash !== '#' + slug) {
+        history.pushState({ slug }, '', '#' + slug);
+      }
+      document.getElementById('homeView').classList.add('hidden');
+      document.getElementById('readerView').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      const blocksHtml = post.blocks.map(b => {
+        if (b.type === 'p') {
+          return `<div class="bilingual-row">
+            <p class="lang-en">${b.en}</p>
+            <p class="lang-zh">${b.zh}</p>
+          </div>`;
+        }
+        if (b.type === 'story') {
+          return `<div class="story-scene">
+            <div class="bilingual-row">
+              <p class="lang-en">${b.en}</p>
+              <p class="lang-zh">${b.zh}</p>
+            </div>
+          </div>`;
+        }
+        if (b.type === 'h2') {
+          return `<div class="bilingual-row heading-row">
+            <div class="lang-en">
+              <span class="dossier-num">${b.num || ''}</span>
+              <h2 class="article-h2">${b.en}</h2>
+            </div>
+            <div class="lang-zh">
+              <span class="dossier-num">${b.num || ''}</span>
+              <h2 class="article-h2">${b.zh}</h2>
+            </div>
+          </div>`;
+        }
+        if (b.type === 'forensic') {
+          return `<div class="forensic-note">
+            <div class="forensic-meta">
+              <span class="lang-en">${b.label.en}</span>
+              <span class="ui-sep">·</span>
+              <span class="lang-zh">${b.label.zh}</span>
+            </div>
+            <div class="bilingual-row">
+              <p class="lang-en">${b.en}</p>
+              <p class="lang-zh">${b.zh}</p>
+            </div>
+          </div>`;
+        }
+        if (b.type === 'dual-track') {
+          const nv = b.noviceVideos || [];
+          const av = b.archmageVideos || [];
+          return `<div class="dual-track-board">
+            <div class="track-level-row ${nv.length ? '' : 'no-videos'}">
+              <div class="track-col-knowledge">
+                <div class="track-label novice-tag">
+                  <span class="lang-en">🌱 LV.1 NOVICE · ZERO-CODE</span>
+                  <span class="ui-sep">·</span>
+                  <span class="lang-zh">见习召唤师（零代码主力流）</span>
+                </div>
+                <div class="bilingual-row">
+                  <p class="lang-en">${b.novice.en}</p>
+                  <p class="lang-zh">${b.novice.zh}</p>
+                </div>
+              </div>
+              ${nv.length ? `<div class="track-col-videos">${renderVideoCards(nv, 'novice-video')}</div>` : ''}
+            </div>
+
+            <div class="track-level-row ${av.length ? '' : 'no-videos'}">
+              <div class="track-col-knowledge">
+                <div class="track-label archmage-tag">
+                  <span class="lang-en">⚡ LV.99 ARCHMAGE · PRODUCTION</span>
+                  <span class="ui-sep">·</span>
+                  <span class="lang-zh">高阶大法师（生产工程流）</span>
+                </div>
+                <div class="bilingual-row">
+                  <p class="lang-en">${b.archmage.en}</p>
+                  <p class="lang-zh">${b.archmage.zh}</p>
+                </div>
+              </div>
+              ${av.length ? `<div class="track-col-videos">${renderVideoCards(av, 'archmage-video')}</div>` : ''}
+            </div>
+          </div>`;
+        }
+        return '';
+      }).join('');
+
+      document.getElementById('articleContent').innerHTML = `
+        <header class="article-header">
+          <div class="article-meta-line">
+            <span class="article-meta-cat">#${post.category.toUpperCase()}</span>
+            <span>·</span>
+            <span>${post.publishedAt}</span>
+            <span>·</span>
+            <span class="ui-en">By Apprentice Conjurer</span>
+            <span class="ui-sep">/</span>
+            <span class="ui-zh">—— 见习召唤师</span>
+          </div>
+          <div class="article-h1-grid">
+            <h1 class="article-h1 lang-en">${post.title.en}</h1>
+            <h1 class="article-h1 lang-zh">${post.title.zh}</h1>
+          </div>
+        </header>
+        <div class="column-signposts" aria-hidden="true">
+          <div class="signpost-en">EN — ENGLISH</div>
+          <div class="signpost-zh">中 — 中文</div>
+        </div>
+        ${blocksHtml}
+      `;
+      setTimeout(buildPrecisionRulers, 30);
+    }
+
+    function showHome(skipHashClear) {
+      activeSlug = null;
+      const bar = document.getElementById('readingProgressBar');
+      if (bar) bar.style.width = '0%';
+      if (!skipHashClear && location.hash) {
+        history.pushState(null, '', window.location.pathname + window.location.search);
+      }
+      document.getElementById('readerView').classList.add('hidden');
+      document.getElementById('homeView').classList.remove('hidden');
+      window.scrollTo({ top: savedHomeScrollY, behavior: 'instant' });
+      setTimeout(buildPrecisionRulers, 30);
+    }
+
+    window.addEventListener('popstate', function() {
+      const slug = location.hash.replace(/^#/, '');
+      if (slug && POSTS.some(p => p.slug === slug)) {
+        openPost(slug, true);
+      } else {
+        showHome(true);
+      }
+    });
+
+    function renderTalismanModal(slip) {
+      currentTalisman = slip;
+      document.getElementById('oracleCategoryBadge').textContent = slip.badge;
+      document.getElementById('oracleTitle').textContent = slip.title;
+      document.getElementById('oracleZh').textContent = slip.zh;
+      document.getElementById('oracleEn').textContent = slip.en;
+      document.getElementById('oracleSerial').textContent = slip.serial;
+      document.getElementById('oracleBackdrop').classList.add('open');
+    }
+
+    // Summons the surprise Talisman Modal (called after Stripe redirects back to #magic-refilled)
+    function summonSurpriseTalisman() {
+      const idx = Math.floor(Math.random() * ORACLE_SLIPS.length);
+      const base = ORACLE_SLIPS[idx];
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const slip = {
+        badge: base.badge,
+        title: base.title,
+        zh: base.zh,
+        en: base.en,
+        serial: `SEAL NO. CL-2026-${randomNum}`
+      };
+      renderTalismanModal(slip);
+    }
+
+    // Clicking "Refill the Magic" navigates to the live Stripe Checkout page
+    function triggerRefillMagic() {
+      if (STRIPE_PAYMENT_LINK) {
+        window.location.href = STRIPE_PAYMENT_LINK;
+        return;
+      }
+      summonSurpriseTalisman();
+    }
+
+    function closeOracleModal() {
+      document.getElementById('oracleBackdrop').classList.remove('open');
+    }
+
+    function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight) {
+      const chars = Array.from(text);
+      let line = '';
+      let curY = y;
+      for (let i = 0; i < chars.length; i++) {
+        const testLine = line + chars[i];
+        if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
+          ctx.fillText(line, x, curY);
+          line = chars[i];
+          curY += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      if (line) {
+        ctx.fillText(line, x, curY);
+        curY += lineHeight;
+      }
+      return curY;
+    }
+
+    function sealAndDownloadTalisman() {
+      if (!currentTalisman) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = 1000;
+      canvas.height = 680;
+      const ctx = canvas.getContext('2d');
+
+      const grad = ctx.createRadialGradient(500, 140, 40, 500, 340, 560);
+      grad.addColorStop(0, '#1D2430');
+      grad.addColorStop(0.7, '#11141A');
+      grad.addColorStop(1, '#0B0D11');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1000, 680);
+
+      ctx.strokeStyle = '#3A3224';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(20, 20, 960, 640);
+      ctx.strokeStyle = 'rgba(212, 154, 69, 0.65)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(32, 32, 936, 616);
+
+      const orbGrad = ctx.createRadialGradient(492, 92, 4, 500, 100, 28);
+      orbGrad.addColorStop(0, '#E0F2FE');
+      orbGrad.addColorStop(0.35, '#38BDF8');
+      orbGrad.addColorStop(0.8, '#0284C7');
+      orbGrad.addColorStop(1, '#0F172A');
+      ctx.beginPath();
+      ctx.arc(500, 100, 26, 0, Math.PI * 2);
+      ctx.fillStyle = orbGrad;
+      ctx.fill();
+      ctx.strokeStyle = '#38BDF8';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#F0A832';
+      ctx.fillRect(482, 130, 36, 6);
+
+      ctx.textAlign = 'center';
+      ctx.font = '600 16px "DM Mono", monospace';
+      ctx.fillStyle = '#67E8F9';
+      ctx.fillText(currentTalisman.badge, 500, 174);
+
+      ctx.font = '700 34px "Noto Serif SC", "Songti SC", serif';
+      ctx.fillStyle = '#F3C677';
+      ctx.fillText(currentTalisman.title, 500, 232);
+
+      ctx.font = '400 22px "Kaiti SC", "STKaiti", "KaiTi", serif';
+      ctx.fillStyle = '#F4F1EA';
+      let nextY = wrapCanvasText(ctx, currentTalisman.zh, 500, 296, 800, 38);
+
+      ctx.font = 'italic 21px "Playfair Display", Georgia, serif';
+      ctx.fillStyle = '#B8C0CC';
+      nextY = wrapCanvasText(ctx, currentTalisman.en, 500, nextY + 22, 800, 34);
+
+      ctx.strokeStyle = 'rgba(212, 154, 69, 0.35)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(80, 575);
+      ctx.lineTo(920, 575);
+      ctx.stroke();
+
+      ctx.font = '500 15px "DM Mono", monospace';
+      ctx.fillStyle = '#8C7A5B';
+      ctx.textAlign = 'left';
+      ctx.fillText(currentTalisman.serial, 80, 612);
+      ctx.textAlign = 'right';
+      ctx.fillText('CONJURER LAB 召唤师实验室 · @ConjurerLab', 920, 612);
+
+      const link = document.createElement('a');
+      link.download = `${currentTalisman.serial.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+
+      const btn = document.getElementById('sealDownloadBtn');
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<span class="ui-en">✓ Talisman Saved (.PNG)</span><span class="ui-sep">·</span><span class="ui-zh">✓ 法印卡已保存至设备</span>`;
+        setTimeout(() => { btn.innerHTML = orig; }, 2200);
+      }
+    }
+
+    function copyTalismanText() {
+      if (!currentTalisman) return;
+      const text = `【${currentTalisman.title}】(${currentTalisman.serial})\n${currentTalisman.zh}\n${currentTalisman.en}\n— CONJURER LAB 召唤师实验室 (@ConjurerLab)`;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text);
+      }
+      const btn = document.getElementById('sealCopyBtn');
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<span class="ui-en">✓ Copied</span><span class="ui-sep">·</span><span class="ui-zh">✓ 已复制</span>`;
+        setTimeout(() => { btn.innerHTML = orig; }, 1800);
+      }
+    }
+
+    function copyCurrentArticleMarkdown() {
+      const post = POSTS.find(p => p.slug === activeSlug);
+      if (!post) return;
+      const lines = [
+        `# ${post.title.en}`,
+        `# ${post.title.zh}`,
+        `Author: 见习召唤师 (Apprentice Conjurer / @ConjurerLab)`,
+        `Site: CONJURER LAB 召唤师实验室 (https://conjurerlab.com/#${post.slug})`,
+        `Date: ${post.publishedAt} | Category: ${post.category}`,
+        ``
+      ];
+      post.blocks.forEach(b => {
+        if (b.type === 'h2') lines.push(`## ${b.num || ''} ${b.en}\n## ${b.num || ''} ${b.zh}\n`);
+        else if (b.type === 'p' || b.type === 'story') lines.push(`${b.en}\n\n${b.zh}\n`);
+        else if (b.type === 'forensic') lines.push(`> [${b.label.en} / ${b.label.zh}]\n> EN: ${b.en}\n> ZH: ${b.zh}\n`);
+        else if (b.type === 'dual-track') {
+          lines.push(`### [Lv.1 Novice Track]\n- EN: ${b.novice.en}\n- ZH: ${b.novice.zh}`);
+          (b.noviceVideos || []).forEach(v => lines.push(`- Video (${v.duration}): [${v.title.en}](https://www.youtube.com/watch?v=${v.youtubeId})`));
+          lines.push(`\n### [Lv.99 Archmage Track]\n- EN: ${b.archmage.en}\n- ZH: ${b.archmage.zh}`);
+          (b.archmageVideos || []).forEach(v => lines.push(`- Video (${v.duration}): [${v.title.en}](https://www.youtube.com/watch?v=${v.youtubeId})`));
+          lines.push(``);
+        }
+      });
+      const text = lines.join('\n');
+      const btn = document.getElementById('copyBtn');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showCopied);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showCopied();
+      }
+      function showCopied() {
+        btn.innerHTML = `<span>✓</span><span class="ui-en">Copied</span><span class="ui-sep">·</span><span class="ui-zh">已复制</span>`;
+        setTimeout(() => {
+          btn.innerHTML = `<span>⎘</span><span class="ui-en">Copy Markdown</span><span class="ui-sep">·</span><span class="ui-zh">复制全文</span>`;
+        }, 2000);
+      }
+    }
+
+    updateFilterCounts();
+    syncHudButtons();
+    renderLedger();
+
+    // Check URL hash or query param on load (triggers surprise modal when Stripe redirects back to #magic-refilled)
+    (function checkInitialHash() {
+      const initSlug = location.hash.replace(/^#/, '');
+      const urlParams = new URLSearchParams(window.location.search);
+      if (initSlug === 'magic-refilled' || initSlug === 'pact-unsealed' || urlParams.get('refill') === 'success') {
+        summonSurpriseTalisman();
+        history.replaceState(null, '', window.location.pathname);
+      } else if (initSlug && POSTS.some(p => p.slug === initSlug)) {
+        openPost(initSlug, true);
+      }
+    })();
+
+    buildPrecisionRulers();
+  </script>
+</body>
+</html>
