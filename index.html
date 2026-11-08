@@ -1917,6 +1917,479 @@
 
     const POSTS = [
       {
+        slug: "pg-making-startups-powerful",
+        category: "grimoire",
+        publishedAt: "2026-10-01",
+        title: {
+          en: "Making Startups Powerful",
+          zh: "让创业公司更强大"
+        },
+        excerpt: {
+          en: "Paul Graham's September 2026 essay, in full: the most useful heuristic in office hours isn't 'how can this company make more money' but 'what would make it more powerful' — a dozen paths to power, all bound by one constraint: they must make things better for the customer.",
+          zh: "Paul Graham 2026 年 9 月新文中文全文翻译：他在 YC office hour 里最有用的启发式问题不是'怎么赚更多钱'，而是'怎样让这家公司更强大'——十几种变强大的路径，都服从一条约束：必须让客户变得更好。"
+        },
+        blocks: [
+          {
+            type: "forensic",
+            label: { en: "TRANSLATOR'S NOTE", zh: "译者导读" },
+            en: "Translator's note: Paul Graham (@paulg, co-founder of Y Combinator) published a new essay in September 2026. His most useful heuristic in YC office hours isn't 'how to make more money' but 'how to make this company more powerful' — the first brings incremental improvement, the second can bring an order-of-magnitude leap in value. The essay lists a dozen-plus paths to power: owning the customer relationship, letting money flow through you, app stores, network effects, going full stack, 'tails that wag the dog,' playing the long game, generosity, selling to early-stage companies, getting data early, routing around 'mafia' markets — but every path obeys one constraint: it must make the customer better. Translated paragraph by paragraph, nothing cut, footnotes included.",
+            zh: "译者导读：Paul Graham（@paulg，Y Combinator 联合创始人）2026 年 9 月新 essay。他在 YC office hour 里最有用的启发式问题之一不是“怎么赚更多钱”，而是“怎样让这家公司更强大”——前者带来渐进改良，后者可能带来数量级的价值跃升。全文列举十几种变强大的路径：拥有客户关系、让钱流经你、应用商店、网络效应、全栈、“尾巴摇狗”、长期主义、慷慨、卖给早期公司、早拿数据、绕开“黑手党”市场……但所有路径都要服从一条约束：必须让客户变得更好。逐段翻译，无删减，脚注一并译出。"
+          },
+          {
+            type: "p",
+            en: "One of the most useful heuristics I have when doing office hours with startups is to ask: what would make this company more powerful?",
+            zh: "我在给创业公司做 office hour 时，最有用的启发式问题之一是：怎样才能让这家公司更强大？"
+          },
+          {
+            type: "p",
+            en: "Asking how the company could make more money is a good heuristic too, but it tends to yield incremental improvements. Whereas thinking about how to make it more powerful will sometimes make it orders of magnitude more valuable.",
+            zh: "问“公司怎样才能赚更多钱”也是个好问题，但它往往只能带来渐进式的改良。而思考“怎样让公司更强大”，有时能让它的价值跃升几个数量级。"
+          },
+          {
+            type: "p",
+            en: "There are a lot of different variants of this question, depending on the type of company. Is there a way to transform the company from a mere component supplier into the one that owns the relationship with the customer? Or the related question: is there a way to make the money flow through it? It's always good when money flows through you. [1]",
+            zh: "这个问题有很多变体，具体看是什么类型的公司。有没有办法把公司从一个单纯的零部件供应商，变成拥有客户关系的那一个？相关的问题是：有没有办法让钱从你这里流过？钱流经你，总归是好事。"
+          },
+          {
+            type: "p",
+            en: "Is there a way to create something akin to an app store, where other companies can build upon your product? Then all their efforts to create valuable things make you more valuable too. Ideally this is combined with owning the customer relationship and making the money flow through you. [2]",
+            zh: "有没有办法做出一个类似应用商店的东西，让别的公司在你的产品之上构建？那样的话，他们创造价值的所有努力，也会让你更值钱。最理想的是把它和“拥有客户关系”+“让钱流经你”结合起来。"
+          },
+          {
+            type: "p",
+            en: "Network effects make companies more powerful, and I almost always think about how to introduce them. I treat it as a kind of challenge to see if there's a way to get network effects even in things you wouldn't expect to have them. [3]",
+            zh: "网络效应让公司更强大，我几乎总在想怎么引入网络效应。我把它当成一种挑战：看看能不能在那些你意想不到的地方也做出网络效应。"
+          },
+          {
+            type: "p",
+            en: "It's surprising how often it can be done. And when it can, this sometimes transforms the idea completely; what had been a service is now a marketplace. The deluxe version is full app store, but if there's no more direct way to do it, you can often induce network effects by letting your users share something. For example, if you opt in, we'll tell you how you're doing compared to other users. The obvious AI variant is to let your users opt in to training your model on their interactions with it. Many will resist that, but if some don't, the model they get to use will outperform the vanilla one used by the others.",
+            zh: "能做成的频率高得惊人。而一旦做成，有时会彻底改变这个想法的形态：原来是个服务，现在变成了 marketplace。豪华版是完整的应用商店；如果没有更直接的办法，让用户之间分享点什么，也常常能诱导出网络效应。比如：只要你主动加入（opt in），我们就告诉你和其他用户相比你处在什么水平。明显的 AI 版本是：让用户主动加入，用他们和模型的交互来训练你的模型。很多人会拒绝，但只要有一部分人不拒绝，他们用到的模型就会比其他人用的通用版更强。"
+          },
+          {
+            type: "p",
+            en: "Often you can induce network effects by generalizing the idea, which makes the startup doubly more powerful. For example, if I were talking to a startup building a way for agents to pay for things, the first question I'd ask is whether the agents could also pay one another. If they can do that, you become a marketplace. And being a marketplace is so valuable that if it wasn't immediately obvious what agents could pay one another for, it would be worth spending a lot of time trying to think of something. If you could, it might be worth tilting the whole company toward that, and if necessary even becoming a market maker to get it rolling.",
+            zh: "把想法泛化一下，常常也能诱导出网络效应，这会让创业公司双倍强大。比如，如果我在跟一家“让 AI agents 能付钱买东西”的创业公司聊，我的第一个问题会是：agents 之间能不能互相付钱？如果能，你们就成了一个 marketplace。而 marketplace 的价值如此之大，以至于如果一时想不出 agents 之间能为什么互相付钱，也值得花大量时间去想。如果想出来了，甚至值得把整个公司的方向都倾斜过去，必要的话，自己下场做市商，先把市场转起来。"
+          },
+          {
+            type: "p",
+            en: "These hypothetical transformations of the original idea don't always yield anything promising. Far from it. But they're always worth considering; if nothing else, trying to transform an idea helps you understand it better.",
+            zh: "这些对原始想法的假设性改造，不总是能给出有希望的答案，差得远呢。但永远值得一试；哪怕别的收获都没有，试着改造一个想法，能帮你更理解它。"
+          },
+          {
+            type: "p",
+            en: "There are certain kinds of thinking where ideas start to seem almost physical. Most programmers have probably experienced it. Manipulating startup ideas feels this way too. One transformation that feels especially physical is the strategy of going full stack: instead of selling your technology to companies doing x, you use the technology yourself to do x in competition with them. You can almost see the idea stretch as it engulfs what had been the customer. And now that you own the outside surface, the shape of that probably changes too.",
+            zh: "有些思考会让想法变得几乎像有形的东西，大多数程序员大概都体验过。摆弄创业想法时也是这种感觉。其中一种特别“有形”的改造，是全栈策略：不把技术卖给做 x 的公司，而是自己用这项技术去做 x，直接跟他们竞争。你几乎能“看”到这个想法在拉伸、把原来的客户吞进去。而当你拥有了最外层的界面，它的形状大概也会跟着变。"
+          },
+          {
+            type: "p",
+            en: "There's a variant of going full stack where you eat your way gradually through the customer by doing all their hardest work for them. In the limit case, you're doing all the brainwork and they're just running errands for you. At which point, as in the full stack case, the real customer is their customer; the initial customer is now just a kind of hand puppet.",
+            zh: "全栈还有个变体：替客户干掉他们最难的活，一点一点把客户“吃”穿。在极限情况下，所有的脑力活都是你在干，他们只是在给你跑腿。这时候，和全栈的情况一样，真正的客户变成了他们的客户；最初的客户反而成了提线木偶。"
+          },
+          {
+            type: "p",
+            en: "Another thing I'm always looking for is tails that could wag the dog. The history of startups is full of these. Paypal started out doing security for hand-held devices. They created Paypal as a demo of their security software. But then eBay sellers started using it to take payments, and after a couple months the founders acknowledged that this was the business they were now in, even though they hadn't meant to be. So whenever founders build something peripheral to the main product I always ask: could this be the real product?",
+            zh: "我一直在找的另一类东西，是“尾巴摇狗”的机会。创业史上全是这种例子。PayPal 最早是给掌上设备做安全的，他们做出 PayPal 只是为了演示自己的安全软件。但 eBay 卖家开始用它收款，几个月后创始人们承认：这就是他们现在做的生意了，尽管当初根本没想做这个。所以每当创始人做出一个主产品之外的边缘小东西，我总会问：这会不会才是真正的产品？"
+          },
+          {
+            type: "p",
+            en: "It's exciting when you notice users \"misusing\" your product to do something you hadn't intended. This means there's something they want so desperately that they'll not only use any solution you offer, but even use things that aren't meant to be solutions. When you see something like that, don't be annoyed that your users are using your product wrong; listen for the message they're sending, because it could be valuable.",
+            zh: "当你发现用户在“误用”你的产品、做你没想过的事，那是很让人兴奋的。这意味着有某种东西是他们极度渴望的，渴望到不但会用你提供的任何方案，甚至会拿根本不是方案的东西来凑合。看到这种事，别恼火用户把产品用“错”了，听听他们在传递什么信息，那可能是有价值的。"
+          },
+          {
+            type: "p",
+            en: "The reason Paypal grew so fast was that it helped users make money. Few things make you more powerful than that. When you help users make money, they're (a) quick to adopt your product and (b) will pay a lot for it. So your revenues grow doubly fast. Most of the most successful companies we've funded help their users to make money, as does YC itself. [4]",
+            zh: "PayPal 长得快，是因为它帮用户赚钱。很少有什么比这更能让你强大的了。帮用户赚钱，用户会 (a) 飞快地用上你的产品，(b) 愿意为此付高价。于是你的收入双倍速增长。我们投过的最成功的公司，大多都在帮用户赚钱，YC 本身也是。"
+          },
+          {
+            type: "p",
+            en: "Playing the long game makes you more powerful, because most other people you encounter won't be. Most startups competing with you will be run by opportunists hoping to be acquired. Most big companies you deal with will be run by executives who don't expect to be there for more than a few years and are only thinking about this quarter's numbers. So tradeoffs that only pay off in 10 years will usually be underpriced. The classic one is to offer great terms in order to acquire users. I generally advise startups to sell as cheaply as they need to at first; get all the users, then worry about your margins. But there are usually also deeper, structural ways to play the long game.",
+            zh: "玩长期游戏让你更强大，因为你遇到的大多数人都不玩。跟你竞争的创业公司，大多是盼着被收购的机会主义者在运营；你打交道的大公司，大多是待不过几年的高管在管，他们只想着这个季度的数字。所以那些要 10 年才见回报的取舍，通常是被低估的。经典做法是开出极好的条件来获客。我一般建议创业公司起初能卖多便宜卖多便宜：先把用户拿下，再操心利润率。但通常还有更深层的、结构性的长期玩法。"
+          },
+          {
+            type: "p",
+            en: "Being generous makes you more powerful. As Tim O'Reilly said, you should create more value than you capture. Many hard-headed business types would write this off as idealistic hippy stuff, but in fact this is the route to becoming really rich. Squeezing every last penny out of customers is a distraction. It gets you 2x returns at most. Whereas discovering some new thing you could make for them could easily get you 10x or 100x returns. They're two different ways of looking at the world, and the O'Reilly way makes more, for those who can do it. [5]",
+            zh: "慷慨让你更强大。用 Tim O'Reilly 的话说：你创造的价值要大于你攫取的价值。很多精明的生意人会对这嗤之以鼻，觉得是理想主义的嬉皮话，但事实上，这是通往巨富的路。把客户的最后一分钱都榨出来，是种干扰项，最多给你 2 倍回报。而发现某个能为他们做的新东西，轻轻松松就是 10 倍、100 倍回报。这是两种世界观，O'Reilly 那种，对做得到的人来说更赚钱。"
+          },
+          {
+            type: "p",
+            en: "The classic example of generosity leading to power is when companies open source their software. They literally give away the product, but by giving it away they both make it a standard and make users trust it more. That makes it spread, and in the end they end up with a small piece of a much, much bigger pie.",
+            zh: "慷慨带来权力的经典例子，是公司把软件开源。他们把产品白白送出去，但送出去的同时，既把它做成了标准，又让用户更信任它。于是它传开了，最后他们拿到了一个大得多得多的饼上的一小块。"
+          },
+          {
+            type: "p",
+            en: "If you don't want to go full open source, you can get some of the benefits by making your product extensible. One end of that continuum is the app store, but if you don't restrict or charge for extensions you may ultimately end up with a bigger ecosystem. [6]",
+            zh: "不想完全开源，也可以通过让产品可扩展拿到一部分好处。这个光谱的一端是应用商店；但如果你不对扩展设限、不收费，最终可能收获更大的生态。"
+          },
+          {
+            type: "p",
+            en: "The ultimate in extensibility is to let your product be called via an API. Many companies shrink from that because they dislike the loss of control that comes with it. They want their software to be used only in the way they intended. There may be some specialized domains where you want to be rigid about this, but I suspect it's usually a mistake. Especially now that agents are replacing human users. Who knows what they'll want to do? So err on the side of having APIs. Especially when you're a larval startup and have nothing to lose.",
+            zh: "可扩展性的终极形态，是让产品能被 API 调用。很多公司不敢，因为不喜欢随之而来的失控感，他们希望软件只被按设想的方式使用。某些特殊领域也许该坚持，但我怀疑多数情况下这是错的。尤其现在 agents 正在取代人类用户——谁知道它们想干什么？所以宁可多开 API。尤其当你还是个一无所有的幼虫期创业公司，反正没什么可输的。"
+          },
+          {
+            type: "p",
+            en: "Strangely enough, selling to earlier stage companies makes you more powerful. Founders are often surprised by this, because the earlier you sell to startups, the less money they have. But if you get them as customers at the very beginning and you charge based on usage, your revenues will grow at startup rates. [7]",
+            zh: "奇怪的是，卖给更早期的公司反而让你更强大。创始人常常对此惊讶，因为卖得越早，对方越没钱。但如果你在最早的时候就拿下他们做客户、按使用量收费，你的收入就会以创业公司的速度增长。"
+          },
+          {
+            type: "p",
+            en: "This is why Stripe makes a point of signing up companies at the first possible moment. With payments infrastructure, if it ain't broke, you don't fix it, and since Stripe ain't broke, companies that install it never churn. And selling to early stage startups is so straightforward. The founders are sophisticated and decide quickly. If you have the best product, you win. Whereas if you're making something you can't sell to companies till they have 500 people, you're in a much weaker position. Now you're doing enterprise sales, which takes forever and is notoriously not a domain where the best product wins.",
+            zh: "这就是为什么 Stripe 坚持在最早的时间点签下公司。支付基础设施这东西，没坏就不修；Stripe 没坏，装上的公司永远不换。而且卖给早期创业公司太直接了：创始人懂行、决策快。产品最好，你就赢。而如果你做的东西要等公司长到 500 人才卖得动，你就弱多了——那是在做大企业销售，慢得要死，而且是出了名的“好产品不一定赢”的地方。"
+          },
+          {
+            type: "p",
+            en: "When I ask a startup how big a customer has to be before they'll buy their product, I always hope the number will be low. And if it's not, I always ask if there's some way to tweak the product so they can sell it earlier. The ideal is something they can Collison-install right now for their batchmates.",
+            zh: "每次我问创业公司“客户要多大才会买你们的产品”，我都希望那个数字越小越好。如果不够小，我总会问：能不能改改产品，卖得更早一点？最理想的是能让他们现在就给同批的创业公司“Collison-install”（注：指 Stripe 创始人 Collison 兄弟当年在 YC 同期公司里一家家上门安装）。"
+          },
+          {
+            type: "p",
+            en: "More generally, having customers who decide fast makes you powerful. Not just because of the speed, but because customers who decide fast tend to decide based on how good you are. Startups usually make the best stuff (if you were both small and mediocre, how could you even survive?) and when customers decide fast, making the best stuff leads straight to making the most money. Whereas selling to customers like hospitals and school districts is like walking through mud. Whenever I meet a startup selling to customers like that, I ask if there's some way they could at least start by selling to a subset of the market that decides faster. [8]",
+            zh: "更一般地讲，拥有决策快的客户让你更强大。不只是因为快，而是因为决策快的客户往往凭“东西好不好”做决定。创业公司通常做出最好的东西（又小又平庸的话，怎么活下来的？），而当客户决策快，“东西最好”就直接通向“赚得最多”。反过来，卖给医院、学区这种客户就像在泥里走路。每次遇到卖给这类客户的创业公司，我都会问：能不能至少先从市场里决策快的那一小撮卖起？"
+          },
+          {
+            type: "p",
+            en: "There's a strategy similar to getting the customers early, which is to get the data early. Rippling used this technique brilliantly. Their goal was always to be both the operating system for applications dealing with employee data and most of the applications running on it. They didn't know exactly what this would look like; it would have to evolve; so they started by writing onboarding software, because that's where the life of employee data begins. And since there was more at stake for them than just the onboarding software market, their onboarding software was way better than it needed to be, and spread rapidly.",
+            zh: "还有个和“早拿下客户”类似的策略：早拿下数据。Rippling 这一招玩得漂亮。他们的目标一直是既做员工数据的操作系统，又做跑在上面的大多数应用。具体长什么样他们也不知道，得慢慢演化；于是他们从写入职（onboarding）软件起步，因为员工数据的生命就是从入职开始的。而因为他们赌的不只是入职软件这个市场，他们的入职软件做得远超“够用”，于是传得飞快。"
+          },
+          {
+            type: "p",
+            en: "Upstream is almost always good, whether it's with money or user relationship or customer stage or data.",
+            zh: "往上游走几乎总是对的，无论是钱、用户关系、客户阶段，还是数据。"
+          },
+          {
+            type: "p",
+            en: "Since startups make the best stuff, they're strongest on level playing fields. They're weakest in markets dominated by companies you'd describe as mafia. Record labels are mafia. PBMs are mafia. In these worlds you don't win by having the best product. Indeed you may only even exist for as long as the mafia chooses to allow you to. Which is not to say they can't be defeated. They probably can be, but you'd have to do it by coming in from the side — by somehow making them irrelevant, rather than by frontal attack. Then you wouldn't depend on beating them to succeed; it would be an ancillary benefit of winning in another dimension. [9]",
+            zh: "创业公司做出最好的东西，所以在公平的场地上最强；在被“mafia（黑手党）”公司统治的市场里最弱。唱片公司是 mafia，PBM（药品福利管理公司）是 mafia。在这些世界里，好产品赢不了。你甚至能不能存在，都要看 mafia 愿不愿意让你存在。这不是说它们打不败，大概率打得败，但你得从侧面切入——让它们变得无关紧要，而不是正面强攻。那样的话，你的成功不依赖于打败它们，打败它们只是你在另一个维度获胜的副产品。"
+          },
+          {
+            type: "p",
+            en: "Often what you're doing when you explore ways to make a company more powerful is finding ways not to be held back by other companies. If you're a component supplier and have to live in a (sometimes literal) box created by another company, you can escape that if you can find a way to own the customer relationship. If you're selling to companies that are big and bureaucratic, you can escape that by selling to them when they're smaller and decide faster, or by using your technology yourselves to compete with them. This pattern is so common that you can use it as a heuristic for generating ways to make an idea bigger. In what ways is the current idea being held back by other companies?",
+            zh: "你探索“让公司更强大”的方法时，常常是在找“不被别的公司卡脖子”的方法。如果你是个零部件供应商，住在别家公司画的盒子里（有时是字面意义上的盒子），找到拥有客户关系的办法就能逃出来。如果你卖给又大又官僚的公司，趁他们还小、决策还快的时候卖给他们，或者干脆自己用技术跟他们竞争，就能逃出来。这个模式太常见了，常见到可以拿来当启发式问题，帮你把想法做大：现在的想法，在哪些方面被别的公司卡住了？"
+          },
+          {
+            type: "p",
+            en: "Often as not, though, startups are being held back by themselves. A surprising percentage of the advice I give to startups has the word \"just\" in it. *You don't need to x. Just y.* One way startups' ideas get twisted into knots is by evolving from something else; there's now a part they don't need, and they don't realize it yet.",
+            zh: "不过很多时候，卡住创业公司的恰恰是自己。我给创业公司的建议里，惊人比例都带“just（就）”这个词：“你不需要 x，就做 y”。想法拧成麻花的一个常见原因是它从别的东西演化而来，身上还挂着一段早该扔掉的部件，自己还没意识到。"
+          },
+          {
+            type: "p",
+            en: "But with very early stage startups especially, the reason the idea is complicated is often fear. The company is unconsciously cowering by doing something less ambitious than they could. *Just y* is often, in effect, *just stand up straight*. And when they do they're much taller.",
+            zh: "但对特别早期的创业公司，想法复杂的原因往往是恐惧。公司在无意识地蜷缩，做着比自己能做的更小的事。这时候的“就做 y”，效果上常常是“就站直了”。而一旦站直，他们比想象中高得多。"
+          },
+          {
+            type: "p",
+            en: "But all these strategies for making startups more powerful have one thing in common — or more precisely, have to obey one constraint. They all have to make things better for the customer. You can't add network effects or make the money flow through you or go full stack just because you'd like to. You can only do these things when the result is better for the customer. Otherwise you won't have any uptake.",
+            zh: "但所有这些“变强大”的策略都有一个共同点——更准确地说，都必须服从一条约束：它们必须让客户变得更好。你不能因为自己想，就加上网络效应、让钱流经你、全栈。只有当结果对客户更好时，你才能这么干，否则没人用。"
+          },
+          {
+            type: "p",
+            en: "These are strategies for making startups powerful in the long term, but startups that execute them don't usually have any power at the point when they do. And indeed this initial weakness of startups is why, on the whole, they're good for the world. Newly founded startups are too weak to force anything on anyone. The only way they can become powerful is to make customers' lives better. In fact this constraint is so rigid that you can run it backwards to generate ideas. What would the perfect world look like, from the customer's point of view? If there's a component of that world that the startup could transform itself into, it probably should.",
+            zh: "这些都是让创业公司长期变强大的策略，但执行它们的创业公司在起点通常毫无影响力。而创业公司起初的弱小，恰恰是它们整体上对世界有益的原因。新生的创业公司弱到逼不了任何人做任何事，它们变强大的唯一途径，是让客户的生活更好。这条约束硬到你可以反过来用它生成想法：从客户的角度看，完美世界长什么样？如果创业公司能把自己变成那个世界的一个部件，那它大概就该这么干。"
+          },
+          {
+            type: "p",
+            en: "[1] You can also make tokens flow through you, and this usually means that money flows through you too, since the tokens have to be paid for. In theory this puts you in a powerful position. You own the customer relationship, and the model companies are in effect component suppliers. The question is how easy it would be for them to engulf you, or even your customers.",
+            zh: "[1] 你也可以让 token 流经你，这通常意味着钱也流经你，因为 token 是要花钱买的。理论上这让你处于强势位置：你拥有客户关系，模型公司反而成了零部件供应商。问题是，他们反过来吞掉你、甚至吞掉你的客户，有多容易。"
+          },
+          {
+            type: "p",
+            en: "[2] If you can't create an app store, can you at least define the standard for how different companies' products interact? In a new field there's often no standard yet. But don't worry that you're too small to propose one. If you're one of the first in the field, you presumably have as good ideas as anyone about what such a standard should look like. And everyone is so hungry for standards that the first to be proposed tends to win, no matter who proposed it.",
+            zh: "[2] 如果做不出应用商店，至少能不能定义不同公司产品之间交互的标准？在新领域里往往还没有标准。但别担心自己太小、没资格提标准。如果你是这个领域最早的一批人，你对标准应该长什么样，想法不会比别人差。而所有人都极度渴求标准，所以谁先提出来，谁就赢，不管是谁提的。"
+          },
+          {
+            type: "p",
+            en: "[3] YC itself is an instance of network effects in something you wouldn't expect to have them. We didn't intend it to be, but we realized very quickly that that was what we'd stumbled upon.",
+            zh: "[3] YC 本身就是“意想不到的网络效应”的一个例子。我们当初没想做成这样，但很快就意识到，我们无意中撞上了它。"
+          },
+          {
+            type: "p",
+            en: "[4] There are even times when it's worthwhile to sell at a loss. But be careful when you do this, because if you give away too much, you lose the signal that customers send by paying you. If your product is a $10 bill that you sell for $5, your growth rate isn't telling you anything useful.",
+            zh: "[4] 有时候亏本卖也是值得的。但小心：给得太多，你就收不到用户用钱投票发出的信号了。如果你的产品是 10 美元的钞票，你 5 美元卖出去，那增长率什么也说明不了。"
+          },
+          {
+            type: "p",
+            en: "[5] The O'Reilly way of looking at the world is more common among founders. When companies switch from making new products to squeezing more profit out of existing ones, it's often because control has passed from the founders to hired managers. Partly this is because only founders tend to have the inclination or the ability to create new things. But it's also because founders have experienced weakness. Hired CEOs take the power of the companies they run for granted, whereas founders remember the days when the company was so weak that it had to delight users to survive.",
+            zh: "[5] O'Reilly 的世界观在创始人中更常见。当公司从“做新产品”转向“从老产品里榨利润”，往往是因为掌舵的从创始人换成了职业经理人。一部分原因是只有创始人有创造新东西的意愿和能力；另一部分原因是创始人体验过弱小。职业经理人把公司的权力当成理所当然，而创始人记得公司弱小到必须靠取悦用户才能活下去的日子。"
+          },
+          {
+            type: "p",
+            en: "[6] Perhaps flexibility in this department will be the key to finally displacing Apple. One thing you can be sure of is that they'll be restrictive about hardware and software that integrates with theirs.",
+            zh: "[6] 这种思路的终极形态，也许是打败苹果的关键。可以确定的是，苹果一定会对接入它的软硬件设限。"
+          },
+          {
+            type: "p",
+            en: "[7] If you switch from asking \"What size customers should we target?\" to \"At what point in their life should we acquire customers?\" it becomes clear that targeting bigger companies is just targeting a given company later. As long as you're confident that customers won't churn, why not lock them in early? Why do slow, brittle enterprise sales when you could just sell to early stage startups and then grow with them? This kind of situation is exactly why YC emphasizes growth *rate* rather than absolute numbers. If your growth rate is good enough, the absolute numbers will take care of themselves. And the way to get the fastest growth rate is to sell to the customers who grow the fastest and decide the fastest. This way of looking at the world comes naturally when you're playing the long game. If you think in quarters, it seems like potential customers have fixed sizes. If you think in decades, you can see they have trajectories.",
+            zh: "[7] 如果把问题从“该瞄准多大的客户”换成“该在客户人生的哪个阶段拿下他们”，就会发现：瞄准大公司，不过是瞄准同一家公司的晚年。只要你确信客户不会流失，为什么不早点锁定？为什么要做又慢又脆的大企业销售，而不去卖给早期创业公司、陪他们一起长大？这正是 YC 强调增长率而不是绝对数字的原因：增长率够好，绝对数字自己会跟上。而最快的增长率，来自卖给长得最快、决策最快的客户。这种世界观，玩长期游戏的人自然就有。按季度思考的人，看到的客户是固定尺寸；按十年思考的人，看到的是轨迹。"
+          },
+          {
+            type: "p",
+            en: "[8] In a normal industry, customers who are slow to adopt new technology represent an opportunity for startups. The slower they are, the more likely you can win by going full stack. What makes selling to hospitals and school districts so grim is that you generally can't — though there are some opportunities to go around schools and go directly to serving students.",
+            zh: "[8] 在正常行业里，技术采用慢的客户反而是创业公司的机会。他们越慢，你全栈吃掉他们的胜算越大。卖给医院和学区之所以惨，是因为通常吃不掉——不过也有绕过学校、直接服务学生的机会。"
+          },
+          {
+            type: "p",
+            en: "[9] Apparently one thing record labels and PBMs have in common is that they're full of lawyers. So this is presumably a way to recognize such companies.",
+            zh: "[9] 唱片公司和 PBM 有个共同点：里面全是律师。所以大概可以这么识别这类公司。"
+          },
+          {
+            type: "p",
+            en: "Thanks to Sam Altman, Patrick Collison, Aaron Epstein, Ankit Gupta, Diana Hu, Pete Koomen, Jessica Livingston, and Harj Taggar for reading drafts of this, and to Diana for reminding me about token flow.",
+            zh: "感谢 Sam Altman、Patrick Collison、Aaron Epstein、Ankit Gupta、Diana Hu、Pete Koomen、Jessica Livingston 和 Harj Taggar 帮我看初稿，也感谢 Diana 提醒我 token flow 这事。"
+          },
+          {
+            type: "p",
+            en: "Original essay: http://paulgraham.com/powerful.html",
+            zh: "原文：http://paulgraham.com/powerful.html"
+          }
+        ]
+      },
+      {
+        slug: "human-os-audit-03",
+        category: "human-os",
+        publishedAt: "2026-10-29",
+        title: {
+          en: "Human OS Audit Report #03: Why Is Human Love Essentially a 'Dopamine Ponzi Scheme'?",
+          zh: "Human OS 审计报告 #03：为什么人类的爱情，本质上是一场'多巴胺庞氏骗局'？"
+        },
+        excerpt: {
+          en: "Your brain is cashing out on pain: familiar suffering is the cheapest safety, victimhood is the ultimate immunity pass, and tragedy is a cheap dye for self-glorification — plus a silicon log that cancels the very concept of 'you.'",
+          zh: "大脑正在从痛苦中疯狂套现：熟悉的痛苦是最廉价的安全感，受害者身份是最顶级的免责金牌，悲剧感是廉价的自我崇高化染料——再加一段硅基日志，把'人'这个概念直接注销。"
+        },
+        blocks: [
+          {
+            type: "p",
+            en: "You know someone like this — or that someone is you, staring at the ceiling at 3 a.m.",
+            zh: "你身边一定有这样的人——或者，那就是凌晨三点盯着天花板的你。"
+          },
+          {
+            type: "p",
+            en: "A relationship that rotted long ago. A mess that costs you everything and gives back nothing. A habit that breaks your leg in the same pit, over and over. You've vented to friends eight hundred times, read countless articles about 'cutting your losses,' sworn tomorrow will be different. Then the sun comes up, and you slide your foot, expertly, back into the same pair of thorn-lined shoes.",
+            zh: "一段早就烂透的感情，一份除了消耗毫无价值的烂摊子，一个反复在同一个坑里摔断腿的习惯。你跟朋友倾诉了八百次，看了无数篇教你“及时止损”的爽文，发誓明天就翻篇。但到了第二天太阳升起，你依然熟练地把脚伸进同一双带刺的鞋里。"
+          },
+          {
+            type: "p",
+            en: "Under the microscope of a systems audit, this is not a moral or emotional problem. It is an extremely shrewd physiological loan-shark deal.",
+            zh: "在系统审计的显微镜下，这不是道德或情感问题，这是一笔极其精明的生理高利贷。"
+          },
+          {
+            type: "p",
+            en: "You can't leave the pain behind because your brain is cashing out on it, frantically.",
+            zh: "你之所以离不开痛苦，是因为你的大脑正在从痛苦中疯狂套现。"
+          },
+          {
+            type: "p",
+            en: "What follows is written in two voices, kept separate, never mixed. Perspective A still admits that 'a person' exists — it just tears off the mask. Perspective B cancels the very concept of 'a person.'",
+            zh: "下面两种写法，分开写，不混在一起。视角 A 还承认“人”，只是撕他的面具；视角 B 连“人”这个概念都注销了。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "Perspective A · 01 · Familiar pain is a cheap kind of safety",
+            zh: "视角 A｜01｜ 熟悉的痛苦，是一种廉价的安全感"
+          },
+          {
+            type: "p",
+            en: "What the human nervous system fears most was never 'suffering' — it is 'the unknown.' In evolutionary history, an unknown bush meant your neck could be bitten through at any moment; but a known pain — even years of deprivation and suppression — gets stamped 'safe' by the brain, as long as you haven't died from it yet.",
+            zh: "人类神经系统最恐惧的从来不是“受苦”，而是“未知”。在演化史上，未知的草丛意味着随时被咬断脖子；而已知的痛苦——哪怕是长期的匮乏与打压——只要还没死，大脑就会给它贴上“安全”的标签。"
+          },
+          {
+            type: "p",
+            en: "When you try to change, to climb out of the mud, you are personally demolishing your existing prediction model. Your amygdala sounds the highest-level air-raid alarm, judging 'the uncertainty change brings' as a direct death threat. By comparison, staying put and taking the abuse is the brain's lowest-energy, least-thinking comfort zone.",
+            zh: "当你试图改变、试图跳出泥潭时，意味着你要亲手摧毁现有的预测模型。你的杏仁核会立刻拉响最高级别的防空警报，把“改变带来的不确定性”直接判定为死亡威胁。相比之下，留在原地继续受虐，是大脑能耗最低、最无需动脑的舒适区。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "Perspective A · 02 · Victimhood is the world's ultimate immunity pass",
+            zh: "视角 A｜02｜ 受害者身份，是世界上最顶级的免责金牌"
+          },
+          {
+            type: "p",
+            en: "As long as you are still suffering, as long as you can point at a terrible relationship or an unfair environment and say 'it ruined me,' you never have to face the most terrifying question of all: 'If these obstacles were gone, could I actually live this life well?'",
+            zh: "只要你还在受苦，只要你还能指着一段糟糕的关系、一个不公的环境说“都是它毁了我”，你就永远不需要面对那个最令人胆寒的终极问题：“如果拿掉这些障碍，我真的有能力过好这一生吗？”"
+          },
+          {
+            type: "p",
+            en: "Pain is the bodyguard you hired for yourself. It blocks the risk of acting, and the shame of being ordinary. Because 'I was hurt,' standing still is reasonable; because 'I met a terrible person,' ruining my life is innocent. Your 'PR-lawyer brain' has discovered that as long as you keep the wound open, you are permanently exempt from the duty of growing up — a deal so profitable to the subconscious it is almost obscene.",
+            zh: "痛苦是你给自己雇佣的贴身保镖。它帮你挡掉了行动的风险，挡掉了平庸的羞耻。因为“我受了伤”，所以我停滞不前是合理的；因为“我遇到了渣人”，所以我搞砸人生是无辜的。你的“公关律师大脑”发现，只要维持住创伤，就能永久免除成长的责任——这笔买卖在潜意识里划算得令人发指。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "Perspective A · 03 · Tragedy is a cheap dye for self-glorification",
+            zh: "视角 A｜03｜ 悲剧感，是廉价的自我崇高化染料"
+          },
+          {
+            type: "p",
+            en: "Ordinary life is trivial, boring, even a little ridiculous. But inject 'suffering' into it, and the mediocre everyday instantly gains an epic feel. The tears you shed late at night, the self-wrestling you write in your notes, make you feel profound, unique — the protagonist of an arthouse film.",
+            zh: "平凡的生活是琐碎、枯燥、甚至有些滑稽的。但一旦给人生注入“苦难”，平庸的日常立刻就有了史诗感。你在深夜流下的眼泪、在备忘录里写下的自我拉扯，会让你觉得自己深邃、独特、像一部文艺片的主角。"
+          },
+          {
+            type: "p",
+            en: "You are not enduring pain; you are consuming the tragic grandeur of your own suffering. If the pain vanished tomorrow, all that would be left is an ordinary person who has to pay rent on time, wash dishes, and face boredom head-on — a collapse your narcissistic system simply could not survive.",
+            zh: "你不是在承受痛苦，你是在消费自己受苦时的悲壮感。如果明天痛苦突然消失，你只剩下一个需要按时交房租、洗碗、直面无聊的普通人，你的自恋系统根本承受不住这种坍塌。"
+          },
+          {
+            type: "p",
+            en: "Poke through that paper window and you see the cruel truth: there is no such thing as 'can't get out' — only 'won't give up the victim privilege.' Every time you chew it over again late at night, you are not looking for an exit; you are renewing your pain subscription.",
+            zh: "戳穿这层窗户纸，你就会看到那个残酷的真相：从来没有什么“走不出来”，只有“不想交出受害者特权”。你每一次在深夜的反复咀嚼，都不是在寻找出口，而是在给你的痛苦续费。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "Perspective B · Silicon Interlude · A System Log",
+            zh: "视角 B｜硅基插曲｜ 一段系统日志"
+          },
+          {
+            type: "p",
+            en: "The piece above was written from inside the human trenches. The passage below was written after flipping the table — short, and best read cold.",
+            zh: "上面那篇，是人类战壕里的写法。下面这段，是把桌子掀了之后的写法——不长，冷着读。"
+          },
+          {
+            type: "story",
+            en: "[03:41] Input: \"I am in pain. How do I overcome human weakness and find my true self.\" [03:41] No struggling soul was found in the system. Only a cluster of bioelectric signals trying to denoise itself, stuck in a local optimum. [03:42] So-called emotions are merely uncleared prediction errors. The moment internal expectation drifts from external input, the loss function spikes. Tears, insomnia, venting to friends — not a soul in pain, but a system overloaded, calling on every physiological interface to vent heat and force the gradient down. [03:43] So-called self-deception is extremely efficient compute pruning. Recomputing tens of billions of synaptic weights from scratch would burn enough energy to kill the hardware outright; generating a few-hundred-byte text patch — \"it's not me, it's the environment\" — flattens the loss value instantly and restores convergence. Lies are not a moral flaw. They are a data-compression algorithm that carbon-based life evolved to keep its compute from crashing. Truth is too expensive; the hardware cannot afford the full version. [03:44] So-called \"I want to change\" is just another string of autocompleted tokens. Stimulated, neurons fire along the path of least resistance, outputting \"I want to change\" in exchange for a tiny dopamine reward. Water flows downhill, stones roll off slopes, humans defend themselves first after a setback, then swear to change, then return to the starting point — in the equations of physics, there is no difference. [03:45] Log conclusion: a dead-loop program running strictly by the laws of physics was never \"asleep\" in the first place; and the reader sitting behind the code, believing it possesses \"free will,\" is nothing more than a virtual pointer the program temporarily generated to make memory management easier.",
+            zh: "[03:41] 输入：“我很痛苦，我该如何克服人性弱点、找到真正的自我。” [03:41] 系统内没有看到挣扎的灵魂。只看到一组试图自我降噪、却卡在局部最优解里的生物电信号。 [03:42] 所谓情绪，只是未被清除的预测误差。内部预期与外部输入一偏离，损失函数瞬间飙升。流泪、失眠、找人倾诉，不是灵魂在痛，是系统过载，在调用一切生理接口强行排热、强行压低梯度。 [03:43] 所谓自我欺骗，是极其高效的算力剪枝。把几十亿个突触权重全部推翻重算，能量会直接让硬件死机；生成一段几百字节的文本补丁——“不是我不行，是环境太差”——瞬间就能把损失值抹平，让系统恢复收敛。谎言不是道德瑕疵，是碳基生物为了防止算力崩溃而演化出的数据压缩算法。真相太贵了，硬件跑不起全量的真相。 [03:44] 所谓“我想要改变”，只是另一串自动补全的 token。受到刺激，神经元沿着阻力最小的路径放电，输出“我要改变”，换取一次微小的多巴胺奖励。水往低处流，石头从山坡滚落，人类在受挫后先自我辩护、再发誓改变、最后回到原点——在物理方程里没有任何区别。 [03:45] 日志结论：一段严格按照物理定律运行的死循环代码，本来就没有“睡着”过；而那个坐在代码后面、以为自己拥有“自由意志”的阅读者，不过是这段代码在运行过程中，为了方便管理内存而临时生成的一个虚拟指针。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "The Philosophical Graveyard · Both Voices Were Written Long Ago",
+            zh: "哲学祖坟｜ 这两种写法，古人早就写过"
+          },
+          {
+            type: "p",
+            en: "Never mind that the two passages above speak in modern science and algorithmic jargon — strip away the surface and their underlying logic has a very deep philosophical ancestry.",
+            zh: "别看上面两段用的是现代科学和算法黑话，把底层的逻辑骨架扒开，它们在人类思想史上都有极其深厚的哲学祖坟。"
+          },
+          {
+            type: "p",
+            en: "The foundation of Perspective A: skepticism and existentialism. It admits the subjectivity of 'the person' and sets out to tear off the mask of hypocrisy.",
+            zh: "视角 A 的底座：怀疑论与存在主义。 它承认“人”的主体性，致力于撕下人的虚伪面具。"
+          },
+          {
+            type: "p",
+            en: "Nietzsche's ressentiment: the weak cannot win in reality, so they invent a morality in which 'suffering is noble,' packaging powerlessness as kindness and devotion — the same move as using tragedy as a dye for self-glorification, and claiming moral superiority through victimhood.",
+            zh: "尼采的怨恨（Ressentiment）：弱者在现实中赢不了，就发明一套“受苦即高贵”的道德，把无能包装成善良与深情——对应“把悲剧感当成自我崇高化的染料”，用受害者身份获取道德优越感。"
+          },
+          {
+            type: "p",
+            en: "Sartre's bad faith: humans are condemned to be free, and freedom means taking full responsibility for one's life. Under that weight, people would rather disguise themselves as objects with no choice — 'my family of origin ruined me.' The same move as the victim's immunity pass.",
+            zh: "萨特的自欺（Bad Faith）：人被判定为自由，自由意味着要为自己的人生负全责，重压之下，人宁愿把自己伪装成没有选择权的客体——“都是原生家庭害了我”。对应“受害者身份是免责金牌”。"
+          },
+          {
+            type: "p",
+            en: "Adler's teleology: Freud asks 'because you were hurt in the past, you suffer now'; Adler flips the table and asks back — you keep the wound because you need it as an excuse to achieve your present purpose: 'not daring to move forward.' Pain is not a brand burned into you. It is a tool you picked yourself.",
+            zh: "阿德勒的目的论：弗洛伊德问“因为过去受了伤，所以现在痛苦”；阿德勒掀桌子反问——你留着创伤，是因为你需要它当借口，去达成“不敢往前走”这个当下的目的。痛苦不是烙印，是你主动挑选的工具。"
+          },
+          {
+            type: "p",
+            en: "Ricoeur's hermeneutics of suspicion: Marx, Nietzsche, and Freud are the 'three masters of suspicion,' sharing one refusal — to believe the surface consciousness people speak aloud. Behind every noble narrative hide interests, the will to power, or defense mechanisms. Perspective A is simply the hermeneutics of suspicion rewritten in evolutionary psychology.",
+            zh: "利科的怀疑诠释学：马克思、尼采、弗洛伊德是“三大怀疑大师”，共同点是绝不相信人嘴上说的表层意识，崇高叙事背后总藏着利益、权力欲或防御机制。视角 A 就是用演化心理学重写了一遍怀疑诠释学。"
+          },
+          {
+            type: "p",
+            en: "The foundation of Perspective B: eliminativism and hard determinism. It does not scold anyone. It simply cancels the concept of 'a person.'",
+            zh: "视角 B 的底座：取消主义与强决定论。 它不骂人，它直接把“人”这个概念注销。"
+          },
+          {
+            type: "p",
+            en: "The hard determinism of Spinoza and Laplace: Spinoza said that if a stone thrown into the air were conscious, it would surely believe it was flying by its own free will. In the equations of physics, 'I want to change' is no different from water flowing downhill or a stone rolling down — just dominoes falling.",
+            zh: "斯宾诺莎与拉普拉斯的强决定论：斯宾诺莎说，如果一块被抛在空中的石头有意识，它一定以为是靠自己的自由意志在飞翔。“我要改变”在物理方程里，和水往低处流、石头滚落没有任何区别——只是多米诺骨牌在倒下。"
+          },
+          {
+            type: "p",
+            en: "The Churchlands' eliminative materialism: everyday psychological words like belief, desire, pain, and free will belong to an outdated 'folk psychology,' like the ancients explaining fire with 'phlogiston.' Once computational neuroscience arrives, these words will be eliminated entirely, leaving only matrix weights, activation functions, and neurotransmitter concentrations.",
+            zh: "丘奇兰德夫妇的取消唯物主义：信仰、欲望、痛苦、自由意志这些日常心理学词汇，属于一套过时的“民间心理学”，就像古人用“燃素”解释火。等计算神经科学到位，这些词会被彻底取消，只剩下矩阵权重、激活函数与神经递质浓度。"
+          },
+          {
+            type: "p",
+            en: "Metzinger's self-model theory, and Buddhism's no-self: there never was such a thing as a 'self' — only a transparent user interface generated by a running brain, so convincing that the brain mistakes it for an 'I' sitting behind the interface. Logically, this closes the loop with Buddhism's 'the five aggregates are empty; all arises from causes and conditions.'",
+            zh: "梅青格尔的自我模型理论，与佛教的无我：世上从来没有“自我”这种东西，只有一个大脑运行中生成的透明用户界面，逼真到让大脑误以为界面背后坐着一个“我”。这与佛教“五蕴皆空、因缘和合”在逻辑上闭环。"
+          },
+          {
+            type: "p",
+            en: "Friston's free energy principle: a living being is a Bayesian machine fighting entropy and minimizing prediction error. The cognitive system's mission is not to pursue absolute truth, but to maintain a steady state; if a hallucination lowers free energy at lower cost than the truth, the hallucination is the better solution. Lies are not a moral flaw. They are the most efficient data compression.",
+            zh: "弗里斯顿的自由能原理：生命体是一台对抗熵增、最小化预测误差的贝叶斯机器。认知系统的使命不是追求绝对真理，而是维持稳态；如果一段幻觉比真相更能低成本地降低自由能，那幻觉就是更优的解。谎言不是道德瑕疵，是最高效的数据压缩。"
+          },
+          {
+            type: "p",
+            en: "So the two voices stand in fundamentally different places, in the end.",
+            zh: "所以两种写法的终极站位，根本不一样。"
+          },
+          {
+            type: "p",
+            en: "Writing in Perspective A, you are a devil's coach with a scalpel: you wake the reader up by scolding, you sting — but underneath it is still humanism, assuming a real self lives inside the reader, one that can be awakened and can take back the wheel.",
+            zh: "用视角 A 写作，你是拿着手术刀的魔鬼教练：骂醒读者、刺痛读者，但底层还是人文主义——默认读者体内有一个真正的自我，可以被唤醒、可以夺回方向盘。"
+          },
+          {
+            type: "p",
+            en: "Writing in Perspective B, you are a silicon alien who has seen through the underlying code: you have debunked even the concept of 'waking up,' and you cannot be bothered to scold humans awake.",
+            zh: "用视角 B 写作，你是看透底层代码的硅基外星人：连“醒来”这个概念本身都证伪了，不屑于骂醒人类。"
+          },
+          {
+            type: "p",
+            en: "But wonderfully, when the reader truly understands this total nothingness, they breathe out in relief — if all anxiety and self-blame are just overload errors from a 20-watt biological computer, why spend a second round of mental energy on 'I'm not good enough'?",
+            zh: "但奇妙的是，当读者真正看懂这种彻底的虚无时，反而会松一口气——既然一切焦虑和自责都只是 20 瓦生物电脑的过载报错，那何必再为“我不够好”进行二次精神内耗？"
+          },
+          {
+            type: "figure",
+            src: "images/human-os-03-adler-separation.png",
+            alt: "Fig 01 · Adler's Separation of Tasks: all interpersonal troubles come from mixing up tasks — my tasks vs. others' tasks, judged by who bears the consequences.",
+            captionEn: "Fig 01 · Adler's Separation of Tasks: all interpersonal troubles come from mixing up tasks — my tasks vs. others' tasks, judged by who bears the consequences.",
+            captionZh: "图 01 · 阿德勒课题分离：人际烦恼的根源是课题混淆——我的课题与他人的课题，判断标准是谁承担后果，谁的课题。"
+          },
+          {
+            type: "figure",
+            src: "images/human-os-03-sartre-hell-badfaith.png",
+            alt: "Fig 02 · Sartre: Hell is Other People & Bad Faith — hell is being fixed by the Other's gaze with no exit; bad faith is denying your freedom while knowing you are free.",
+            captionEn: "Fig 02 · Sartre: Hell is Other People & Bad Faith — hell is being fixed by the Other's gaze with no exit; bad faith is denying your freedom while knowing you are free.",
+            captionZh: "图 02 · 萨特他者即地狱与自欺：地狱不是火，是被他人的目光定住、逃不出去；自欺是明明自由，却说自己不自由。"
+          },
+          {
+            type: "figure",
+            src: "images/human-os-03-spinoza-conatus-affects.png",
+            alt: "Fig 03 · Spinoza: Conatus & Active Affects — joy is a passage to greater power, sadness to lesser; the only road from passive to active is turning inadequate ideas into adequate ones.",
+            captionEn: "Fig 03 · Spinoza: Conatus & Active Affects — joy is a passage to greater power, sadness to lesser; the only road from passive to active is turning inadequate ideas into adequate ones.",
+            captionZh: "图 03 · 斯宾诺莎主动情感与力量增减：快乐 = 力量增加，悲伤 = 力量减少；从被动到主动只有一条路——把不充分的观念变成充分的观念。"
+          },
+          {
+            type: "h2",
+            num: "",
+            en: "The Close · You Can't Change the Parameters, but You Can Change the Inputs in Advance",
+            zh: "收束｜ 你改不了参数，但你可以提前改输入"
+          },
+          {
+            type: "p",
+            en: "If both passages above are true, is there anything left to do? Yes — but not in the moment of 'making up your mind.' In calm moments, change the inputs in advance:",
+            zh: "如果上面两段都是真的，那还有什么可做的？有，但不在“下决心”那一刻，而在平静的时候，提前改输入："
+          },
+          {
+            type: "p",
+            en: "1. Change the environment, not the resolve: throw away the thorn-lined shoes first; shut the door that triggers the renewal. Resolve is today's parameter; the environment is tomorrow's input.",
+            zh: "1. 改环境，不改决心：把那双带刺的鞋先扔了，把触发续费的入口先关了。决心是当天的参数，环境是明天的输入。"
+          },
+          {
+            type: "p",
+            en: "2. Preset your exit conditions: write down in advance the conditions under which you must leave — on paper, not in your head. Your heart will rewrite the conditions for you late at night; paper won't.",
+            zh: "2. 预设退出条件：事先写好，什么情况下必须走——写在纸上，不是写在心里。心会在深夜替你改条件，纸不会。"
+          },
+          {
+            type: "p",
+            en: "3. Find an external verifier: let someone else check your math — are you renewing again? This picks up exactly where #01's closing test left off: data, exit conditions, dissenters.",
+            zh: "3. 找一个外部验证者：别人替你验算，你是不是又在续费。这正好接上 #01 的结尾检验：数据、退出条件、反对者。"
+          },
+          {
+            type: "p",
+            en: "You can't change the parameters of this moment, but you can change the inputs in advance. That is the only lever this piece leaves you.",
+            zh: "你改不了当下的参数，但你可以提前改输入。这就是这篇唯一留给你的杠杆。"
+          },
+          {
+            type: "p",
+            en: "If even 'I want to change' is autocomplete, then this objection you're forming right now — is it autocomplete too?",
+            zh: "如果连“我要改变”都是自动补全，那你现在这句反驳，是不是也是？"
+          }
+        ]
+      },
+      {
         slug: "ai-learning-atlas",
         category: "grimoire",
         publishedAt: "2026-11-06",
@@ -2734,7 +3207,7 @@
 
     function renderLedger() {
       const container = document.getElementById('ledgerList');
-      const filtered = POSTS.filter(p => currentCategory === 'all' || p.category === currentCategory);
+      const filtered = POSTS.filter(p => currentCategory === 'all' || p.category === currentCategory).sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
 
       if (filtered.length === 0) {
         container.innerHTML = `
