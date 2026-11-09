@@ -10,7 +10,6 @@
 - [Home](https://conjurerlab.com/): article index (Human OS + AI Learning Atlas), refill button.
 - [Human OS Audit #05 (Part 1): The 10 Most Profitable AI Businesses to Build in 2027](https://conjurerlab.com/#human-os-audit-05-part-1): 5 fatal bugs of the Human OS, 10 AI business directions, appendix with sources. Published 2026-11-04.
 - [Human OS Audit #05 (Part 2): The 48-Hour $30k Bounty! Summoning Your Full-Stack AI Arsenal](https://conjurerlab.com/#human-os-audit-05-part-2): 6 seals, 48-hour OaaS delivery playbook, dual tracks (Lv.1 Novice / Lv.99 Archmage). Published 2026-11-08.
-- [Human OS Side Episode 01: Jensen Huang and the $4.5 Trillion Empire That Lost Its Belt](https://conjurerlab.com/#human-os-side-01): the $4.5T empire, the Sunday-night email, and the legacy-code bugs in the human OS. Published 2026-11-09.
 - [AI Learning Atlas](https://conjurerlab.com/atlas): interactive 6-month AI learning map (1-day / 1-week / 1-month / 6-month zoom levels).
 
 ## For agents
