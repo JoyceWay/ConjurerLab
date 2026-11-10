@@ -1400,13 +1400,14 @@
       document.querySelectorAll('#six-view .full-month .week-details details > summary').forEach(function(sum){
         const m=(sum.textContent||'').match(/W(\d+)/); if(!m)return;
         const strong=sum.querySelector('strong');
-        let title='W'+m[1];
+        let title='W'+m[1], cn='', en='';
         if(strong){
-          const cn=strong.childNodes[0]?strong.childNodes[0].textContent.trim():'';
+          cn=strong.childNodes[0]?strong.childNodes[0].textContent.trim():'';
           const enEl=strong.querySelector('.en');
-          title=enEl?cn+' · '+enEl.textContent.trim():strong.textContent.trim();
+          en=enEl?enEl.textContent.trim():'';
+          title=en?cn+' · '+en:(cn||strong.textContent.trim());
         }
-        out.push({n:parseInt(m[1],10), title:title});
+        out.push({n:parseInt(m[1],10), title:title, cn:cn, en:en});
       });
       return out.sort((a,b)=>a.n-b.n);
     }
@@ -1469,14 +1470,14 @@
         const badge=dist.querySelector('.exp-badge'); if(badge)badge.hidden=!all;
       });
       var wks=expWeeks();
-      var nextTitleText='';
-      wks.forEach(function(w){ if(w.n===firstUndone)nextTitleText=w.title; });
+      var nextTitleText='', nextTitleCn='', nextTitleEn='';
+      wks.forEach(function(w){ if(w.n===firstUndone){ nextTitleText=w.title; nextTitleCn=w.cn||w.title; nextTitleEn=w.en||w.title; } });
       var allDone=firstUndone>24;
       document.querySelectorAll('.map-next-cn').forEach(function(el){
-        el.textContent=allDone?'24 周已全部完成，进入作品与收入。':('W'+String(firstUndone).padStart(2,'0')+' · '+nextTitleText);
+        el.textContent=allDone?'24 周已全部完成，进入作品与收入。':('W'+String(firstUndone).padStart(2,'0')+' · '+nextTitleCn);
       });
       document.querySelectorAll('.map-next-en').forEach(function(el){
-        el.textContent=allDone?'All 24 weeks done — move on to portfolio and revenue.':('Next stop: W'+String(firstUndone).padStart(2,'0')+' · '+nextTitleText);
+        el.textContent=allDone?'All 24 weeks done — move on to portfolio and revenue.':('Next stop: W'+String(firstUndone).padStart(2,'0')+' · '+nextTitleEn);
       });
       document.querySelectorAll('.map-next-btn').forEach(function(btn){
         btn.dataset.week=allDone?'':String(firstUndone);
