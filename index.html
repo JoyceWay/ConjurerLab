@@ -1378,6 +1378,30 @@
     }
 
     .hidden { display: none !important; }
+    /* ==========================================================================
+       HDR GLOW - magic moments only (2026-11-09, from the HDR demo Joyce approved)
+       Only HDR screens see this: color(display-p3 ...) values above 1.0 render
+       brighter than SDR white. Every rule lives inside @media (dynamic-range: high),
+       so SDR screens keep the exact current look - nothing changes for them.
+       Targets: refill button (.btn-mana-primary), talisman orb (.talisman-orb-wrap svg),
+       fortune slip card (.oracle-slip).
+       ========================================================================== */
+    @media (dynamic-range: high) {
+      /* 01 - Refill button: cyan glow lifts past white */
+      .btn-mana-primary {
+        box-shadow: inset 0 0 0 1px color(display-p3 1.9 1.5 0.6), 0 0 22px color(display-p3 0.35 1.5 1.8);
+        text-shadow: 0 0 14px color(display-p3 0.4 1.6 1.9);
+      }
+      /* 02 - Crystal ball orb in the fortune modal: halo */
+      .talisman-orb-wrap svg {
+        filter: drop-shadow(0 0 14px color(display-p3 0.45 1.5 1.9)) drop-shadow(0 0 34px color(display-p3 1.7 1.25 0.45));
+      }
+      /* 03 - Fortune slip card: gold halo on the brass outline */
+      .oracle-slip {
+        outline-color: color(display-p3 1.8 1.3 0.5);
+        box-shadow: 0 28px 64px rgba(0, 0, 0, 0.65), 0 0 54px color(display-p3 1.5 1.05 0.35);
+      }
+    }
   </style>
 </head>
 <body>
