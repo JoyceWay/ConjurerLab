@@ -9,7 +9,7 @@
   <meta name="description" content="午夜硅基小馆：一张导览加四张地图，走完六个月 AI 工程。导览先认路，热气球俯瞰、侦察、特训、远征四种尺度各走各的路。双语版，对人对 agent 都友好。" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Midnight Silicon Bistro — 6-Month AI Learning Atlas （午夜硅基小馆 · AI 学习地图册）","description":"A 6-month self-directed AI engineering curriculum across 4 zoom scales (1D hot-air-balloon overview, 1W scout, 1M boot camp, 6M expedition), with a bilingual guide, check-ins, and a machine-readable agent protocol.","provider":{"@type":"Organization","name":"Conjurer Lab","url":"https://conjurerlab.com/atlas"},"educationalLevel":"Beginner to Production AI Engineer","timeRequired":"P6M","inLanguage":["zh-CN","en"],"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT10H per week"}}</script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=ZCOOL+KuaiLe&display=swap');
 
     :root {
       color-scheme: light dark;
@@ -26,7 +26,7 @@
       --card-2:#efece2;
       --shadow:rgba(24,28,26,.10);
       --focus:#0d5c56;
-      --serif:"Instrument Serif","Noto Serif SC",serif;
+      --serif:"Source Serif 4","Instrument Serif","Noto Serif SC",serif;
       --sans:"Noto Sans SC",sans-serif;
       --mono:"JetBrains Mono","DM Mono",monospace;
     }
@@ -157,7 +157,7 @@
     .view-head h2{font:600 clamp(22px,3vw,30px)/1.2 var(--serif);letter-spacing:-.02em;margin:0}
     .view-head p{margin:8px 0 0;color:var(--muted);max-width:650px}
     .en{display:block;font-family:var(--sans);font-style:normal;font-size:.9em;line-height:1.5;letter-spacing:-.01em;color:var(--muted);font-weight:400;margin-top:3px}
-    h3 .en,h4 .en,summary strong .en,.day-title .en{font-family:var(--serif);font-style:normal;color:var(--route-2)}
+    h3 .en,h4 .en,summary strong .en,.day-title .en{font-family:var(--serif);font-style:normal;color:var(--route-2);letter-spacing:.01em}
     .hero-en{font:italic 400 clamp(17px,2.1vw,22px)/1.4 var(--serif);color:var(--route);margin:8px 0 4px}
     .scale-tag{flex:0 0 auto;font:500 11px/1 var(--mono);color:var(--route);border-bottom:2px solid var(--route);padding:0 0 8px}
 
@@ -213,7 +213,7 @@
     .sprint-outcomes dd{margin:5px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
     .sprint-days{position:relative;display:grid;gap:12px;margin-left:52px}
     .sprint-days:before{content:"";position:absolute;top:20px;bottom:20px;left:-28px;width:2px;background:repeating-linear-gradient(180deg,var(--route) 0 8px,transparent 8px 14px);opacity:.55}
-    .sprint-day{position:relative;display:grid;grid-template-columns:22px 170px minmax(0,1fr) minmax(190px,.72fr);gap:16px;padding:13px 16px;background:var(--card);border:1px solid var(--line);border-radius:4px 18px 4px 4px;box-shadow:0 8px 20px var(--shadow)}
+    .sprint-day{position:relative;display:grid;grid-template-columns:22px 150px minmax(0,1.15fr) minmax(210px,.85fr);gap:16px;padding:13px 16px;background:var(--card);border:1px solid var(--line);border-radius:4px 18px 4px 4px;box-shadow:0 8px 20px var(--shadow)}
     .sprint-day:before{content:"";position:absolute;left:-37px;top:23px;width:16px;height:16px;border-radius:50%;background:var(--accent,var(--route));box-shadow:0 0 0 5px var(--paper),0 0 0 6px var(--accent,var(--route))}
     .sprint-day-label{min-width:0}
     .sprint-day-label .day-num{font:500 10px/1.2 var(--mono);letter-spacing:.1em;color:var(--accent,var(--route))}
@@ -346,7 +346,7 @@
     .detail-cell.six-cell:nth-child(2n){border-right:0}
     .detail-cell.six-cell h4{font:700 10px/1.5 var(--sans);color:var(--rust);margin:0 0 6px}
     .detail-cell.six-cell p{font-size:12px;color:var(--muted);margin:0}
-    .detail-cell.story-cell.six-cell{background:color-mix(in srgb,var(--route-2) 8%,var(--card));border-left:3px solid var(--route-2)}
+    .detail-cell.story-cell.six-cell{background:color-mix(in srgb,var(--route-2) 12%,transparent);border-left:0}
     .detail-cell.story-cell.six-cell h4{color:#7a5c22}
     #six-view .detail-body > .six-cell:nth-child(3) p{font-family:var(--mono);font-size:12px;background:var(--paper-2);padding:8px 12px;border-radius:6px;border-left:2px solid var(--rust)}
     #six-view .detail-body > .six-cell:nth-child(4) h4{color:var(--rust)}
@@ -566,8 +566,8 @@
     .six-controls{display:flex;gap:8px;margin:14px 0}
     .mini-btn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;color:var(--ink)}
     .mini-btn:hover{border-color:var(--route);color:var(--route)}
-    .month-artifact{display:block;margin:12px 0 4px;padding:10px 12px;background:color-mix(in srgb,var(--route-2) 9%,var(--card));border:1px dashed var(--route-2);border-radius:8px;font-size:14px}
-    .month-artifact .route-kicker{display:block;margin-bottom:4px}
+    .month-artifact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:baseline;margin:12px 0 4px;padding:10px 12px;background:color-mix(in srgb,var(--route-2) 9%,var(--card));border:1px dashed var(--route-2);border-radius:8px;font-size:14px}
+    .month-artifact .route-kicker{display:block;margin-bottom:0;white-space:nowrap}
     .exp-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0 16px;padding:0;font-size:13px}
     .exp-legend small{color:var(--muted);font-family:var(--serif);margin-left:6px}
     .exp-dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);vertical-align:-2px;margin-right:6px}
@@ -608,7 +608,7 @@
     @media (max-width:720px){.exp-row{grid-template-columns:repeat(2,1fr)}}
   
     /* ===== v3: content-type typography — font/size/color per kind ===== */
-    .story-text{font-family:var(--serif);background:color-mix(in srgb,var(--route-2) 12%,transparent);padding:0 4px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+    .story-text{font-family:"ZCOOL KuaiLe","Noto Serif SC",serif;background:color-mix(in srgb,var(--route-2) 12%,transparent);padding:0 4px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
     .aim-line strong{color:var(--muted)}
     .do-line strong{color:var(--route)}
     .ask-line strong{color:var(--route-2)}
@@ -750,6 +750,7 @@
       font-size: 11px;
       line-height: 1.35;
       color: var(--muted);
+      text-wrap: balance;
     }
 
     /* Upgraded Vivid Cast Cards */
@@ -883,7 +884,7 @@
       border-radius: 8px;
       background: var(--paper);
       text-align: center;
-      opacity: .55;
+      opacity: .78;
       transition: all .25s ease;
     }
     .medal-slot.earned {
@@ -951,6 +952,30 @@
       .cast-cards-grid { grid-template-columns: 1fr; }
     }
 
+    /* ===== batch 8: v3 fixes + two-column stories, Kuaile story font, clearer English ===== */
+    .next-step-btn .en{color:inherit;opacity:.85}
+    @media (max-width:1500px){.nav-divider,.nav-group-label{display:none}#topnav-rank{display:none}}
+    .exp-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:6px 36px;align-items:start;margin-bottom:6px}
+    .exp-intro .exp-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;margin:8px 0 0}
+    .chapter-top{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:10px 28px;align-items:start;margin:0 0 16px}
+    .chapter-top .chapter-why{margin:0 0 14px}
+    .chapter-top .chapter-why:last-child{margin-bottom:0}
+    .chapter-story{margin:0;padding:16px 18px;background:color-mix(in srgb,var(--route-2) 12%,transparent);border:0;border-radius:10px}
+    .chapter-story b{display:block;margin:0 0 6px;font-size:15px}
+    .chapter-story .story-text{background:transparent;padding:0}
+    .chapter-story .en{font-family:"Source Serif 4","Noto Serif SC",serif}
+    .story-text .en{font-family:"Source Serif 4","Noto Serif SC",serif}
+    #six-view .detail-body > .detail-cell.story-cell.six-cell p{font-family:"ZCOOL KuaiLe","Noto Serif SC",serif;font-size:13px;color:var(--ink)}
+    @media (max-width:720px){
+      .month-artifact{display:block}
+      .month-artifact .route-kicker{margin-bottom:4px}
+      .exp-intro{grid-template-columns:1fr}
+      .exp-intro .exp-legend{display:flex;flex-wrap:wrap}
+      .chapter-top{grid-template-columns:1fr}
+      .sprint-day{grid-template-columns:22px minmax(0,1fr)}
+      .sprint-day .sprint-task,.sprint-day .sprint-result{grid-column:1/-1}
+    }
+
 </style>
 </head>
 <body>
@@ -964,7 +989,7 @@
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="checkin-view" id="tab-checkin" data-view="checkin"><strong>打卡</strong><small>CHECK-IN</small></button>
     <span class="nav-divider" aria-hidden="true"></span>
     <span class="nav-group-label">四尺度</span>
-    <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="day-view" id="tab-day" data-view="day"><strong>1D <span class="tab-name">· 热气球</span></strong><small>OVERVIEW</small></button>
+    <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="day-view" id="tab-day" data-view="day"><strong>1D <span class="tab-name">· 热气球</span></strong><small>HOT AIR BALLOON</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="week-view" id="tab-week" data-view="week"><strong>1W <span class="tab-name">· 侦察</span></strong><small>SCOUT</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="month-view" id="tab-month" data-view="month"><strong>1M <span class="tab-name">· 特训</span></strong><small>BOOT CAMP</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="six-view" id="tab-six" data-view="six"><strong>6M <span class="tab-name">· 远征</span></strong><small>EXPEDITION</small></button>
@@ -1099,7 +1124,7 @@
       </div>
       <div class="view" id="map-view" role="tabpanel" aria-labelledby="tab-map" hidden>
         <header class="view-head"><div><h2>认路，别赶路</h2><p>地图只回答三件事：在哪、下一站是哪、怎么跳过去。故事在另一页。<span class="en">The map answers three questions: where you are, what's next, and how to jump there. The story lives on its own page.</span></p></div><span class="scale-tag">MAP · NAVIGATION</span></header>
-<section class="expedition" id="expedition" aria-labelledby="exp-title"><h2 id="exp-title">探险地图 <span class="en">Expedition map</span></h2><p class="lead">点路标直接跳到那一周；勾完一个月的 4 周，拿到当月徽章。<span class="en">Click a waypoint to open that week. Finish a month’s four weeks for its badge.</span></p><ul class="exp-legend"><li><span class="exp-dot"></span>路标：一周的学习 <small>waypoint · one week</small></li><li><span class="exp-dot done"></span>已到达 <small>reached</small></li><li><span class="exp-dot next"></span>下一站 <small>next stop</small></li><li><span class="exp-badge-mark">🏅</span>徽章：当月 4 周全完成 <small>district badge</small></li></ul>
+<section class="expedition" id="expedition" aria-labelledby="exp-title"><div class="exp-intro"><div class="exp-intro-text"><h2 id="exp-title">探险地图 <span class="en">Expedition map</span></h2><p class="lead">点路标直接跳到那一周；勾完一个月的 4 周，拿到当月徽章。<span class="en">Click a waypoint to open that week. Finish a month’s four weeks for its badge.</span></p></div><ul class="exp-legend"><li><span class="exp-dot"></span>路标：一周的学习 <small>waypoint · one week</small></li><li><span class="exp-dot done"></span>已到达 <small>reached</small></li><li><span class="exp-dot next"></span>下一站 <small>next stop</small></li><li><span class="exp-badge-mark">🏅</span>徽章：当月 4 周全完成 <small>district badge</small></li></ul></div>
       <div class="next-step-banner" id="map-next-top"><span>下一站 · NEXT STOP：<span class="map-next-cn">去 6M 查看下一周。</span> <span class="en map-next-en">Jump to your next stop in the 6-month expedition.</span></span><button type="button" class="next-step-btn map-next-btn" data-week="">跳到下一站 <span class="en">Jump to the next stop →</span></button></div>
       <div class="exp-map" id="exp-map"></div></section>
         <p class="map-note">餐馆故事在 <a href="#/story">故事</a> 页；这里只管认路和打卡。</p>
@@ -1420,7 +1445,7 @@
       const icons=['🔪','🎓','📚','🕵️','📦','🏮'];
       track.innerHTML=months.map((m,idx)=>`
         <button type="button" class="blueprint-node" data-jump-month="${m.n}" style="${monthStyle(m)}">
-          <div class="bp-top"><span>M0${m.n} · W0${(m.n-1)*4+1}–W${String(m.n*4).padStart(2,'0')}</span><span>${icons[idx]||'🏮'}</span></div>
+          <div class="bp-top"><span>M0${m.n} · W${String((m.n-1)*4+1).padStart(2,'0')}–W${String(m.n*4).padStart(2,'0')}</span><span>${icons[idx]||'🏮'}</span></div>
           <strong>${m.name}</strong>
           <small>${m.en}</small>
           <small style="margin-top:6px;color:var(--route-2);font-family:var(--serif)">${m.checkpoint}</small>
@@ -1601,7 +1626,7 @@
       const cards=months.map(m=>{
         const start=(m.n-1)*4+1;
         const days=weeks.filter(w=>w.m===m.n).map((w,i)=>`<div class="chapter-day"><span class="day-code">DAY ${String(start+i).padStart(2,'0')}</span><b class="day-title">W${w.n} · ${w.t}${en(w.e)}</b><div class="day-copy"><p class="aim-line"><strong>学：</strong>${w.aim}</p><p class="do-line"><strong>做：</strong>${w.out}</p><p class="ask-line"><strong>问 AI：</strong><span class="prompt-text">${w.prompt}</span> <button type="button" class="copy-prompt-btn" data-copy="${w.prompt.replace(/"/g,'&quot;')}">📋 复制咒语 · Copy</button></p></div></div>`).join('');
-        return `<article class="chapter" style="${monthStyle(m)}"><span class="chapter-no">DAYS ${String(start).padStart(2,'0')}–${String(start+3).padStart(2,'0')} · CHAPTER ${m.n}</span><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en)}</h3></header><div class="chapter-why"><h4>为什么学 · WHY</h4><p>${m.why}${en(m.whyEn)}</p></div><div class="chapter-why"><h4>阶段成果 · CHECKPOINT</h4><p>${m.checkpoint}${en(m.checkpointEn)}</p></div><p class="chapter-story"><b>餐馆这一章</b>${en('Restaurant chapter')}<span class="story-text">${m.chapterStory}</span>${en(m.chapterStoryEn)}</p><div class="chapter-days">${days}</div></article>`;
+        return `<article class="chapter" style="${monthStyle(m)}"><span class="chapter-no">DAYS ${String(start).padStart(2,'0')}–${String(start+3).padStart(2,'0')} · CHAPTER ${m.n}</span><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en)}</h3></header><div class="chapter-top"><div class="chapter-top-left"><div class="chapter-why"><h4>为什么学 · WHY</h4><p>${m.why}${en(m.whyEn)}</p></div><div class="chapter-why"><h4>阶段成果 · CHECKPOINT</h4><p>${m.checkpoint}${en(m.checkpointEn)}</p></div></div><p class="chapter-story"><b>餐馆这一章</b>${en('Restaurant chapter')}<span class="story-text">${m.chapterStory}</span>${en(m.chapterStoryEn)}</p></div><div class="chapter-days">${days}</div></article>`;
       }).join('');
       const rhythm=`<div class="month-rhythm"><div class="rhythm-step"><b>第 1 周 · Days 1–7</b>M1 全部 + M2 前三站</div><div class="rhythm-step"><b>第 2 周 · Days 8–14</b>M2 收尾 + M3 + M4 前两站</div><div class="rhythm-step"><b>第 3 周 · Days 15–21</b>M4 收尾 + M5 + M6 方向一</div><div class="rhythm-step"><b>第 4 周 · Days 22–28</b>M6 方向二、三 + 四天整合项目</div></div>`;
       const integration=`<article class="integration-card"><h3>Days 25–28 · 把 24 天串成一个能跑的系统${en('Integrate the 24 topics into one working system')}</h3><ol><li><b>Day 25：</b>回看依赖，补最卡的一处。</li><li><b>Day 26：</b>把 Prompt、工具、RAG 接成一条流程。</li><li><b>Day 27：</b>加测试、错误处理、成本记录。</li><li><b>Day 28：</b>整理 README、演示与下月复盘。</li></ol></article>`;
@@ -1621,7 +1646,7 @@
     function renderSix(){
       const filters=`<div class="filters" aria-label="筛选月份"><button class="month-filter active" data-month="all">全部 · All</button><button class="month-filter" data-month="todo">⏳ 只看未完成 · Todo</button>${months.map(m=>`<button class="month-filter" data-month="${m.n}">M${m.n} ${m.name}</button>`).join('')}</div>`;
       const groups=months.map(m=>{
-        const ds=weeks.filter(w=>w.m===m.n).map((w,i)=>`<details style="${monthStyle(m)}"><summary><span class="wk-no">W${String(w.n).padStart(2,'0')}</span><strong>${w.t}${en(w.e)}</strong><span class="wk-res-pill" data-wk-pill="${w.n}">📚 资料</span><span class="route-inline"><span class="route-kicker">承接 · CONNECTION</span><span>${slimRoute(w.n)}</span></span></summary><div class="detail-body">${detailCell('从零学什么','LEARN',w.aim,'six-cell')}${detailCell('对 AI 的意义','WHY AI',w.ai,'six-cell')}<div class="detail-cell six-cell"><h4>Prompt 在哪用 · PROMPT</h4><div class="prompt-box-wrap"><p>${w.prompt}</p><button type="button" class="copy-prompt-btn" data-copy="${w.prompt.replace(/"/g,'&quot;')}">📋 复制问 AI 咒语 · Copy Prompt</button></div></div>${detailCell('这一周做出来','SHIP',w.out,'six-cell')}${detailCell('餐馆里的这一幕','STORY',w.story,'story-cell six-cell')}<div class="detail-cell six-cell"><h4>完成标准 · DONE</h4><p>你能不用术语，用自己的话解释；也能亲手跑通一次，并指出一个失败点。</p></div>${resourceCell(w.n)}${videoGuideCell(w.n)}<div class="stuck-line"><span class="route-kicker">卡点 · STUCK</span><input type="text" class="stuck-input" data-week="${w.n}" maxlength="200" placeholder="踩到卡点或报错写在这里（自动保存，并同步至底部 Agent 家教提示词）..."></div></div></details>`).join('');
+        const ds=weeks.filter(w=>w.m===m.n).map((w,i)=>`<details style="${monthStyle(m)}"><summary><span class="wk-no">W${String(w.n).padStart(2,'0')}</span><strong>${w.t}${en(w.e)}</strong><span class="wk-res-pill" data-wk-pill="${w.n}">📚 资料</span><span class="route-inline"><span class="route-kicker">承接 · CONNECTION</span><span>${slimRoute(w.n)}</span></span></summary><div class="detail-body">${detailCell('从零学什么','LEARN',w.aim,'six-cell')}${detailCell('对 AI 的意义','WHY AI',w.ai,'six-cell')}<div class="detail-cell six-cell"><h4>Prompt 在哪用 · PROMPT</h4><div class="prompt-box-wrap"><p>${w.prompt}</p><button type="button" class="copy-prompt-btn" data-copy="${w.prompt.replace(/"/g,'&quot;')}">📋 复制问 AI 咒语 · Copy Prompt</button></div></div>${detailCell('这一周做出来','SHIP',w.out,'six-cell')}<div class="detail-cell six-cell"><h4>完成标准 · DONE</h4><p>你能不用术语，用自己的话解释；也能亲手跑通一次，并指出一个失败点。</p></div>${detailCell('餐馆里的这一幕','STORY',w.story,'story-cell six-cell')}${resourceCell(w.n)}${videoGuideCell(w.n)}<div class="stuck-line"><span class="route-kicker">卡点 · STUCK</span><input type="text" class="stuck-input" data-week="${w.n}" maxlength="200" placeholder="踩到卡点或报错写在这里（自动保存，并同步至底部 Agent 家教提示词）..."></div></div></details>`).join('');
         return `<section class="full-month" data-month-group="${m.n}" style="${monthStyle(m)}"><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en+' · '+m.storyEn)}</h3></header><div class="month-artifact"><span class="route-kicker">月末交付物 · ARTIFACT</span><span>${m.artifact}${en(m.artifactEn)}</span></div>${m.n>1?`<div class="revisit-line"><span class="route-kicker">回访 · REVISIT</span><span>进 M${m.n} 之前，先回 M${m.n-1} 的 SHIP 里挑一个，改一处。</span></div>`:''}<div class="week-details">${ds}</div></section>`;
       }).join('');
       document.getElementById('six-view').innerHTML=`<header class="view-head"><div><h2>六个月，逐周精读、看讲义、动手</h2><p>每周先看不超过 3 个“必看”，其余都是真有需要才打开的“可选项”；再完成动手任务并按标准验收。Week 24 不加新视频，只整合作品。<span class="en">Each week has no more than three required items. Open optional resources only for a real need, then build and verify the result. Week 24 adds no new video and is reserved for portfolio integration.</span></p></div><span class="scale-tag">24 WEEKS · BUILD FIRST</span></header><div class="honest-total"><div><strong>约 26 小时</strong><span>必看视频 · required</span></div><div><strong>约 36 小时</strong><span>可选项视频 · optional</span></div><div><strong>约 155–185 小时</strong><span>含 92–122 小时动手；目标 480 小时，缺口不注水</span></div></div><div class="six-controls"><button type="button" class="mini-btn" id="expand-all-weeks">全部展开</button><button type="button" class="mini-btn" id="collapse-all-weeks">全部收起</button></div>${filters}${groups}`;
@@ -1804,7 +1829,7 @@
         {min:9, icon:'📚', cn:'秘方馆长', en:'Recipe Archivist', desc:'执掌向量书架与老馆长精排，店员答话字字有据。'},
         {min:13, icon:'🕵️', cn:'铁面店长', en:'Bistro Manager', desc:'精通 ReAct 循环、步数护栏与米其林 30 题暗访评测。'},
         {min:17, icon:'📦', cn:'连锁总督', en:'Fleet Director', desc:'集装箱开分店、门禁限流、全链路监控与缓存账本样样精通。'},
-        {min:21, icon:'🏮', cn:'黑珍珠总厨', en:'Midnight Master Chef', desc:'走通六个月完整硅基工程链，随时开门迎客！'}
+        {min:24, icon:'🏮', cn:'黑珍珠总厨', en:'Midnight Master Chef', desc:'走通六个月完整硅基工程链，随时开门迎客！'}
       ];
       var curRank=ranks[0];
       for(var rIdx=0;rIdx<ranks.length;rIdx++){
