@@ -4450,6 +4450,21 @@
             "zh": "四、全局市场数据与产业研报出处（Market Intelligence）——（1）Gartner 2028 智能体商务（Agentic Commerce）15 万亿美元预测：Gartner 权威预测指出，到 2028 年，全球 90% 的 B2B 采购将由 AI 代理介入撮合，推动超过 15 万亿美元的 B2B 支出通过 AI 代理交易网络完成。🔗 官方新闻稿原链：Gartner Unveils Top Predictions for IT Organizations and Users in 2026 and Beyond: https://www.gartner.com/en/newsroom/press-releases/2025-10-21-gartner-unveils-top-predictions-for-it-organizations-and-users-in-2026-and-beyond （2）各大顶级机构对 Agentic Commerce 市场规模的交叉对比（McKinsey / Morgan Stanley / Bain / Gartner）：深度解析从消费级端内结账（千亿级）到全球 B2B 智能体全链路撮合（数万亿级）的商业边界与套利空间。🔗 深度对比研报：Agentic Commerce Market Size Forecast — McKinsey, Gartner & More: https://stellagent.ai/insights/agentic-commerce-market-size-forecast-2030"
           }
         ]
+      },
+      {
+        slug: "silicon-counter-intelligence",
+        category: "grimoire",
+        publishedAt: "2026-11-10",
+        externalUrl: "/silicon-counter-intelligence.html",
+        title: {
+          en: "Silicon Counter-Intelligence: A Conjurer's Field Manual",
+          zh: "硅基反间谍与认知防火墙法典"
+        },
+        excerpt: {
+          en: "An interactive bilingual monograph: 8 mathematical failure modes of Transformer LLMs — sycophancy, echo chambers, mode collapse, sunk cost, over-engineering, confabulation, context rot, sampling physics — with a 12-term glossary, verified papers and lectures, a live prompt minefield scanner, and the 4-line master override.",
+          zh: "一份交互式中英双语专著：Transformer 大模型的 8 大数学失效模式——马屁精、回音壁、均值坍缩、沉没成本、过度工程、幻觉圆谎、上下文腐烂、采样物理——附 12 词术语词典、已核实论文与公开课、实时提问排雷器与 4 行护体总咒。"
+        },
+        blocks: []
       }
     ];
 
@@ -4536,12 +4551,12 @@
           </div>`
         : '';
 
-      const actionLabelEn = post.externalUrl ? 'Launch Interactive Atlas ↗' : 'Read Full Article →';
-      const actionLabelZh = post.externalUrl ? '打开交互地图册 ↗' : '阅读全文 →';
+      const actionLabelEn = post.externalUrl ? 'Launch Interactive Monograph ↗' : 'Read Full Article →';
+      const actionLabelZh = post.externalUrl ? '打开交互专著 ↗' : '阅读全文 →';
 
       card.innerHTML = `
         <div class="preview-card-topbar">
-          <span>${post.publishedAt} · #${post.category.toUpperCase()}${post.externalUrl ? ' · INTERACTIVE ATLAS' : ''}</span>
+          <span>${post.publishedAt} · #${post.category.toUpperCase()}${post.externalUrl ? ' · INTERACTIVE' : ''}</span>
           <button class="preview-close-btn" onclick="hidePreview(event)" aria-label="Close Preview">✕</button>
         </div>
         <div class="preview-card-body">
