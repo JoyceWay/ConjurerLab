@@ -9,7 +9,7 @@
   <meta name="description" content="午夜硅基小馆：一张导览加四张地图，走完六个月 AI 工程。导览先认路，热气球俯瞰、侦察、特训、远征四种尺度各走各的路。双语版，对人对 agent 都友好。" />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"Midnight Silicon Bistro — 6-Month AI Learning Atlas （午夜硅基小馆 · AI 学习地图册）","description":"A 6-month self-directed AI engineering curriculum across 4 zoom scales (1D hot-air-balloon overview, 1W scout, 1M boot camp, 6M expedition), with a bilingual guide, check-ins, and a machine-readable agent protocol.","provider":{"@type":"Organization","name":"Conjurer Lab","url":"https://conjurerlab.com/atlas"},"educationalLevel":"Beginner to Production AI Engineer","timeRequired":"P6M","inLanguage":["zh-CN","en"],"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT10H per week"}}</script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=ZCOOL+KuaiLe&display=swap');
 
     :root {
       color-scheme: light dark;
@@ -26,7 +26,7 @@
       --card-2:#efece2;
       --shadow:rgba(24,28,26,.10);
       --focus:#0d5c56;
-      --serif:"Instrument Serif","Noto Serif SC",serif;
+      --serif:"Source Serif 4","Instrument Serif","Noto Serif SC",serif;
       --sans:"Noto Sans SC",sans-serif;
       --mono:"JetBrains Mono","DM Mono",monospace;
     }
@@ -157,7 +157,7 @@
     .view-head h2{font:600 clamp(22px,3vw,30px)/1.2 var(--serif);letter-spacing:-.02em;margin:0}
     .view-head p{margin:8px 0 0;color:var(--muted);max-width:650px}
     .en{display:block;font-family:var(--sans);font-style:normal;font-size:.9em;line-height:1.5;letter-spacing:-.01em;color:var(--muted);font-weight:400;margin-top:3px}
-    h3 .en,h4 .en,summary strong .en,.day-title .en{font-family:var(--serif);font-style:normal;color:var(--route-2)}
+    h3 .en,h4 .en,summary strong .en,.day-title .en{font-family:var(--serif);font-style:normal;color:var(--route-2);letter-spacing:.01em}
     .hero-en{font:italic 400 clamp(17px,2.1vw,22px)/1.4 var(--serif);color:var(--route);margin:8px 0 4px}
     .scale-tag{flex:0 0 auto;font:500 11px/1 var(--mono);color:var(--route);border-bottom:2px solid var(--route);padding:0 0 8px}
 
@@ -213,7 +213,7 @@
     .sprint-outcomes dd{margin:5px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}
     .sprint-days{position:relative;display:grid;gap:12px;margin-left:52px}
     .sprint-days:before{content:"";position:absolute;top:20px;bottom:20px;left:-28px;width:2px;background:repeating-linear-gradient(180deg,var(--route) 0 8px,transparent 8px 14px);opacity:.55}
-    .sprint-day{position:relative;display:grid;grid-template-columns:22px 170px minmax(0,1fr) minmax(190px,.72fr);gap:16px;padding:13px 16px;background:var(--card);border:1px solid var(--line);border-radius:4px 18px 4px 4px;box-shadow:0 8px 20px var(--shadow)}
+    .sprint-day{position:relative;display:grid;grid-template-columns:22px 150px minmax(0,1.15fr) minmax(210px,.85fr);gap:16px;padding:13px 16px;background:var(--card);border:1px solid var(--line);border-radius:4px 18px 4px 4px;box-shadow:0 8px 20px var(--shadow)}
     .sprint-day:before{content:"";position:absolute;left:-37px;top:23px;width:16px;height:16px;border-radius:50%;background:var(--accent,var(--route));box-shadow:0 0 0 5px var(--paper),0 0 0 6px var(--accent,var(--route))}
     .sprint-day-label{min-width:0}
     .sprint-day-label .day-num{font:500 10px/1.2 var(--mono);letter-spacing:.1em;color:var(--accent,var(--route))}
@@ -346,7 +346,7 @@
     .detail-cell.six-cell:nth-child(2n){border-right:0}
     .detail-cell.six-cell h4{font:700 10px/1.5 var(--sans);color:var(--rust);margin:0 0 6px}
     .detail-cell.six-cell p{font-size:12px;color:var(--muted);margin:0}
-    .detail-cell.story-cell.six-cell{background:color-mix(in srgb,var(--route-2) 8%,var(--card));border-left:3px solid var(--route-2)}
+    .detail-cell.story-cell.six-cell{background:color-mix(in srgb,var(--route-2) 12%,transparent);border-left:0}
     .detail-cell.story-cell.six-cell h4{color:#7a5c22}
     #six-view .detail-body > .six-cell:nth-child(3) p{font-family:var(--mono);font-size:12px;background:var(--paper-2);padding:8px 12px;border-radius:6px;border-left:2px solid var(--rust)}
     #six-view .detail-body > .six-cell:nth-child(4) h4{color:var(--rust)}
@@ -566,8 +566,8 @@
     .six-controls{display:flex;gap:8px;margin:14px 0}
     .mini-btn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;color:var(--ink)}
     .mini-btn:hover{border-color:var(--route);color:var(--route)}
-    .month-artifact{display:block;margin:12px 0 4px;padding:10px 12px;background:color-mix(in srgb,var(--route-2) 9%,var(--card));border:1px dashed var(--route-2);border-radius:8px;font-size:14px}
-    .month-artifact .route-kicker{display:block;margin-bottom:4px}
+    .month-artifact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:baseline;margin:12px 0 4px;padding:10px 12px;background:color-mix(in srgb,var(--route-2) 9%,var(--card));border:1px dashed var(--route-2);border-radius:8px;font-size:14px}
+    .month-artifact .route-kicker{display:block;margin-bottom:0;white-space:nowrap}
     .exp-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0 16px;padding:0;font-size:13px}
     .exp-legend small{color:var(--muted);font-family:var(--serif);margin-left:6px}
     .exp-dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);vertical-align:-2px;margin-right:6px}
@@ -608,7 +608,7 @@
     @media (max-width:720px){.exp-row{grid-template-columns:repeat(2,1fr)}}
   
     /* ===== v3: content-type typography — font/size/color per kind ===== */
-    .story-text{font-family:var(--serif);background:color-mix(in srgb,var(--route-2) 12%,transparent);padding:0 4px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+    .story-text{font-family:"ZCOOL KuaiLe","Noto Serif SC",serif;background:color-mix(in srgb,var(--route-2) 12%,transparent);padding:0 4px;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
     .aim-line strong{color:var(--muted)}
     .do-line strong{color:var(--route)}
     .ask-line strong{color:var(--route-2)}
@@ -623,24 +623,382 @@
     .next-step-btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:0;border-radius:999px;background:var(--route);color:var(--paper);font-weight:700;font-size:14px;cursor:pointer;text-decoration:none}
     @media (prefers-color-scheme: dark){.next-step-btn{color:#10201c}}
     .stuck-input{display:block;width:100%;box-sizing:border-box;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:4px 12px 4px 4px;background:var(--card);color:var(--ink)}
+
+    /* ===== v4: 9.5/10 Editorial Cartography & Joyful Learning Upgrades ===== */
+    .topnav-tabs {
+      align-items: center;
+    }
+    .nav-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--line);
+      margin: 0 4px;
+      flex-shrink: 0;
+    }
+    .nav-group-label {
+      font: 500 9px/1 var(--mono);
+      letter-spacing: .14em;
+      color: var(--faint);
+      text-transform: uppercase;
+      padding: 0 4px;
+      white-space: nowrap;
+    }
+    .agent-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--route-2);
+      background: color-mix(in srgb, var(--route-2) 12%, var(--card));
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font: 600 12px/1 var(--sans);
+      cursor: pointer;
+      transition: all .2s ease;
+      white-space: nowrap;
+    }
+    .agent-top-btn:hover {
+      background: var(--route-2);
+      color: var(--paper);
+      transform: translateY(-1px);
+    }
+    .rank-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--route) 10%, var(--card));
+      border: 1px solid color-mix(in srgb, var(--route) 35%, var(--line));
+      font: 600 11px/1 var(--sans);
+      color: var(--route);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .rank-pill:hover {
+      border-color: var(--route);
+    }
+
+    /* Interactive 6-Stage Bistro Blueprint Bar in Hero */
+    .bistro-blueprint {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding: 16px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px 18px 4px 4px;
+      box-shadow: 0 10px 24px -12px var(--shadow);
+      position: relative;
+    }
+    .blueprint-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .blueprint-title {
+      font: 600 13px/1.3 var(--mono);
+      letter-spacing: .08em;
+      color: var(--route);
+      text-transform: uppercase;
+    }
+    .blueprint-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .blueprint-track {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .blueprint-node {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent, var(--route));
+      border-radius: 4px 12px 4px 4px;
+      text-align: left;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .blueprint-node:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent, var(--route));
+      box-shadow: 0 8px 18px -6px var(--shadow);
+    }
+    .blueprint-node .bp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font: 600 10px/1 var(--mono);
+      color: var(--accent, var(--route));
+      margin-bottom: 4px;
+    }
+    .blueprint-node strong {
+      display: block;
+      font: 600 14px/1.3 var(--serif);
+      color: var(--ink);
+    }
+    .blueprint-node small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      line-height: 1.35;
+      color: var(--muted);
+      text-wrap: balance;
+    }
+
+    /* Upgraded Vivid Cast Cards */
+    .cast-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .cast-card {
+      padding: 16px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--route);
+      border-radius: 4px 16px 4px 4px;
+      box-shadow: 0 6px 16px -8px var(--shadow);
+    }
+    .cast-card:nth-child(3n+2) { border-top-color: var(--route-2); }
+    .cast-card:nth-child(3n) { border-top-color: var(--rust); }
+    .cast-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .cast-card-head strong {
+      font: 700 16px/1.3 var(--serif);
+      color: var(--ink);
+    }
+    .cast-tech-tag {
+      font: 500 10px/1.2 var(--mono);
+      padding: 3px 7px;
+      border-radius: 99px;
+      background: var(--paper-2);
+      color: var(--route);
+      white-space: nowrap;
+    }
+    .cast-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* Prompt Copy Button inside 1M & 6M */
+    .prompt-box-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .copy-prompt-btn {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 4px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--route);
+      font: 500 11px/1.2 var(--mono);
+      cursor: pointer;
+      transition: all .15s ease;
+    }
+    .copy-prompt-btn:hover {
+      border-color: var(--route);
+      background: color-mix(in srgb, var(--route) 8%, var(--card));
+    }
+
+    /* Week summary resource badge */
+    .wk-res-pill {
+      font: 500 10px/1 var(--mono);
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--paper-2);
+      color: var(--muted);
+      border: 1px solid var(--line);
+      white-space: nowrap;
+    }
+    .wk-res-pill.all-done {
+      background: color-mix(in srgb, var(--route) 14%, var(--card));
+      color: var(--route);
+      border-color: var(--route);
+    }
+
+    /* Rank & Badge Showcase in Check-in View */
+    .rank-showcase {
+      display: grid;
+      grid-template-columns: minmax(220px, .9fr) minmax(0, 1.5fr);
+      gap: 16px;
+      margin: 14px 0 18px;
+      padding: 16px 18px;
+      background: color-mix(in srgb, var(--route-2) 7%, var(--card));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--route-2);
+      border-radius: 4px 16px 4px 4px;
+    }
+    .rank-current-title {
+      font: 500 10px/1.2 var(--mono);
+      letter-spacing: .1em;
+      color: var(--rust);
+      text-transform: uppercase;
+    }
+    .rank-name {
+      font: 700 22px/1.25 var(--serif);
+      color: var(--ink);
+      margin: 4px 0;
+    }
+    .rank-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .medal-shelf {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+      align-items: stretch;
+    }
+    .medal-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 6px;
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      text-align: center;
+      opacity: .78;
+      transition: all .25s ease;
+    }
+    .medal-slot.earned {
+      opacity: 1;
+      border-style: solid;
+      border-color: var(--route-2);
+      background: color-mix(in srgb, var(--route-2) 14%, var(--card));
+      box-shadow: 0 4px 12px -4px var(--shadow);
+    }
+    .medal-slot .m-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .medal-slot .m-code {
+      font: 600 10px/1.2 var(--mono);
+      color: var(--ink);
+      margin-top: 4px;
+    }
+    .medal-slot .m-name {
+      font-size: 11px;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+
+    /* Floating Bistro Stamp Toast */
+    .bistro-toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 120;
+      max-width: 360px;
+      padding: 12px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      border-left: 4px solid var(--route-2);
+      border-radius: 4px 14px 4px 4px;
+      box-shadow: 0 14px 32px rgba(0,0,0,.28);
+      font-size: 13px;
+      line-height: 1.5;
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+    }
+    .bistro-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .bistro-toast strong {
+      display: block;
+      font: 600 14px/1.3 var(--serif);
+      color: #f0c36d;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .blueprint-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .cast-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .rank-showcase { grid-template-columns: 1fr; }
+      .medal-shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .nav-divider, .nav-group-label { display: none; }
+    }
+    @media (max-width: 560px) {
+      .blueprint-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cast-cards-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== batch 8: v3 fixes + two-column stories, Kuaile story font, clearer English ===== */
+    .next-step-btn .en{color:inherit;opacity:.85}
+    @media (max-width:1500px){.nav-divider,.nav-group-label{display:none}#topnav-rank{display:none}}
+    .exp-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:6px 36px;align-items:start;margin-bottom:6px}
+    .exp-intro .exp-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;margin:8px 0 0}
+    .chapter-top{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:10px 28px;align-items:start;margin:0 0 16px}
+    .chapter-top .chapter-why{margin:0 0 14px}
+    .chapter-top .chapter-why:last-child{margin-bottom:0}
+    .chapter-story{margin:0;padding:16px 18px;background:color-mix(in srgb,var(--route-2) 12%,transparent);border:0;border-radius:10px}
+    .chapter-story b{display:block;margin:0 0 6px;font-size:15px}
+    .chapter-story .story-text{background:transparent;padding:0}
+    .chapter-story .en{font-family:"Source Serif 4","Noto Serif SC",serif}
+    .story-text .en{font-family:"Source Serif 4","Noto Serif SC",serif}
+    #six-view .detail-body > .detail-cell.story-cell.six-cell p{font-family:"ZCOOL KuaiLe","Noto Serif SC",serif;font-size:13px;color:var(--ink)}
+    @media (max-width:720px){
+      .month-artifact{display:block}
+      .month-artifact .route-kicker{margin-bottom:4px}
+      .exp-intro{grid-template-columns:1fr}
+      .exp-intro .exp-legend{display:flex;flex-wrap:wrap}
+      .chapter-top{grid-template-columns:1fr}
+      .sprint-day{grid-template-columns:22px minmax(0,1fr)}
+      .sprint-day .sprint-task,.sprint-day .sprint-result{grid-column:1/-1}
+    }
+
 </style>
 </head>
 <body>
 <header class="topnav">
   <a class="brand" href="#/guide">🌙 午夜硅基小馆<span>AI 学习地图册 · 6-MONTH ATLAS</span></a>
   <nav class="topnav-tabs" role="tablist" aria-label="地图页面">
+    <span class="nav-group-label">罗盘</span>
     <button class="topnav-tab" role="tab" aria-selected="true" aria-controls="guide-view" id="tab-guide" data-view="guide"><strong>导览</strong><small>ORIENTATION</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="story-view" id="tab-story" data-view="story"><strong>故事</strong><small>STORY</small></button>
-    <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="checkin-view" id="tab-checkin" data-view="checkin"><strong>打卡</strong><small>CHECK-IN</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="map-view" id="tab-map" data-view="map"><strong>地图</strong><small>MAP</small></button>
+    <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="checkin-view" id="tab-checkin" data-view="checkin"><strong>打卡</strong><small>CHECK-IN</small></button>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <span class="nav-group-label">四尺度</span>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="day-view" id="tab-day" data-view="day"><strong>1D <span class="tab-name">· 热气球</span></strong><small>HOT AIR BALLOON</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="week-view" id="tab-week" data-view="week"><strong>1W <span class="tab-name">· 侦察</span></strong><small>SCOUT</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="month-view" id="tab-month" data-view="month"><strong>1M <span class="tab-name">· 特训</span></strong><small>BOOT CAMP</small></button>
     <button class="topnav-tab" role="tab" aria-selected="false" aria-controls="six-view" id="tab-six" data-view="six"><strong>6M <span class="tab-name">· 远征</span></strong><small>EXPEDITION</small></button>
   </nav>
   <div class="topnav-side">
-    <a class="home-link" href="https://conjurerlab.com" title="Back to Conjurer Lab">← conjurerlab.com</a>
+    <a class="rank-pill" href="#/checkin" id="topnav-rank" title="查看我的小馆掌柜头衔与打卡">🔪 见习学徒</a>
     <span class="topnav-progress" id="topnav-progress"></span>
+    <button type="button" class="agent-top-btn" id="agent-open-top" title="召唤 AI 家教与复制进度协议">🤖 Agent 伴读</button>
+    <a class="home-link" href="https://conjurerlab.com" title="Back to Conjurer Lab">← conjurerlab.com</a>
   </div>
 </header>
   <main class="shell">
@@ -669,24 +1027,51 @@
         <a href="#/6m"><span class="legend-no">6M · 远征</span><strong>二十四周远征</strong><small>Follow 63 linked resources week by week.</small></a>
       </div>
       <p class="china-note"><b>国内观看提示：</b>以下视频主链接均指向 YouTube，在中国大陆无法直接打开；标题后标有「中文版」的可直接观看，其余可在 B站 搜索同名视频。</p>
+      <div class="bistro-blueprint" aria-label="六个月筹建沙盘">
+        <div class="blueprint-head">
+          <span class="blueprint-title">🗺️ 午夜硅基小馆 · 六月筹建全景沙盘 (6-MONTH EXPEDITION BLUEPRINT)</span>
+          <span class="blueprint-sub">点击任意月份直达 6M 远征对应章节 · Click any stage to jump</span>
+        </div>
+        <div class="blueprint-track" id="hero-blueprint-track"></div>
+      </div>
     </section>
 
         
         <div id="manual-content"></div>
-<section class="cast-guide guide-fold" aria-labelledby="cast-title">
+<section class="cast-guide" id="cast-section" aria-labelledby="cast-title">
       <div>
-        <h2 id="cast-title">先把角色认清 <span class="en">Meet the cast</span></h2>
-        <p class="lead">故事不是另一套知识。它只是把抽象技术换成你已经熟悉的餐馆场景。<span class="en">The story is not extra material. It translates abstract technology into a familiar restaurant.</span></p>
+        <h2 id="cast-title">先把后厨角色认清 <span class="en">Meet the Bistro Cast</span></h2>
+        <p class="lead">故事不是另一套知识负担，而是把抽象的硅基工程翻译成你一眼能懂的后厨现场。<span class="en">The story is not extra material. It translates abstract AI engineering into a living midnight bistro.</span></p>
       </div>
-      <dl class="role-key">
-        <div><dt>你 / 老板 <span class="arrow">→</span> 学习者</dt><dd>你要学的是设计、连接和管理整个 AI 系统。<span class="en">You learn to design, connect, and run the whole AI system.</span></dd></div>
-        <div><dt>学霸店员阿林 <span class="arrow">→</span> AI 模型</dt><dd>知识很多，会说话，但需要清楚指令，也可能答错。<span class="en">Knowledgeable and fluent, but needs clear instructions and can be wrong.</span></dd></div>
-        <div><dt>店长 <span class="arrow">→</span> Agent</dt><dd>模型有了工具和循环，能自己决定下一步做什么。<span class="en">A model with tools and a loop that can choose its next step.</span></dd></div>
-        <div><dt>客人 <span class="arrow">→</span> 产品用户</dt><dd>他们不关心厨房多复杂，只关心问题有没有被解决。<span class="en">They care less about the kitchen than whether their problem gets solved.</span></dd></div>
-        <div><dt>AI 小馆 <span class="arrow">→</span> AI 应用</dt><dd>代码、模型、资料、工具和规则合在一起，才是一家能营业的店。<span class="en">Code, model, knowledge, tools, and rules together make a working product.</span></dd></div>
-        <div><dt>菜谱库 <span class="arrow">→</span> RAG 资料库</dt><dd>模型不会凭空记住你的资料；要先找证据，再按证据回答。<span class="en">The model retrieves your evidence first, then answers from it.</span></dd></div>
-      </dl>
-      <p class="bridge-note"><b>建立链接的方法：</b>先讲故事，再翻译回技术。例如，“老板让店员翻菜谱回答客人”就是“开发者让模型检索资料后回答用户”。能从两边来回说，链接就建牢了。<span class="en"><b>Build the link:</b> tell the scene, then translate it back into technology. “The owner asks the server to consult the cookbook for a guest” becomes “the developer makes the model retrieve evidence before answering a user.” If you can move both ways, the connection is solid.</span></p>
+      <div>
+        <div class="cast-cards-grid">
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>🧑‍🍳 你 / 掌柜</strong><span class="cast-tech-tag">AI 架构师 · Builder</span></div>
+            <p>你不是替店员切每一根葱的苦力，而是定规矩、搭动线、装护栏、管账本的总设计师。<span class="en">You don’t chop every scallion yourself; you design the kitchen workflows, rules, and ledgers.</span></p>
+          </article>
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>🎓 学霸店员「阿林」</strong><span class="cast-tech-tag">大语言模型 · LLM</span></div>
+            <p>熟读八大菜系与莎士比亚，嘴皮子极溜但太爱面子。指令稍含糊就敢端上“辣椒炒冰淇淋”，遇到盲区还会面不改色地瞎编。<span class="en">Well-read and eloquent, yet too proud to admit ignorance. Give him vague orders and he will confidently invent a dish.</span></p>
+          </article>
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>📚 菜谱秘方库与老馆长</strong><span class="cast-tech-tag">检索增强 · RAG & Rerank</span></div>
+            <p>两百页私房菜谱绝不靠阿林死记硬背。先按风味上架编号、由老馆长精挑细选，逼阿林指着页码原话回答。<span class="en">Never trust raw memory for private recipes. Index the pages, rerank the best matches, and require exact page citations.</span></p>
+          </article>
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>🕵️ 铁面店长「老周」</strong><span class="cast-tech-tag">智能体 · ReAct Agent</span></div>
+            <p>配了后厨钥匙和采购卡的升级版店员，懂“盘算→行动→看结果→改计划”。但必须装步数电表，否则他能给海鲜贩子连打80通电话。<span class="en">Equipped with tools and a reasoning loop. He adapts to surprises, though without step caps he might call a supplier 80 times.</span></p>
+          </article>
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>🍽️ 挑剔食客与暗访员</strong><span class="cast-tech-tag">用户与评测 · Users & Evals</span></div>
+            <p>食客只关心菜好不好吃、上得快不快；米其林暗访员（Evals）则揣着 30 道固定考题每月盲测，只认分数不听吹牛。<span class="en">Diners care about taste and speed; mystery shoppers (Evals) grade every update with a 30-case rubric instead of vibes.</span></p>
+          </article>
+          <article class="cast-card">
+            <div class="cast-card-head"><strong>🏮 午夜硅基小馆</strong><span class="cast-tech-tag">生产级应用 · Production App</span></div>
+            <p>光有一个能聊天的店员开不了店。点餐窗（FastAPI）、秘方库（RAG）、护栏、集装箱（Docker）与监控合体，才是一家能营业的名店。<span class="en">A chatty server is not a business. Code, prompts, retrieval, guardrails, and containers together make a working product.</span></p>
+          </article>
+        </div>
+        <p class="bridge-note"><b>双向翻译心法：</b>先用后厨画面建立直觉，再立刻翻回技术语言。例如：“掌柜逼阿林先翻菜谱第12页再回话” ⇄ “开发者先做向量检索与重排，再把片段塞进 Prompt 做 Grounded Generation”。能来回自如切换，知识就真正长在你身上了。<span class="en"><b>Two-way translation:</b> picture the kitchen scene first, then translate it back into engineering mechanisms (inputs, process, outputs, and limits).</span></p>
+      </div>
     </section>
 <section class="analogy-guide" aria-labelledby="analogy-title">
       <header class="analogy-guide-head">
@@ -715,6 +1100,14 @@
       <h2 id="progress-title">我的学习打卡 <span class="en">My study check-ins</span></h2>
       <p class="lead">上午学习时点一下“今日打卡”；每完成一站、一天、一周，就在那一站前面打勾。进度实时汇总到下面这张表。注意：打卡只存在这台设备的浏览器里，换设备、清缓存会丢——重要的里程碑还是以你讲回来的验收为准。<span class="en">Check in after your morning study; tick each stop, day, or week as you finish it. Progress rolls up into the table below. Check-ins live only in this device's browser — switching devices or clearing storage loses them. Milestones still count only when you explain them back.</span></p>
       <div class="checkin-row"><button class="checkin-btn" id="checkin-btn" type="button">今日打卡 ✓ · Check in today</button><span class="checkin-meta" id="checkin-meta"></span></div>
+      <div class="rank-showcase" aria-label="小馆掌柜晋升与月度徽章">
+        <div>
+          <span class="rank-current-title">CURRENT BISTRO RANK · 当前掌柜头衔</span>
+          <div class="rank-name" id="rank-title-display">🔪 见习学徒 · Novice Apprentice</div>
+          <p class="rank-desc" id="rank-desc-display">完成每周建造或每日打卡，逐步从后厨学徒晋升为午夜黑珍珠大厨。</p>
+        </div>
+        <div class="medal-shelf" id="checkin-medal-shelf" aria-label="六个月通关徽章架"></div>
+      </div>
       <div class="passport-actions"><button type="button" class="mini-btn" id="export-btn">导出打卡 JSON · Export</button><button type="button" class="mini-btn" id="import-btn">导入打卡 JSON · Import</button><input type="file" id="import-file" accept=".json,application/json" hidden><button type="button" class="mini-btn" id="xpost-btn">生成 X 战报 · X report</button><span class="passport-hint" id="passport-hint"></span></div>
       <div class="overall"><div class="overall-top"><strong>6 月版总进度 · 24 周 · 6-MONTH TOTAL</strong><span id="overall-text"></span></div><div class="progress-bar"><div class="progress-fill" id="overall-fill"></div></div></div>
       <table class="progress-table" aria-label="学习进度表">
@@ -731,7 +1124,7 @@
       </div>
       <div class="view" id="map-view" role="tabpanel" aria-labelledby="tab-map" hidden>
         <header class="view-head"><div><h2>认路，别赶路</h2><p>地图只回答三件事：在哪、下一站是哪、怎么跳过去。故事在另一页。<span class="en">The map answers three questions: where you are, what's next, and how to jump there. The story lives on its own page.</span></p></div><span class="scale-tag">MAP · NAVIGATION</span></header>
-<section class="expedition" id="expedition" aria-labelledby="exp-title"><h2 id="exp-title">探险地图 <span class="en">Expedition map</span></h2><p class="lead">点路标直接跳到那一周；勾完一个月的 4 周，拿到当月徽章。<span class="en">Click a waypoint to open that week. Finish a month’s four weeks for its badge.</span></p><ul class="exp-legend"><li><span class="exp-dot"></span>路标：一周的学习 <small>waypoint · one week</small></li><li><span class="exp-dot done"></span>已到达 <small>reached</small></li><li><span class="exp-dot next"></span>下一站 <small>next stop</small></li><li><span class="exp-badge-mark">🏅</span>徽章：当月 4 周全完成 <small>district badge</small></li></ul>
+<section class="expedition" id="expedition" aria-labelledby="exp-title"><div class="exp-intro"><div class="exp-intro-text"><h2 id="exp-title">探险地图 <span class="en">Expedition map</span></h2><p class="lead">点路标直接跳到那一周；勾完一个月的 4 周，拿到当月徽章。<span class="en">Click a waypoint to open that week. Finish a month’s four weeks for its badge.</span></p></div><ul class="exp-legend"><li><span class="exp-dot"></span>路标：一周的学习 <small>waypoint</small></li><li><span class="exp-dot done"></span>已到达 <small>reached</small></li><li><span class="exp-dot next"></span>下一站 <small>next stop</small></li><li><span class="exp-badge-mark">🏅</span>徽章：当月 4 周全完成 <small>district badge</small></li></ul></div>
       <div class="next-step-banner" id="map-next-top"><span>下一站 · NEXT STOP：<span class="map-next-cn">去 6M 查看下一周。</span> <span class="en map-next-en">Jump to your next stop in the 6-month expedition.</span></span><button type="button" class="next-step-btn map-next-btn" data-week="">跳到下一站 <span class="en">Jump to the next stop →</span></button></div>
       <div class="exp-map" id="exp-map"></div></section>
         <p class="map-note">餐馆故事在 <a href="#/story">故事</a> 页；这里只管认路和打卡。</p>
@@ -1046,17 +1439,46 @@
       document.getElementById('manual-rules-slot').appendChild(document.querySelector('.advice'));
     }
 
+    function renderBlueprint(){
+      const track=document.getElementById('hero-blueprint-track');
+      if(!track)return;
+      const icons=['🔪','🎓','📚','🕵️','📦','🏮'];
+      track.innerHTML=months.map((m,idx)=>`
+        <button type="button" class="blueprint-node" data-jump-month="${m.n}" style="${monthStyle(m)}">
+          <div class="bp-top"><span>M0${m.n} · W${String((m.n-1)*4+1).padStart(2,'0')}–W${String(m.n*4).padStart(2,'0')}</span><span>${icons[idx]||'🏮'}</span></div>
+          <strong>${m.name}</strong>
+          <small>${m.en}</small>
+          <small style="margin-top:6px;color:var(--route-2);font-family:var(--serif)">${m.checkpoint}</small>
+        </button>
+      `).join('');
+      track.querySelectorAll('.blueprint-node').forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const mn=btn.dataset.jumpMonth;
+          location.hash='#/6m';
+          setTimeout(()=>{
+            const filterBtn=document.querySelector('.month-filter[data-month="'+mn+'"]');
+            if(filterBtn)filterBtn.click();
+            const sec=document.querySelector('.full-month[data-month-group="'+mn+'"]');
+            if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+          },100);
+        });
+      });
+    }
+
     function renderStory(){
       const story=months.map(m=>`<article class="manual-story-step" style="${monthStyle(m)}"><span class="story-no">M${m.n}</span><h4>${m.story}${en(m.en)}</h4><p class="story-text">${m.chapterStory}${en(m.chapterStoryEn)}</p></article>`).join('');
       document.getElementById('story-content').innerHTML=`
-        <header class="view-head"><div><h2>先看故事，再学技术</h2><p>六个月，一间餐馆，六幕戏。先看完故事，再回去学技术。${en('Six months, one restaurant, six scenes. Read the story first, then study the technology.')}</p></div><span class="scale-tag">STORY · READ ONCE</span></header>
-        <p class="story-note">认路去 <a href="#/map">地图</a> 页；这里只讲故事。</p>
+        <header class="view-head"><div><h2>先看故事，再学技术</h2><p>六个月，一间餐馆，六幕戏。先用人间烟火看懂硅基架构，再回去动手砌砖。${en('Six months, one midnight bistro, six acts. See the architecture through the story first, then build the code.')}</p></div><span class="scale-tag">STORY · 6 ACTS & 22 SPELLS</span></header>
+        <p class="story-note">认路去 <a href="#/map">地图</a> 页；这里专门演完「午夜硅基小馆」的筹建全剧与 22 道女巫破障咒。</p>
         <div class="manual-slot" id="story-role-slot"></div>
-        <section class="manual-section" aria-labelledby="full-story-title"><header class="manual-section-head"><h3 id="full-story-title">餐馆故事完整版${en('The complete restaurant story')}</h3><p>故事只负责让你先看见结构。每一幕下面都有对应的技术章节；学完要能把故事翻回技术。${en('The story reveals structure first. Every scene maps to a technical chapter; after studying, translate it back into technology.')}</p></header><div class="manual-story">${story}</div></section>
+        <section class="manual-section" aria-labelledby="full-story-title"><header class="manual-section-head"><h3 id="full-story-title">小馆筹建六幕剧${en('The Six-Act Bistro Chronicle')}</h3><p>故事负责让你先看见系统骨架。每一幕都精确对应一个月的工程主线；学完那章，试着不用比喻把技术讲回来。${en('Every act maps to one month of AI engineering. After studying a chapter, translate the scene back into pure technical mechanisms.')}</p></header><div class="manual-story">${story}</div></section>
         <div class="manual-slot" id="story-analogy-slot"></div>
-        <div class="next-step-banner"><span>下一步：去 1D · 热气球，花 50 分钟俯瞰全貌。${en('Next: 50 minutes over the whole map.')}</span><a class="next-step-btn" href="#/1d">去 1D · 热气球 → ${en('Go to the 1-day view')}</a></div>`;
-      document.getElementById('story-role-slot').appendChild(document.querySelector('.cast-guide'));
-      document.getElementById('story-analogy-slot').appendChild(document.querySelector('.analogy-guide'));
+        <div class="next-step-banner"><span>下一步：故事认熟了，去 1D · 热气球，花 50 分钟俯瞰六个月全貌。${en('Next: 50 minutes over the whole map in the 1-Day Hot Air Balloon.')}</span><a class="next-step-btn" href="#/1d">去 1D · 热气球 → ${en('Go to the 1-day view')}</a></div>`;
+      const castEl=document.querySelector('.cast-guide');
+      const analogyEl=document.querySelector('.analogy-guide');
+      if(castEl)document.getElementById('story-role-slot').appendChild(castEl);
+      if(analogyEl)document.getElementById('story-analogy-slot').appendChild(analogyEl);
+      renderBlueprint();
     }
 
     function renderAnalogies(){
@@ -1203,8 +1625,8 @@
     function renderMonth(){
       const cards=months.map(m=>{
         const start=(m.n-1)*4+1;
-        const days=weeks.filter(w=>w.m===m.n).map((w,i)=>`<div class="chapter-day"><span class="day-code">DAY ${String(start+i).padStart(2,'0')}</span><b class="day-title">W${w.n} · ${w.t}${en(w.e)}</b><div class="day-copy"><p class="aim-line"><strong>学：</strong>${w.aim}</p><p class="do-line"><strong>做：</strong>${w.out}</p><p class="ask-line"><strong>问 AI：</strong>${w.prompt}</p></div></div>`).join('');
-        return `<article class="chapter" style="${monthStyle(m)}"><span class="chapter-no">DAYS ${String(start).padStart(2,'0')}–${String(start+3).padStart(2,'0')} · CHAPTER ${m.n}</span><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en)}</h3></header><div class="chapter-why"><h4>为什么学 · WHY</h4><p>${m.why}${en(m.whyEn)}</p></div><div class="chapter-why"><h4>阶段成果 · CHECKPOINT</h4><p>${m.checkpoint}${en(m.checkpointEn)}</p></div><p class="chapter-story"><b>餐馆这一章</b>${en('Restaurant chapter')}<span class="story-text">${m.chapterStory}</span>${en(m.chapterStoryEn)}</p><div class="chapter-days">${days}</div></article>`;
+        const days=weeks.filter(w=>w.m===m.n).map((w,i)=>`<div class="chapter-day"><span class="day-code">DAY ${String(start+i).padStart(2,'0')}</span><b class="day-title">W${w.n} · ${w.t}${en(w.e)}</b><div class="day-copy"><p class="aim-line"><strong>学：</strong>${w.aim}</p><p class="do-line"><strong>做：</strong>${w.out}</p><p class="ask-line"><strong>问 AI：</strong><span class="prompt-text">${w.prompt}</span> <button type="button" class="copy-prompt-btn" data-copy="${w.prompt.replace(/"/g,'&quot;')}">📋 复制咒语 · Copy</button></p></div></div>`).join('');
+        return `<article class="chapter" style="${monthStyle(m)}"><span class="chapter-no">DAYS ${String(start).padStart(2,'0')}–${String(start+3).padStart(2,'0')} · CHAPTER ${m.n}</span><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en)}</h3></header><div class="chapter-top"><div class="chapter-top-left"><div class="chapter-why"><h4>为什么学 · WHY</h4><p>${m.why}${en(m.whyEn)}</p></div><div class="chapter-why"><h4>阶段成果 · CHECKPOINT</h4><p>${m.checkpoint}${en(m.checkpointEn)}</p></div></div><p class="chapter-story"><b>餐馆这一章</b>${en('Restaurant chapter')}<span class="story-text">${m.chapterStory}</span>${en(m.chapterStoryEn)}</p></div><div class="chapter-days">${days}</div></article>`;
       }).join('');
       const rhythm=`<div class="month-rhythm"><div class="rhythm-step"><b>第 1 周 · Days 1–7</b>M1 全部 + M2 前三站</div><div class="rhythm-step"><b>第 2 周 · Days 8–14</b>M2 收尾 + M3 + M4 前两站</div><div class="rhythm-step"><b>第 3 周 · Days 15–21</b>M4 收尾 + M5 + M6 方向一</div><div class="rhythm-step"><b>第 4 周 · Days 22–28</b>M6 方向二、三 + 四天整合项目</div></div>`;
       const integration=`<article class="integration-card"><h3>Days 25–28 · 把 24 天串成一个能跑的系统${en('Integrate the 24 topics into one working system')}</h3><ol><li><b>Day 25：</b>回看依赖，补最卡的一处。</li><li><b>Day 26：</b>把 Prompt、工具、RAG 接成一条流程。</li><li><b>Day 27：</b>加测试、错误处理、成本记录。</li><li><b>Day 28：</b>整理 README、演示与下月复盘。</li></ol></article>`;
@@ -1222,9 +1644,9 @@
     const routeLines={1:'起点 ｜ 整理文本/重命名小脚本 ｜ → W02 · 终端与 Git',2:'← W01 · Python ｜ 建仓库、三次 commit、回看差异 ｜ → W03 · API、JSON 与异步',3:'← W02 · 终端与 Git ｜ 调公开 API，取三字段打印 ｜ → W04 · FastAPI',4:'← W03 · API、JSON 与异步 ｜ 带 /docs 的小服务，返回结构化结果 ｜ → W05 · Prompt',5:'← W04 · FastAPI ｜ 同一任务 v1/v2 两版 prompt，五例比较 ｜ → W06 · 工具调用',6:'← W05 · Prompt ｜ 模型在计算器与查询工具中选择并解释 ｜ → W07 · 流式输出与对话记忆',7:'← W06 · 工具调用 ｜ 逐字显示、记住两项偏好的聊天页 ｜ → W08 · 可靠性与提示注入',8:'← W07 · 流式输出与对话记忆 ｜ 超时、两次重试、友好降级、注入测试 ｜ → W09 · 向量与切块',9:'← W08 · 可靠性与提示注入 ｜ 短文切块，比较两种切法检索结果 ｜ → W10 · 向量库与检索',10:'← W09 · 向量与切块 ｜ 小知识库，十问取回前三条证据 ｜ → W11 · Rerank',11:'← W10 · 向量库与检索 ｜ 比较“仅检索”与“检索+重排”十题准确率 ｜ → W12 · Grounding、引用与 RAG 评测',12:'← W11 · Rerank ｜ 带引用问答 + 三类测试（正确/无答案/冲突） ｜ → W13 · ReAct',13:'← W12 · Grounding、引用与 RAG 评测 ｜ 能搜索、比较、输出结论的三步 Agent ｜ → W14 · 护栏、预算与停止条件',14:'← W13 · ReAct ｜ Agent 加步数上限、费用上限、失败出口 ｜ → W15 · 工作流还是 Agent？',15:'← W14 · 护栏、预算与停止条件 ｜ Agent 改成“固定流程 + 一个判断节点” ｜ → W16 · Evals',16:'← W15 · 工作流还是 Agent？ ｜ 30 道测试，比较两个 prompt 版本 ｜ → W17 · Docker 与部署',17:'← W16 · Evals ｜ 现有应用装进容器，本地重新跑通 ｜ → W18 · 鉴权、限流与密钥',18:'← W17 · Docker 与部署 ｜ 简单鉴权、每分钟限流、安全环境变量 ｜ → W19 · 可观测与 Prompt 版本',19:'← W18 · 鉴权、限流与密钥 ｜ 最小仪表：调用数、失败率、延迟、token 成本 ｜ → W20 · 缓存与成本控制',20:'← W19 · 可观测与 Prompt 版本 ｜ 重复问题加缓存，比较优化前后成本与延迟 ｜ → W21 · AI 产品工程',21:'← W20 · 缓存与成本控制 ｜ 一周内做出可演示、可被真实用户试用的 MVP ｜ → W22 · 微调',22:'← W21 · AI 产品工程 ｜ 小数据集对比实验，写清“不该微调”的情况 ｜ → W23 · AI 自动化',23:'← W22 · 微调 ｜ 端到端自动化，记录每周节省的时间 ｜ → W24 · 作品集、演示与发布',24:'← W23 · AI 自动化 ｜ 发布完整案例：代码、README、90 秒演示、真实复盘 ｜ 终点'};
     function slimRoute(n){const p=(routeLines[n]||'').split(' ｜ ');return p.length>=3?p[0]+' ｜ '+p[p.length-1]:(routeLines[n]||'');}
     function renderSix(){
-      const filters=`<div class="filters" aria-label="筛选月份"><button class="month-filter active" data-month="all">全部 · All</button>${months.map(m=>`<button class="month-filter" data-month="${m.n}">M${m.n} ${m.name}</button>`).join('')}</div>`;
+      const filters=`<div class="filters" aria-label="筛选月份"><button class="month-filter active" data-month="all">全部 · All</button><button class="month-filter" data-month="todo">⏳ 只看未完成 · Todo</button>${months.map(m=>`<button class="month-filter" data-month="${m.n}">M${m.n} ${m.name}</button>`).join('')}</div>`;
       const groups=months.map(m=>{
-        const ds=weeks.filter(w=>w.m===m.n).map((w,i)=>`<details style="${monthStyle(m)}"><summary><span class="wk-no">W${String(w.n).padStart(2,'0')}</span><strong>${w.t}${en(w.e)}</strong><span class="route-inline"><span class="route-kicker">承接 · CONNECTION</span><span>${slimRoute(w.n)}</span></span></summary><div class="detail-body">${detailCell('从零学什么','LEARN',w.aim,'six-cell')}${detailCell('对 AI 的意义','WHY AI',w.ai,'six-cell')}${detailCell('Prompt 在哪用','PROMPT',w.prompt,'six-cell')}${detailCell('这一周做出来','SHIP',w.out,'six-cell')}${detailCell('餐馆里的这一幕','STORY',w.story,'story-cell six-cell')}<div class="detail-cell six-cell"><h4>完成标准 · DONE</h4><p>你能不用术语，用自己的话解释；也能亲手跑通一次，并指出一个失败点。</p></div>${resourceCell(w.n)}${videoGuideCell(w.n)}<div class="stuck-line"><span class="route-kicker">卡点 · STUCK</span><input type="text" class="stuck-input" data-week="${w.n}" maxlength="200" placeholder="踩到卡点或报错写在这里（自动保存，并同步至底部 Agent 家教提示词）..."></div></div></details>`).join('');
+        const ds=weeks.filter(w=>w.m===m.n).map((w,i)=>`<details style="${monthStyle(m)}"><summary><span class="wk-no">W${String(w.n).padStart(2,'0')}</span><strong>${w.t}${en(w.e)}</strong><span class="wk-res-pill" data-wk-pill="${w.n}">📚 资料</span><span class="route-inline"><span class="route-kicker">承接 · CONNECTION</span><span>${slimRoute(w.n)}</span></span></summary><div class="detail-body">${detailCell('从零学什么','LEARN',w.aim,'six-cell')}${detailCell('对 AI 的意义','WHY AI',w.ai,'six-cell')}<div class="detail-cell six-cell"><h4>Prompt 在哪用 · PROMPT</h4><div class="prompt-box-wrap"><p>${w.prompt}</p><button type="button" class="copy-prompt-btn" data-copy="${w.prompt.replace(/"/g,'&quot;')}">📋 复制问 AI 咒语 · Copy Prompt</button></div></div>${detailCell('这一周做出来','SHIP',w.out,'six-cell')}<div class="detail-cell six-cell"><h4>完成标准 · DONE</h4><p>你能不用术语，用自己的话解释；也能亲手跑通一次，并指出一个失败点。</p></div>${detailCell('餐馆里的这一幕','STORY',w.story,'story-cell six-cell')}${resourceCell(w.n)}${videoGuideCell(w.n)}<div class="stuck-line"><span class="route-kicker">卡点 · STUCK</span><input type="text" class="stuck-input" data-week="${w.n}" maxlength="200" placeholder="踩到卡点或报错写在这里（自动保存，并同步至底部 Agent 家教提示词）..."></div></div></details>`).join('');
         return `<section class="full-month" data-month-group="${m.n}" style="${monthStyle(m)}"><header class="full-title"><span class="big-no">M${m.n}</span><h3>${m.name}${en(m.en+' · '+m.storyEn)}</h3></header><div class="month-artifact"><span class="route-kicker">月末交付物 · ARTIFACT</span><span>${m.artifact}${en(m.artifactEn)}</span></div>${m.n>1?`<div class="revisit-line"><span class="route-kicker">回访 · REVISIT</span><span>进 M${m.n} 之前，先回 M${m.n-1} 的 SHIP 里挑一个，改一处。</span></div>`:''}<div class="week-details">${ds}</div></section>`;
       }).join('');
       document.getElementById('six-view').innerHTML=`<header class="view-head"><div><h2>六个月，逐周精读、看讲义、动手</h2><p>每周先看不超过 3 个“必看”，其余都是真有需要才打开的“可选项”；再完成动手任务并按标准验收。Week 24 不加新视频，只整合作品。<span class="en">Each week has no more than three required items. Open optional resources only for a real need, then build and verify the result. Week 24 adds no new video and is reserved for portfolio integration.</span></p></div><span class="scale-tag">24 WEEKS · BUILD FIRST</span></header><div class="honest-total"><div><strong>约 26 小时</strong><span>必看视频 · required</span></div><div><strong>约 36 小时</strong><span>可选项视频 · optional</span></div><div><strong>约 155–185 小时</strong><span>含 92–122 小时动手；目标 480 小时，缺口不注水</span></div></div><div class="six-controls"><button type="button" class="mini-btn" id="expand-all-weeks">全部展开</button><button type="button" class="mini-btn" id="collapse-all-weeks">全部收起</button></div>${filters}${groups}`;
@@ -1270,13 +1692,41 @@
       });
     });
 
+    document.addEventListener('click',e=>{
+      const copyBtn=e.target.closest('.copy-prompt-btn');
+      if(copyBtn){
+        const text=copyBtn.dataset.copy||'';
+        if(navigator.clipboard&&text){
+          navigator.clipboard.writeText(text).then(()=>{
+            const orig=copyBtn.innerHTML;
+            copyBtn.innerHTML='✓ 咒语已复制 · Copied!';
+            setTimeout(()=>{ copyBtn.innerHTML=orig; },1400);
+          });
+        }
+        return;
+      }
+    });
     document.getElementById('six-view').addEventListener('click',e=>{
       if(e.target.closest('#expand-all-weeks')){ document.querySelectorAll('#six-view details').forEach(d=>d.open=true); return; }
       if(e.target.closest('#collapse-all-weeks')){ document.querySelectorAll('#six-view details').forEach(d=>d.open=false); return; }
       const btn=e.target.closest('.month-filter');
       if(!btn)return;
       document.querySelectorAll('.month-filter').forEach(b=>b.classList.toggle('active',b===btn));
-      document.querySelectorAll('.full-month').forEach(g=>g.classList.toggle('hidden',btn.dataset.month!=='all'&&g.dataset.monthGroup!==btn.dataset.month));
+      const mode=btn.dataset.month;
+      if(mode==='todo'){
+        document.querySelectorAll('.full-month').forEach(g=>{
+          let anyTodo=false;
+          g.querySelectorAll('.week-details > details').forEach(d=>{
+            const done=d.classList.contains('is-done');
+            d.style.display=done?'none':'';
+            if(!done)anyTodo=true;
+          });
+          g.classList.toggle('hidden',!anyTodo);
+        });
+      } else {
+        document.querySelectorAll('#six-view .week-details > details').forEach(d=>{ d.style.display=''; });
+        document.querySelectorAll('.full-month').forEach(g=>g.classList.toggle('hidden',mode!=='all'&&g.dataset.monthGroup!==mode));
+      }
     });
   })();
   </script>
@@ -1344,16 +1794,63 @@
       var idn=keys.filter(function(k){ return store.item[k]; }).length;
       setText('count-item', keys.length? (idn+' / '+keys.length) : '—');
       var ib=document.getElementById('bar-item'); if(ib)ib.style.width=(keys.length? Math.round(idn/keys.length*100):0)+'%';
-      var items={day:itemStats('day-view'),week:itemStats('week-view'),month:itemStats('month-view'),six:itemStats('six-view')};
+      var unitLabels={day:' 站',week:' 天',month:' 主题',six:' 周'};
       ['day','week','month','six'].forEach(function(g){
-        var t=(odTotals[g]||0)+(items[g].total||0), d=Math.min((odDone[g]||0)+(items[g].done||0),t);
-        setText('count-'+g, t? (d+' / '+t) : '—');
+        var t=odTotals[g]||0, d=Math.min(odDone[g]||0,t);
+        setText('count-'+g, t? (d+' / '+t+unitLabels[g]) : '—');
         var bar=document.getElementById('bar-'+g); if(bar)bar.style.width=(t? Math.round(d/t*100):0)+'%';
       });
-      var st=((odTotals.six||0)+(items.six.total||0))||24, sd=Math.min((odDone.six||0)+(items.six.done||0),st);
-      setText('overall-text', sd+' / '+st+' 周 · weeks');
+      var st=odTotals.six||24, sd=Math.min(odDone.six||0,st);
+      setText('overall-text', sd+' / '+st+' 周 · weeks （资源 '+idn+'/'+keys.length+'）');
       var of=document.getElementById('overall-fill'); if(of)of.style.width=Math.round(sd/st*100)+'%';
-      var tp=document.getElementById('topnav-progress'); if(tp){ var tot=(odTotals.day+odTotals.week+odTotals.month+odTotals.six)+keys.length; var dn=(odDone.day+odDone.week+odDone.month+odDone.six)+idn; tp.textContent='已打卡 '+dn+' / '+tot+' · checked in'; }
+      var tp=document.getElementById('topnav-progress'); if(tp){ tp.textContent='远征 '+sd+'/24周 · 资源 '+idn+'/'+keys.length; }
+
+      // Update per-week resource pills in 6M
+      document.querySelectorAll('#six-view .full-month .week-details > details').forEach(function(det){
+        var pill=det.querySelector('.wk-res-pill');
+        if(!pill)return;
+        var boxes=det.querySelectorAll('.item-check');
+        var bTotal=boxes.length, bDone=0;
+        boxes.forEach(function(b){ if(b.checked)bDone++; });
+        if(bTotal===0){
+          pill.textContent='🎓 毕业周';
+          pill.classList.toggle('all-done',det.classList.contains('is-done'));
+        } else {
+          pill.textContent='📚 '+bDone+'/'+bTotal;
+          pill.classList.toggle('all-done',bDone===bTotal && bTotal>0);
+        }
+      });
+
+      // Update Bistro Chef Rank & 6-Month Medal Shelf
+      var ranks=[
+        {min:0, icon:'🔪', cn:'见习学徒', en:'Novice Apprentice', desc:'刚盘下空铺子，正在磨快 Python 主厨刀与熟悉后厨规矩。'},
+        {min:2, icon:'🥕', cn:'切墩快手', en:'Prep Cook', desc:'已点亮后厨炉火，开始用 Git 后悔药与 FastAPI 窗口接单。'},
+        {min:5, icon:'🎓', cn:'学霸调教师', en:'Prompt Whisperer', desc:'能用严谨点单铁律管住阿林，并给他装上工具调用真手。'},
+        {min:9, icon:'📚', cn:'秘方馆长', en:'Recipe Archivist', desc:'执掌向量书架与老馆长精排，店员答话字字有据。'},
+        {min:13, icon:'🕵️', cn:'铁面店长', en:'Bistro Manager', desc:'精通 ReAct 循环、步数护栏与米其林 30 题暗访评测。'},
+        {min:17, icon:'📦', cn:'连锁总督', en:'Fleet Director', desc:'集装箱开分店、门禁限流、全链路监控与缓存账本样样精通。'},
+        {min:24, icon:'🏮', cn:'黑珍珠总厨', en:'Midnight Master Chef', desc:'走通六个月完整硅基工程链，随时开门迎客！'}
+      ];
+      var curRank=ranks[0];
+      for(var rIdx=0;rIdx<ranks.length;rIdx++){
+        if(sd>=ranks[rIdx].min)curRank=ranks[rIdx];
+      }
+      var rankEl=document.getElementById('rank-title-display');
+      if(rankEl)rankEl.textContent=curRank.icon+' '+curRank.cn+' · '+curRank.en;
+      var rankDescEl=document.getElementById('rank-desc-display');
+      if(rankDescEl)rankDescEl.textContent=curRank.desc+'（已完成 '+sd+'/24 周，累计打卡 '+store.checkins.length+' 天）';
+      var topRankEl=document.getElementById('topnav-rank');
+      if(topRankEl)topRankEl.textContent=curRank.icon+' '+curRank.cn;
+
+      var shelf=document.getElementById('checkin-medal-shelf');
+      if(shelf){
+        var medalIcons=['🔪','🎓','📚','🕵️','📦','🏮'];
+        shelf.innerHTML=months.map(function(m,idx){
+          var earned=[1,2,3,4].every(function(k){ return !!store.six[(m.n-1)*4+k]; });
+          return '<div class="medal-slot'+(earned?' earned':'')+'" title="M'+m.n+' '+m.name+'：完成该月全部 4 周即可点亮勋章"><span class="m-icon">'+(earned?'🏅':medalIcons[idx])+'</span><span class="m-code">M0'+m.n+'</span><span class="m-name">'+m.name+'</span></div>';
+        }).join('');
+      }
+
       updateExpedition();
     }
     function addCheck(el,group,id){
@@ -1367,6 +1864,15 @@
         var host=el; if(group==='six'){ host=el.closest('details'); }
         if(host)host.classList.toggle('is-done',box.checked);
         refresh();
+        if(box.checked && window.showBistroToast){
+          var cheers={
+            day:'🎈 热气球掠过第 '+id+' 站！全局骨架又清晰了一分。',
+            week:'🧭 侦察 Day '+id+' 跑通！手感已入账。',
+            month:'⚡ 特训第 '+id+' 站打卡完成！继续保持节奏。',
+            six:'🏮 后厨盖章 · W'+String(id).padStart(2,'0')+' 建造通关！阿林端来一杯冰镇酸梅汤。'
+          };
+          window.showBistroToast('进度已存档 · Stamp Recorded', cheers[group]||'已完成一站打卡！');
+        }
       });
       if(group==='six'){ el.insertBefore(box,el.firstChild); var host=el.closest('details'); if(host)host.classList.toggle('is-done',box.checked); }
       else { el.insertBefore(box,el.firstChild); el.classList.toggle('is-done',box.checked); }
@@ -1387,10 +1893,27 @@
         save();
       });
     });
+    var toastEl=document.createElement('div');
+    toastEl.className='bistro-toast';
+    toastEl.setAttribute('role','status');
+    toastEl.setAttribute('aria-live','polite');
+    document.body.appendChild(toastEl);
+    var toastTimer=null;
+    window.showBistroToast=function(title,msg){
+      toastEl.innerHTML='<strong>'+title+'</strong><span>'+msg+'</span>';
+      toastEl.classList.add('show');
+      if(toastTimer)clearTimeout(toastTimer);
+      toastTimer=setTimeout(function(){ toastEl.classList.remove('show'); },2800);
+    };
     var btn=document.getElementById('checkin-btn');
     if(btn)btn.addEventListener('click',function(){
       var t=todayStr(), i=store.checkins.indexOf(t);
-      if(i>=0)store.checkins.splice(i,1); else store.checkins.push(t);
+      if(i>=0){
+        store.checkins.splice(i,1);
+      } else {
+        store.checkins.push(t);
+        if(window.showBistroToast)window.showBistroToast('☀️ 今日出勤盖章成功！','连续打卡 '+streak()+' 天 · 今天也要在硅基小馆砌下一块真砖。');
+      }
       store.checkins.sort(); save(); refresh();
     });
     document.querySelectorAll('.go-btn[data-tab]').forEach(function(b){
@@ -1613,6 +2136,8 @@
     var modal=document.getElementById('agent-modal');
     var openBtn=document.getElementById('agent-open');
     if(openBtn)openBtn.addEventListener('click',function(){ renderPanel(); modal.hidden=false; });
+    var openTopBtn=document.getElementById('agent-open-top');
+    if(openTopBtn)openTopBtn.addEventListener('click',function(){ renderPanel(); modal.hidden=false; });
     var closeBtn=document.getElementById('agent-close');
     if(closeBtn)closeBtn.addEventListener('click',function(){ modal.hidden=true; });
     if(modal)modal.addEventListener('click',function(e){ if(e.target===modal)modal.hidden=true; });
