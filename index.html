@@ -3817,58 +3817,6 @@
         ]
       },
       {
-        slug: "ai-learning-atlas",
-        category: "grimoire",
-        publishedAt: "2026-11-06",
-        externalUrl: "atlas.html",
-        title: {
-          en: "The AI Learning Atlas: One 6-Month Route Across Four Zoom Levels (The Restaurant Analogy) ↗",
-          zh: "AI 学习地图册：先看全局，再走进细节（四级缩放尺度 · 餐馆故事与女巫升级咒）↗"
-        },
-        excerpt: {
-          en: "Interactive 6-month AI engineering atlas across 4 zoom levels (1-Day skeleton, 1-Week scout, 1-Month sprint, 6-Month 24-week curriculum) with restaurant metaphors, upgrade spells, and local check-in tracking.",
-          zh: "四张地图画同一条六个月路线：一天版看全貌，一周版侦察试跑，一月版 24 主题串联，六月版 63 个精选资源逐周实践，内置餐馆比喻、女巫升级咒与本地学习打卡。"
-        },
-        blocks: [
-          {
-            type: "h2",
-            num: "M1 //",
-            en: "Code Foundations — From an Empty Kitchen to an Open Door (Python, Git, API, FastAPI)",
-            zh: "代码基本功 —— 从空厨房到挂出店牌（螺丝刀 Python、后悔药 Git、点外卖 API、开店面 FastAPI）"
-          },
-          {
-            type: "h2",
-            num: "M2 //",
-            en: "LLM Application Building — Hire a Brilliant Server & Add Safety Belts (Prompts, Tools, Streaming)",
-            zh: "LLM 应用开发 —— 雇来学霸店员，教会点单与系安全带（提示词、工具调用、流式记忆、防注入）"
-          },
-          {
-            type: "h2",
-            num: "M3 //",
-            en: "RAG & Grounded Answers — Build a Cookbook Library with Citations (Embeddings, Vector Store, Rerank)",
-            zh: "RAG 开卷问答 —— 给记性差的学霸建菜谱库（向量邻居、切块检索、管理员精排 Rerank、写出处）"
-          },
-          {
-            type: "h2",
-            num: "M4 //",
-            en: "Agents & Evaluation — Promote Server to Manager with Guardrails & Mystery Shoppers (ReAct, Evals)",
-            zh: "Agent 与评测 —— 店员升店长，先装护栏与神秘顾客质检（ReAct 循环、步数预算、Workflow vs Agent、Evals）"
-          },
-          {
-            type: "h2",
-            num: "M5 //",
-            en: "Deployment & Reliability — Open Branches with Containers, Locks, Monitors & Ledgers (Docker, Langfuse)",
-            zh: "部署与可靠性 —— 开分店：装集装箱、门锁、监控摄像头和记账本（Docker、鉴权限流、可观测、缓存控本）"
-          },
-          {
-            type: "h2",
-            num: "M6 //",
-            en: "Direction & Portfolio — Pop-Up Products, Engine Fine-Tuning, or Automation Lines (Launch & Proof)",
-            zh: "方向与作品 —— 决定开快闪店（产品工程）、改发动机（微调）还是卖流水线（AI 自动化），完成公开交付"
-          }
-        ]
-      },
-      {
         slug: "human-os-audit-05-part-2",
         category: "grimoire",
         publishedAt: "2026-11-08",
@@ -4722,9 +4670,8 @@
       }).join('');
     }
 
-    // '#atlas' is a friendly alias for the Atlas entry (slug: ai-learning-atlas)
     function resolveSlug(raw) {
-      return raw === 'atlas' ? 'ai-learning-atlas' : raw;
+      return raw;
     }
 
     function openPost(slug, skipHashPush) {
