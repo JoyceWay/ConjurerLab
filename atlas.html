@@ -976,6 +976,16 @@
       .sprint-day .sprint-task,.sprint-day .sprint-result{grid-column:1/-1}
     }
 
+    /* ===== batch 9: page-fold summary stacks; Michelin burgundy story boxes ===== */
+    details.page-fold>summary{display:grid;grid-template-columns:minmax(0,1fr) 34px;gap:2px 12px;align-items:center}
+    details.page-fold>summary .en{grid-column:1/-1;grid-row:2}
+    details.page-fold>summary::after{grid-column:2;grid-row:1}
+    .chapter-story{background:#6E2B33;color:#F7F1E5}
+    .chapter-story .en{color:rgba(247,241,229,.78)}
+    .detail-cell.story-cell.six-cell{background:#6E2B33}
+    #six-view .detail-body > .detail-cell.story-cell.six-cell p{color:#F7F1E5}
+    #six-view .detail-body > .detail-cell.story-cell.six-cell h4{color:#EBCB7D}
+
 </style>
 </head>
 <body>
