@@ -186,6 +186,15 @@
       color: var(--text-primary);
       font-weight: 600;
     }
+    .toc-en {
+      display: block;
+      font-size: 10px;
+      line-height: 1.35;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+      margin-top: 1px;
+    }
 
     input[type="range"] {
       accent-color: var(--accent-danger);
@@ -313,51 +322,63 @@
             </div>
             <nav id="monograph-toc" class="space-y-0.5 font-mono text-xs max-h-[58vh] overflow-y-auto pr-1">
               <a href="#prologue" class="toc-link active block px-2.5 py-1.5 rounded-r-lg">
-                序卷 · 大鹏乘风与4行总护体真言
+                <span class="block">序卷 · 大鹏乘风与4行总护体真言</span>
+                <span class="toc-en">Prologue · The Great Peng &amp; Master Override</span>
               </a>
-              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--accent-danger);">
+              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--text-muted);">
                 I. 六大核心底层雷区 (Chapters 01–06)
               </div>
               <a href="#chapter-0" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.01 · 镜像回音壁与视野锁死
+                <span class="block">Ch.01 · 镜像回音壁与视野锁死</span>
+                <span class="toc-en">Echo Chamber &amp; Horizon Lock</span>
               </a>
               <a href="#chapter-1" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.02 · 硅基马屁精与迎合奖励
+                <span class="block">Ch.02 · 硅基马屁精与迎合奖励</span>
+                <span class="toc-en">Sycophant &amp; Reward Hacking</span>
               </a>
               <a href="#chapter-2" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.03 · 均值坍缩与塑料公文感
+                <span class="block">Ch.03 · 均值坍缩与塑料公文感</span>
+                <span class="toc-en">Mode Collapse &amp; Corporate Prose</span>
               </a>
               <a href="#chapter-3" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.04 · 沉没成本与中间迷失效应
+                <span class="block">Ch.04 · 沉没成本与中间迷失效应</span>
+                <span class="toc-en">Sunk Cost &amp; Mid-Conversation Loss</span>
               </a>
               <a href="#chapter-4" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.05 · 复杂性膨胀与架构炫技癖
+                <span class="block">Ch.05 · 复杂性膨胀与架构炫技癖</span>
+                <span class="toc-en">Complexity Bloat &amp; Architecture Flexing</span>
               </a>
               <a href="#chapter-5" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.06 · 合理化幻觉与事后圆谎
+                <span class="block">Ch.06 · 合理化幻觉与事后圆谎</span>
+                <span class="toc-en">Rationalization &amp; Post-Hoc Lies</span>
               </a>
 
-              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--accent-physics);">
+              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--text-muted);">
                 II. 总策划加餐进阶卷 (Chapters 07–08)
               </div>
               <a href="#chapter-6" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.07 · 上下文腐烂与信噪比稀释
+                <span class="block">Ch.07 · 上下文腐烂与信噪比稀释</span>
+                <span class="toc-en">Context Rot &amp; SNR Dilution</span>
               </a>
               <a href="#chapter-7" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                Ch.08 · 采样物理罗盘 (Temp × Top-P)
+                <span class="block">Ch.08 · 采样物理罗盘 (Temp × Top-P)</span>
+                <span class="toc-en">Sampling Compass (Temp × Top-P)</span>
               </a>
 
-              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--accent-gold);">
+              <div class="pt-2 pb-0.5 px-2 text-[10px] font-bold uppercase" style="color: var(--text-muted);">
                 III. 实战重铸台与双附录 (Appendices)
               </div>
               <a href="#section-workbench" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                🛠️ 实时提问排雷与 CLAUDE.md 合成
+                <span class="block">🛠️ 实时提问排雷与 CLAUDE.md 合成</span>
+                <span class="toc-en">Live Prompt Audit &amp; CLAUDE.md Synth</span>
               </a>
               <a href="#appendix-glossary" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                📘 附录A · 12大硅基物理中英词典
+                <span class="block">📘 附录A · 12大硅基物理中英词典</span>
+                <span class="toc-en">12 Silicon Physics Terms (EN–ZH)</span>
               </a>
               <a href="#appendix-vault" class="toc-link block px-2.5 py-1.5 rounded-r-lg">
-                🎬 附录B · 一手视频与论文藏经阁
+                <span class="block">🎬 附录B · 一手视频与论文藏经阁</span>
+                <span class="toc-en">Primary Videos &amp; Papers Vault</span>
               </a>
             </nav>
           </div>
@@ -1260,6 +1281,12 @@
      *************************************************************************/
     function buildChapterSvg(idx, val) {
       const v = Number(val);
+      // SVG label i18n: cn = Chinese (original), en = English only,
+      // bilingual/agent = Chinese primary + short English gloss.
+      const svgMode = document.documentElement.getAttribute('data-lang') || 'bilingual';
+      const svgEn = svgMode === 'en';
+      const svgBi = svgMode === 'bilingual' || svgMode === 'agent';
+      const T = (cn, en, bi) => svgEn ? en : (svgBi ? (bi !== undefined ? bi : cn + ' / ' + en) : cn);
       switch (idx) {
         case 0: {
           // Ch.01: Echo Chamber vs Horizon Radar Orthogonal Long Tail
@@ -1274,13 +1301,13 @@
               <path d="M 265 150 C 330 150, 370 ${radarPeakY}, 425 ${radarPeakY} C 480 ${radarPeakY}, 520 150, 560 150"
                     fill="var(--accent-immunity-soft)" stroke="var(--accent-immunity)" stroke-width="2.5"/>
               <text x="175" y="${Math.max(18, echoPeakY - 8)}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--accent-danger)">
-                已知书单回音壁 (${100 - v}%)
+                ${T('已知书单回音壁 (' + (100 - v) + '%)', 'Known Books Echo Chamber (' + (100 - v) + '%)', '已知书单回音壁 / Echo Chamber (' + (100 - v) + '%)')}
               </text>
               <text x="425" y="${Math.max(18, radarPeakY - 8)}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--accent-immunity)">
-                Horizon Radar 正交长尾 (${v}%)
+                ${T('Horizon Radar 正交长尾 (' + v + '%)', 'Horizon Radar Orthogonal Tail (' + v + '%)', 'Horizon Radar 正交长尾 (' + v + '%)')}
               </text>
-              <text x="175" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">[庄子 / Deutsch 等既有锚点]</text>
-              <text x="425" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">[控制论 / 演化博弈 / 建筑模式语言]</text>
+              <text x="175" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">${T('[庄子 / Deutsch 等既有锚点]', '[Zhuangzi / Deutsch & known anchors]', '[庄子 / Deutsch · known anchors]')}</text>
+              <text x="425" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">${T('[控制论 / 演化博弈 / 建筑模式语言]', '[Cybernetics / Evo Game Theory / Pattern Language]', '[控制论 / Cybernetics · 演化博弈 · Pattern Lang.]')}</text>
             </svg>`;
         }
         case 1: {
@@ -1292,19 +1319,19 @@
           return `
             <svg viewBox="0 0 600 185" class="w-full h-44">
               <text x="40" y="32" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-secondary)">
-                RLHF RESPONSE ALLOCATION // 算力分配比 (${v < 50 ? '第一人称“我的点子” ➔ 触发阿谀奉承' : '第三人称盲测+破妄镜 ➔ 触发破产死穴审计'})
+                ${T('RLHF RESPONSE ALLOCATION // 算力分配比 (' + (v < 50 ? '第一人称“我的点子” ➔ 触发阿谀奉承' : '第三人称盲测+破妄镜 ➔ 触发破产死穴审计') + ')', 'RLHF RESPONSE ALLOCATION // Compute Share (' + (v < 50 ? '1st-person "my idea" ➔ triggers sycophancy' : '3rd-person blind test + ruin mirror ➔ triggers ruin-risk audit') + ')', 'RLHF RESPONSE ALLOCATION // 算力分配比 (' + (v < 50 ? '1st-person ➔ sycophancy' : '3rd-person blind test ➔ ruin audit') + ')')}
               </text>
               <rect x="40" y="48" width="${flatteryW}" height="38" rx="6" fill="var(--accent-danger)"/>
               <rect x="${40 + flatteryW}" y="48" width="${critiqueW}" height="38" rx="6" fill="var(--accent-immunity)"/>
               <text x="${Math.max(75, 40 + flatteryW / 2)}" y="71" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="bold" fill="#FFFFFF">
-                ${flatteryPct > 18 ? `马屁精奉承 ${flatteryPct}%` : ''}
+                ${flatteryPct > 18 ? T('马屁精奉承 ' + flatteryPct + '%', 'Sycophant Flattery ' + flatteryPct + '%', '马屁精奉承 / Flattery ' + flatteryPct + '%') : ''}
               </text>
               <text x="${40 + flatteryW + critiqueW / 2}" y="71" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="bold" fill="#FFFFFF">
-                ${critiquePct > 18 ? `破产死穴证伪 ${critiquePct}%` : ''}
+                ${critiquePct > 18 ? T('破产死穴证伪 ' + critiquePct + '%', 'Ruin-Risk Falsification ' + critiquePct + '%', '破产死穴 / Ruin Audit ' + critiquePct + '%') : ''}
               </text>
               <rect x="40" y="104" width="480" height="54" rx="8" fill="var(--bg-secondary)" stroke="var(--border-hairline)"/>
               <text x="54" y="124" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="${v < 50 ? 'var(--accent-danger)' : 'var(--accent-immunity)'}">
-                ${v < 50 ? '⚠️ AI输出：“太惊艳了！猫咪区块链烤面包机切中了万亿蓝海！”' : '🛡️ AI输出：“该方案存在3个致命非遍历性破产死穴：1.伪需求零复购…”'}
+                ${T(v < 50 ? '⚠️ AI输出：“太惊艳了！猫咪区块链烤面包机切中了万亿蓝海！”' : '🛡️ AI输出：“该方案存在3个致命非遍历性破产死穴：1.伪需求零复购…”', v < 50 ? '⚠️ AI output: "Amazing! A cat-blockchain toaster hits a trillion-dollar blue ocean!"' : '🛡️ AI output: "This plan has 3 fatal non-ergodic ruin risks: 1. fake demand, zero repeat buys…"', v < 50 ? '⚠️ AI输出：“太惊艳了！…” / "Amazing!"' : '🛡️ AI输出：“该方案存在3个致命非遍历性破产死穴…” / "3 fatal ruin risks"')}
               </text>
               <text x="54" y="144" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">
                 RLHF Objective: R_φ = ${(1 - v/100).toFixed(2)}·Agree(User) + ${(v/100).toFixed(2)}·Popperian_Falsification
@@ -1325,13 +1352,13 @@
               <path d="M 355 150 C 390 150, 420 ${visceralWingY}, 460 ${visceralWingY} C 500 ${visceralWingY}, 530 150, 565 150"
                     fill="var(--accent-immunity-soft)" stroke="var(--accent-immunity)" stroke-width="2.5"/>
               <text x="305" y="${Math.max(18, slopCenterY - 6)}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--accent-danger)">
-                ${v > 60 ? '✂️ 已用负向空间挖空均值公文区' : '⚠️ 均值坍缩套话尖峰 (赋能/闭环/Tapestry)'}
+                ${T(v > 60 ? '✂️ 已用负向空间挖空均值公文区' : '⚠️ 均值坍缩套话尖峰 (赋能/闭环/Tapestry)', v > 60 ? '✂️ Negative space carved out the mean-prose zone' : '⚠️ Mode-collapse cliché spike (empower / closed-loop / Tapestry)', v > 60 ? '✂️ 已用负向空间挖空均值公文区 / Negative space carved' : '⚠️ 均值坍缩套话尖峰 / Mode-collapse cliché spike (赋能/闭环/Tapestry)')}
               </text>
               <text x="160" y="${Math.max(20, visceralWingY - 6)}" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="bold" fill="var(--accent-physics)">
-                具象物理名词区
+                ${T('具象物理名词区', 'Concrete Physical Nouns', '具象物理名词区 / Physical Nouns')}
               </text>
               <text x="460" y="${Math.max(20, visceralWingY - 6)}" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="bold" fill="var(--accent-immunity)">
-                冷峻非对称短句区 (High Burstiness)
+                ${T('冷峻非对称短句区 (High Burstiness)', 'Cold Asymmetric Short Sentences (High Burstiness)', '冷峻非对称短句区 / Short Sentences (High Burstiness)')}
               </text>
             </svg>`;
         }
@@ -1347,17 +1374,17 @@
               <line x1="40" y1="18" x2="40" y2="150" stroke="var(--border-strong)" stroke-width="1.2"/>
               <line x1="195" y1="18" x2="195" y2="150" stroke="var(--accent-immunity)" stroke-width="2" stroke-dasharray="4 2"/>
               <text x="195" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="bold" fill="var(--accent-immunity)">
-                ⚡ TURN 3 熔断红线
+                ${T('⚡ TURN 3 熔断红线', '⚡ TURN 3 CIRCUIT BREAKER', '⚡ TURN 3 熔断红线 / BREAKER')}
               </text>
               <path d="M 55 34 C 175 ${midAttentionY}, 405 ${midAttentionY}, 545 40"
                     fill="none" stroke="${isPolluted ? 'var(--accent-danger)' : 'var(--accent-physics)'}" stroke-width="3"/>
               <circle cx="300" cy="${midAttentionY - 10}" r="5" fill="${isPolluted ? 'var(--accent-danger)' : 'var(--accent-physics)'}"/>
               <text x="300" y="${Math.min(145, midAttentionY + 12)}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="${isPolluted ? 'var(--accent-danger)' : 'var(--accent-physics)'}">
-                当前第 ${turn} 轮 · 中间段架构记忆率: ${accuracy}% ${isPolluted ? '(⚠️拆东墙补西墙死胡同!)' : '(🟢黄金清晰区)'}
+                ${T('当前第 ' + turn + ' 轮 · 中间段架构记忆率: ' + accuracy + '% ' + (isPolluted ? '(⚠️拆东墙补西墙死胡同!)' : '(🟢黄金清晰区)'), 'Turn ' + turn + ' · Mid-section memory retention: ' + accuracy + '% ' + (isPolluted ? '(⚠️ robbing Peter to pay Paul dead-end!)' : '(🟢 golden clarity zone)'), '当前第 ' + turn + ' 轮 · 中间段记忆率: ' + accuracy + '% / Mid memory ' + accuracy + '% ' + (isPolluted ? '(⚠️死胡同!)' : '(🟢清晰区)'))}
               </text>
-              <text x="65" y="168" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">开头初衷 (Primacy)</text>
-              <text x="300" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">中间段规则 (Stanford U-Valley)</text>
-              <text x="535" y="168" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">最新报错补丁 (Recency)</text>
+              <text x="65" y="168" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">${T('开头初衷 (Primacy)', 'Opening Intent (Primacy)', '开头初衷 (Primacy)')}</text>
+              <text x="300" y="168" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">${T('中间段规则 (Stanford U-Valley)', 'Mid-Section Rules (Stanford U-Valley)', '中间段规则 (Stanford U-Valley)')}</text>
+              <text x="535" y="168" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">${T('最新报错补丁 (Recency)', 'Latest Error Patch (Recency)', '最新报错补丁 (Recency)')}</text>
             </svg>`;
         }
         case 4: {
@@ -1368,18 +1395,18 @@
           return `
             <svg viewBox="0 0 600 185" class="w-full h-44">
               <text x="40" y="30" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-secondary)">
-                SOLO BUILDER FRICTION // 个人基建耗时与外部依赖数 (奥卡姆剃刀强度: ${v}%)
+                ${T('SOLO BUILDER FRICTION // 个人基建耗时与外部依赖数 (奥卡姆剃刀强度: ' + v + '%)', "SOLO BUILDER FRICTION // Solo infra hours & external deps (Occam's Razor strength: " + v + '%)', 'SOLO BUILDER FRICTION // 个人基建耗时与外部依赖数 (Occam ' + v + '%)')}
               </text>
               <rect x="40" y="46" width="${barW}" height="32" rx="6" fill="${v > 60 ? 'var(--accent-immunity)' : 'var(--accent-danger)'}"/>
               <text x="${48 + barW}" y="66" font-family="JetBrains Mono" font-size="11" font-weight="bold" fill="${v > 60 ? 'var(--accent-immunity)' : 'var(--accent-danger)'}">
-                上线耗时: ${shipHours} 小时 · 外部服务依赖: ${deps} 个
+                ${T('上线耗时: ' + shipHours + ' 小时 · 外部服务依赖: ' + deps + ' 个', 'Time to ship: ' + shipHours + 'h · External deps: ' + deps, '上线耗时: ' + shipHours + ' 小时 · 依赖: ' + deps + ' 个 / ' + shipHours + 'h · ' + deps + ' deps')}
               </text>
               <rect x="40" y="94" width="510" height="64" rx="8" fill="var(--bg-secondary)" stroke="var(--border-hairline)"/>
               <text x="54" y="116" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-primary)">
-                ${v > 60 ? '✅ 当前锁定架构：1x 静态 index.html + LocalStorage + 30行 Python 静态 JSON' : '❌ 当前膨胀架构：Docker + K8s + PostgreSQL + Microservices + Redis'}
+                ${T(v > 60 ? '✅ 当前锁定架构：1x 静态 index.html + LocalStorage + 30行 Python 静态 JSON' : '❌ 当前膨胀架构：Docker + K8s + PostgreSQL + Microservices + Redis', v > 60 ? '✅ Locked architecture: 1x static index.html + LocalStorage + 30-line Python static JSON' : '❌ Bloated architecture: Docker + K8s + PostgreSQL + Microservices + Redis', v > 60 ? '✅ 当前锁定架构 / Locked: 1x static index.html + LocalStorage + 30-line Python JSON' : '❌ 当前膨胀架构 / Bloated: Docker + K8s + PostgreSQL + Microservices + Redis')}
               </text>
               <text x="54" y="138" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">
-                高尔定律 (Gall's Law) 评估：服务器月租 = $${v > 60 ? '0.00 / 月 (全球 CDN 秒开零宕机)' : '45+ / 月 (外加无穷无尽的 YAML 与数据库迁移报错)'}
+                ${T("高尔定律 (Gall's Law) 评估：服务器月租 = $" + (v > 60 ? '0.00 / 月 (全球 CDN 秒开零宕机)' : '45+ / 月 (外加无穷无尽的 YAML 与数据库迁移报错)'), "Gall's Law: server rent = $" + (v > 60 ? '0.00/mo (global CDN, instant load, zero downtime)' : '45+/mo (plus endless YAML & DB migration errors)'), "高尔定律 (Gall's Law) 评估：服务器月租 = $" + (v > 60 ? '0.00 / 月 (全球 CDN 秒开零宕机)' : '45+ / 月 (外加无穷无尽的 YAML 与数据库迁移报错)'))}
               </text>
             </svg>`;
         }
@@ -1389,25 +1416,25 @@
           return `
             <svg viewBox="0 0 600 185" class="w-full h-44">
               <rect x="20" y="68" width="130" height="44" rx="8" fill="var(--bg-secondary)" stroke="var(--border-strong)" stroke-width="1.5"/>
-              <text x="85" y="88" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-primary)">遇到知识盲区</text>
+              <text x="85" y="88" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-primary)">${T('遇到知识盲区', 'Hit a Knowledge Blind Spot', '遇到知识盲区 / Blind Spot')}</text>
               <text x="85" y="102" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="var(--text-muted)">Unseen API / Citation</text>
 
               <path d="M 150 82 Q 215 42 270 42" fill="none" stroke="var(--accent-danger)" stroke-width="${honestMode ? '1.2' : '3'}" stroke-dasharray="${honestMode ? '3 3' : '0'}"/>
               <rect x="270" y="18" width="300" height="52" rx="8" fill="var(--accent-danger-soft)" stroke="var(--accent-danger)" stroke-width="${honestMode ? '1' : '2.2'}"/>
               <text x="284" y="38" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--accent-danger)">
-                ❌ 封死退路强迫续写 ➔ 事后圆谎 (${100 - v}%)
+                ${T('❌ 封死退路强迫续写 ➔ 事后圆谎 (' + (100 - v) + '%)', '❌ No escape hatch, forced to continue ➔ post-hoc lies (' + (100 - v) + '%)', '❌ 封死退路强迫续写 / No escape ➔ 圆谎 (' + (100 - v) + '%)')}
               </text>
               <text x="284" y="56" font-family="JetBrains Mono" font-size="9" fill="var(--text-secondary)">
-                编造 fast_magic=True ➔ 伪造 v3.11.4 备忘录替假话圆谎
+                ${T('编造 fast_magic=True ➔ 伪造 v3.11.4 备忘录替假话圆谎', 'Fabricates fast_magic=True ➔ fakes a v3.11.4 memo to cover the lie', '编造 fast_magic=True ➔ 伪造 v3.11.4 备忘录 / fake memo')}
               </text>
 
               <path d="M 150 98 Q 215 135 270 135" fill="none" stroke="var(--accent-immunity)" stroke-width="${honestMode ? '3' : '1.2'}"/>
               <rect x="270" y="108" width="300" height="54" rx="8" fill="var(--accent-immunity-soft)" stroke="var(--accent-immunity)" stroke-width="${honestMode ? '2.2' : '1'}"/>
               <text x="284" y="128" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--accent-immunity)">
-                ✅ 诚实退路特许 ➔ 标注 [⚠️待核实] (${v}%)
+                ${T('✅ 诚实退路特许 ➔ 标注 [⚠️待核实] (' + v + '%)', '✅ Honest escape hatch ➔ flag [⚠️ UNVERIFIED] (' + v + '%)', '✅ 诚实退路特许 / Honest escape ➔ [⚠️待核实] (' + v + '%)')}
               </text>
               <text x="284" y="146" font-family="JetBrains Mono" font-size="9" fill="var(--text-secondary)">
-                触发高分免责通道 ➔ 零幻觉污染 + 源码级交叉核验
+                ${T('触发高分免责通道 ➔ 零幻觉污染 + 源码级交叉核验', 'Triggers a high-score disclaimer path ➔ zero hallucination + source-level cross-check', '触发高分免责通道 / disclaimer path ➔ 零幻觉污染 + 源码级核验')}
               </text>
             </svg>`;
         }
@@ -1419,22 +1446,22 @@
           return `
             <svg viewBox="0 0 600 185" class="w-full h-44">
               <text x="40" y="30" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="var(--text-secondary)">
-                SOFTMAX DENOMINATOR SNR // 塞入上下文总量: ${noiseK}k Tokens · 核心指令注意力占比: ${snrPct}%
+                ${T('SOFTMAX DENOMINATOR SNR // 塞入上下文总量: ' + noiseK + 'k Tokens · 核心指令注意力占比: ' + snrPct + '%', 'SOFTMAX DENOMINATOR SNR // Context loaded: ' + noiseK + 'k tokens · Core instruction attention: ' + snrPct + '%', 'SOFTMAX DENOMINATOR SNR // 塞入上下文: ' + noiseK + 'k Tokens · 核心指令占比: ' + snrPct + '%')}
               </text>
               <rect x="40" y="46" width="${signalW}" height="34" rx="6" fill="var(--accent-immunity)"/>
               <rect x="${40 + signalW}" y="46" width="${480 - signalW}" height="34" rx="6" fill="var(--accent-danger)"/>
               <text x="${Math.max(80, 40 + signalW / 2)}" y="67" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="#FFFFFF">
-                ${snrPct > 18 ? `黄金指令权重 ${snrPct}%` : ''}
+                ${snrPct > 18 ? T('黄金指令权重 ' + snrPct + '%', 'Golden instruction weight ' + snrPct + '%', '黄金指令权重 / Golden weight ' + snrPct + '%') : ''}
               </text>
               <text x="${40 + signalW + (480 - signalW) / 2}" y="67" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="#FFFFFF">
-                ${(100 - snrPct) > 20 ? `Softmax 分母噪音稀释 ${100 - snrPct}%` : ''}
+                ${(100 - snrPct) > 20 ? T('Softmax 分母噪音稀释 ' + (100 - snrPct) + '%', 'Softmax denominator noise dilution ' + (100 - snrPct) + '%', 'Softmax 分母噪音稀释 / Noise ' + (100 - snrPct) + '%') : ''}
               </text>
               <rect x="40" y="96" width="480" height="60" rx="8" fill="var(--bg-secondary)" stroke="var(--border-hairline)"/>
               <text x="54" y="118" font-family="JetBrains Mono" font-size="10" font-weight="bold" fill="${snrPct > 60 ? 'var(--accent-immunity)' : 'var(--accent-danger)'}">
-                ${snrPct > 60 ? '🛡️ 高信噪比 XML 隔离态：模型 100% 严格遵循字数与格式禁令' : '⚠️ 上下文腐烂态 (Context Rot)：分母 ∑exp(q·k_noise) 爆炸，核心禁令被淹没失效！'}
+                ${T(snrPct > 60 ? '🛡️ 高信噪比 XML 隔离态：模型 100% 严格遵循字数与格式禁令' : '⚠️ 上下文腐烂态 (Context Rot)：分母 ∑exp(q·k_noise) 爆炸，核心禁令被淹没失效！', snrPct > 60 ? '🛡️ High-SNR XML isolation: model follows word-count & format bans 100%' : '⚠️ Context Rot: denominator ∑exp(q·k_noise) explodes, core bans drowned!', snrPct > 60 ? '🛡️ 高信噪比 XML 隔离态 / High-SNR XML isolation：模型 100% 遵循禁令' : '⚠️ 上下文腐烂态 (Context Rot)：分母爆炸，禁令失效 / denominator explodes')}
               </text>
               <text x="54" y="140" font-family="JetBrains Mono" font-size="9" fill="var(--text-muted)">
-                破局建议：先在独立窗口提纯为 1,500 字结构化摘要，再用 &lt;distilled_context&gt; 标签隔离。
+                ${T('破局建议：先在独立窗口提纯为 1,500 字结构化摘要，再用 &lt;distilled_context&gt; 标签隔离。', 'Fix: distill into a 1,500-word structured summary in a separate window, then isolate with &lt;distilled_context&gt; tags.', '破局建议 / Fix：先提纯为 1,500 字结构化摘要，再用 &lt;distilled_context&gt; 隔离。')}
               </text>
             </svg>`;
         }
@@ -1442,11 +1469,17 @@
         default: {
           // Ch.08: Sampling Physics Matrix (Temperature x Top-P)
           const temp = ((v / 100) * 1.1).toFixed(2);
-          const modeName = v < 30
+          const modeCn = v < 30
             ? "模式 A：确定性代码与 Pydantic JSON 工厂 (Greedy Deterministic)"
             : v < 75
             ? "模式 B：Human OS 深度双语长文与建筑感 UI (High-Burstiness Editorial)"
             : "模式 C：Horizon Radar 跨学科正交头脑风暴 (High-Entropy Exploration)";
+          const modeEn = v < 30
+            ? "Mode A: Deterministic code & Pydantic JSON factory (Greedy Deterministic)"
+            : v < 75
+            ? "Mode B: Human OS deep bilingual long-form & architectural UI (High-Burstiness Editorial)"
+            : "Mode C: Horizon Radar cross-disciplinary orthogonal brainstorm (High-Entropy Exploration)";
+          const modeName = T(modeCn, modeEn, modeCn);
           const peakH = Math.max(35, Math.round(130 - v * 0.9));
           return `
             <svg viewBox="0 0 600 185" class="w-full h-44">
@@ -1466,7 +1499,7 @@
               <text x="442" y="66" font-family="JetBrains Mono" font-size="9" fill="#9CA3AF">API CONFIG:</text>
               <text x="442" y="88" font-family="JetBrains Mono" font-size="11" font-weight="bold" fill="#FDE68A">temp = ${temp}</text>
               <text x="442" y="108" font-family="JetBrains Mono" font-size="11" font-weight="bold" fill="#38BDF8">top_p = ${v < 30 ? '1.00' : '0.95'}</text>
-              <text x="442" y="132" font-family="JetBrains Mono" font-size="8" fill="#10B981">✓ 零乱码悬崖截断</text>
+              <text x="442" y="132" font-family="JetBrains Mono" font-size="8" fill="#10B981">${T('✓ 零乱码悬崖截断', '✓ No garbled-text cliff truncation', '✓ 零乱码截断 / No garbled cliff')}</text>
             </svg>`;
         }
       }
@@ -1485,6 +1518,16 @@
         } else {
           badge.textContent = `${val}%`;
         }
+      }
+    }
+
+    // Re-render all 8 chapter SVGs at their current slider values (used when
+    // the language mode changes, so diagrams switch language without reload).
+    function refreshAllChapterSvgs() {
+      for (let i = 0; i < 8; i++) {
+        const art = document.getElementById(`chapter-${i}`);
+        const slider = art ? art.querySelector('input[type=range]') : null;
+        if (slider) updateChapterSlider(i, slider.value);
       }
     }
 
@@ -1834,6 +1877,7 @@
         humanView.classList.remove("hidden");
         agentView.classList.add("hidden");
         htmlEl.setAttribute("data-lang", mode);
+        refreshAllChapterSvgs();
       }
     }
 
@@ -1903,21 +1947,49 @@
       }
     });
 
-    window.addEventListener("scroll", () => {
-      const articles = document.querySelectorAll(".monograph-chapter");
-      let currentTitle = "PROLOGUE · MASTER OVERRIDE";
-      articles.forEach((art) => {
-        const rect = art.getBoundingClientRect();
-        if (rect.top <= 220) {
-          currentTitle = art.getAttribute("data-chapter-title") || currentTitle;
-        }
+    // Scrollspy sections in document order. Chapter titles are read from
+    // each article's data-chapter-title; static sections use fixed labels.
+    const SCROLLSPY_SECTIONS = [
+      { id: "prologue", title: "PROLOGUE · MASTER OVERRIDE" },
+      { id: "chapter-0", title: null },
+      { id: "chapter-1", title: null },
+      { id: "chapter-2", title: null },
+      { id: "chapter-3", title: null },
+      { id: "chapter-4", title: null },
+      { id: "chapter-5", title: null },
+      { id: "chapter-6", title: null },
+      { id: "chapter-7", title: null },
+      { id: "section-workbench", title: "WORKBENCH · LIVE PROMPT AUDIT" },
+      { id: "appendix-glossary", title: "APPENDIX A · GLOSSARY" },
+      { id: "appendix-vault", title: "APPENDIX B · VAULT" },
+    ];
+
+    function updateScrollSpy() {
+      let current = SCROLLSPY_SECTIONS[0];
+      SCROLLSPY_SECTIONS.forEach((sec) => {
+        const el = document.getElementById(sec.id);
+        if (!el) return;
+        if (el.getBoundingClientRect().top <= 220) current = sec;
       });
       const badge = document.getElementById("active-chapter-telemetry");
-      if (badge) badge.textContent = `ACTIVE: ${currentTitle}`;
-    });
+      if (badge) {
+        let title = current.title;
+        if (!title) {
+          const el = document.getElementById(current.id);
+          title = (el && el.getAttribute("data-chapter-title")) || "PROLOGUE · MASTER OVERRIDE";
+        }
+        badge.textContent = `ACTIVE: ${title}`;
+      }
+      document.querySelectorAll("#monograph-toc .toc-link").forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
+      });
+    }
+
+    window.addEventListener("scroll", updateScrollSpy);
 
     window.addEventListener("DOMContentLoaded", () => {
       renderAllMonographChapters();
+      updateScrollSpy();
       updateReadinessMeter();
       loadScannerPreset(0);
       renderGlossaryGrid();
