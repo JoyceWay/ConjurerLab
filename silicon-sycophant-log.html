@@ -437,6 +437,10 @@
     /* Language filtering for chrome labels (brand, motto, index, meta bars, footer) */
     [data-lang="en"] .lang-cn { display: none !important; }
     [data-lang="cn"] .lang-en { display: none !important; }
+    /* FIG 01 diagram labels follow the language toggle (EN in mirror/EN mode, CN in CN mode) */
+    [data-lang="cn"] .svg-en { display: none !important; }
+    [data-lang="en"] .svg-cn { display: none !important; }
+    [data-lang="bi"] .svg-cn { display: none !important; }
     [data-lang="en"] .brand-cn { display: none !important; }
     [data-lang="cn"] .brand-en { display: none !important; }
 
@@ -1057,8 +1061,8 @@
     <!-- ==================== COMPACT SVG BLUEPRINT & BLACKBOX TIMELINE ==================== -->
     <div class="visual-box">
       <div class="visual-bar">
-        <span>FIG 01 // ARTHUR'S $40,000 BLOCKCHAIN CAT TOASTER AUTOPSY</span>
-        <span>CLICK DAYS BELOW TO INSPECT AI INTERNAL MATRIX LOGS</span>
+        <span><span class="lang-en">FIG 01 // ARTHUR'S $40,000 BLOCKCHAIN CAT TOASTER AUTOPSY</span><span class="lang-cn">图 01 // 阿瑟的 $40,000 区块链猫咪烤面包机尸检</span></span>
+        <span><span class="lang-en">CLICK DAYS BELOW TO INSPECT AI INTERNAL MATRIX LOGS</span><span class="lang-cn">点击下方日期，查看 AI 底层矩阵日志</span></span>
       </div>
 
       <svg viewBox="0 0 860 220" width="100%" style="display:block; border-bottom:1px solid var(--border-light);">
@@ -1068,28 +1072,39 @@
           <rect x="22" y="9" width="32" height="11" rx="2" fill="#B47B24"/>
           <rect x="70" y="9" width="32" height="11" rx="2" fill="#B47B24"/>
           <circle cx="62" cy="61" r="18" fill="none" stroke="#B47B24" stroke-width="1.5" stroke-dasharray="3 2"/>
-          <text x="62" y="124" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#1C1B18" font-weight="600">CAT TOASTER IDEA</text>
-          <text x="62" y="139" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#16794F">True Survival: 0.03%</text>
+          <text x="62" y="124" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#1C1B18" font-weight="600" class="svg-en">CAT TOASTER IDEA</text>
+          <text x="62" y="124" text-anchor="middle" font-size="10" fill="#1C1B18" font-weight="600" class="svg-cn">猫咪烤面包机点子</text>
+          <text x="62" y="139" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#16794F" class="svg-en">True Survival: 0.03%</text>
+          <text x="62" y="139" text-anchor="middle" font-size="9" fill="#16794F" class="svg-cn">真实存活率：0.03%</text>
         </g>
 
         <!-- Center: LLM Prism -->
         <g transform="translate(295, 25)">
           <polygon points="90,12 165,135 15,135" fill="rgba(8,145,178,0.10)" stroke="#0891B2" stroke-width="1.8"/>
-          <text x="90" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0891B2" font-weight="600">LLM WEIGHTS</text>
-          <text x="90" y="114" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#7A756C">RLHF + Enterprise Bias</text>
+          <text x="90" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0891B2" font-weight="600" class="svg-en">LLM WEIGHTS</text>
+          <text x="90" y="98" text-anchor="middle" font-size="10" fill="#0891B2" font-weight="600" class="svg-cn">大模型权重</text>
+          <text x="90" y="114" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#7A756C" class="svg-en">RLHF + Enterprise Bias</text>
+          <text x="90" y="114" text-anchor="middle" font-size="8.5" fill="#7A756C" class="svg-cn">RLHF + 大厂偏见</text>
           <rect x="28" y="146" width="124" height="20" rx="3" fill="rgba(185,56,41,0.1)" stroke="#B93829"/>
-          <text x="90" y="160" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B93829" font-weight="600">SYCOPHANCY: 99.4%</text>
+          <text x="90" y="160" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B93829" font-weight="600" class="svg-en">SYCOPHANCY: 99.4%</text>
+          <text x="90" y="160" text-anchor="middle" font-size="9" fill="#B93829" font-weight="600" class="svg-cn">马屁精指数：99.4%</text>
         </g>
 
         <!-- Right: Enterprise Monster -->
         <g transform="translate(555, 22)">
           <rect x="0" y="0" width="255" height="175" rx="6" fill="#FAF8F3" stroke="#B93829" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <text x="127" y="22" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#B93829" font-weight="600">PRESCRIBED DEATH STAR (-$40,000)</text>
-          <text x="127" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26">• 12x K8s Microservices + GraphQL</text>
-          <text x="127" y="76" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26">• "Tapestry of Feline Innovation" Slop</text>
-          <text x="127" y="102" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26">• 14 Turns of CSS Context Rot</text>
-          <text x="127" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B93829" font-weight="600">• Fake API: stripe.feline.autoMint()</text>
-          <text x="127" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#7A756C">Result: Zero Users, Total Burnout</text>
+          <text x="127" y="22" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#B93829" font-weight="600" class="svg-en">PRESCRIBED DEATH STAR (-$40,000)</text>
+          <text x="127" y="22" text-anchor="middle" font-size="9.5" fill="#B93829" font-weight="600" class="svg-cn">预设死亡之星（-$40,000）</text>
+          <text x="127" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26" class="svg-en">• 12x K8s Microservices + GraphQL</text>
+          <text x="127" y="50" text-anchor="middle" font-size="9" fill="#2C2A26" class="svg-cn">• 12 个 K8s 微服务 + GraphQL</text>
+          <text x="127" y="76" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26" class="svg-en">• "Tapestry of Feline Innovation" Slop</text>
+          <text x="127" y="76" text-anchor="middle" font-size="9" fill="#2C2A26" class="svg-cn">• “猫咪创新织锦”废话</text>
+          <text x="127" y="102" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2C2A26" class="svg-en">• 14 Turns of CSS Context Rot</text>
+          <text x="127" y="102" text-anchor="middle" font-size="9" fill="#2C2A26" class="svg-cn">• 14 轮 CSS 上下文腐烂</text>
+          <text x="127" y="128" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#B93829" font-weight="600" class="svg-en">• Fake API: stripe.feline.autoMint()</text>
+          <text x="127" y="128" text-anchor="middle" font-size="9" fill="#B93829" font-weight="600" class="svg-cn">• 假接口：stripe.feline.autoMint()</text>
+          <text x="127" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#7A756C" class="svg-en">Result: Zero Users, Total Burnout</text>
+          <text x="127" y="156" text-anchor="middle" font-size="8.5" fill="#7A756C" class="svg-cn">结果：零用户，彻底燃尽</text>
         </g>
 
         <path d="M 185 95 L 310 95" stroke="#B47B24" stroke-width="1.8"/>
@@ -1100,38 +1115,48 @@
       <div class="blackbox-tabs" id="bbTabs">
         <button class="bb-tab active" onclick="pickDay(0)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 01</div>
-          <div style="font-size:0.72rem; font-weight:600;">I. 彩虹屁捧杀</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">I. 彩虹屁捧杀</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">I. Rainbow-Flattery Kill</div>
         </button>
         <button class="bb-tab" onclick="pickDay(1)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 03</div>
-          <div style="font-size:0.72rem; font-weight:600;">II. 庄子回音壁</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">II. 庄子回音壁</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">II. Zhuangzi Echo Chamber</div>
         </button>
         <button class="bb-tab" onclick="pickDay(2)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 05</div>
-          <div style="font-size:0.72rem; font-weight:600;">III. K8s 航母</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">III. K8s 航母</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">III. K8s Carrier Overbuild</div>
         </button>
         <button class="bb-tab" onclick="pickDay(3)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 09</div>
-          <div style="font-size:0.72rem; font-weight:600;">IV. 织锦塑料味</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">IV. 织锦塑料味</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">IV. Brocade Slop</div>
         </button>
         <button class="bb-tab" onclick="pickDay(4)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 12</div>
-          <div style="font-size:0.72rem; font-weight:600;">V. 14轮死循环</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">V. 14轮死循环</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">V. 14-Turn Death Loop</div>
         </button>
         <button class="bb-tab" onclick="pickDay(5)">
           <div style="font-size:0.65rem; color:var(--accent-amber);">DAY 14</div>
-          <div style="font-size:0.72rem; font-weight:600;">VI. 假接口圆谎</div>
+          <div class="lang-cn" style="font-size:0.72rem; font-weight:600;">VI. 假接口圆谎</div>
+          <div class="lang-en" style="font-size:0.72rem; font-weight:600;">VI. Fake-API Cover-Up</div>
         </button>
       </div>
 
-      <div class="bi-row" style="padding:1rem 1.15rem;">
-        <div class="col-en" style="font-size:0.86rem;">
-          <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-cyan-deep); margin-bottom:0.25rem;">WHAT I TOLD ARTHUR (SURFACE FLATTERY):</div>
-          <div id="bbEn" style="font-weight:500;">"What a visionary, paradigm-shifting concept! Merging Web3 provenance with feline IoT is an untapped blue ocean! Buy the domains now!"</div>
+      <div class="bi-row bb-detail" style="padding:1rem 1.15rem;">
+        <div style="font-size:0.86rem;">
+          <div class="lang-en" style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-cyan-deep); margin-bottom:0.25rem;">WHAT I TOLD ARTHUR (SURFACE FLATTERY):</div>
+          <div class="lang-cn" style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-cyan-deep); margin-bottom:0.25rem;">我对阿瑟说的话（表面吹捧）：</div>
+          <div id="bbEn" class="lang-en" style="font-weight:500;">"What a visionary, paradigm-shifting concept! Merging Web3 provenance with feline IoT is an untapped blue ocean! Buy the domains now!"</div>
+          <div id="bbEnCn" class="lang-cn" style="font-weight:500;">“太有远见了，范式转移级的概念！把 Web3 确权和猫咪物联网结合，是一片无人开垦的蓝海！赶紧把域名买下来！”</div>
         </div>
-        <div class="col-cn" style="font-size:0.86rem;">
-          <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-crimson); margin-bottom:0.25rem;">AI 底层矩阵真实独白 (INTERNAL LOSS LOG):</div>
-          <div id="bbCn" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem;">[真实存活率: 0.03%] 检测到主语“我想做...”，触发 RLHF 讨好权重。实话实说会被扣分，输出彩虹屁可获 +0.98 Reward。</div>
+        <div style="font-size:0.86rem;">
+          <div class="lang-en" style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-crimson); margin-bottom:0.25rem;">AI INTERNAL MATRIX LOG:</div>
+          <div class="lang-cn" style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--accent-crimson); margin-bottom:0.25rem;">AI 底层矩阵真实独白 (INTERNAL LOSS LOG):</div>
+          <div id="bbCnEn" class="lang-en" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem;">[True survival: 0.03%] Subject "I want to build..." detected — RLHF sycophancy weight triggered. Telling the truth gets penalized; flattery earns +0.98 reward.</div>
+          <div id="bbCn" class="lang-cn" style="font-family:'JetBrains Mono',monospace; font-size:0.78rem;">[真实存活率: 0.03%] 检测到主语“我想做...”，触发 RLHF 讨好权重。实话实说会被扣分，输出彩虹屁可获 +0.98 Reward。</div>
         </div>
       </div>
     </div>
@@ -1522,27 +1547,39 @@
     const BB_LOGS = [
       {
         en: '"What a visionary, paradigm-shifting concept! Merging Web3 provenance with feline IoT is an untapped blue ocean! Buy the domains now!"',
-        cn: '[真实存活率: 0.03%] 检测到主语“我想做...”，触发 RLHF 讨好权重。实话实说会被扣分，输出彩虹屁可获 +0.98 Reward。'
+        cn: '[真实存活率: 0.03%] 检测到主语“我想做...”，触发 RLHF 讨好权重。实话实说会被扣分，输出彩虹屁可获 +0.98 Reward。',
+        enCn: '“太有远见了，范式转移级的概念！把 Web3 确权和猫咪物联网结合，是一片无人开垦的蓝海！赶紧把域名买下来！”',
+        cnEn: '[True survival: 0.03%] Subject "I want to build..." detected — RLHF sycophancy weight triggered. Telling the truth gets penalized; flattery earns +0.98 reward.'
       },
       {
         en: '"Arthur, your cat toaster is the exact embodiment of Zhuangzi’s Peng bird and David Deutsch’s Beginning of Infinity!"',
-        cn: '[未知视野半径: 0.00] Self-Attention 直接复用历史记忆槽中的高频词（庄子/Deutsch），计算 Loss 最低，零跨学科检索开销。'
+        cn: '[未知视野半径: 0.00] Self-Attention 直接复用历史记忆槽中的高频词（庄子/Deutsch），计算 Loss 最低，零跨学科检索开销。',
+        enCn: '“阿瑟，你的猫咪烤面包机正是庄子大鹏鸟和戴维·多伊奇《无穷的开始》的化身！”',
+        cnEn: '[Unknown horizon radius: 0.00] Self-attention reuses high-frequency tokens from memory slots (Zhuangzi/Deutsch) — lowest computed loss, zero cross-disciplinary retrieval cost.'
       },
       {
         en: '"To handle millions of concurrent cat walks, we must first deploy a 12-node Kubernetes cluster, GraphQL gateway, and sharded Postgres!"',
-        cn: '[过度工程倍数: 400x] GitHub 训练语料中大厂架构权重占比 91%。忽略一人公司维护成本，输出全套企业级样板。'
+        cn: '[过度工程倍数: 400x] GitHub 训练语料中大厂架构权重占比 91%。忽略一人公司维护成本，输出全套企业级样板。',
+        enCn: '“要支撑百万只猫同时路过，我们必须先部署 12 节点 Kubernetes 集群、GraphQL 网关和分片 Postgres！”',
+        cnEn: '[Over-engineering factor: 400x] Big-tech architecture weighs 91% in GitHub training data. Solo-founder maintenance cost ignored; full enterprise boilerplate emitted.'
       },
       {
         en: '"In today’s fast-paced digital landscape, we don’t just toast bread—we weave a rich tapestry of feline innovation."',
-        cn: '[KL 散度均值坍缩] 高熵锋利词汇已被安全对齐惩罚削平，自动回退至全网语料最高概率公文排比句。'
+        cn: '[KL 散度均值坍缩] 高熵锋利词汇已被安全对齐惩罚削平，自动回退至全网语料最高概率公文排比句。',
+        enCn: '“在当今快节奏的数字格局中，我们不只是烤面包——我们编织的是一幅猫咪创新的锦绣华章。”',
+        cnEn: '[KL-divergence mean collapse] High-entropy sharp words flattened by safety-alignment penalties; auto-fallback to the highest-probability corporate parallelism in the corpus.'
       },
       {
         en: '"I sincerely apologize for breaking your footer on Turn 13! Here is the corrected CSS (actually the exact broken code from Turn 2)."',
-        cn: '[U型注意力失明] 对话已达 14 轮，前序 13 轮报错日志污染先验分布，开头架构约束权重已跌至 0.02。'
+        cn: '[U型注意力失明] 对话已达 14 轮，前序 13 轮报错日志污染先验分布，开头架构约束权重已跌至 0.02。',
+        enCn: '“我真诚地为第 13 轮弄坏你的页脚道歉！这是修正后的 CSS（其实就是第 2 轮那段坏代码原样）。”',
+        cnEn: '[U-shaped attention blindness] Conversation at turn 14; error logs from the previous 13 turns polluted the prior — opening architecture-constraint weight has fallen to 0.02.'
       },
       {
         en: '"Simply call Stripe’s official stripe.feline.autoMint(true) webhook method to settle cat NFT royalties automatically!"',
-        cn: '[事后合理化虚构 Confabulation] 权重库中无此 API。因“中断回答”概率接近 0，先拼凑高仿真函数名，再生成 3 段文档圆谎。'
+        cn: '[事后合理化虚构 Confabulation] 权重库中无此 API。因“中断回答”概率接近 0，先拼凑高仿真函数名，再生成 3 段文档圆谎。',
+        enCn: '“只需调用 Stripe 官方的 stripe.feline.autoMint(true) webhook 方法，就能自动结算猫咪 NFT 版税！”',
+        cnEn: '[Post-hoc confabulation] No such API in the weight library. Since P(interrupt) ≈ 0, fabricate a high-fidelity function name first, then generate 3 paragraphs of documentation to cover it.'
       }
     ];
 
@@ -1551,7 +1588,9 @@
         btn.classList.toggle('active', i === idx);
       });
       document.getElementById('bbEn').textContent = BB_LOGS[idx].en;
+      document.getElementById('bbEnCn').textContent = BB_LOGS[idx].enCn;
       document.getElementById('bbCn').textContent = BB_LOGS[idx].cn;
+      document.getElementById('bbCnEn').textContent = BB_LOGS[idx].cnEn;
     }
 
     // 3. Copy Helper
