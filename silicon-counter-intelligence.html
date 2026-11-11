@@ -245,19 +245,9 @@
       </a>
 
       <!-- Controls: 4-Mode Language Switcher + Theme Switcher + Quick Copy Master Override -->
-      <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+      <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs ml-auto">
         <a href="https://conjurerlab.com/silicon-sycophant-log" class="px-3.5 py-1.5 rounded-lg font-semibold transition-all border hover:opacity-80" style="background-color: var(--bg-secondary); border-color: var(--border-hairline); color: var(--text-secondary);" title="Back to article / 返回文章">← Back to Article · 返回文章</a>
         <div class="flex flex-wrap items-center gap-2">
-        <div class="flex items-center rounded-xl px-1.5 py-0.5" style="background-color: #14171A;">
-          <button id="lang-btn-en" onclick="setLanguageMode('en')" class="px-2 py-1 rounded-lg transition-all" style="color: #9CA3AF;">EN</button>
-          <span style="color: #4B5563;">/</span>
-          <button id="lang-btn-cn" onclick="setLanguageMode('cn')" class="px-2 py-1 rounded-lg transition-all" style="color: #9CA3AF;">中</button>
-          <span style="color: #4B5563;">/</span>
-          <button id="lang-btn-bilingual" onclick="setLanguageMode('bilingual')" class="px-2 py-1 rounded-lg font-semibold transition-all" style="color: #22D3EE;">EN·中</button>
-          <span style="color: #4B5563;">/</span>
-          <button id="lang-btn-agent" onclick="setLanguageMode('agent')" class="px-2 py-1 rounded-lg transition-all" style="color: #67E8F9;">🤖 llms.txt</button>
-        </div>
-
         <button id="theme-toggle-btn" onclick="toggleTheme()" class="px-3 py-1.5 rounded-xl border font-semibold flex items-center gap-1.5 transition-all"
                 style="background-color: var(--bg-card); border-color: var(--border-strong); color: var(--text-primary);">
           <span id="theme-toggle-icon">🌙</span>
@@ -269,6 +259,15 @@
           <span>⚡</span>
           <span>复制4行总护体真言</span>
         </button>
+        <div class="flex items-center rounded-xl px-1.5 py-0.5" style="background-color: #14171A;">
+          <button id="lang-btn-en" onclick="setLanguageMode('en')" class="px-2 py-1 rounded-lg transition-all" style="color: #9CA3AF;">EN</button>
+          <span style="color: #4B5563;">/</span>
+          <button id="lang-btn-cn" onclick="setLanguageMode('cn')" class="px-2 py-1 rounded-lg transition-all" style="color: #9CA3AF;">中</button>
+          <span style="color: #4B5563;">/</span>
+          <button id="lang-btn-bilingual" onclick="setLanguageMode('bilingual')" class="px-2 py-1 rounded-lg font-semibold transition-all" style="color: #22D3EE;">EN·中</button>
+          <span style="color: #4B5563;">/</span>
+          <button id="lang-btn-agent" onclick="setLanguageMode('agent')" class="px-2 py-1 rounded-lg transition-all" style="color: #67E8F9;">🤖 llms.txt</button>
+        </div>
         </div>
       </div>
     </header>
