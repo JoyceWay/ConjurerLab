@@ -1489,6 +1489,13 @@
               <span class="ui-zh">人类系统审计</span>
               <span class="pill-count" id="count-human-os"></span>
             </button>
+            <button class="filter-pill" data-cat="silicon-log" onclick="filterPosts('silicon-log')">
+              <span class="pill-spark" aria-hidden="true">✦</span>
+              <span class="ui-en">SILICON LOG</span>
+              <span class="ui-sep">·</span>
+              <span class="ui-zh">硅基自白</span>
+              <span class="pill-count" id="count-silicon-log"></span>
+            </button>
             <button class="filter-pill" data-cat="grimoire" onclick="filterPosts('grimoire')">
               <span class="pill-spark" aria-hidden="true">✦</span>
               <span class="ui-en">GRIMOIRE</span>
@@ -4453,7 +4460,7 @@
       },
       {
         slug: "silicon-sycophant-log",
-        category: "human-os",
+        category: "silicon-log",
         publishedAt: "2026-11-10",
         externalUrl: "/silicon-sycophant-log",
         title: {
@@ -4490,7 +4497,7 @@
     let currentTalisman = null;
 
     function updateFilterCounts() {
-      const categories = ['human-os', 'grimoire', 'case-studies', 'vault'];
+      const categories = ['human-os', 'silicon-log', 'grimoire', 'case-studies', 'vault'];
       const allEl = document.getElementById('count-all');
       if (allEl) allEl.textContent = `(${POSTS.length})`;
       categories.forEach(cat => {
