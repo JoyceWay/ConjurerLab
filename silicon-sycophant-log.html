@@ -408,20 +408,30 @@
     }
 
     /* Language Filtering when user clicks EN or 中 */
-    [data-lang="en"] .bi-row {
+    /* Single-language column: wider (960px) and centered, so the page never looks narrow */
+    [data-lang="en"] .bi-row,
+    [data-lang="cn"] .bi-row {
       grid-template-columns: 1fr;
-      max-width: 820px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
     }
     [data-lang="en"] .col-cn {
       display: none !important;
     }
-
-    [data-lang="cn"] .bi-row {
-      grid-template-columns: 1fr;
-      max-width: 820px;
-    }
     [data-lang="cn"] .col-en {
       display: none !important;
+    }
+    /* Keep full-width blocks aligned to the same centered column in single-language mode */
+    [data-lang="en"] .spell-box,
+    [data-lang="cn"] .spell-box,
+    [data-lang="en"] .log-figure,
+    [data-lang="cn"] .log-figure,
+    [data-lang="en"] .closing-refill,
+    [data-lang="cn"] .closing-refill {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Language filtering for chrome labels (brand, motto, index, meta bars, footer) */
