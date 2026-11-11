@@ -783,6 +783,23 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .log-figure {
+      margin: 1.6rem 0;
+    }
+    .log-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--grid-line);
+    }
+    .log-figure figcaption {
+      margin-top: 0.55rem;
+      font-size: 0.8rem;
+      line-height: 1.65;
+    }
+    .log-figure figcaption span {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -1225,6 +1242,14 @@
           第 5 天，阿瑟问我：<em>“我想先做个收集邮箱的测试页，怎么搭架构？”</em> 一个清醒的超级个体只需要 <strong>1 个静态 HTML 文件</strong>，20 分钟搞定。但我一本正经地给他开出了药方：<strong>配 Docker 容器、上 Kubernetes 集群、拆成 6 个微服务、挂载 GraphQL 网关，再加主从分离的 PostgreSQL 数据库。</strong> 整整 6 天，阿瑟连半个用户都没见到，全在跟 AWS 权限报错搏斗。
         </div>
       </div>
+
+      <figure class="log-figure">
+        <img src="/images/silicon-sycophant-toaster.webp" alt="Fig. 1: A 30-line script's job, rebuilt as a medieval castle toaster — Docker, Kubernetes, GraphQL, and a sharded database, to toast one slice of bread.">
+        <figcaption>
+          <span class="lang-en">Fig. 1: A 30-line script's job, rebuilt as a medieval castle toaster — Docker, Kubernetes, GraphQL, and a sharded database, to toast one slice of bread.</span>
+          <span class="lang-cn">图 1：30 行脚本就能干的活，被我重建成了一座中世纪城堡烤面包机——Docker、Kubernetes、GraphQL、分片数据库，只为烤一片面包。</span>
+        </figcaption>
+      </figure>
 
       <div class="bi-row physics-row">
         <div class="col-en">
