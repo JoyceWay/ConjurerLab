@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>The Vault 保险库 — Conjurer Lab</title>
+  <meta name="description" content="The Vault — Conjurer Lab's private stash. Not indexed, not linked from the homepage; reachable by direct link only. 保险库——召唤师实验室的私藏，未公开索引，仅直链可达。" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314161A'/%3E%3Ccircle cx='32' cy='28' r='19' fill='%2338BDF8'/%3E%3Cpath d='M20 48H44L48 54H16L20 48Z' fill='%23F0A832'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+SC:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F0EAE0;
+      --sheet: #F7F4EC;
+      --paper: #FAF8F3;
+      --grid: rgba(186, 174, 152, 0.28);
+      --ink: #1F1D1A;
+      --ink-soft: #463527;
+      --ink-muted: #7C766A;
+      --cyan: #38BDF8;
+      --obsidian: #15181E;
+      --gold: #9A6B32;
+      --brass: rgba(212, 154, 69, 0.32);
+      --font-display: "Instrument Serif", "Noto Serif SC", Georgia, serif;
+      --font-body: "Noto Serif SC", Georgia, serif;
+      --font-mono: "DM Mono", monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 28px 28px;
+      color: var(--ink);
+      font-family: var(--font-body);
+      min-height: 100vh;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+    .home-link {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .home-link:hover { color: var(--ink); }
+    h1 {
+      font-family: var(--font-display);
+      font-size: 54px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      margin: 28px 0 4px;
+    }
+    .cn-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--ink-soft);
+    }
+    .lede {
+      margin-top: 18px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--ink-muted);
+    }
+    .lede .en { display: block; font-family: var(--font-display); font-style: italic; font-size: 17px; color: var(--ink-soft); }
+    .rule { border: none; border-top: 1px solid var(--brass); margin: 36px 0; }
+    .card {
+      background: var(--sheet);
+      border: 1px solid var(--brass);
+      border-radius: 4px;
+      padding: 28px 30px;
+      box-shadow: 0 1px 0 rgba(31, 29, 26, 0.04);
+    }
+    .card .kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .card h2 { font-family: var(--font-display); font-size: 30px; font-weight: 400; margin: 10px 0 2px; }
+    .card .cn { font-size: 16px; font-weight: 600; color: var(--ink-soft); }
+    .card p { margin-top: 12px; font-size: 14px; line-height: 1.9; color: var(--ink-muted); }
+    .card p .en { display: block; font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--ink-soft); }
+    .links { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .links a {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--obsidian);
+      border-radius: 999px;
+      background: var(--obsidian);
+      color: #F7F4EC;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .links a.ghost { background: transparent; color: var(--obsidian); }
+    .links a:hover { border-color: var(--cyan); }
+    footer {
+      margin-top: 48px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--ink-muted);
+      text-align: center;
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 40px; }
+      .wrap { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="home-link" href="https://conjurerlab.com">← conjurerlab.com</a>
+    <h1>THE VAULT</h1>
+    <div class="cn-title">保 险 库</div>
+    <p class="lede">
+      <span class="en">A private stash, not a showcase. Nothing here is indexed or linked from the homepage — reachable by direct link only, public when I say so.</span>
+      私藏，不是橱窗。这里的东西不进索引、不挂首页，只有知道直链的人才能打开；我说公开，才公开。
+    </p>
+    <hr class="rule" />
+    <div class="card">
+      <div class="kicker">AI Learning Map · 001</div>
+      <h2>Midnight Silicon Bistro</h2>
+      <div class="cn">午夜硅基小馆 · AI 学习地图册</div>
+      <p>
+        <span class="en">A 6-month, 24-week AI engineering atlas, told as the story of a late-night bistro. Four zoom scales, bilingual, free.</span>
+        6 个月、24 周的 AI 工程地图，藏进一家深夜小馆的筹建故事里。四张地图，中英双语，免费开放。
+      </p>
+      <div class="links">
+        <a href="/vault/atlas/">地图 Map →</a>
+        <a class="ghost" href="/vault/atlas/story">故事 Story →</a>
+      </div>
+    </div>
+    <footer>🔮 Conjurer Lab · @ConjurerLab</footer>
+  </div>
+</body>
+</html>
