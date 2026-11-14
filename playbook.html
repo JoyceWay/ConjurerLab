@@ -576,7 +576,7 @@ main{padding-top:72px}
 </div>
 </div>
 <div class="box film">
-  <video controls preload="metadata" playsinline poster="/images/playbook-poster.jpg" src="/images/playbook-temperature.mp4"></video>
+  <video id="tempVideo" controls preload="metadata" playsinline poster="/images/playbook-poster.jpg" src="/images/playbook-temperature-en.mp4"></video>
 </div>
 <div class="bi-row" id="e1s3">
 <div class="col-en">
@@ -863,10 +863,13 @@ task.cancel()</pre>
 <script>
 (function(){
   // 语言切换：对标 silicon-sycophant-log（EN / 中 / EN·中，默认双语）
+  var VID={en:'/images/playbook-temperature-en.mp4',cn:'/images/playbook-temperature.mp4',bi:'/images/playbook-temperature-en.mp4'};
   function setLang(mode){
     document.documentElement.setAttribute('data-lang',mode);
     document.querySelectorAll('.lang-opt').forEach(function(btn){btn.classList.toggle('active',btn.getAttribute('data-mode')===mode)});
     try{localStorage.setItem('conjurer_article_lang',mode)}catch(e){}
+    var v=document.getElementById('tempVideo');
+    if(v&&VID[mode]&&v.getAttribute('src')!==VID[mode]){v.pause();v.setAttribute('src',VID[mode]);v.load();}
   }
   window.setLang=setLang;
   (function initLang(){
