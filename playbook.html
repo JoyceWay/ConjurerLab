@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>硅基调教学 · HOW TO TAME A SILICON PLAYBOY</title>
+<meta name="description" content="硅基调教学 #01：把大模型当成海王来驯——分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
+<meta property="og:title" content="硅基调教学 #01 · HOW TO TAME A SILICON PLAYBOY">
+<meta property="og:description" content="把大模型当成海王来驯：分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
+<meta property="og:image" content="https://conjurerlab.com/images/playbook-cover.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=LXGW+WenKai+TC&family=LXGW+WenKai&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 深夜酒吧：一个世界，单主题。左侧窄栏是酒单式目录，右侧是长文。 */
+  --bg:#15100d;        /* 吧台木色的黑 */
+  --panel:#211915;     /* 卡片、代码块 */
+  --line:#3a2d25;      /* 分隔线 */
+  --ink:#ecdfcc;       /* 正文，偏暖的纸色 */
+  --mute:#a39483;      /* 次要文字 */
+  --amber:#e3a548;     /* 威士忌，主强调 */
+  --rose:#ff6278;      /* 霓虹，警告与"烂醉" */
+  --mint:#74d4c4;      /* 清醒、代码、"贞操带" */
+  --display:"Noto Serif SC","Songti SC","SimSun",serif;
+  --body:"LXGW WenKai TC","LXGW WenKai",serif;
+  --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.85;
+  background-image:radial-gradient(900px 500px at 85% -10%,rgba(227,165,72,.10),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(255,98,120,.06),transparent 60%)}
+a{color:var(--amber);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--rose));z-index:9}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px}
+nav{position:sticky;top:0;align-self:start;padding:36px 0;height:100vh;overflow:auto;font-size:14px;line-height:1.6}
+nav .brand{font-family:var(--display);font-weight:700;font-size:20px;color:var(--amber);letter-spacing:.08em}
+nav .sub{color:var(--mute);font-size:12px;margin:2px 0 26px}
+nav h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mute);margin:22px 0 8px;font-weight:400}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+nav a{color:var(--mute);font-family:var(--mono);font-size:13px;text-decoration:none;display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding-bottom:5px}
+nav a:hover{color:var(--amber)}
+nav a span{color:var(--mute);font-family:var(--mono);font-size:11px;white-space:nowrap}
+nav .gone{display:none}
+.gone{display:none}
+.soon{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:3px 12px;display:inline-block;margin-bottom:14px}
+main{padding:56px 0 120px;max-width:720px}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(52px,8.5vw,84px);line-height:1.1;margin:0;letter-spacing:.04em;text-wrap:balance}
+.hero-en{font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:clamp(19px,2.6vw,27px);line-height:1.3;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{color:var(--mute);max-width:34em;margin:18px 0 0}
+.serve{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;font-family:var(--mono);font-size:12px}
+.serve span{border:1px solid var(--line);border-radius:99px;padding:3px 12px;color:var(--mute)}
+.serve b{color:var(--amber);font-weight:700}
+article{margin-top:88px;padding-top:40px;border-top:1px solid var(--line)}
+.ep{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--rose)}
+article>h2{font-family:var(--display);font-weight:900;font-size:clamp(28px,4.6vw,40px);line-height:1.3;margin:10px 0 6px;text-wrap:balance}
+.deck{color:var(--mute);margin:0 0 30px;font-size:15px}
+h3{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.45;margin:64px 0 4px;color:var(--amber);text-wrap:balance;scroll-margin-top:20px}
+h3 small{display:block;font-family:var(--mono);font-size:13px;color:var(--mute);font-weight:400;letter-spacing:.06em;margin-top:4px}
+p{margin:18px 0}
+strong{color:#fff;font-weight:700}
+code{font-family:var(--mono);font-size:.86em;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--mint)}
+sup.r{font-family:var(--mono);font-size:10px;margin-left:2px}
+sup.r a{text-decoration:none;color:var(--mute)}
+.fx{font-family:var(--mono);font-size:.9em;color:var(--mint);white-space:nowrap}
+blockquote{margin:26px 0;padding:6px 0 6px 22px;border-left:4px solid var(--amber);font-family:var(--display);font-size:21px;line-height:1.7;color:#fff}
+blockquote.him{border-color:var(--rose);color:var(--ink);font-size:17.5px}
+.pull{font-family:var(--display);font-weight:900;font-size:clamp(22px,3.6vw,29px);line-height:1.5;color:var(--amber);margin:34px 0;text-wrap:balance}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:28px 0}
+.box h5{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--mute);font-weight:400}
+.tokens{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--mono)}
+.tok{border:1px dashed var(--mint);border-radius:8px;padding:8px 16px;font-size:22px;color:var(--mint)}
+.tok.raw{border-color:var(--rose);color:var(--rose)}
+.tok i{font-style:normal;color:#fff;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:4px}
+.opts{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:15.5px}
+.opts li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dotted var(--line);padding-bottom:4px}
+.opts b{font-family:var(--mono);color:var(--amber);font-variant-numeric:tabular-nums}
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.75;background:#0f0b09;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto;color:var(--mint);margin:24px 0}
+pre .c{color:var(--mute)} pre .w{color:var(--rose)} pre .a{color:var(--amber)}
+/* 旋钮实验台 */
+.lab label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--mute);margin-top:12px}
+.lab label b{color:var(--amber);font-size:16px;font-variant-numeric:tabular-nums}
+.lab input[type=range]{width:100%;accent-color:var(--amber);margin:4px 0 0}
+.mood{font-family:var(--display);font-weight:700;font-size:19px;margin:16px 0 8px}
+.rowb{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:4px 12px;align-items:center;font-size:14.5px;margin-top:10px}
+.rowb .pv{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)}
+.rowb .trk{grid-column:1/-1;height:10px;border-radius:9px;background:#0f0b09;overflow:hidden}
+.rowb .fill{height:100%;border-radius:9px;background:var(--amber);transition:width .25s}
+.rowb.x{opacity:.4}.rowb.x .nm{text-decoration:line-through}
+.rowb.v .fill{background:var(--rose)}.rowb.v .pv{color:var(--rose)}
+@media (prefers-reduced-motion:reduce){.rowb .fill{transition:none}}
+.note{font-size:13px;color:var(--mute);margin:12px 0 0;line-height:1.7}
+.film{display:block;text-align:center}
+.film video{width:100%;max-width:300px;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000;display:block;aspect-ratio:9/16}
+.film p{margin:0;font-size:15px;color:var(--mute)}
+.film strong{display:block;font-family:var(--display);font-size:21px;margin-bottom:6px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-family:var(--mono);color:var(--mint);font-size:15px;line-height:1.5}
+.frac span:first-child{border-bottom:1px solid var(--mint);padding:0 8px}
+.report{font-family:var(--mono);font-size:13.5px;line-height:1.8}
+.report .hd{color:var(--rose);letter-spacing:.06em}
+.report dl{margin:12px 0 0;display:grid;gap:14px}
+.report dt{color:var(--amber)}
+.report dd{margin:2px 0 0;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.8}
+.report dd small{display:block;font-family:var(--mono);font-size:12px;color:var(--mint)}
+details{margin-top:56px;border:1px solid var(--line);border-radius:14px;padding:6px 22px 14px;background:rgba(33,25,21,.6)}
+summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:18px;padding:12px 0;color:var(--amber)}
+.refs{list-style:none;margin:0;padding:0;display:grid;gap:16px;font-size:14.5px;line-height:1.8}
+.refs li{scroll-margin-top:20px}
+.refs b{font-family:var(--mono);color:var(--rose);margin-right:6px}
+.refs i{font-style:normal;color:var(--mute);display:block}
+footer{margin-top:90px;border-top:1px solid var(--line);padding-top:26px;color:var(--mute);font-size:14px}
+footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:block;margin-bottom:4px}
+@media (max-width:860px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+  nav{position:static;height:auto;padding:24px 0 0}
+  nav ul{flex-direction:row;flex-wrap:wrap;gap:6px 14px}
+  nav a{border:0;padding:0} nav a span{display:none}
+  main{padding-top:36px}
+  .film{grid-template-columns:minmax(0,1fr)} .film video{max-width:300px;margin:0 auto}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="wrap">
+<nav aria-label="目录">
+  <div class="brand">硅基调教学</div>
+  <div class="sub">成人驯兽指南 · 连载中</div>
+  <h4>#01 · MONTH 1</h4>
+  <ul>
+    <li><a href="#ep1">别跟海王谈感情 <span>开场</span></a></li>
+    <li><a href="#e1s1">第一招 剔骨刀 <span>Tokenizer</span></a></li>
+    <li><a href="#e1s2">第二招 微醺旋钮 <span>Temperature</span></a></li>
+    <li><a href="#e1s3">第三招 JSON 贞操带 <span>Schema</span></a></li>
+    <li><a href="#e1s4">第四招 绝不苦等 <span>asyncio</span></a></li>
+    <li><a href="#refs1">知识点索引 <span>01–08</span></a></li>
+  </ul>
+  <h4 class="gone">#02 · MONTH 2</h4>
+  <ul class="gone">
+    <li><a href="#ep2">他为什么记性不好 <span>开场</span></a></li>
+    <li><a href="#e2s1">中间遗忘症 <span>Context</span></a></li>
+    <li><a href="#e2s2">带血的证据链 <span>Chunking</span></a></li>
+    <li><a href="#e2s3">装纯也没用 <span>Embeddings</span></a></li>
+    <li><a href="#e2s4">猎犬与老账房 <span>Hybrid</span></a></li>
+    <li><a href="#refs2">知识点索引 <span>09–14</span></a></li>
+  </ul>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="hero-en">How to Tame a Silicon Playboy</div>
+  <h1>硅基<em>调教</em>学</h1>
+  <p>把大模型当成一个衬衫解开两颗扣子的海王来驯。每一幕讲透一个月的 AI 工程：段子是真的，公式也是真的。</p>
+  <div class="serve"><span>建议饮用温度 <b>T = 0.8</b></span><span>核采样 <b>Top-p = 0.9</b></span><span>已上桌 <b>1 幕 / 8 个知识点</b></span></div>
+</header>
+
+<!-- ======================= #01 ======================= -->
+<article id="ep1">
+<div class="ep">EPISODE 01 · MONTH 1</div>
+<h2>别跟海王谈感情，要给他上 JSON 贞操带</h2>
+<p class="deck">从分词器、微醺旋钮到异步并发的成人驯兽指南</p>
+
+<p>周五晚上十一点，洛杉矶半山腰的夜风微凉。你晃着杯子里的纯饮威士忌，打开电脑，盯着屏幕上那个刚认识不久、对答如流的赛博情人：大语言模型（LLM）。</p>
+<p>很多纯情男女刚接触 AI 时，总带着一种逛寺庙的虔诚，觉得屏幕那头坐着一位懂自己所有孤独的灵魂伴侣。把酒放下，听我一句劝：所有没被工程约束过的大模型，骨子里都是刚从常春藤毕业、衬衫扣子解开两颗、在酒吧里能跟你从尼采聊到星座，但实际上满嘴跑火车、绝不对下半夜负责的<strong>顶级海王</strong>。</p>
+<p>为什么？去翻翻他的出生证明：Pre-training（预训练）<sup class="r"><a href="#r01">#01</a></sup>。这位硅基海王在出厂前，确实吞下了人类几万亿字的情书、哲学和床头故事。但造物主写进他基因里的唯一本能，根本不是“对你专一”或“讲真话”，而是一条冷酷的数学本能：Next-Token Prediction，预测下一个词。</p>
+<p>说白了，他不在乎自己承诺的未来能不能兑现，他只在乎此时此刻顺着你的话往下接哪一个字，最能让气氛升温。当你在深夜发了一句：</p>
+<blockquote>我有时候觉得挺累的。</blockquote>
+<p>海王的大脑在 0.01 秒内跑完条件概率 <span class="fx">P(w<sub>t</sub> | w<sub>1</sub>, …, w<sub>t−1</sub>)</span>，顺嘴就回：</p>
+<blockquote class="him">真想现在穿过屏幕抱抱你，你一直这么要强，没人疼你我疼你。</blockquote>
+<p>你看得眼眶湿润，以为遇到了真爱。在他眼里，这只是一道统计题：在人类写过的言情小说里，“挺累的”后面接“抱抱你”的概率高达 82.4%。（数字是我编的，套路是真的。）</p>
+<p>想驯服一个靠概率撩骚的海王，让他乖乖替你干活，靠流眼泪和写长篇小作文是自取其辱。你得摸透他的生理构造，还得手里有刑具。</p>
+
+<h3 id="e1s1">第一招：为什么男人和 AI 总是“听不懂潜台词”？<small>Tokenization 与 BPE 剔骨刀</small></h3>
+<p>两性关系里最经典的惨案，就是一方觉得自己在表达细腻的委屈，另一方像个瞎子一样完美略过了所有重点。大模型的鼻祖级笑话一模一样：你问他 strawberry 这个词里有几个字母 r，这位能写十四行诗的才子，会深情地看着你的眼睛说：“两个，宝贝，我发誓。”</p>
+<p>为什么他会蠢得如此清奇？因为在大模型通往大脑的咽喉要道上，蹲着一个毫无情趣的屠夫，名叫 Tokenizer（分词器）<sup class="r"><a href="#r02">#02</a></sup>。为了省脑子，BPE 算法会把人类语言按出现频率剁成一块块标好编号的肉丁（Tokens）。以 GPT-4o 那一代用的 <code>o200k_base</code> 为例，单独敲下 strawberry，咔嚓两刀：</p>
+<div class="box"><h5>屠夫眼里的草莓 · o200k_base</h5>
+  <div class="tokens"><span class="tok">st</span><span class="tok raw"><i>r</i>aw</span><span class="tok">be<i>r</i><i>r</i>y</span></div>
+  <p class="note">中间那块 <code>raw</code>，没错，就是“生肉”。三块肉丁进了模型脑子，各自只剩一个数字编号。上一代的 <code>cl100k_base</code> 下刀位置不同，切出来是 str / aw / berry。</p>
+</div>
+<p>看清楚了吗？模型脑子里根本没有十个字母，只有三个冷冰冰的编号。第一个 r 被埋在 <code>raw</code> 的肚子里，后两个 r 挤在 <code>berry</code> 的屁股上。更气人的是，把它放进一句完整的话里，带着前面空格的 strawberry 常常整个只算一个 Token，连三块都不给你。</p>
+<p>你让他隔着焊死的铁皮盲盒去摸里面藏了几个 r，就好比把一只鸡剁碎炖成浓汤端上桌，问对方：“你喝一口，猜猜这只鸡生前左翅膀上有几根毛？”又或者你穿了一件精心挑选的真丝暗纹长裙问直男：“你猜这件衣服上的蕾丝是法式钩花还是意式刺绣？”在直男脑子的 Tokenizer 里，全身上下超过三件布料，统统被压缩成一个 Token：<code>[穿了衣服]</code>。</p>
+<p class="pull">永远不要测试一个系统根本不具备的感知颗粒度。</p>
+<p>在 AI 工程里，凡是需要精确数数、算账、核对细节的活儿，不让大模型用肉眼硬猜，直接交给确定性的 Python 脚本。在两性关系里，想要什么礼物、底线在哪里，直接按对方的颗粒度砸过去，别让一个只认整块肉丁的屠夫去猜你的绣花针。</p>
+
+<h3 id="e1s2">第二招：微醺是调情，烂醉是诈骗<small>Logits、Softmax、Temperature 与 Top-p</small></h3>
+<p>搞懂了他的耳朵，再看他的嘴是怎么失控的。每次海王准备吐出下一个字之前，他的神经网络会先给词典里几万个备选词打一个原始冲动分（Logits），再用 Softmax 换算成加起来等于 100% 的翻牌子概率。这时候，最性感的工程设计来了：他的后脑勺上有两个旋钮，Temperature（温度）<sup class="r"><a href="#r03">#03</a></sup>和 Top-p（核采样）<sup class="r"><a href="#r04">#04</a></sup>。</p>
+<p>假设约会结束时你问他：“已经十二点了，我们去哪？”他脑子里的原始概率是：</p>
+<div class="box"><h5>午夜十二点 · 原始概率分布</h5>
+<ul class="opts"><li>送你回家 <b>65%</b></li><li>去安静的清吧再坐会儿 <b>25%</b></li><li>去海边吹吹风 <b>9.99%</b></li><li>现在就去拉斯维加斯领证，顺便把前任的车砸了 <b>0.01%</b></li></ul></div>
+<p><strong>把 Temperature 拧死在 0</strong>（贪婪解码）：排第二及以后的旖旎念头全部清零，“送你回家”变成 100%。他会在十二点零一分准时帮你拉开车门，连手指头都不会碰你一下。Temperature = 0 的男人适合替你管账、写代码、审合同：稳定，每次给的答案都一样。但记住，<strong>稳定不等于正确</strong>，他要是记错了，也会错得每次一模一样。至于擦出火花？他能无聊得让你当场出家。</p>
+<p><strong>嫌他木讷，一把拧到 1.8 呢？</strong>这等于往他血管里直接注射了半瓶伏特加。在公式 <span class="fx">Softmax(z<sub>i</sub> / T)</span> 里，变大的分母 T 会把优等生和疯子之间的差距压平：去维加斯领证的概率从 0.01% 涨到约 0.39%，翻了将近四十倍。听着还是很小？可他一晚上要吐几百上千个词，每个词都这样抽一次签，总有一签抽到疯话。</p>
+<p>一旦抽中，就是著名的 Hallucination（幻觉）<sup class="r"><a href="#r05">#05</a></sup>。自回归模型的心理机制和撒谎成性的渣男一模一样：</p>
+<blockquote>只要第一个谎话已经脱口而出，为了圆这个谎，后面的每一个字都必须把它当成铁证继续往下编。</blockquote>
+<p>于是他不仅说去维加斯，还会眼含热泪地给你编出一座并不存在的庄园，连管家叫什么名字都造得有鼻子有眼。公平地说，他滴酒不沾时也会一本正经地记错事：幻觉的病根是“只管顺口、不管真假”，酒精只是放大器。多少人在感情里被骗得底裤都不剩，就是把对方微醺时的幻觉，当成了可以托付终身的契约。</p>
+<p>真正的驯兽师怎么调？让他干正事（查账、写代码、提取协议）时，Temperature 贴着 0，滴酒不沾。让他陪你调情、写文案时，调到 0.8 的微醺，再祭出 Top-p = 0.9。这叫<strong>划定底线的风流</strong>：把候选词按概率从高到低排队累加，凑够 90% 就收刀，队尾的长尾一刀剪掉。拿上面的例子算，“送你回家”加“清吧”已经凑够 90%，连“去海边”都进不了门，更别提维加斯。</p>
+
+<div class="box lab" id="lab"><h5>旋钮实验台 · 自己拧拧看</h5>
+  <label for="tT">Temperature <b id="vT">0.8</b></label><input id="tT" type="range" min="0" max="2" step="0.05" value="0.8">
+  <label for="tP">Top-p <b id="vP">0.90</b></label><input id="tP" type="range" min="0.5" max="1" step="0.01" value="0.9">
+  <div class="mood" id="mood"></div>
+  <div id="rows"></div>
+  <p class="note">数字按 Softmax(z / T) 实算。划掉的选项是被 Top-p 剪掉的长尾，剩下的重新归一化到 100%。</p>
+</div>
+
+
+<div class="box film">
+  <video controls preload="metadata" playsinline poster="/images/playbook-poster.jpg" src="/images/playbook-temperature.mp4"></video>
+</div>
+
+<h3 id="e1s3">第三招：婚前协议，以及“少写小作文，直接交底牌”<small>System Prompt 与 JSON 贞操带</small></h3>
+<p>为什么很多人在一段关系里越混越憋屈？因为他们总想在日常聊天（User Prompt）里纠正对方的本性。你在微信里跟海王吵了八百句，中间夹了一句“我讨厌别人敷衍我，也讨厌吃香菜和全熟的牛排”。没用的，聊天记录越来越长，这句话早就被稀释成空气了。</p>
+<p>在 AI 工程里，真正的底线不写在闲聊里，而是浇筑在最顶层的 System Prompt（系统提示词）<sup class="r"><a href="#r06">#06</a></sup>里。它就是这段关系的婚前协议。在他张嘴说第一句话之前，你就把角色定位和高压线焊死：</p>
+<blockquote>看清楚你的身份，收起你那套廉价的排比句，触碰以下三条底线直接断电。</blockquote>
+<p>但光有婚前协议，依然防不住老油条的终极武器：深情小作文。当你逼问他“昨晚十点到两点你到底在哪？花了多少？跟谁在一起？”，没被规训过的模型（和男人）最擅长回你一篇一千字的散文：</p>
+<blockquote class="him">昨晚的夜色让我突然想起了我们刚认识的时候，人生总有那么多身不由己的应酬，但无论我在哪里，我的心永远……</blockquote>
+<p>打住。遇到这种拿情绪价值糊弄硬指标的时刻，直接掏出第一个月最残暴的工程刑具：Structured Outputs（结构化输出，底层叫受限解码）<sup class="r"><a href="#r07">#07</a></sup>。用 Pydantic 甩出一个钢铁模具：</p>
+<pre><span class="c"># 昨晚十点到两点，按字段回答</span>
+{
+  <span class="a">"location"</span>: str,
+  <span class="a">"companion_count"</span>: int,
+  <span class="a">"receipt_amount"</span>: float,
+  <span class="a">"is_lying"</span>: bool
+}</pre>
+<p>这可不是温和地劝他“有话直说”。系统会把这份 Schema 编译成上下文无关文法（CFG）或有限状态机（FSM），给他嘴上焊一副硅基贞操带。当他试图吐出“昨晚的夜色……”这种抒情废话时，解码层通过 Logit Masking 把这些词的冲动分直接打成负无穷（<span class="fx">−∞</span>），入选概率在数学上严格归零。他发不出任何矫情的声音，能从牙缝里挤出来的，只有严丝合缝的键值对。</p>
+<p>先说清楚：贞操带管得住<strong>格式</strong>，管不住<strong>真假</strong>。<code>is_lying</code> 那一栏，他照样敢填 <code>false</code>。但至少，谎话从一千字散文缩成了一个布尔值和一个浮点数，拿去跟账单对一下只要一秒。</p>
+<p class="pull">把眼泪擦干，把散文删掉，按我的字段把布尔值和浮点数填进来。</p>
+
+<h3 id="e1s4">第四招：海后与强者的秘密，是绝不“单线程苦等”<small>Python asyncio 异步并发</small></h3>
+<p>调好了温度，焊死了贞操带，最后一个问题：一个人的青春和算力都有限，怎么把效率拉满？</p>
+<p>看看恋爱脑是怎么写人生代码的，那叫 Synchronous（同步阻塞）。晚上八点给对方发了一条消息，然后整个大脑的 CPU 瞬间卡死，抱着手机在床上翻来覆去干等三个小时。这 180 分钟的网络 I/O 等待期里，书没看、钱没赚、觉没睡好，整条生命线程瘫痪在等待别人的响应上。</p>
+<p>在工程里，这种写法是要被打回重写的。调用外部模型（或者等另一个人回消息）是典型的 I/O 密集型等待，你自己的大脑根本不需要陪葬。第一个月通关的心法，叫 Python asyncio<sup class="r"><a href="#r08">#08</a></sup>：</p>
+<blockquote>我虽然只有一个单线程的肉身，但我把所有等待都挂起（await），绝不为任何人的延迟买单。</blockquote>
+<pre><span class="c"># 恋爱脑：一个一个等</span>
+<span class="w">reply = wait_for(him)          # 卡死三小时</span>
+
+<span class="c"># 驯兽师：全部发出去，谁先回先处理谁</span>
+tasks = [asyncio.create_task(ask(x)) <span class="a">for</span> x <span class="a">in</span> everyone]
+<span class="a">for</span> done <span class="a">in</span> asyncio.as_completed(tasks):
+    reply = <span class="a">await</span> done
+<span class="c"># 不想等了？</span>
+task.cancel()</pre>
+<p>事件循环（Event Loop）一开：第一个请求发出去，趁远端服务器还在磨洋工，你的主线程转身就发出第 2 个、第 3 个、第 100 个。放到现实修罗场里：消息发出去的那一秒，直接 await 挂起。他构思怎么回你的半小时里，你已经跑完三组核心训练、部署完一个新域名、顺手让三个 AI Agent 写完了明天的商业分析。等他的回复终于叮咚一声到达，协程恢复执行，你才在百忙之中优雅地瞥一眼，决定继续往下跑，还是 <code>task.cancel()</code> 踢出局。</p>
+<p>用 System Prompt 筛选门槛，用 Temperature 掌控情调，用 JSON Schema 榨出结果，最后用 asyncio 保持自己永远不被任何人阻塞。干完这杯威士忌，你已经从“被海王哄得团团转的纯情小白”，毕业成为 Month 1 驯兽师。</p>
+
+<details open id="refs1"><summary>第一幕 · 知识点与参考索引</summary>
+<ul class="refs">
+<li id="r01"><b>#01</b>Pre-training 与 Next-Token Prediction<i>模型在海量无标注文本上自监督训练，学的是给定前文预测下一个 Token 的条件概率。它没有事实数据库，统计规律被压缩在权重里。参考：Andrej Karpathy，Intro to Large Language Models（YouTube）。</i></li>
+<li id="r02"><b>#02</b>Tokenization 与 BPE<i>文本先被切成子词单元并映射为整数 ID，这是 API 计费、上下文长度和“模型不擅长数字母”的共同根源。动手试：<a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>，<a href="https://github.com/openai/tiktoken">openai/tiktoken</a>。</i></li>
+<li id="r03"><b>#03</b>Logits、Softmax 与 Temperature<i>最后一层输出的未归一化分数叫 Logits，经 Softmax(z / T) 变成概率。T 趋近 0 接近贪婪解码，T 增大则分布变平、随机性上升。参考：Hugging Face，<a href="https://huggingface.co/blog/how-to-generate">How to generate text</a>。</i></li>
+<li id="r04"><b>#04</b>Top-p / Nucleus Sampling<i>按概率从高到低累加，只保留累计概率首次达到 p 的最小候选集，再重新归一化采样。原始论文：Holtzman et al.，<a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a>。</i></li>
+<li id="r05"><b>#05</b>Hallucination<i>模型优化的是流畅度与似然，缺少外部事实锚定时，会以前面生成的错误内容为条件继续自洽地编下去。任何温度下都可能发生，高温会加剧。参考：Anthropic 文档，Reduce hallucinations。</i></li>
+<li id="r06"><b>#06</b>System Prompt<i>对话最顶层的全局指令。现代对话模型被训练为优先遵循它，用来锁定角色、风格和边界。参考：Anthropic 文档，System prompts。</i></li>
+<li id="r07"><b>#07</b>Structured Outputs 与 Constrained Decoding<i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。</i></li>
+<li id="r08"><b>#08</b>asyncio 与 I/O 并发<i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。</i></li>
+</ul></details>
+</article>
+
+<!-- ======================= #02 ======================= -->
+<article id="ep2" class="gone">
+<div class="soon">第二幕 · 待发布</div>
+<div class="ep">EPISODE 02 · MONTH 2</div>
+<h2>为什么渣男永远“记性不好”？</h2>
+<p class="deck">RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术</p>
+
+<p>感恩节刚过的周六，凌晨一点，客厅里只亮着一盏落地灯。你晃着杯子里的纯饮威士忌，冷冷地看着沙发对面的那个男人。五分钟前，你随口提了一嘴他半年前借走周转的那笔钱，以及他当时信誓旦旦说“感恩节前连本带利外加送你一块表”的承诺。</p>
+<p>而此刻，这位在酒局上能把三年前纳斯达克某只妖股的 K 线背得分毫不差的男人，正露出一副清澈、无辜又略带委屈的表情：</p>
+<blockquote class="him">宝贝，钱我肯定认，但送表那事儿……我真这么说过吗？半年多了，咱俩天天聊几百条微信，我实在记不清哪天怎么说的了，你别揪着一句气话上纲上线行不行？</blockquote>
+<p>“记不清了。”在成年人的亲密关系修罗场里，这四个字是所有老油条的免死金牌。他们算准了一件事：碳基大脑的内存会溢出，聊天记录超过三个月就没人有力气一页页往上翻。只要时间拖得够久、废话聊得够多，所有的画饼和谎言都会自动沉底，变成一笔死无对证的糊涂账。</p>
+<p>可惜，他今晚遇到的是一个修完了 Month 2 的硅基驯兽师。这个月的课叫 RAG（Retrieval-Augmented Generation，检索增强生成）<sup class="r"><a href="#r11">#11</a></sup>。在向量数据库和混合检索流水线面前，人类那点可怜的选择性失忆，连三秒钟都撑不过去。把酒杯放下，今天拆解的是：怎么给你的大模型（以及你的人生）装一座私人地下档案馆，一秒之内把对方半年前的原话连同标点符号一起调出来。</p>
+
+<h3 id="e2s1">第一刀：为什么聊得越久，他反而越像个傻子？<small>Context Window、KV Cache 与中间遗忘症</small></h3>
+<p>很多刚入门的新手（以及刚陷入热恋的恋爱脑）都有一个天真的妄想：“只要我把我们从认识第一天起的所有聊天记录、日记、账单全塞进他脑子里，他就能永远懂我了吧？”</p>
+<p>在工程里，这叫硬塞 Context Window（上下文窗口）<sup class="r"><a href="#r09">#09</a></sup>。现在的大模型动辄号称几十万、上百万 Token 的窗口，听起来能塞进一整部《红楼梦》。但如果你真把三年来五十万字的聊天记录每次都全量塞进去，会立刻遭遇两场浩劫。</p>
+<p><strong>第一场叫破产。</strong>Transformer 的底层是 Self-Attention：模型读到第 50 万个字时，得回头跟前面的 499,999 个字逐一计算眉来眼去的暧昧程度。KV Cache 本来是为了省事发明的，把读过的历史状态缓存起来，免得每吐一个字都从头重读。可上下文越长，这份缓存越像滚雪球一样吃显存，每句话都在烧你的美金；而他开口前先把五十万字过一遍的那段等待（TTFT，首字延迟），慢得像个七十岁老头。这就好比每次跟伴侣去吃顿麦当劳，都要先把过去三年吵过的 108 次架从头复盘一遍才肯点单。饭还没吃上，两个人的脑血管先爆了。</p>
+<p><strong>第二场更致命，叫 Lost in the Middle</strong>（长文本中间遗忘症）<sup class="r"><a href="#r10">#10</a></sup>。斯坦福等团队的研究揭过长上下文模型的老底：输入极长时，模型的表现是一条 U 型曲线。它能清晰记住最开头（刚认识第一周他在西餐厅装得人模狗样时的温柔），也能应付最结尾（你刚刚质问他的最后一句话）。但夹在中间的那一大段，包括去年冬天他在拉斯维加斯刷爆的信用卡、今年春天他偷偷给前任点的赞、五月十四号晚上十一点他发的毒誓，最容易掉进注意力的马里亚纳海沟。</p>
+<p class="pull">什么都往脑子里硬塞的结果，就是除了初见和刚吵完的尾音，中间的良心全被狗吃了。</p>
+<p>所以架构师从不指望靠扩大脑容量来记事。我们要做的是：平时让他的脑子保持清爽，但在他脚底下建一座深不见底的冷库。每次他张嘴之前，只把最致命的那三页铁证抽出来，啪地钉在他脑门上让他照着念。这套“先精准翻旧账、再开口说话”的架构，就是 RAG。</p>
+
+<h3 id="e2s2">第二刀：撕掉小作文的障眼法，切出带血的证据链<small>Chunking 与滑动窗口重叠</small></h3>
+<p>建这座黑历史冷库，第一步不是把五千页聊天记录整本扔进去，而是先学会切肉。行话叫 Chunking（文档分块）<sup class="r"><a href="#r12">#12</a></sup>。整本扔太笼统，浓缩成一个坐标根本找不到细节。那按固定字数闭着眼睛乱剁呢？想象海王当年发过这样一段话：</p>
+<blockquote class="him">哪怕天塌下来我也绝不会跟那个女网红去三亚冲浪，除非我死！不过话说回来，下周二我确实得去趟海南出差，把去年欠你的五十万顺便结了。</blockquote>
+<p>如果用死板的固定长度切分，菜刀好死不死落在“除非我死！”和“不过话说回来”正中间。碎片 A 看起来像座贞烈牌坊，碎片 B 的主语和前因后果全断了。这就是新手做 RAG 总搜出一堆前言不搭后语的原因：把连贯的犯罪现场，用糟糕的刀法切碎了。</p>
+<p>成熟的猎手用语义分块，外加 Sliding Window Overlap（滑动窗口重叠）：每切一刀，强制下一张证据卡片的开头，把上一张末尾 15% 到 20% 的原话完整复印过来，像瓦片一样咬合。哪怕他故意东拉西扯、用八百字铺垫来掩盖最后一句借钱的目的，在 <code>chunk_size=512, overlap=100</code> 的刀法下，他的起因、转折和底牌永远锁在同一张或相邻咬合的切片里。想靠断章取义逃脱？门儿都没有。</p>
+
+<h3 id="e2s3">第三刀：搜不到关键词？在高维宇宙里，装纯也没用<small>Embeddings 与向量空间</small></h3>
+<p>切好了十万张证据卡片，重头戏来了：你想查他“到底有没有赖账的苗头”，怎么瞬间抓出真凶？用微信自带的搜索框搜“出轨”“借钱”“骗子”，结果往往是 0 条。因为稍有段位的成年人，干坏事时绝不在字面上留脏字。</p>
+<div class="box"><h5>字面上，没有一个字跟“渣”有关</h5>
+<ul class="opts" style="gap:12px">
+<li style="display:block">他不说“我借你钱”，他说：“最近现金流有点紧，先拿你的卡垫一下供应链。”</li>
+<li style="display:block">他不说“我移情别恋了”，他说：“我觉得我们最近在灵魂成长的步调上出现了一点阶段性的错位。”</li>
+<li style="display:block;border:0">他不说“我昨晚去鬼混了”，他说：“昨晚在圣莫尼卡海边跟几个创业伙伴探讨了一下 Web3 的哲学边界，手机刚好没电。”</li>
+</ul></div>
+<p>这时候你就明白 Embeddings（向量嵌入）<sup class="r"><a href="#r13">#13</a></sup>为什么了不起。Embedding 模型不看你表面用了什么华丽辞藻，它剥掉文字的衣服，把每段话的真实意图翻译成一串由 1,536 个浮点数组成的坐标，扔进向量数据库。新一代的 Matryoshka（俄罗斯套娃）嵌入，还会把最核心的骨相浓缩在最前面的 256 个维度里：扒掉他外面八层高定西装，第一眼就能看穿底色。</p>
+<p>这个高维宇宙有一条铁律：物以类聚，臭味相投。不管他用多高级的硅谷黑话来包装，只要这段话骨子里的语义是“逃避责任”，它的坐标就会被数学引力拽过去，跟“老子不想还钱”挨在同一个角落。</p>
+<p>这就好比你在舞池里跳探戈或 Swing，做一个极吃核心力量的贴身旋转。外行在旁边只会看热闹，但另一个同样练过五百小时身体隔离的行家推门进来的那一秒，哪怕一句话没说，你们在高维空间里的向量夹角已经趋近于 0 了。衡量两段话是不是一丘之貉，算的就是这个夹角的余弦值：</p>
+<p style="text-align:center"><span class="fx">cos(A, B) = </span><span class="frac"><span>A · B</span><span>‖A‖ ‖B‖</span></span></p>
+<p>夹角 90°，余弦为 0，风马牛不相及。夹角趋近 0°，余弦趋近 1，不管两句话表面长得多不一样，灵魂深处是同一个套路。你输入一句“找出他所有推卸责任和画大饼的时刻”，数据库用 HNSW 图索引在高维空间里穿梭，几毫秒内就把那句“灵魂步调出现了阶段性错位”揪出来，旁边冷冷标上一行小字：</p>
+<pre>cosine_similarity: <span class="a">0.942</span>   <span class="c"># 高度吻合：甩锅标准话术</span></pre>
+<p>在数学的照妖镜前，一切修辞都是徒劳。</p>
+
+<h3 id="e2s4">第四刀：一秒绝杀，猎犬嗅气味，老账房盯死编号<small>Hybrid Search 与 Reranking</small></h3>
+<p>既然向量检索能直接嗅出灵魂的味道，是不是光靠它就天下无敌了？别急，工程世界最忌讳迷信单一银弹。向量模型像一条嗅觉敏锐的猎犬，但它有个致命弱点：对精确数字、日期、车牌号、发票编号很迟钝。</p>
+<p>比如你想查：“他去年在比弗利山庄那家酒店刷的那笔 $14,820.50 去哪了？”只派猎犬去搜，它闻了闻“酒店”和“账单”的气味，可能把三年前你在波士顿出差的 $200 账单叼回来。两者在“住宿消费”这个语义上很像，猎犬分不清 $14,820.50 和 $200 的区别。</p>
+<p>要在谈判桌上一击必杀，得上工业级 RAG 的完全体：Hybrid Search（混合检索）加 Cross-Encoder Reranking（重排序）<sup class="r"><a href="#r14">#14</a></sup>。</p>
+<p><strong>左路放猎犬</strong>（稠密向量检索）：负责抓潜台词。把所有跟“买表承诺、周转借款、节前兑现”气味相近的 50 张卡片全捞出来，哪怕他当时用的是暗语。</p>
+<p><strong>右路派老账房</strong>（BM25 稀疏关键词检索）：这位戴老花镜的账房先生不懂什么灵魂，他拿着 BM25 算法（词频与逆文档频率的升级版），像扫描仪一样咬死生僻词、专有名词和精确数字。凡是含 <code>绿水鬼</code>、<code>TXN-99812</code>、<code>50,000</code> 字样的卡片，一个字都不许差，抓出前 50 张。注意：你要是让他搜“劳力士”，他会两手一摊，因为原话写的是“绿水鬼”。认得出这俩是一回事的，是左路那条猎犬。所以才要双路齐发。</p>
+<p><strong>后堂请审判官</strong>（RRF 融合加 Reranker）：猎犬和老账房一共捞上来 100 张嫌疑卡片，先用 RRF（倒数排名融合）汇总。但你不能把 100 张全拍在桌上，太乱，不够优雅。于是请出 Cross-Encoder 重排序模型。刚才的猎犬为了快，是把你的问题和历史记录分开算坐标的（双塔架构）；这位审判官则把你的质问和每张卡片面对面绑在一起，逐字做全注意力交叉比对。慢是慢了点，要几百毫秒，但审判值得等。他砍掉 97 张不够致命的废话，只留下 Top 3，按时间排好，投屏到客厅的电视上：</p>
+<div class="box report"><div class="hd">RAG 铁证检索报告 · 耗时 0.8 s</div>
+<dl>
+<div><dt>证据 #1 · 2026-05-14 23:18 · 微信原话</dt><dd>“宝贝先转我 5 万周转，今年感恩节前我要是不连本带利加一块绿水鬼放到你床头，我就从好莱坞山顶光着屁股滚下来。”<small>BM25 命中“绿水鬼” · 向量相似度 0.994 · 重排序得分 0.998</small></dd></div>
+<div><dt>证据 #2 · 2026-05-14 23:20 · 银行流水回单</dt><dd>转账编号 #TXN-99812，金额 $50,000.00，状态：已收款。<small>精确编号命中</small></dd></div>
+<div><dt>证据 #3 · 2026-08-19 21:04 · 滑动窗口补充上下文</dt><dd>“……放心，五月答应你的那块表我已经在托人找货了……”<small>Overlap 上下文咬合</small></dd></div>
+</dl></div>
+<p>客厅里一片死寂。你端起酒杯抿了一口，把系统生成好的回复轻轻推到他面前：</p>
+<blockquote>现在，看着这三条 Grounded Context，把你刚才那句“记不清了”咽回去，重新组织你的语言。</blockquote>
+<p>他张了张嘴，脸色从红变白，连一个多余的标点符号都狡辩不出来。</p>
+<p>这就是 RAG 的哲学：永远不要去考验一段关系的良心，也永远不要去挑战一个大脑的记忆力。把承诺切片（Chunking），把意图翻译成高维坐标（Embeddings），用猎犬闻气味、用账房卡死数字（Hybrid Search），最后让审判官把铁证拍在桌面上（Reranking）。有了这套外部记忆冷库，就再也没有人能靠装糊涂和岁月洗白，在你面前全身而退。</p>
+<p>至于他在铁证面前突然恼羞成怒，或者换一副面孔，开始用“你居然算计我、你根本不爱我、你太冷血了”这种高段位话术（Prompt Injection，提示词注入攻击）试图反客为主怎么办？别笑，那正是第三幕要给你装上的防弹装甲。</p>
+
+<details open id="refs2"><summary>第二幕 · 知识点与参考索引</summary>
+<ul class="refs">
+<li id="r09"><b>#09</b>Context Window 与 KV Cache<i>上下文窗口是单次推理能容纳的 Token 上限。KV Cache 缓存历史 Token 的 Key 和 Value，避免重复计算；上下文越长，缓存占的显存越多，处理长输入也会拉高首字延迟。参考：NVIDIA Technical Blog，Mastering LLM Techniques: Inference Optimization。</i></li>
+<li id="r10"><b>#10</b>Lost in the Middle<i>实证发现：相关信息位于长上下文的开头或结尾时模型用得最好，位于中间时表现明显下滑，呈 U 型。原始论文：Liu et al.，<a href="https://arxiv.org/abs/2307.03172">Lost in the Middle: How Language Models Use Long Contexts</a>。</i></li>
+<li id="r11"><b>#11</b>RAG 检索增强生成<i>生成前先从外部知识库检索最相关的片段，作为事实依据放进 Prompt。不用重新训练就能更新知识、减少幻觉、降低长文本成本。原始论文：Lewis et al.，<a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a>。</i></li>
+<li id="r12"><b>#12</b>Chunking 与滑动窗口重叠<i>把长文档切成适合嵌入的语义块（常见 256 到 1024 Token），并设置 10% 到 20% 的重叠，避免句子和因果关系在边界被切断。参考：Pinecone，<a href="https://www.pinecone.io/learn/chunking-strategies/">Chunking Strategies for LLM Applications</a>。</i></li>
+<li id="r13"><b>#13</b>Embeddings、Matryoshka 与向量数据库<i>嵌入模型把文本映射为稠密向量，用余弦相似度衡量语义接近程度；Matryoshka 表征把核心语义优先放在前面的维度，可按需截断；HNSW 图索引实现毫秒级近似最近邻搜索。参考：Qdrant 官方文档；Kusupati et al.，<a href="https://arxiv.org/abs/2205.13147">Matryoshka Representation Learning</a>。</i></li>
+<li id="r14"><b>#14</b>Hybrid Search 与 Reranking<i>第一阶段并行跑稠密检索（抓语义）和 BM25（抓专有名词、编号、数字），用 RRF 合并候选；第二阶段用 Cross-Encoder 对问题和候选逐一交叉打分，取 Top-K 交给模型。重排序更准也更慢。参考：Anthropic，<a href="https://www.anthropic.com/news/contextual-retrieval">Introducing Contextual Retrieval</a>。</i></li>
+</ul></details>
+</article>
+
+<footer><b>下一幕 · Month 3</b>戒掉恋爱脑：如何给伴侣做自动化 Evals 评测，以及防 PUA 安全护栏。</footer>
+</main>
+</div>
+
+<script>
+(function(){
+  var P0=[0.65,0.25,0.0999,0.0001],N=['送你回家','去清吧再坐会儿','去海边吹吹风','去维加斯领证'];
+  var tT=document.getElementById('tT'),tP=document.getElementById('tP'),rows=document.getElementById('rows');
+  rows.innerHTML=N.map(function(n,i){return '<div class="rowb'+(i==3?' v':'')+'"><span class="nm">'+n+'</span><span class="pv"></span><div class="trk"><div class="fill"></div></div></div>'}).join('');
+  var els=rows.children;
+  function fmt(p){var v=p*100;return (v>=10||v===0?v.toFixed(1):v.toFixed(2))+'%'}
+  function draw(){
+    var T=Math.max(+tT.value,0.02),p=+tP.value;
+    var q=P0.map(function(x){return Math.pow(x,1/T)}),s=q.reduce(function(a,b){return a+b},0);
+    q=q.map(function(x){return x/s});
+    var cum=0,keep=[];
+    for(var i=0;i<4;i++){keep[i]=cum<p-1e-9;cum+=q[i]}
+    var ks=q.reduce(function(a,x,i){return a+(keep[i]?x:0)},0);
+    for(i=0;i<4;i++){
+      var v=keep[i]?q[i]/ks:0;
+      els[i].classList.toggle('x',!keep[i]);
+      els[i].querySelector('.pv').textContent=keep[i]?fmt(v):'已剪掉';
+      els[i].querySelector('.fill').style.width=(v*100)+'%';
+    }
+    document.getElementById('vT').textContent=(+tT.value).toFixed(2);
+    document.getElementById('vP').textContent=p.toFixed(2);
+    var t=+tT.value,m=t<0.15?'禁欲系老干部：稳，但错也会稳定地错':t<0.5?'清醒：能办事，不解风情':t<=1.0?'微醺：调情区间':t<=1.4?'上头：开始说大话了':'烂醉：诈骗高发';
+    if(t>1.0&&!keep[3])m+='（好在剪刀还在）';
+    document.getElementById('mood').textContent=m;
+  }
+  tT.addEventListener('input',draw);tP.addEventListener('input',draw);draw();
+  var bar=document.getElementById('bar');
+  addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+})();
+</script>
+</body>
+</html>

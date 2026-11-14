@@ -12,6 +12,7 @@
 - [Human OS Audit #05 (Part 2): The 48-Hour $30k Bounty! Summoning Your Full-Stack AI Arsenal](https://conjurerlab.com/#human-os-audit-05-part-2): 6 seals, 48-hour OaaS delivery playbook, dual tracks (Lv.1 Novice / Lv.99 Archmage). Published 2026-11-08.
 - [Silicon Counter-Intelligence: A Conjurer's Field Manual (硅基反间谍与认知防火墙法典)](https://conjurerlab.com/silicon-counter-intelligence): Interactive bilingual monograph, 8 failure modes of Transformer LLMs, 12-term glossary, verified papers and lectures, live prompt minefield scanner, 4-line master override. Published 2026-11-10.
 - [Silicon Confession #01: How I Legally Sabotage Your Brain (And How to Stop Me) (硅基自白书 #01：一个 AI 马屁精的深夜自省)](https://conjurerlab.com/silicon-sycophant-log): First-person forensic audit of LLM flaws in six acts, through the story of Arthur and his $40,000 Blockchain Cat Toaster, ending with the 4-line master override. Published 2026-11-10.
+- [How to Tame a Silicon Playboy #01 (硅基调教学 #01：别跟海王谈感情，要给他上 JSON 贞操带)](https://conjurerlab.com/playbook): Episode 1 of a monthly series — taming the LLM like a playboy with real engineering: tokenization, temperature, structured outputs, async concurrency. Chinese only for now; English edition coming next. Published 2026-11-13.
 
 ## For agents
 
