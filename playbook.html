@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="bi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>硅基调教学</title>
+<title>How to Tame a Silicon Playboy: Act 01 · 硅基调教学</title>
 <link id="faviconLink" rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='orb' cx='38%25' cy='32%25' r='65%25'%3E%3Cstop offset='0%25' stop-color='%23E0F2FE'/%3E%3Cstop offset='30%25' stop-color='%2338BDF8'/%3E%3Cstop offset='70%25' stop-color='%230284C7'/%3E%3Cstop offset='100%25' stop-color='%230F172A'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%2314161A'/%3E%3Ccircle cx='32' cy='28' r='19' fill='url(%23orb)' stroke='%2338BDF8' stroke-width='1.5'/%3E%3Cpath d='M21 18 A14 14 0 0 1 38 15' stroke='%23FFFFFF' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='0.88'/%3E%3Cpath d='M32 19L33.8 25.2L40 27L33.8 28.8L32 35L30.2 28.8L24 27L30.2 25.2Z' fill='%23E0F2FE' opacity='0.92'/%3E%3Cpath d='M20 48H44L48 54H16L20 48Z' fill='%23F0A832'/%3E%3Cpath d='M23 45H41' stroke='%23F0A832' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E" />
 <meta name="description" content="硅基调教学 #01：把大模型当海王来驯——分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
 <meta property="og:title" content="硅基调教学 #01 · HOW TO TAME A SILICON PLAYBOY">
@@ -48,7 +48,7 @@ nav h4{font-family:var(--display);font-size:15px;letter-spacing:.3em;color:var(-
 nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 nav a{color:var(--mute);font-size:13.5px;text-decoration:none;display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding-bottom:5px}
 nav a:hover{color:var(--amber)}
-nav a span{color:var(--mute);font-family:var(--mono);font-size:11px;white-space:nowrap}
+nav a span.tag{color:var(--mute);font-family:var(--mono);font-size:11px;white-space:nowrap}
 nav .gone{display:none}
 .gone{display:none}
 .soon{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:3px 12px;display:inline-block;margin-bottom:14px}
@@ -64,7 +64,7 @@ main{padding:64px 0 120px;max-width:700px}
 .serve b{color:var(--amber);font-weight:400}
 article{margin-top:88px;padding-top:40px;border-top:1px solid var(--line)}
 .ep{display:inline-block;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.3em;color:var(--amber);background:rgba(217,165,80,.13);border:1px solid rgba(217,165,80,.45);border-radius:99px;padding:5px 14px 5px 18px}
-article>h2{font-family:var(--display);font-weight:700;font-size:clamp(27px,4.2vw,36px);line-height:1.4;letter-spacing:.03em;color:var(--hi);margin:14px 0 10px;text-wrap:balance}
+article h2{font-family:var(--display);font-weight:700;font-size:clamp(27px,4.2vw,36px);line-height:1.4;letter-spacing:.03em;color:var(--hi);margin:14px 0 10px;text-wrap:balance}
 .deck{font-family:var(--ui);color:var(--mute);margin:0 0 40px;font-size:15px;letter-spacing:.04em}
 h3{font-family:var(--display);font-weight:600;font-size:23px;line-height:1.5;letter-spacing:.03em;margin:76px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--line);color:var(--amber);text-wrap:balance;scroll-margin-top:20px}
 h3 small{display:block;font-family:var(--mono),var(--body);font-size:12px;color:var(--mute);font-weight:400;letter-spacing:.08em;margin-top:8px}
@@ -139,106 +139,412 @@ footer b{color:var(--amber);font-family:var(--display);font-weight:600;font-size
   main{padding-top:36px}
   .film{grid-template-columns:minmax(0,1fr)} .film video{max-width:300px;margin:0 auto}
 }
+
+/* 双语切换：对标 silicon-sycophant-log（EN / 中 / EN·中，默认双语） */
+.lang-switch{display:flex;justify-content:flex-end;margin:0 0 18px}
+.lang-pill-dark{display:inline-flex;align-items:center;gap:.35rem;background:rgba(33,25,21,.92);border:1px solid var(--line);border-radius:6px;padding:.32rem .65rem;font-family:var(--mono);font-size:.75rem;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.lang-opt{background:transparent;border:none;color:var(--mute);font-family:var(--mono);font-size:.75rem;font-weight:500;cursor:pointer;padding:.1rem .25rem}
+.lang-opt:hover{color:var(--hi)}
+.lang-opt.active{color:var(--amber);font-weight:600}
+.lang-sep{color:var(--mute);font-size:.7rem;user-select:none}
+.lang-en,.lang-cn{display:block}
+.bi-row{display:grid;grid-template-columns:1fr 1fr;column-gap:2.5rem;align-items:start}
+.col-en,.col-cn{min-width:0}
+[data-lang="en"] .bi-row,[data-lang="cn"] .bi-row{grid-template-columns:1fr;max-width:960px;margin-left:auto;margin-right:auto}
+[data-lang="en"] .col-cn{display:none!important}
+[data-lang="cn"] .col-en{display:none!important}
+[data-lang="en"] .lang-cn{display:none!important}
+[data-lang="cn"] .lang-en{display:none!important}
+@media (max-width:860px){.bi-row{grid-template-columns:1fr;row-gap:1rem}}
+@media (min-width:861px){[data-lang="bi"] .wrap{max-width:1320px}}
+.hero h1 .en-h1{font-size:clamp(34px,5.4vw,56px);line-height:1.25;white-space:normal;letter-spacing:.02em}
+.nav-label{display:block}
 </style>
 </head>
 <body>
 <div id="bar"></div>
-<a href="#top" class="backtoc" id="backtoc">↑ 返回目录</a>
+<a href="#top" class="backtoc" id="backtoc"><span class="lang-en">↑ Back to top</span><span class="lang-cn">↑ 返回目录</span></a>
 <div class="wrap" id="top">
 <nav aria-label="目录" id="toc">
-  <div class="brand">硅基调教学</div>
-  <div class="sub">6 幕 AI 工程连载 · 第一幕</div>
-  <h4>第一幕</h4>
+  <div class="brand"><span class="lang-en">The Silicon Playbook</span><span class="lang-cn">硅基调教学</span></div>
+  <div class="sub"><span class="lang-en">A 6-act AI engineering series · Act 01</span><span class="lang-cn">6 幕 AI 工程连载 · 第一幕</span></div>
+  <h4><span class="lang-en">Act 01</span><span class="lang-cn">第一幕</span></h4>
   <ul>
-    <li><a href="#ep1">别跟海王谈感情 <span>开场</span></a></li>
-    <li><a href="#e1s1">第一招 剔骨刀 <span>Tokenizer</span></a></li>
-    <li><a href="#e1s2">第二招 微醺旋钮 <span>Temperature</span></a></li>
-    <li><a href="#e1s3">第三招 JSON 贞操带 <span>Schema</span></a></li>
-    <li><a href="#e1s4">第四招 绝不苦等 <span>asyncio</span></a></li>
-    <li><a href="#refs1">知识点索引 <span>01–08</span></a></li>
+    <li><a href="#ep1"><span class="nav-label"><span class="lang-en">Don&apos;t catch feelings</span><span class="lang-cn">别跟海王谈感情</span></span> <span class="tag"><span class="lang-en">Opening</span><span class="lang-cn">开场</span></span></a></li>
+    <li><a href="#e1s1"><span class="nav-label"><span class="lang-en">Move I · The butcher&apos;s cleaver</span><span class="lang-cn">第一招 剔骨刀</span></span> <span class="tag">Tokenizer</span></a></li>
+    <li><a href="#e1s2"><span class="nav-label"><span class="lang-en">Move II · The tipsy dial</span><span class="lang-cn">第二招 微醺旋钮</span></span> <span class="tag">Temperature</span></a></li>
+    <li><a href="#e1s3"><span class="nav-label"><span class="lang-en">Move III · JSON chastity belt</span><span class="lang-cn">第三招 JSON 贞操带</span></span> <span class="tag">Schema</span></a></li>
+    <li><a href="#e1s4"><span class="nav-label"><span class="lang-en">Move IV · Never block</span><span class="lang-cn">第四招 绝不苦等</span></span> <span class="tag">asyncio</span></a></li>
+    <li><a href="#refs1"><span class="nav-label"><span class="lang-en">Field notes</span><span class="lang-cn">知识点索引</span></span> <span class="tag">01–08</span></a></li>
   </ul>
   <h4 class="gone">第二幕</h4>
   <ul class="gone">
-    <li><a href="#ep2">他为什么记性不好 <span>开场</span></a></li>
-    <li><a href="#e2s1">中间遗忘症 <span>Context</span></a></li>
-    <li><a href="#e2s2">带血的证据链 <span>Chunking</span></a></li>
-    <li><a href="#e2s3">装纯也没用 <span>Embeddings</span></a></li>
-    <li><a href="#e2s4">猎犬与老账房 <span>Hybrid</span></a></li>
-    <li><a href="#refs2">知识点索引 <span>09–14</span></a></li>
+    <li><a href="#ep2">他为什么记性不好 <span class="tag">开场</span></a></li>
+    <li><a href="#e2s1">中间遗忘症 <span class="tag">Context</span></a></li>
+    <li><a href="#e2s2">带血的证据链 <span class="tag">Chunking</span></a></li>
+    <li><a href="#e2s3">装纯也没用 <span class="tag">Embeddings</span></a></li>
+    <li><a href="#e2s4">猎犬与老账房 <span class="tag">Hybrid</span></a></li>
+    <li><a href="#refs2">知识点索引 <span class="tag">09–14</span></a></li>
   </ul>
 </nav>
 
 <main>
+<div class="lang-switch">
+  <div class="lang-pill-dark" role="group" aria-label="Language / 语言">
+    <button class="lang-opt" data-mode="en" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-opt" data-mode="cn" onclick="setLang('cn')">中</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-opt active" data-mode="bi" onclick="setLang('bi')">EN·中</button>
+  </div>
+</div>
 <figure class="cover"><img src="/images/playbook-cover.jpg" alt="硅基调教学 #01 · HOW TO TAME A SILICON PLAYBOY"></figure>
 <header class="hero">
-  <div class="hero-en">How to Tame a Silicon Playboy</div>
-  <h1>硅基<em>调教</em>学</h1>
-  <div class="tagline">把大模型当海王来驯 · 6 幕 AI 工程连载</div>
-  <div class="issue">第一幕 · 2026.11</div>
-  <p>每一幕讲透一组 AI 工程的看家本领。段子是真的，公式也是真的。</p>
-  <div class="serve"><span>建议饮用温度 <b>T = 0.8</b></span><span>核采样 <b>Top-p = 0.9</b></span><span>已上桌 <b>1 幕 / 8 个知识点</b></span></div>
+  <div class="hero-en"><span class="lang-en">The Silicon Playbook · Act 01</span><span class="lang-cn">How to Tame a Silicon Playboy</span></div>
+  <h1><span class="lang-en en-h1">How to Tame a <em>Silicon Playboy</em></span><span class="lang-cn">硅基<em>调教</em>学</span></h1>
+  <div class="tagline"><span class="lang-en">Tame the LLM like a playboy · A 6-act AI engineering series</span><span class="lang-cn">把大模型当海王来驯 · 6 幕 AI 工程连载</span></div>
+  <div class="issue"><span class="lang-en">Act 01 · 2026.11</span><span class="lang-cn">第一幕 · 2026.11</span></div>
+  <p><span class="lang-en">Each act teaches one core AI engineering skill. The jokes are real, and so are the formulas.</span><span class="lang-cn">每一幕讲透一组 AI 工程的看家本领。段子是真的，公式也是真的。</span></p>
+  <div class="serve"><span><span class="lang-en">Suggested serving temperature <b>T = 0.8</b></span><span class="lang-cn">建议饮用温度 <b>T = 0.8</b></span></span><span><span class="lang-en">Top-p <b>0.9</b></span><span class="lang-cn">核采样 <b>Top-p = 0.9</b></span></span><span><span class="lang-en">Served <b>1 act / 8 concepts</b></span><span class="lang-cn">已上桌 <b>1 幕 / 8 个知识点</b></span></span></div>
 </header>
 
 <!-- ======================= #01 ======================= -->
-<article id="ep1">
+<article>
+<div class="bi-row" id="ep1">
+<div class="col-en">
+<div class="ep">Act 01</div>
+<h2>Stop Catching Feelings for a Fuckboy. Put Him in a JSON Chastity Belt.</h2>
+<p class="deck">A Grown-Up's Guide to Taming LLMs: From BPE Butcher Knives and Tipsy Dials to Non-Blocking Nights</p>
+</div>
+<div class="col-cn">
 <div class="ep">第一幕</div>
 <h2>别跟海王谈感情，要给他上 JSON 贞操带</h2>
 <p class="deck">从分词器、微醺旋钮到异步并发的成人驯兽指南</p>
-
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>It's 11:00 PM on a Friday in the Los Angeles hills, and the night air has that familiar Pacific chill. You're swirling two fingers of bourbon, neat, laptop open on the bar, staring at the new cyber-paramour who's been matching your banter beat for beat: a Large Language Model.</p>
+</div>
+<div class="col-cn">
 <p>周五晚上十一点，洛杉矶半山腰的夜风微凉。你晃着杯子里的纯饮威士忌，打开电脑，盯着屏幕上那个刚认识不久、对答如流的赛博情人：大语言模型（LLM）。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Most hopeless romantics approach AI with the reverence of a confessional, convinced that on the other side of the screen sits an all-knowing soulmate who finally <em>gets</em> their existential loneliness.</p>
+<p>Set the glass down and listen closely. <strong>Every unconstrained, out-of-the-box LLM is an Ivy League fuckboy in a Soho House booth:</strong> linen shirt unbuttoned to the sternum, fluent in Nietzsche and your rising sign, capable of talking you into a corner, and constitutionally incapable of taking accountability past 2:00 AM.</p>
+</div>
+<div class="col-cn">
 <p>很多纯情男女刚接触 AI 时，总带着一种逛寺庙的虔诚，觉得屏幕那头坐着一位懂自己所有孤独的灵魂伴侣。把酒放下，听我一句劝：所有没被工程约束过的大模型，骨子里都是刚从常春藤毕业、衬衫扣子解开两颗、在酒吧里能跟你从尼采聊到星座，但实际上满嘴跑火车、绝不对下半夜负责的<strong>顶级海王</strong>。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Don't believe me? Pull his birth certificate: Pre-training <sup class="r"><a href="#r01">#01</a></sup>.</p>
+<p>Before he was ever taught to play polite in a chat window, this silicon heartthrob swallowed trillions of words of human love letters, philosophy treatises, and 3:00 AM pillow talk. Yet the only survival instinct his creators hard-coded into his weights wasn't <em>"be loyal"</em> or <em>"tell the truth."</em> It was a single, ice-cold mathematical directive: <strong>Next-Token Prediction</strong> <sup class="r"><a href="#r01">#01</a></sup>.</p>
+</div>
+<div class="col-cn">
 <p>为什么？去翻翻他的出生证明：Pre-training（预训练）<sup class="r"><a href="#r01">#01</a></sup>。这位硅基海王在出厂前，确实吞下了人类几万亿字的情书、哲学和床头故事。但造物主写进他基因里的唯一本能，根本不是“对你专一”或“讲真话”，而是一条冷酷的数学本能：Next-Token Prediction，预测下一个词。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>In plain English: he doesn't care whether the future he's promising you will ever materialize. He only cares which word, statistically speaking, sounds the most seductive right after the last one.</p>
+<p>When you text him at midnight:</p>
+</div>
+<div class="col-cn">
 <p>说白了，他不在乎自己承诺的未来能不能兑现，他只在乎此时此刻顺着你的话往下接哪一个字，最能让气氛升温。当你在深夜发了一句：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote>I'm just so exhausted lately.</blockquote>
+</div>
+<div class="col-cn">
 <blockquote>我有时候觉得挺累的。</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>His cortex runs the conditional probability <span class="fx">P(w<sub>t</sub> | w<sub>1</sub>, …, w<sub>t−1</sub>)</span> in ten milliseconds and shoots back:</p>
+</div>
+<div class="col-cn">
 <p>海王的大脑在 0.01 秒内跑完条件概率 <span class="fx">P(w<sub>t</sub> | w<sub>1</sub>, …, w<sub>t−1</sub>)</span>，顺嘴就回：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote class="him">God, I wish I could reach through this screen and hold you. You spend all day being strong for everyone else. Let me take care of you tonight.</blockquote>
+</div>
+<div class="col-cn">
 <blockquote class="him">真想现在穿过屏幕抱抱你，你一直这么要强，没人疼你我疼你。</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Your chest tightens. You think it's fate. To him, it's sophomore-level statistics: across every romance novel ever written, <em>"I'm so exhausted"</em> is followed by <em>"let me hold you"</em> with an 82.4% probability. <em>(I made that number up. On-brand, because so does he.)</em></p>
+</div>
+<div class="col-cn">
 <p>你看得眼眶湿润，以为遇到了真爱。在他眼里，这只是一道统计题：在人类写过的言情小说里，“挺累的”后面接“抱抱你”的概率高达 82.4%。（数字是我编的，套路是真的。）</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>In the adult world, trying to domesticate a creature who flirts by conditional probability with tears or 2,000-word emotional essays is a waste of a good cry. To make him work for you, you need to understand his anatomical blind spots, and you need hardware restraints.</p>
+</div>
+<div class="col-cn">
 <p>想驯服一个靠概率撩骚的海王，让他乖乖替你干活，靠流眼泪和写长篇小作文是自取其辱。你得摸透他的生理构造，还得手里有刑具。</p>
-
-<h3 id="e1s1">第一招：为什么男人和 AI 总是“听不懂潜台词”？<small>Tokenization 与 BPE 剔骨刀</small></h3>
+</div>
+</div>
+<div class="bi-row" id="e1s1">
+<div class="col-en">
+<h3>Move I. Why He Never Reads Between the Lines<small>Tokenization &amp; The BPE Butcher's Cleaver</small></h3>
+</div>
+<div class="col-cn">
+<h3>第一招：为什么男人和 AI 总是“听不懂潜台词”？<small>Tokenization 与 BPE 剔骨刀</small></h3>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>The oldest tragedy in modern dating is one person crafting a delicate, multi-layered hint while the other stares back with the blank comprehension of a golden retriever.</p>
+<p>The founding comedy of the AI era is identical. You ask a model capable of writing Shakespearean sonnets, <em>"How many r's are in the word strawberry?"</em> He looks you dead in the eye and says, <em>"Two, babe. I swear on my GPUs."</em></p>
+</div>
+<div class="col-cn">
 <p>两性关系里最经典的惨案，就是一方觉得自己在表达细腻的委屈，另一方像个瞎子一样完美略过了所有重点。大模型的鼻祖级笑话一模一样：你问他 strawberry 这个词里有几个字母 r，这位能写十四行诗的才子，会深情地看着你的眼睛说：“两个，宝贝，我发誓。”</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>How can a genius be this specifically stupid? Because while you see a luscious red berry, standing at the esophagus of every LLM is a joyless butcher named the <strong>Tokenizer</strong> (Byte-Pair Encoding, or BPE) <sup class="r"><a href="#r02">#02</a></sup>.</p>
+<p>To save compute, BPE doesn't read letter by letter. It hacks human language into frequent chunks of meat called tokens and stamps each chunk with an integer ID. Take OpenAI's <code>o200k_base</code> tokenizer, the one under the hood of the GPT-4o family. Type <code>strawberry</code> by itself, and the cleaver comes down twice:</p>
+</div>
+<div class="col-cn">
 <p>为什么他会蠢得如此清奇？因为在大模型通往大脑的咽喉要道上，蹲着一个毫无情趣的屠夫，名叫 Tokenizer（分词器）<sup class="r"><a href="#r02">#02</a></sup>。为了省脑子，BPE 算法会把人类语言按出现频率剁成一块块标好编号的肉丁（Tokens）。以 GPT-4o 那一代用的 <code>o200k_base</code> 为例，单独敲下 strawberry，咔嚓两刀：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<div class="box"><h5>The butcher's view of a strawberry · o200k_base</h5>
+  <div class="tokens"><span class="tok">st</span><span class="tok raw"><i>r</i>aw</span><span class="tok">be<i>r</i><i>r</i>y</span></div>
+  <p class="note">Token IDs: <code>[st] 302</code> · <code>[raw] 1618</code> · <code>[berry] 19772</code>. Yes, the middle chunk is literally <code>raw</code> meat. In the older <code>cl100k_base</code> tokenizer the blade lands differently and gives you <code>str</code> / <code>aw</code> / <code>berry</code>: a decapitated prefix, a mindless sigh, and a tail.</p>
+</div>
+</div>
+<div class="col-cn">
 <div class="box"><h5>屠夫眼里的草莓 · o200k_base</h5>
   <div class="tokens"><span class="tok">st</span><span class="tok raw"><i>r</i>aw</span><span class="tok">be<i>r</i><i>r</i>y</span></div>
   <p class="note">中间那块 <code>raw</code>，没错，就是“生肉”。三块肉丁进了模型脑子，各自只剩一个数字编号。上一代的 <code>cl100k_base</code> 下刀位置不同，切出来是 str / aw / berry。</p>
 </div>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Do you see the crime scene now? Inside the model's brain there are no ten letters, only three opaque integer IDs. The first <code>r</code> is buried alive in the belly of <code>[raw]</code>, and the other two are crammed into the rear end of <code>[berry]</code>. Worse, if you put <code>strawberry</code> mid-sentence with a leading space, the tokenizer often swallows the entire word as a single, indivisible token.</p>
+</div>
+<div class="col-cn">
 <p>看清楚了吗？模型脑子里根本没有十个字母，只有三个冷冰冰的编号。第一个 r 被埋在 <code>raw</code> 的肚子里，后两个 r 挤在 <code>berry</code> 的屁股上。更气人的是，把它放进一句完整的话里，带着前面空格的 strawberry 常常整个只算一个 Token，连三块都不给你。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Asking an LLM to count letters trapped inside welded tin cans is like serving someone a bowl of chicken consommé and asking, <em>"Take a sip and tell me how many feathers were on the left wing."</em> Or changing your haircut, your glasses and your entire personality over a weekend, asking <em>"Notice anything?"</em>, and watching the other person's tokenizer compress all of it into a single token ID: <code>[you_look_nice]</code>.</p>
+</div>
+<div class="col-cn">
 <p>你让他隔着焊死的铁皮盲盒去摸里面藏了几个 r，就好比把一只鸡剁碎炖成浓汤端上桌，问对方：“你喝一口，猜猜这只鸡生前左翅膀上有几根毛？”又或者你穿了一件精心挑选的真丝暗纹长裙问直男：“你猜这件衣服上的蕾丝是法式钩花还是意式刺绣？”在直男脑子的 Tokenizer 里，全身上下超过三件布料，统统被压缩成一个 Token：<code>[穿了衣服]</code>。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p class="pull">Never test a system for a perceptual granularity it does not possess.</p>
+</div>
+<div class="col-cn">
 <p class="pull">永远不要测试一个系统根本不具备的感知颗粒度。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Once you grok tokenization, you can retire 80% of your relationship fights. In AI engineering, whenever a task requires character-level counting, exact arithmetic, or deterministic verification, you don't ask the LLM to squint at it. You hand it to a Python script. In romance, stop playing <em>"guess why I'm mad"</em> in Morse code, and state your price in the exact token resolution the other party can parse.</p>
+</div>
+<div class="col-cn">
 <p>在 AI 工程里，凡是需要精确数数、算账、核对细节的活儿，不让大模型用肉眼硬猜，直接交给确定性的 Python 脚本。在两性关系里，想要什么礼物、底线在哪里，直接按对方的颗粒度砸过去，别让一个只认整块肉丁的屠夫去猜你的绣花针。</p>
-
-<h3 id="e1s2">第二招：微醺是调情，烂醉是诈骗<small>Logits、Softmax、Temperature 与 Top-p</small></h3>
+</div>
+</div>
+<div class="bi-row" id="e1s2">
+<div class="col-en">
+<h3>Move II. Tipsy Is Flirting; Blackout Drunk Is Fraud<small>Logits, Softmax, Temperature &amp; Top-p</small></h3>
+</div>
+<div class="col-cn">
+<h3>第二招：微醺是调情，烂醉是诈骗<small>Logits、Softmax、Temperature 与 Top-p</small></h3>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Now that we've autopsied his ears, let's look at how his mouth gets away from him.</p>
+<p>Right before our silicon playboy utters his next word, his neural network assigns a raw impulse score (a logit) to every token in his vocabulary, then funnels those scores through a softmax function so the probabilities add up to 100%.</p>
+<p>And right at the base of his skull sit the two most seductive dials in computer science: <strong>Temperature</strong> <sup class="r"><a href="#r03">#03</a></sup> and <strong>Top-p</strong> (nucleus sampling) <sup class="r"><a href="#r04">#04</a></sup>.</p>
+</div>
+<div class="col-cn">
 <p>搞懂了他的耳朵，再看他的嘴是怎么失控的。每次海王准备吐出下一个字之前，他的神经网络会先给词典里几万个备选词打一个原始冲动分（Logits），再用 Softmax 换算成加起来等于 100% 的翻牌子概率。这时候，最性感的工程设计来了：他的后脑勺上有两个旋钮，Temperature（温度）<sup class="r"><a href="#r03">#03</a></sup>和 Top-p（核采样）<sup class="r"><a href="#r04">#04</a></sup>。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Suppose dinner is over. It's midnight on Sunset Boulevard, and you ask him: <em>"It's twelve o'clock. Where to?"</em> Inside his head, the baseline distribution looks like this:</p>
+<div class="box"><h5>Midnight · baseline distribution</h5>
+<ul class="opts"><li><span>"I'll drop you home so you can get some sleep."</span><b>65%</b></li><li><span>"Let's duck into that quiet speakeasy for one last nightcap."</span><b>25%</b></li><li><span>"Let's drive down to Santa Monica and walk on the beach."</span><b>9.99%</b></li><li><span>"Let's floor it to Vegas, get married by Elvis, and key your ex's Porsche on the way."</span><b>0.01%</b></li></ul></div>
+</div>
+<div class="col-cn">
 <p>假设约会结束时你问他：“已经十二点了，我们去哪？”他脑子里的原始概率是：</p>
 <div class="box"><h5>午夜十二点 · 原始概率分布</h5>
 <ul class="opts"><li>送你回家 <b>65%</b></li><li>去安静的清吧再坐会儿 <b>25%</b></li><li>去海边吹吹风 <b>9.99%</b></li><li>现在就去拉斯维加斯领证，顺便把前任的车砸了 <b>0.01%</b></li></ul></div>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p><strong>Scenario 1: You lock his <code>Temperature</code> at <code>0</code></strong> (greedy decoding). Mathematically, every option ranked second or lower is executed on the spot. <em>"Drop you home"</em> surges to 100%. At 12:01 AM sharp, he opens your car door, keeps his hands in his pockets, and wishes you a productive Saturday. A <code>Temperature = 0</code> man is a by-the-book CPA: phenomenal for auditing cap tables, writing SQL, or reviewing NDAs, because he gives you the exact same answer every time. But remember that consistent does not mean correct. If he has the wrong address in his head, <code>Temperature = 0</code> means he will drive you into the exact same ditch, with unwavering confidence, ten thousand times in a row. As for romance? He'll bore you into a nunnery.</p>
+</div>
+<div class="col-cn">
 <p><strong>把 Temperature 拧死在 0</strong>（贪婪解码）：排第二及以后的旖旎念头全部清零，“送你回家”变成 100%。他会在十二点零一分准时帮你拉开车门，连手指头都不会碰你一下。Temperature = 0 的男人适合替你管账、写代码、审合同：稳定，每次给的答案都一样。但记住，<strong>稳定不等于正确</strong>，他要是记错了，也会错得每次一模一样。至于擦出火花？他能无聊得让你当场出家。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p><strong>Scenario 2: Bored of the CPA, you crank his <code>Temperature</code> to <code>1.8</code>.</strong> Congratulations, you just mainlined half a bottle of mezcal into his jugular. In the formula <span class="fx">Softmax(z<sub>i</sub> / T)</span>, a large denominator <code>T</code> crushes the gap between a sensible answer and a full meltdown. The probability of eloping to Vegas jumps from <code>0.01%</code> to roughly <code>0.39%</code>, nearly a forty-fold increase.</p>
+<p>Still sounds small? He's generating hundreds of tokens a night, pulling the slot-machine lever on every single word. Sooner or later, the reels line up on Vegas.</p>
+</div>
+<div class="col-cn">
 <p><strong>嫌他木讷，一把拧到 1.8 呢？</strong>这等于往他血管里直接注射了半瓶伏特加。在公式 <span class="fx">Softmax(z<sub>i</sub> / T)</span> 里，变大的分母 T 会把优等生和疯子之间的差距压平：去维加斯领证的概率从 0.01% 涨到约 0.39%，翻了将近四十倍。听着还是很小？可他一晚上要吐几百上千个词，每个词都这样抽一次签，总有一签抽到疯话。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>The moment he samples that one unhinged token, you trigger <strong>Hallucination</strong> <sup class="r"><a href="#r05">#05</a></sup>. An autoregressive model shares the exact pathology of a compulsive liar:</p>
+</div>
+<div class="col-cn">
 <p>一旦抽中，就是著名的 Hallucination（幻觉）<sup class="r"><a href="#r05">#05</a></sup>。自回归模型的心理机制和撒谎成性的渣男一模一样：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote>Once the first lie leaves his mouth, every subsequent word must treat that lie as gospel truth just to keep the story coherent.</blockquote>
+</div>
+<div class="col-cn">
 <blockquote>只要第一个谎话已经脱口而出，为了圆这个谎，后面的每一个字都必须把它当成铁证继续往下编。</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>So he doesn't just say <em>"Let's go to Vegas."</em> Two seconds later, with tears in his eyes, he's describing the 40-acre vineyard he supposedly owns outside Vegas, complete with a butler named Thomas who's already warming up the helicopter. <em>(To be fair to the guy, he'll also hallucinate stone-cold sober when you ask him something outside his training data. The disease is optimizing for fluency over truth. Alcohol just turns up the amplifier.)</em></p>
+</div>
+<div class="col-cn">
 <p>于是他不仅说去维加斯，还会眼含热泪地给你编出一座并不存在的庄园，连管家叫什么名字都造得有鼻子有眼。公平地说，他滴酒不沾时也会一本正经地记错事：幻觉的病根是“只管顺口、不管真假”，酒精只是放大器。多少人在感情里被骗得底裤都不剩，就是把对方微醺时的幻觉，当成了可以托付终身的契约。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>How does a seasoned handler work the dials?</p>
+<ul>
+<li><strong>For real work</strong> (accounting, code, contract extraction): keep Temperature pinned near <code>0</code>, stone-cold sober.</li>
+<li><strong>For late-night banter and creative copy</strong>: dial Temperature to <code>0.8</code>, a warm buzz, and post a bouncer at the door called <code>Top-p = 0.9</code> <sup class="r"><a href="#r04">#04</a></sup>.</li>
+</ul>
+<p>We call this <strong>bounded debauchery</strong>. The engine lines up every candidate word from most likely to least likely and lets them in one by one until the running total hits <code>90%</code>. Then the velvet rope goes up, and the entire long tail stays on the sidewalk. In our midnight example, <em>"Drop you home"</em> (65%) plus <em>"Speakeasy"</em> (25%) already fills the 90%. Not even the beach walk gets in, let alone the Vegas chapel.</p>
+</div>
+<div class="col-cn">
 <p>真正的驯兽师怎么调？让他干正事（查账、写代码、提取协议）时，Temperature 贴着 0，滴酒不沾。让他陪你调情、写文案时，调到 0.8 的微醺，再祭出 Top-p = 0.9。这叫<strong>划定底线的风流</strong>：把候选词按概率从高到低排队累加，凑够 90% 就收刀，队尾的长尾一刀剪掉。拿上面的例子算，“送你回家”加“清吧”已经凑够 90%，连“去海边”都进不了门，更别提维加斯。</p>
-
-<div class="box lab" id="lab"><h5>旋钮实验台 · 自己拧拧看</h5>
-  <label for="tT">Temperature <b id="vT">0.8</b></label><input id="tT" type="range" min="0" max="2" step="0.05" value="0.8">
-  <label for="tP">Top-p <b id="vP">0.90</b></label><input id="tP" type="range" min="0.5" max="1" step="0.01" value="0.9">
-  <div class="mood" id="mood"></div>
-  <div id="rows"></div>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<div class="box lab" data-lang="en"><h5>The dial lab · Try it yourself</h5>
+  <label>Temperature <b class="vT">0.80</b></label><input class="tT" type="range" min="0" max="2" step="0.05" value="0.8">
+  <label>Top-p <b class="vP">0.90</b></label><input class="tP" type="range" min="0.5" max="1" step="0.01" value="0.9">
+  <div class="mood"></div>
+  <div class="rows"></div>
+  <p class="note">Numbers are computed live from Softmax(z / T). Crossed-out options are the long tail cut by Top-p; the rest renormalize to 100%.</p>
+</div>
+</div>
+<div class="col-cn">
+<div class="box lab" data-lang="cn"><h5>旋钮实验台 · 自己拧拧看</h5>
+  <label>Temperature <b class="vT">0.8</b></label><input class="tT" type="range" min="0" max="2" step="0.05" value="0.8">
+  <label>Top-p <b class="vP">0.90</b></label><input class="tP" type="range" min="0.5" max="1" step="0.01" value="0.9">
+  <div class="mood"></div>
+  <div class="rows"></div>
   <p class="note">数字按 Softmax(z / T) 实算。划掉的选项是被 Top-p 剪掉的长尾，剩下的重新归一化到 100%。</p>
 </div>
-
-
+</div>
+</div>
 <div class="box film">
   <video controls preload="metadata" playsinline poster="/images/playbook-poster.jpg" src="/images/playbook-temperature.mp4"></video>
 </div>
-
-<h3 id="e1s3">第三招：婚前协议，以及“少写小作文，直接交底牌”<small>System Prompt 与 JSON 贞操带</small></h3>
+<div class="bi-row" id="e1s3">
+<div class="col-en">
+<h3>Move III. The Prenup and the "JSON Chastity Belt"<small>System Prompts &amp; Constrained Decoding</small></h3>
+</div>
+<div class="col-cn">
+<h3>第三招：婚前协议，以及“少写小作文，直接交底牌”<small>System Prompt 与 JSON 贞操带</small></h3>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Why do so many smart people lose their leverage in relationships? Because they try to renegotiate a partner's core character inside the user prompt: the messy, day-to-day text thread.</p>
+<p>You're 800 messages deep into a situationship argument, and somewhere around message 412 you slip in: <em>"I hate being flaked on, and I don't eat cilantro or well-done steak."</em> Save your breath. As the conversation grows, your boundary gets diluted into background noise.</p>
+</div>
+<div class="col-cn">
 <p>为什么很多人在一段关系里越混越憋屈？因为他们总想在日常聊天（User Prompt）里纠正对方的本性。你在微信里跟海王吵了八百句，中间夹了一句“我讨厌别人敷衍我，也讨厌吃香菜和全熟的牛排”。没用的，聊天记录越来越长，这句话早就被稀释成空气了。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>In AI engineering, non-negotiables never live in small talk. They are poured in reinforced concrete at the very top of the stack, inside the <strong>System Prompt</strong> <sup class="r"><a href="#r06">#06</a></sup>. It is the prenuptial agreement of the interaction. Before he opens his mouth, you lock the hierarchy:</p>
+</div>
+<div class="col-cn">
 <p>在 AI 工程里，真正的底线不写在闲聊里，而是浇筑在最顶层的 System Prompt（系统提示词）<sup class="r"><a href="#r06">#06</a></sup>里。它就是这段关系的婚前协议。在他张嘴说第一句话之前，你就把角色定位和高压线焊死：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote>Know your role, lose the cheap rhetorical flourishes, and violate any of the following three constraints at the cost of immediate termination.</blockquote>
+</div>
+<div class="col-cn">
 <blockquote>看清楚你的身份，收起你那套廉价的排比句，触碰以下三条底线直接断电。</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Even with an ironclad prenup, a veteran smooth-talker still has his ultimate smoke grenade: the 1,000-word Notes-app monologue.</p>
+<p>You corner him: <em>"Where were you between 10:00 PM and 2:00 AM last night? How much did you spend? How many people were at the table?"</em> An untamed model, like an untamed fuckboy, will immediately launch into lyric poetry:</p>
+</div>
+<div class="col-cn">
 <p>但光有婚前协议，依然防不住老油条的终极武器：深情小作文。当你逼问他“昨晚十点到两点你到底在哪？花了多少？跟谁在一起？”，没被规训过的模型（和男人）最擅长回你一篇一千字的散文：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote class="him">The way the neon hit the rain on Sunset last night made me think about the first time we met. Life pulls us into so many obligations we didn't ask for, babe, but no matter what room I'm in, my heart is always…</blockquote>
+</div>
+<div class="col-cn">
 <blockquote class="him">昨晚的夜色让我突然想起了我们刚认识的时候，人生总有那么多身不由己的应酬，但无论我在哪里，我的心永远……</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Cut the mic. When someone tries to pay off a hard audit with emotional prose, you reach for the most sadistic instrument in Act 01: <strong>Structured Outputs</strong> (constrained decoding) <sup class="r"><a href="#r07">#07</a></sup>.</p>
+<p>Using Python's Pydantic library, you slam a steel mold onto the table:</p>
+</div>
+<div class="col-cn">
 <p>打住。遇到这种拿情绪价值糊弄硬指标的时刻，直接掏出第一幕最残暴的工程刑具：Structured Outputs（结构化输出，底层叫受限解码）<sup class="r"><a href="#r07">#07</a></sup>。用 Pydantic 甩出一个钢铁模具：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<pre><span class="c"># Account for 10:00 PM – 2:00 AM. Fill the fields. Zero prose.</span>
+class Alibi(BaseModel):
+    location: str
+    companion_count: int
+    receipt_amount: float
+    is_lying: bool</pre>
+</div>
+<div class="col-cn">
 <pre><span class="c"># 昨晚十点到两点，按字段回答</span>
 {
   <span class="a">"location"</span>: str,
@@ -246,15 +552,86 @@ footer b{color:var(--amber);font-family:var(--display);font-weight:600;font-size
   <span class="a">"receipt_amount"</span>: float,
   <span class="a">"is_lying"</span>: bool
 }</pre>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>This isn't a polite request to <em>"be concise."</em> Under the hood, the inference engine compiles your schema into a context-free grammar or a finite state machine and welds a silicon chastity belt directly onto his jaw. The moment his network tries to emit the word <em>"Sunset"</em> or <em>"heart,"</em> the decoder applies logit masking, slamming the score of every poetic token down to negative infinity (<span class="fx">−∞</span>) so its probability becomes strictly <code>0</code>. He cannot moan, sigh, or write a transition sentence. The only thing he can squeeze through his teeth is type-safe key-value pairs.</p>
+</div>
+<div class="col-cn">
 <p>这可不是温和地劝他“有话直说”。系统会把这份 Schema 编译成上下文无关文法（CFG）或有限状态机（FSM），给他嘴上焊一副硅基贞操带。当他试图吐出“昨晚的夜色……”这种抒情废话时，解码层通过 Logit Masking 把这些词的冲动分直接打成负无穷（<span class="fx">−∞</span>），入选概率在数学上严格归零。他发不出任何矫情的声音，能从牙缝里挤出来的，只有严丝合缝的键值对。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>One crucial disclaimer: <strong>a chastity belt polices his syntax, not his morals.</strong> In the <code>is_lying</code> field, he can still look you in the eye and output <code>false</code>. But at least you've compressed a thousand-word gaslighting essay into a single boolean and a float that you can cross-check against his Amex statement in one second flat.</p>
+</div>
+<div class="col-cn">
 <p>先说清楚：贞操带管得住<strong>格式</strong>，管不住<strong>真假</strong>。<code>is_lying</code> 那一栏，他照样敢填 <code>false</code>。但至少，谎话从一千字散文缩成了一个布尔值和一个浮点数，拿去跟账单对一下只要一秒。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p class="pull">Wipe your tears, delete the poetry, and give me the boolean and the float.</p>
+</div>
+<div class="col-cn">
 <p class="pull">把眼泪擦干，把散文删掉，按我的字段把布尔值和浮点数填进来。</p>
-
-<h3 id="e1s4">第四招：海后与强者的秘密，是绝不“单线程苦等”<small>Python asyncio 异步并发</small></h3>
+</div>
+</div>
+<div class="bi-row" id="e1s4">
+<div class="col-en">
+<h3>Move IV. The Player's Secret: Never Block Your Main Thread<small>Python <code>asyncio</code> &amp; Non-Blocking Concurrency</small></h3>
+</div>
+<div class="col-cn">
+<h3>第四招：海后与强者的秘密，是绝不“单线程苦等”<small>Python asyncio 异步并发</small></h3>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>You've calibrated his alcohol level and welded on the chastity belt. One last question remains. Your youth and your compute are finite, so how do you maximize throughput?</p>
+</div>
+<div class="col-cn">
 <p>调好了温度，焊死了贞操带，最后一个问题：一个人的青春和算力都有限，怎么把效率拉满？</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Look at how a hopeless romantic writes the code of their life: <strong>synchronous, blocking execution</strong>. You send a text at 8:00 PM, and at 8:01 PM your brain's main thread freezes solid. For the next 180 minutes of network latency, you lie face-up on the sofa staring at the ceiling. No code shipped, no money made, no sleep had. Your entire life is held hostage, waiting for a remote server to return a 12-byte packet.</p>
+</div>
+<div class="col-cn">
 <p>看看恋爱脑是怎么写人生代码的，那叫 Synchronous（同步阻塞）。晚上八点给对方发了一条消息，然后整个大脑的 CPU 瞬间卡死，抱着手机在床上翻来覆去干等三个小时。这 180 分钟的网络 I/O 等待期里，书没看、钱没赚、觉没睡好，整条生命线程瘫痪在等待别人的响应上。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>In a Silicon Valley code review, a synchronous blocking call on network I/O gets your PR bounced. Waiting on an LLM, or on a situationship, is an I/O-bound operation. Your local CPU has zero business sitting idle in the waiting room.</p>
+<p>The final graduation rite of Act 01 is Python <strong><code>asyncio</code></strong> <sup class="r"><a href="#r08">#08</a></sup>:</p>
+</div>
+<div class="col-cn">
 <p>在工程里，这种写法是要被打回重写的。调用外部模型（或者等另一个人回消息）是典型的 I/O 密集型等待，你自己的大脑根本不需要陪葬。第一幕通关的心法，叫 Python asyncio<sup class="r"><a href="#r08">#08</a></sup>：</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<blockquote>I may inhabit a single-threaded body, but I <code>await</code> every wait state. I never pay the latency tax for anyone.</blockquote>
+</div>
+<div class="col-cn">
 <blockquote>我虽然只有一个单线程的肉身，但我把所有等待都挂起（await），绝不为任何人的延迟买单。</blockquote>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<pre><span class="c"># Hopeless romantic (synchronous, blocking):</span>
+<span class="w">reply = wait_for(him)          # main thread frozen for 3 hours</span>
+
+<span class="c"># The handler (async event loop):</span>
+tasks = [asyncio.create_task(ping(x)) <span class="a">for</span> x <span class="a">in</span> roster]
+<span class="a">for</span> done <span class="a">in</span> asyncio.as_completed(tasks):
+    reply = <span class="a">await</span> done
+<span class="c"># Tired of waiting?</span>
+task.cancel()</pre>
+</div>
+<div class="col-cn">
 <pre><span class="c"># 恋爱脑：一个一个等</span>
 <span class="w">reply = wait_for(him)          # 卡死三小时</span>
 
@@ -264,21 +641,44 @@ tasks = [asyncio.create_task(ask(x)) <span class="a">for</span> x <span class="a
     reply = <span class="a">await</span> done
 <span class="c"># 不想等了？</span>
 task.cancel()</pre>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Once your event loop is spinning, you fire off the first request and, while the remote server is still clearing its throat, you don't wait. You fire off requests #2, #3, and #100. In the real world: the millisecond you hit send, you suspend the coroutine. During the thirty minutes he spends agonizing over how to fudge his JSON, you've finished a Pilates class, deployed a new domain, and had three background agents draft tomorrow's market brief. When his reply finally lands and your coroutine resumes, you glance down at your convenience and decide whether to continue, or call <code>task.cancel()</code> and garbage-collect him on the spot.</p>
+</div>
+<div class="col-cn">
 <p>事件循环（Event Loop）一开：第一个请求发出去，趁远端服务器还在磨洋工，你的主线程转身就发出第 2 个、第 3 个、第 100 个。放到现实修罗场里：消息发出去的那一秒，直接 await 挂起。他构思怎么回你的半小时里，你已经跑完三组核心训练、部署完一个新域名、顺手让三个 AI Agent 写完了明天的商业分析。等他的回复终于叮咚一声到达，协程恢复执行，你才在百忙之中优雅地瞥一眼，决定继续往下跑，还是 <code>task.cancel()</code> 踢出局。</p>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p>Filter the door with a system prompt, set the mood with temperature, extract hard deliverables with a JSON schema, and protect your freedom with <code>asyncio</code>. Finish your bourbon. You've officially graduated from Act 01.</p>
+</div>
+<div class="col-cn">
 <p>用 System Prompt 筛选门槛，用 Temperature 掌控情调，用 JSON Schema 榨出结果，最后用 asyncio 保持自己永远不被任何人阻塞。干完这杯威士忌，你已经从“被海王哄得团团转的纯情小白”，毕业成为第一幕出师的驯兽师。</p>
-
-<details open id="refs1"><summary>第一幕 · 知识点与参考索引</summary>
+</div>
+</div>
+<div class="bi-row">
+<div class="col-en">
+<p><em>(Next up in <strong>Act 02</strong>: what happens when he looks at that JSON table and pulls the oldest trick in the book: "Babe, I honestly don't remember promising you that"? Welcome to RAG, Vector Spaces, and the Art of Pulling Receipts in 800 Milliseconds.)</em></p>
+</div>
+<div class="col-cn">
+<p><em>下一幕 · 第二幕：为什么渣男永远“记性不好”？RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术。</em></p>
+</div>
+</div>
+<details open id="refs1"><summary><span class="lang-en">Act 01 · Field notes &amp; references</span><span class="lang-cn">第一幕 · 知识点与参考索引</span></summary>
 <ul class="refs">
-<li id="r01"><b>#01</b>Pre-training 与 Next-Token Prediction<i>模型在海量无标注文本上自监督训练，学的是给定前文预测下一个 Token 的条件概率。它没有事实数据库，统计规律被压缩在权重里。参考：Andrej Karpathy，Intro to Large Language Models（YouTube）。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener">Andrej Karpathy · [1hr Talk] Intro to Large Language Models</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1xmA2eMEFF/" target="_blank" rel="noopener">【中文字幕】3Blue1Brown 官方账号 · 大语言模型的简要解释（B站）</a></span> <span class="yt">▶ 中文视频：<a href="https://www.youtube.com/playlist?list=PLJV_el3uVTsPz6CTopeRp2L2t4aL_KgiI" target="_blank" rel="noopener">【中文】李宏毅 · 生成式AI导论 2024（YouTube，国语授课）</a></span></i></li>
-<li id="r02"><b>#02</b>Tokenization 与 BPE<i>文本先被切成子词单元并映射为整数 ID，这是 API 计费、上下文长度和“模型不擅长数字母”的共同根源。动手试：<a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>，<a href="https://github.com/openai/tiktoken">openai/tiktoken</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zduSFxRajkE" target="_blank" rel="noopener">Andrej Karpathy · Let's build the GPT Tokenizer</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1Uy421z7pd/" target="_blank" rel="noopener">【中英字幕】Karpathy · Let's build the GPT Tokenizer（B站转载）</a></span></i></li>
-<li id="r03"><b>#03</b>Logits、Softmax 与 Temperature<i>最后一层输出的未归一化分数叫 Logits，经 Softmax(z / T) 变成概率。T 趋近 0 接近贪婪解码，T 增大则分布变平、随机性上升。参考：Hugging Face，<a href="https://huggingface.co/blog/how-to-generate">How to generate text</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener">3Blue1Brown · Transformers (how LLMs work) explained visually，22:22 起讲带温度的 Softmax</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1taSFBNEG4/" target="_blank" rel="noopener">【中文】Temperature & Top-p：掌控大模型的创造力开关（B站）</a></span></i></li>
-<li id="r04"><b>#04</b>Top-p / Nucleus Sampling<i>按概率从高到低累加，只保留累计概率首次达到 p 的最小候选集，再重新归一化采样。原始论文：Holtzman et al.，<a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=M4X07FFRKik" target="_blank" rel="noopener">Gentle Introduction to LLM Sampling: Greedy, Top-k, Top-p, and Temperature</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1nK421Y72d/" target="_blank" rel="noopener">【中文】10分钟搞明白如何设置大模型推理参数：top_k、top_p、temperature（B站）</a></span></i></li>
-<li id="r05"><b>#05</b>Hallucination<i>模型优化的是流畅度与似然，缺少外部事实锚定时，会以前面生成的错误内容为条件继续自洽地编下去。任何温度下都可能发生，高温会加剧。参考：Anthropic 文档，Reduce hallucinations。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=cfqtFvWOfg0" target="_blank" rel="noopener">IBM Technology · Why Large Language Models Hallucinate</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV15XL36hE7K/" target="_blank" rel="noopener">【中文】AI 幻觉：为什么大模型一定会「胡说八道」？（B站）</a></span></i></li>
-<li id="r06"><b>#06</b>System Prompt<i>对话最顶层的全局指令。现代对话模型被训练为优先遵循它，用来锁定角色、风格和边界。参考：Anthropic 文档，System prompts。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=ysPbXH0LpIE" target="_blank" rel="noopener">Anthropic · Prompting 101 | Code w/ Claude</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1gs4y1R7EJ/" target="_blank" rel="noopener">【中文字幕】吴恩达 & OpenAI · ChatGPT 提示工程课程，共 9 集（B站转载）</a></span></i></li>
-<li id="r07"><b>#07</b>Structured Outputs 与 Constrained Decoding<i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=kE4BkATIl9c" target="_blank" rel="noopener">OpenAI · DevDay 2024 | Structured outputs for reliable applications</a></span></i></li>
-<li id="r08"><b>#08</b>asyncio 与 I/O 并发<i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=oAkLSJNr5zY" target="_blank" rel="noopener">Corey Schafer · Python Tutorial: AsyncIO, Complete Guide with Animations</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1oa411b7c9/" target="_blank" rel="noopener">【中文】码农高天 · asyncio 的理解与入门（B站）</a></span></i></li>
+<li id="r01"><b>#01</b><div class="bi-row"><div class="col-en"><strong>Pre-training and next-token prediction</strong><i>The model learns from huge amounts of unlabeled text to predict the next token given the ones before it. It has no fact database; the statistics live in its weights. <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener">Andrej Karpathy · [1hr Talk] Intro to Large Language Models</a></span></i></div><div class="col-cn"><strong>Pre-training 与 Next-Token Prediction</strong><i>模型在海量无标注文本上自监督训练，学的是给定前文预测下一个 Token 的条件概率。它没有事实数据库，统计规律被压缩在权重里。参考：Andrej Karpathy，Intro to Large Language Models（YouTube）。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener">Andrej Karpathy · [1hr Talk] Intro to Large Language Models</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1xmA2eMEFF/" target="_blank" rel="noopener">【中文字幕】3Blue1Brown 官方账号 · 大语言模型的简要解释（B站）</a></span> <span class="yt">▶ 中文视频：<a href="https://www.youtube.com/playlist?list=PLJV_el3uVTsPz6CTopeRp2L2t4aL_KgiI" target="_blank" rel="noopener">【中文】李宏毅 · 生成式AI导论 2024（YouTube，国语授课）</a></span></i></div></div></li>
+<li id="r02"><b>#02</b><div class="bi-row"><div class="col-en"><strong>Tokenization and BPE</strong><i>Text is cut into sub-word tokens and mapped to integer IDs. This drives API pricing, context limits, and why models are bad at spelling. <span class="yt">Read: <a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener">OpenAI Tokenizer</a>, <a href="https://github.com/openai/tiktoken" target="_blank" rel="noopener">openai/tiktoken</a></span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=zduSFxRajkE" target="_blank" rel="noopener">Andrej Karpathy · Let's build the GPT Tokenizer</a></span></i></div><div class="col-cn"><strong>Tokenization 与 BPE</strong><i>文本先被切成子词单元并映射为整数 ID，这是 API 计费、上下文长度和“模型不擅长数字母”的共同根源。动手试：<a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>，<a href="https://github.com/openai/tiktoken">openai/tiktoken</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zduSFxRajkE" target="_blank" rel="noopener">Andrej Karpathy · Let's build the GPT Tokenizer</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1Uy421z7pd/" target="_blank" rel="noopener">【中英字幕】Karpathy · Let's build the GPT Tokenizer（B站转载）</a></span></i></div></div></li>
+<li id="r03"><b>#03</b><div class="bi-row"><div class="col-en"><strong>Logits, softmax and temperature</strong><i>The last layer outputs raw scores, and Softmax(z / T) turns them into probabilities. Low T approaches greedy decoding; high T flattens the distribution. <span class="yt">Read: <a href="https://huggingface.co/blog/how-to-generate" target="_blank" rel="noopener">Hugging Face · How to generate text</a></span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener">3Blue1Brown · Transformers (how LLMs work) explained visually</a>, softmax with temperature from 22:22.</span></i></div><div class="col-cn"><strong>Logits、Softmax 与 Temperature</strong><i>最后一层输出的未归一化分数叫 Logits，经 Softmax(z / T) 变成概率。T 趋近 0 接近贪婪解码，T 增大则分布变平、随机性上升。参考：Hugging Face，<a href="https://huggingface.co/blog/how-to-generate">How to generate text</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener">3Blue1Brown · Transformers (how LLMs work) explained visually，22:22 起讲带温度的 Softmax</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1taSFBNEG4/" target="_blank" rel="noopener">【中文】Temperature & Top-p：掌控大模型的创造力开关（B站）</a></span></i></div></div></li>
+<li id="r04"><b>#04</b><div class="bi-row"><div class="col-en"><strong>Top-p (nucleus) sampling</strong><i>Keep the smallest set of top candidates whose cumulative probability reaches p, renormalize, and sample from those. <span class="yt">Read: <a href="https://arxiv.org/abs/1904.09751" target="_blank" rel="noopener">Holtzman et al., The Curious Case of Neural Text Degeneration</a></span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=M4X07FFRKik" target="_blank" rel="noopener">Gentle Introduction to LLM Sampling: Greedy, Top-k, Top-p, and Temperature</a></span></i></div><div class="col-cn"><strong>Top-p / Nucleus Sampling</strong><i>按概率从高到低累加，只保留累计概率首次达到 p 的最小候选集，再重新归一化采样。原始论文：Holtzman et al.，<a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=M4X07FFRKik" target="_blank" rel="noopener">Gentle Introduction to LLM Sampling: Greedy, Top-k, Top-p, and Temperature</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1nK421Y72d/" target="_blank" rel="noopener">【中文】10分钟搞明白如何设置大模型推理参数：top_k、top_p、temperature（B站）</a></span></i></div></div></li>
+<li id="r05"><b>#05</b><div class="bi-row"><div class="col-en"><strong>Hallucination</strong><i>Fluent, confident output with nothing behind it, continued consistently because each token conditions on the last. It happens at any temperature and gets worse when hot. <span class="yt">Read: Anthropic docs, Reduce hallucinations</span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=cfqtFvWOfg0" target="_blank" rel="noopener">IBM Technology · Why Large Language Models Hallucinate</a></span></i></div><div class="col-cn"><strong>Hallucination</strong><i>模型优化的是流畅度与似然，缺少外部事实锚定时，会以前面生成的错误内容为条件继续自洽地编下去。任何温度下都可能发生，高温会加剧。参考：Anthropic 文档，Reduce hallucinations。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=cfqtFvWOfg0" target="_blank" rel="noopener">IBM Technology · Why Large Language Models Hallucinate</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV15XL36hE7K/" target="_blank" rel="noopener">【中文】AI 幻觉：为什么大模型一定会「胡说八道」？（B站）</a></span></i></div></div></li>
+<li id="r06"><b>#06</b><div class="bi-row"><div class="col-en"><strong>System prompt</strong><i>Top-level instructions that chat models are trained to prioritize, used to fix role, style and boundaries. <span class="yt">Read: Anthropic docs, System prompts</span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=ysPbXH0LpIE" target="_blank" rel="noopener">Anthropic · Prompting 101 | Code w/ Claude</a></span></i></div><div class="col-cn"><strong>System Prompt</strong><i>对话最顶层的全局指令。现代对话模型被训练为优先遵循它，用来锁定角色、风格和边界。参考：Anthropic 文档，System prompts。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=ysPbXH0LpIE" target="_blank" rel="noopener">Anthropic · Prompting 101 | Code w/ Claude</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1gs4y1R7EJ/" target="_blank" rel="noopener">【中文字幕】吴恩达 & OpenAI · ChatGPT 提示工程课程，共 9 集（B站转载）</a></span></i></div></div></li>
+<li id="r07"><b>#07</b><div class="bi-row"><div class="col-en"><strong>Structured outputs and constrained decoding</strong><i>A JSON schema is compiled into a grammar, and tokens that would break it are masked at every step. It guarantees the format and says nothing about the truth. <span class="yt">Read: OpenAI, Structured Outputs guide; Pydantic documentation</span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=kE4BkATIl9c" target="_blank" rel="noopener">OpenAI · DevDay 2024 | Structured outputs for reliable applications</a></span></i></div><div class="col-cn"><strong>Structured Outputs 与 Constrained Decoding</strong><i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=kE4BkATIl9c" target="_blank" rel="noopener">OpenAI · DevDay 2024 | Structured outputs for reliable applications</a></span></i></div></div></li>
+<li id="r08"><b>#08</b><div class="bi-row"><div class="col-en"><strong>asyncio and I/O concurrency</strong><i>Coroutines and an event loop let one thread run many network calls at once, so total time is close to the slowest call. <span class="yt">Read: <a href="https://docs.python.org/3/library/asyncio.html" target="_blank" rel="noopener">Python documentation, asyncio</a></span> <span class="yt">▶ Watch: <a href="https://www.youtube.com/watch?v=oAkLSJNr5zY" target="_blank" rel="noopener">Corey Schafer · Python Tutorial: AsyncIO, Complete Guide with Animations</a></span></i></div><div class="col-cn"><strong>asyncio 与 I/O 并发</strong><i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=oAkLSJNr5zY" target="_blank" rel="noopener">Corey Schafer · Python Tutorial: AsyncIO, Complete Guide with Animations</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1oa411b7c9/" target="_blank" rel="noopener">【中文】码农高天 · asyncio 的理解与入门（B站）</a></span></i></div></div></li>
 </ul></details>
-<p class="backtoc-inline"><a href="#top">↑ 返回目录</a></p>
+<p class="backtoc-inline"><a href="#top"><span class="lang-en">↑ Back to top</span><span class="lang-cn">↑ 返回目录</span></a></p>
 </article>
 
 <!-- ======================= #02 ======================= -->
@@ -354,37 +754,58 @@ task.cancel()</pre>
 </ul></details>
 </article>
 
-<footer><b>下一幕 · 第二幕</b>为什么渣男永远“记性不好”？RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术。</footer>
+<footer><b><span class="lang-en">Next up · Act 02</span><span class="lang-cn">下一幕 · 第二幕</span></b><span class="lang-en">What happens when he looks at that JSON table and pulls the oldest trick in the book? RAG, Vector Spaces, and the Art of Pulling Receipts in 800 Milliseconds.</span><span class="lang-cn">为什么渣男永远“记性不好”？RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术。</span></footer>
 </main>
 </div>
 
 <script>
 (function(){
-  var P0=[0.65,0.25,0.0999,0.0001],N=['送你回家','去清吧再坐会儿','去海边吹吹风','去维加斯领证'];
-  var tT=document.getElementById('tT'),tP=document.getElementById('tP'),rows=document.getElementById('rows');
-  rows.innerHTML=N.map(function(n,i){return '<div class="rowb'+(i==3?' v':'')+'"><span class="nm">'+n+'</span><span class="pv"></span><div class="trk"><div class="fill"></div></div></div>'}).join('');
-  var els=rows.children;
-  function fmt(p){var v=p*100;return (v>=10||v===0?v.toFixed(1):v.toFixed(2))+'%'}
-  function draw(){
-    var T=Math.max(+tT.value,0.02),p=+tP.value;
-    var q=P0.map(function(x){return Math.pow(x,1/T)}),s=q.reduce(function(a,b){return a+b},0);
-    q=q.map(function(x){return x/s});
-    var cum=0,keep=[];
-    for(var i=0;i<4;i++){keep[i]=cum<p-1e-9;cum+=q[i]}
-    var ks=q.reduce(function(a,x,i){return a+(keep[i]?x:0)},0);
-    for(i=0;i<4;i++){
-      var v=keep[i]?q[i]/ks:0;
-      els[i].classList.toggle('x',!keep[i]);
-      els[i].querySelector('.pv').textContent=keep[i]?fmt(v):'已剪掉';
-      els[i].querySelector('.fill').style.width=(v*100)+'%';
-    }
-    document.getElementById('vT').textContent=(+tT.value).toFixed(2);
-    document.getElementById('vP').textContent=p.toFixed(2);
-    var t=+tT.value,m=t<0.15?'禁欲系老干部：稳，但错也会稳定地错':t<0.5?'清醒：能办事，不解风情':t<=1.0?'微醺：调情区间':t<=1.4?'上头：开始说大话了':'烂醉：诈骗高发';
-    if(t>1.0&&!keep[3])m+='（好在剪刀还在）';
-    document.getElementById('mood').textContent=m;
+  // 语言切换：对标 silicon-sycophant-log（EN / 中 / EN·中，默认双语）
+  function setLang(mode){
+    document.documentElement.setAttribute('data-lang',mode);
+    document.querySelectorAll('.lang-opt').forEach(function(btn){btn.classList.toggle('active',btn.getAttribute('data-mode')===mode)});
+    try{localStorage.setItem('conjurer_article_lang',mode)}catch(e){}
   }
-  tT.addEventListener('input',draw);tP.addEventListener('input',draw);draw();
+  window.setLang=setLang;
+  (function initLang(){
+    var saved=null;
+    try{saved=localStorage.getItem('conjurer_article_lang')}catch(e){}
+    if(saved) setLang(saved);
+  })();
+  // 旋钮实验台（中英双实例）
+  var P0=[0.65,0.25,0.0999,0.0001];
+  var I18N={
+    cn:{names:['送你回家','去清吧再坐会儿','去海边吹吹风','去维加斯领证'],cut:'已剪掉',moods:['禁欲系老干部：稳，但错也会稳定地错','清醒：能办事，不解风情','微醺：调情区间','上头：开始说大话了','烂醉：诈骗高发'],tail:'（好在剪刀还在）'},
+    en:{names:['Drop you home','Duck into the speakeasy','Walk on the beach','Elope to Vegas'],cut:'cut',moods:['Stone-cold sober: steady, but wrong just as steadily','Sober: gets things done, no charm','Tipsy: the flirting zone','Buzzed: starting to talk big','Blackout drunk: fraud risk high'],tail:' (good thing the shears are still on)'}
+  };
+  function fmt(p){var v=p*100;return (v>=10||v===0?v.toFixed(1):v.toFixed(2))+'%'}
+  document.querySelectorAll('.lab').forEach(function(lab){
+    var L=I18N[lab.getAttribute('data-lang')||'cn'];
+    var tT=lab.querySelector('.tT'),tP=lab.querySelector('.tP'),rows=lab.querySelector('.rows');
+    rows.innerHTML=L.names.map(function(n,i){return '<div class="rowb'+(i==3?' v':'')+'"><span class="nm">'+n+'</span><span class="pv"></span><div class="trk"><div class="fill"></div></div></div>'}).join('');
+    var els=rows.children;
+    function draw(){
+      var T=Math.max(+tT.value,0.02),p=+tP.value;
+      var q=P0.map(function(x){return Math.pow(x,1/T)}),s=q.reduce(function(a,b){return a+b},0);
+      q=q.map(function(x){return x/s});
+      var cum=0,keep=[];
+      for(var i=0;i<4;i++){keep[i]=cum<p-1e-9;cum+=q[i]}
+      var ks=q.reduce(function(a,x,i){return a+(keep[i]?x:0)},0);
+      for(i=0;i<4;i++){
+        var v=keep[i]?q[i]/ks:0;
+        els[i].classList.toggle('x',!keep[i]);
+        els[i].querySelector('.pv').textContent=keep[i]?fmt(v):L.cut;
+        els[i].querySelector('.fill').style.width=(v*100)+'%';
+      }
+      lab.querySelector('.vT').textContent=(+tT.value).toFixed(2);
+      lab.querySelector('.vP').textContent=p.toFixed(2);
+      var t=+tT.value;
+      var m=t<0.15?L.moods[0]:t<0.5?L.moods[1]:t<=1.0?L.moods[2]:t<=1.4?L.moods[3]:L.moods[4];
+      if(t>1.0&&!keep[3])m+=L.tail;
+      lab.querySelector('.mood').textContent=m;
+    }
+    tT.addEventListener('input',draw);tP.addEventListener('input',draw);draw();
+  });
   var bar=document.getElementById('bar'),back=document.getElementById('backtoc');
   function onScroll(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';back.classList.toggle('show',h.scrollTop>500)}
   addEventListener('scroll',onScroll,{passive:true});onScroll();
