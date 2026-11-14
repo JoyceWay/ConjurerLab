@@ -92,7 +92,7 @@ pre .c{color:var(--mute)} pre .w{color:var(--rose)} pre .a{color:var(--amber)}
 .rowb .fill{height:100%;border-radius:9px;background:var(--amber);transition:width .25s}
 .rowb.x{opacity:.4}.rowb.x .nm{text-decoration:line-through}
 .rowb.v .fill{background:var(--rose)}.rowb.v .pv{color:var(--rose)}
-@media (prefers-reduced-motion:reduce){.rowb .fill{transition:none}}
+@media (prefers-reduced-motion:reduce){.rowb .fill{transition:none}.backtoc{transition:none}}
 .note{font-size:13px;color:var(--mute);margin:12px 0 0;line-height:1.7}
 .film{display:block;text-align:center}
 .film video{width:100%;max-width:300px;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000;display:block;aspect-ratio:9/16}
@@ -114,6 +114,12 @@ summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:18px
 .refs i{font-style:normal;color:var(--mute);display:block}
 footer{margin-top:90px;border-top:1px solid var(--line);padding-top:26px;color:var(--mute);font-size:14px}
 footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:block;margin-bottom:4px}
+.backtoc{position:fixed;right:20px;bottom:20px;z-index:10;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--mute);background:rgba(33,25,21,.88);border:1px solid var(--line);border-radius:99px;padding:9px 15px;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .3s}
+.backtoc:hover{color:var(--amber);border-color:var(--amber)}
+.backtoc.show{opacity:1;pointer-events:auto}
+.backtoc-inline{text-align:center;margin:48px 0 0}
+.backtoc-inline a{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--mute);text-decoration:none;border-bottom:1px dotted var(--line);padding-bottom:3px}
+.backtoc-inline a:hover{color:var(--amber)}
 @media (max-width:860px){
   .wrap{grid-template-columns:minmax(0,1fr);gap:0}
   nav{position:static;height:auto;padding:24px 0 0}
@@ -126,8 +132,9 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
 </head>
 <body>
 <div id="bar"></div>
-<div class="wrap">
-<nav aria-label="目录">
+<a href="#top" class="backtoc" id="backtoc">↑ 返回目录</a>
+<div class="wrap" id="top">
+<nav aria-label="目录" id="toc">
   <div class="brand">硅基调教学</div>
   <div class="sub">成人驯兽指南 · 连载中</div>
   <h4>#01 · MONTH 1</h4>
@@ -257,6 +264,7 @@ task.cancel()</pre>
 <li id="r07"><b>#07</b>Structured Outputs 与 Constrained Decoding<i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。</i></li>
 <li id="r08"><b>#08</b>asyncio 与 I/O 并发<i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。</i></li>
 </ul></details>
+<p class="backtoc-inline"><a href="#top">↑ 返回目录</a></p>
 </article>
 
 <!-- ======================= #02 ======================= -->
@@ -363,8 +371,9 @@ task.cancel()</pre>
     document.getElementById('mood').textContent=m;
   }
   tT.addEventListener('input',draw);tP.addEventListener('input',draw);draw();
-  var bar=document.getElementById('bar');
-  addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+  var bar=document.getElementById('bar'),back=document.getElementById('backtoc');
+  function onScroll(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';back.classList.toggle('show',h.scrollTop>500)}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 </script>
 </body>
