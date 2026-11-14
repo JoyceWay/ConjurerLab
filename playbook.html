@@ -3,99 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>硅基调教学 · HOW TO TAME A SILICON PLAYBOY</title>
-<meta name="description" content="硅基调教学 #01：把大模型当成海王来驯——分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
+<title>硅基调教学</title>
+<meta name="description" content="硅基调教学 #01：把大模型当海王来驯——分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
 <meta property="og:title" content="硅基调教学 #01 · HOW TO TAME A SILICON PLAYBOY">
-<meta property="og:description" content="把大模型当成海王来驯：分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
+<meta property="og:description" content="把大模型当海王来驯：分词剔骨刀、温度旋钮、JSON 贞操带、异步并发。段子是真的，公式也是真的。">
 <meta property="og:image" content="https://conjurerlab.com/images/playbook-cover.jpg">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500&family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=LXGW+WenKai+TC&family=LXGW+WenKai&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* 深夜酒吧：一个世界，单主题。左侧窄栏是酒单式目录，右侧是长文。 */
   --bg:#15100d;        /* 吧台木色的黑 */
   --panel:#211915;     /* 卡片、代码块 */
   --line:#3a2d25;      /* 分隔线 */
-  --ink:#ecdfcc;       /* 正文，偏暖的纸色 */
+  --ink:#d8cebf;       /* 正文：压低亮度的暖灰，不用纯白 */
+  --hi:#f0e6d4;        /* 强调与引文：比正文亮一档，仍不是纯白 */
   --mute:#a39483;      /* 次要文字 */
-  --amber:#e3a548;     /* 威士忌，主强调 */
-  --rose:#ff6278;      /* 霓虹，警告与"烂醉" */
-  --mint:#74d4c4;      /* 清醒、代码、"贞操带" */
-  --display:"Noto Serif SC","Songti SC","SimSun",serif;
-  --body:"LXGW WenKai TC","LXGW WenKai",serif;
+  --amber:#d9a550;     /* 威士忌，主强调 */
+  --rose:#e77a86;      /* 霓虹，警告与"烂醉" */
+  --mint:#8cc7bb;      /* 清醒、代码、"贞操带" */
+  --display:"Noto Serif SC","Noto Serif CJK SC","Songti SC","SimSun",serif;
+  --body:"LXGW WenKai TC","LXGW WenKai","Kaiti SC","KaiTi","STKaiti","Noto Serif SC",serif;   /* 正文：楷体，讲故事的字 */
+  --ui:"Noto Sans SC","Noto Sans CJK SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;   /* 目录、注释、索引：黑体小字 */
+  --voice:var(--display);   /* 人物开口说话：宋体，和楷体正文区分 */
   --mono:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.85;
-  background-image:radial-gradient(900px 500px at 85% -10%,rgba(227,165,72,.10),transparent 60%),radial-gradient(700px 500px at -10% 30%,rgba(255,98,120,.06),transparent 60%)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.9;letter-spacing:.025em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(900px 500px at 85% -10%,rgba(217,165,80,.06),transparent 60%)}
 a{color:var(--amber);text-underline-offset:3px}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--rose));z-index:9}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px}
-nav{position:sticky;top:0;align-self:start;padding:36px 0;height:100vh;overflow:auto;font-size:14px;line-height:1.6}
-nav .brand{font-family:var(--display);font-weight:700;font-size:20px;color:var(--amber);letter-spacing:.08em}
-nav .sub{color:var(--mute);font-size:12px;margin:2px 0 26px}
-nav h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mute);margin:22px 0 8px;font-weight:400}
+#bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--amber);z-index:9}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:72px}
+nav{font-family:var(--ui);position:sticky;top:0;align-self:start;padding:36px 0;height:100vh;overflow:auto;font-size:14px;line-height:1.6}
+nav .brand{font-family:var(--display);font-weight:600;font-size:19px;color:var(--amber);letter-spacing:.1em}
+nav .sub{color:var(--mute);font-size:12px;letter-spacing:.06em;margin:6px 0 30px}
+nav h4{font-family:var(--display);font-size:15px;letter-spacing:.3em;color:var(--mute);margin:22px 0 8px;font-weight:400}
 nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
-nav a{color:var(--mute);font-family:var(--mono);font-size:13px;text-decoration:none;display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding-bottom:5px}
+nav a{color:var(--mute);font-size:13.5px;text-decoration:none;display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted var(--line);padding-bottom:5px}
 nav a:hover{color:var(--amber)}
 nav a span{color:var(--mute);font-family:var(--mono);font-size:11px;white-space:nowrap}
 nav .gone{display:none}
 .gone{display:none}
 .soon{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:3px 12px;display:inline-block;margin-bottom:14px}
-main{padding:56px 0 120px;max-width:720px}
-.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(52px,8.5vw,84px);line-height:1.1;margin:0;letter-spacing:.04em;text-wrap:balance}
-.hero-en{font-family:'Bodoni Moda',Georgia,serif;font-weight:500;font-size:clamp(19px,2.6vw,27px);line-height:1.3;letter-spacing:.14em;color:var(--amber);text-transform:uppercase;margin-bottom:16px}
+main{padding:64px 0 120px;max-width:700px}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(48px,9vw,92px);line-height:1.15;margin:0;letter-spacing:.06em;color:var(--hi);white-space:nowrap}
+.tagline{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.4vw,22px);letter-spacing:.08em;color:var(--ink);margin:22px 0 0}
+.issue{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--mute);margin:10px 0 0;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.hero-en{font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(13px,1.7vw,16px);line-height:1.3;letter-spacing:.34em;color:var(--amber);text-transform:uppercase;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--amber)}
-.hero p{color:var(--mute);max-width:34em;margin:18px 0 0}
+.hero p{font-family:var(--ui);font-size:15.5px;color:var(--mute);max-width:34em;margin:26px 0 0}
 .serve{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;font-family:var(--mono);font-size:12px}
 .serve span{border:1px solid var(--line);border-radius:99px;padding:3px 12px;color:var(--mute)}
-.serve b{color:var(--amber);font-weight:700}
+.serve b{color:var(--amber);font-weight:400}
 article{margin-top:88px;padding-top:40px;border-top:1px solid var(--line)}
-.ep{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--rose)}
-article>h2{font-family:var(--display);font-weight:900;font-size:clamp(28px,4.6vw,40px);line-height:1.3;margin:10px 0 6px;text-wrap:balance}
-.deck{color:var(--mute);margin:0 0 30px;font-size:15px}
-h3{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.45;margin:64px 0 4px;color:var(--amber);text-wrap:balance;scroll-margin-top:20px}
-h3 small{display:block;font-family:var(--mono);font-size:13px;color:var(--mute);font-weight:400;letter-spacing:.06em;margin-top:4px}
-p{margin:18px 0}
-strong{color:#fff;font-weight:700}
-code{font-family:var(--mono);font-size:.86em;background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:1px 6px;color:var(--mint)}
+.ep{font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.5em;color:var(--amber)}
+article>h2{font-family:var(--display);font-weight:700;font-size:clamp(27px,4.2vw,36px);line-height:1.4;letter-spacing:.03em;color:var(--hi);margin:14px 0 10px;text-wrap:balance}
+.deck{font-family:var(--ui);color:var(--mute);margin:0 0 40px;font-size:15px;letter-spacing:.04em}
+h3{font-family:var(--display);font-weight:600;font-size:23px;line-height:1.5;letter-spacing:.03em;margin:76px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--line);color:var(--amber);text-wrap:balance;scroll-margin-top:20px}
+h3 small{display:block;font-family:var(--mono),var(--body);font-size:12px;color:var(--mute);font-weight:400;letter-spacing:.08em;margin-top:8px}
+p{margin:0 0 1.3em}
+strong{color:var(--hi);font-weight:700}
+code{font-family:var(--mono);font-size:.84em;background:rgba(240,230,212,.07);border-radius:3px;padding:2px 6px;color:var(--hi);letter-spacing:0}
 sup.r{font-family:var(--mono);font-size:10px;margin-left:2px}
 sup.r a{text-decoration:none;color:var(--mute)}
 .fx{font-family:var(--mono);font-size:.9em;color:var(--mint);white-space:nowrap}
-blockquote{margin:26px 0;padding:6px 0 6px 22px;border-left:4px solid var(--amber);font-family:var(--display);font-size:21px;line-height:1.7;color:#fff}
+blockquote{margin:30px 0;padding:2px 0 2px 24px;border-left:2px solid var(--amber);font-family:var(--voice);font-weight:500;font-size:19px;line-height:1.85;letter-spacing:.03em;color:var(--hi)}
 blockquote.him{border-color:var(--rose);color:var(--ink);font-size:17.5px}
-.pull{font-family:var(--display);font-weight:900;font-size:clamp(22px,3.6vw,29px);line-height:1.5;color:var(--amber);margin:34px 0;text-wrap:balance}
-.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:28px 0}
+.pull{font-family:var(--display);font-weight:600;font-size:clamp(21px,3.2vw,26px);line-height:1.65;letter-spacing:.05em;color:var(--mint);margin:44px 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;text-wrap:balance}
+.box{background:rgba(33,25,21,.7);border:1px solid var(--line);border-radius:4px;padding:22px 24px;margin:34px 0}
 .box h5{margin:0 0 12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--mute);font-weight:400}
 .tokens{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--mono)}
-.tok{border:1px dashed var(--mint);border-radius:8px;padding:8px 16px;font-size:22px;color:var(--mint)}
+.tok{border:1px solid var(--mint);border-radius:3px;padding:8px 16px;font-size:22px;color:var(--mint)}
 .tok.raw{border-color:var(--rose);color:var(--rose)}
-.tok i{font-style:normal;color:#fff;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:4px}
-.opts{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:15.5px}
-.opts li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px dotted var(--line);padding-bottom:4px}
-.opts b{font-family:var(--mono);color:var(--amber);font-variant-numeric:tabular-nums}
-pre{font-family:var(--mono);font-size:13.5px;line-height:1.75;background:#0f0b09;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow-x:auto;color:var(--mint);margin:24px 0}
+.tok i{font-style:normal;color:var(--hi);text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:4px}
+.opts{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:16.5px}
+.opts li{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.opts li:last-child{border:0;padding:0}
+.opts b{font-family:var(--mono);font-weight:400;color:var(--amber);font-variant-numeric:tabular-nums;white-space:nowrap}
+pre{font-family:var(--mono);font-size:13.5px;line-height:1.75;background:#0f0b09;border:1px solid var(--line);border-radius:4px;padding:18px 22px;overflow-x:auto;color:var(--mint);margin:30px 0;letter-spacing:0}
 pre .c{color:var(--mute)} pre .w{color:var(--rose)} pre .a{color:var(--amber)}
 /* 旋钮实验台 */
 .lab label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:13px;color:var(--mute);margin-top:12px}
 .lab label b{color:var(--amber);font-size:16px;font-variant-numeric:tabular-nums}
 .lab input[type=range]{width:100%;accent-color:var(--amber);margin:4px 0 0}
-.mood{font-family:var(--display);font-weight:700;font-size:19px;margin:16px 0 8px}
-.rowb{display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:4px 12px;align-items:center;font-size:14.5px;margin-top:10px}
+.mood{font-family:var(--display);font-weight:600;font-size:18px;color:var(--hi);margin:18px 0 8px}
+.rowb{font-family:var(--ui);display:grid;grid-template-columns:minmax(0,1fr) 72px;gap:4px 12px;align-items:center;font-size:14.5px;margin-top:10px}
 .rowb .pv{font-family:var(--mono);text-align:right;font-variant-numeric:tabular-nums;color:var(--amber)}
-.rowb .trk{grid-column:1/-1;height:10px;border-radius:9px;background:#0f0b09;overflow:hidden}
-.rowb .fill{height:100%;border-radius:9px;background:var(--amber);transition:width .25s}
+.rowb .trk{grid-column:1/-1;height:4px;background:#0f0b09;overflow:hidden}
+.rowb .fill{height:100%;background:var(--amber);transition:width .25s}
 .rowb.x{opacity:.4}.rowb.x .nm{text-decoration:line-through}
 .rowb.v .fill{background:var(--rose)}.rowb.v .pv{color:var(--rose)}
 @media (prefers-reduced-motion:reduce){.rowb .fill{transition:none}.backtoc{transition:none}}
-.note{font-size:13px;color:var(--mute);margin:12px 0 0;line-height:1.7}
+.note{font-family:var(--ui);font-size:13px;color:var(--mute);margin:12px 0 0;line-height:1.7}
 .film{display:block;text-align:center}
-.film video{width:100%;max-width:300px;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000;display:block;aspect-ratio:9/16}
+.film video{width:100%;max-width:300px;margin:0 auto;border-radius:6px;border:1px solid var(--line);background:#000;display:block;aspect-ratio:9/16}
 .film p{margin:0;font-size:15px;color:var(--mute)}
 .film strong{display:block;font-family:var(--display);font-size:21px;margin-bottom:6px}
 .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;font-family:var(--mono);color:var(--mint);font-size:15px;line-height:1.5}
@@ -104,16 +111,17 @@ pre .c{color:var(--mute)} pre .w{color:var(--rose)} pre .a{color:var(--amber)}
 .report .hd{color:var(--rose);letter-spacing:.06em}
 .report dl{margin:12px 0 0;display:grid;gap:14px}
 .report dt{color:var(--amber)}
-.report dd{margin:2px 0 0;color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.8}
+.report dd{margin:2px 0 0;color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.8}
 .report dd small{display:block;font-family:var(--mono);font-size:12px;color:var(--mint)}
-details{margin-top:56px;border:1px solid var(--line);border-radius:14px;padding:6px 22px 14px;background:rgba(33,25,21,.6)}
-summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:18px;padding:12px 0;color:var(--amber)}
-.refs{list-style:none;margin:0;padding:0;display:grid;gap:16px;font-size:14.5px;line-height:1.8}
-.refs li{scroll-margin-top:20px}
-.refs b{font-family:var(--mono);color:var(--rose);margin-right:6px}
-.refs i{font-style:normal;color:var(--mute);display:block}
+details{margin-top:72px;border-top:1px solid var(--line);padding:8px 0 0}
+summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:.06em;padding:12px 0 18px;color:var(--amber)}
+.refs{font-family:var(--ui);list-style:none;margin:0;padding:0;display:grid;gap:20px;font-size:14.5px;line-height:1.85;color:var(--hi)}
+.refs li{scroll-margin-top:20px;padding-left:46px;position:relative}
+.refs b{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--amber);position:absolute;left:0;top:2px}
+.yt{display:block;margin-top:6px;color:var(--ink)}
+.refs i{font-style:normal;color:var(--mute);display:block;font-size:13.5px;margin-top:2px}
 footer{margin-top:90px;border-top:1px solid var(--line);padding-top:26px;color:var(--mute);font-size:14px}
-footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:block;margin-bottom:4px}
+footer b{color:var(--amber);font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.1em;display:block;margin-bottom:6px}
 .backtoc{position:fixed;right:20px;bottom:20px;z-index:10;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--mute);background:rgba(33,25,21,.88);border:1px solid var(--line);border-radius:99px;padding:9px 15px;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .3s}
 .backtoc:hover{color:var(--amber);border-color:var(--amber)}
 .backtoc.show{opacity:1;pointer-events:auto}
@@ -136,8 +144,8 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
 <div class="wrap" id="top">
 <nav aria-label="目录" id="toc">
   <div class="brand">硅基调教学</div>
-  <div class="sub">成人驯兽指南 · 连载中</div>
-  <h4>#01 · MONTH 1</h4>
+  <div class="sub">6 幕 AI 工程连载 · 第一幕</div>
+  <h4>第一幕</h4>
   <ul>
     <li><a href="#ep1">别跟海王谈感情 <span>开场</span></a></li>
     <li><a href="#e1s1">第一招 剔骨刀 <span>Tokenizer</span></a></li>
@@ -146,7 +154,7 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
     <li><a href="#e1s4">第四招 绝不苦等 <span>asyncio</span></a></li>
     <li><a href="#refs1">知识点索引 <span>01–08</span></a></li>
   </ul>
-  <h4 class="gone">#02 · MONTH 2</h4>
+  <h4 class="gone">第二幕</h4>
   <ul class="gone">
     <li><a href="#ep2">他为什么记性不好 <span>开场</span></a></li>
     <li><a href="#e2s1">中间遗忘症 <span>Context</span></a></li>
@@ -161,13 +169,15 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
 <header class="hero">
   <div class="hero-en">How to Tame a Silicon Playboy</div>
   <h1>硅基<em>调教</em>学</h1>
-  <p>把大模型当成一个衬衫解开两颗扣子的海王来驯。每一幕讲透一个月的 AI 工程：段子是真的，公式也是真的。</p>
+  <div class="tagline">把大模型当海王来驯 · 6 幕 AI 工程连载</div>
+  <div class="issue">第一幕 · 2026.11</div>
+  <p>每一幕讲透一组 AI 工程的看家本领。段子是真的，公式也是真的。</p>
   <div class="serve"><span>建议饮用温度 <b>T = 0.8</b></span><span>核采样 <b>Top-p = 0.9</b></span><span>已上桌 <b>1 幕 / 8 个知识点</b></span></div>
 </header>
 
 <!-- ======================= #01 ======================= -->
 <article id="ep1">
-<div class="ep">EPISODE 01 · MONTH 1</div>
+<div class="ep">第一幕</div>
 <h2>别跟海王谈感情，要给他上 JSON 贞操带</h2>
 <p class="deck">从分词器、微醺旋钮到异步并发的成人驯兽指南</p>
 
@@ -224,7 +234,7 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
 <blockquote>看清楚你的身份，收起你那套廉价的排比句，触碰以下三条底线直接断电。</blockquote>
 <p>但光有婚前协议，依然防不住老油条的终极武器：深情小作文。当你逼问他“昨晚十点到两点你到底在哪？花了多少？跟谁在一起？”，没被规训过的模型（和男人）最擅长回你一篇一千字的散文：</p>
 <blockquote class="him">昨晚的夜色让我突然想起了我们刚认识的时候，人生总有那么多身不由己的应酬，但无论我在哪里，我的心永远……</blockquote>
-<p>打住。遇到这种拿情绪价值糊弄硬指标的时刻，直接掏出第一个月最残暴的工程刑具：Structured Outputs（结构化输出，底层叫受限解码）<sup class="r"><a href="#r07">#07</a></sup>。用 Pydantic 甩出一个钢铁模具：</p>
+<p>打住。遇到这种拿情绪价值糊弄硬指标的时刻，直接掏出第一幕最残暴的工程刑具：Structured Outputs（结构化输出，底层叫受限解码）<sup class="r"><a href="#r07">#07</a></sup>。用 Pydantic 甩出一个钢铁模具：</p>
 <pre><span class="c"># 昨晚十点到两点，按字段回答</span>
 {
   <span class="a">"location"</span>: str,
@@ -239,7 +249,7 @@ footer b{color:var(--amber);font-family:var(--display);font-size:18px;display:bl
 <h3 id="e1s4">第四招：海后与强者的秘密，是绝不“单线程苦等”<small>Python asyncio 异步并发</small></h3>
 <p>调好了温度，焊死了贞操带，最后一个问题：一个人的青春和算力都有限，怎么把效率拉满？</p>
 <p>看看恋爱脑是怎么写人生代码的，那叫 Synchronous（同步阻塞）。晚上八点给对方发了一条消息，然后整个大脑的 CPU 瞬间卡死，抱着手机在床上翻来覆去干等三个小时。这 180 分钟的网络 I/O 等待期里，书没看、钱没赚、觉没睡好，整条生命线程瘫痪在等待别人的响应上。</p>
-<p>在工程里，这种写法是要被打回重写的。调用外部模型（或者等另一个人回消息）是典型的 I/O 密集型等待，你自己的大脑根本不需要陪葬。第一个月通关的心法，叫 Python asyncio<sup class="r"><a href="#r08">#08</a></sup>：</p>
+<p>在工程里，这种写法是要被打回重写的。调用外部模型（或者等另一个人回消息）是典型的 I/O 密集型等待，你自己的大脑根本不需要陪葬。第一幕通关的心法，叫 Python asyncio<sup class="r"><a href="#r08">#08</a></sup>：</p>
 <blockquote>我虽然只有一个单线程的肉身，但我把所有等待都挂起（await），绝不为任何人的延迟买单。</blockquote>
 <pre><span class="c"># 恋爱脑：一个一个等</span>
 <span class="w">reply = wait_for(him)          # 卡死三小时</span>
@@ -251,18 +261,18 @@ tasks = [asyncio.create_task(ask(x)) <span class="a">for</span> x <span class="a
 <span class="c"># 不想等了？</span>
 task.cancel()</pre>
 <p>事件循环（Event Loop）一开：第一个请求发出去，趁远端服务器还在磨洋工，你的主线程转身就发出第 2 个、第 3 个、第 100 个。放到现实修罗场里：消息发出去的那一秒，直接 await 挂起。他构思怎么回你的半小时里，你已经跑完三组核心训练、部署完一个新域名、顺手让三个 AI Agent 写完了明天的商业分析。等他的回复终于叮咚一声到达，协程恢复执行，你才在百忙之中优雅地瞥一眼，决定继续往下跑，还是 <code>task.cancel()</code> 踢出局。</p>
-<p>用 System Prompt 筛选门槛，用 Temperature 掌控情调，用 JSON Schema 榨出结果，最后用 asyncio 保持自己永远不被任何人阻塞。干完这杯威士忌，你已经从“被海王哄得团团转的纯情小白”，毕业成为 Month 1 驯兽师。</p>
+<p>用 System Prompt 筛选门槛，用 Temperature 掌控情调，用 JSON Schema 榨出结果，最后用 asyncio 保持自己永远不被任何人阻塞。干完这杯威士忌，你已经从“被海王哄得团团转的纯情小白”，毕业成为第一幕出师的驯兽师。</p>
 
 <details open id="refs1"><summary>第一幕 · 知识点与参考索引</summary>
 <ul class="refs">
-<li id="r01"><b>#01</b>Pre-training 与 Next-Token Prediction<i>模型在海量无标注文本上自监督训练，学的是给定前文预测下一个 Token 的条件概率。它没有事实数据库，统计规律被压缩在权重里。参考：Andrej Karpathy，Intro to Large Language Models（YouTube）。</i></li>
-<li id="r02"><b>#02</b>Tokenization 与 BPE<i>文本先被切成子词单元并映射为整数 ID，这是 API 计费、上下文长度和“模型不擅长数字母”的共同根源。动手试：<a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>，<a href="https://github.com/openai/tiktoken">openai/tiktoken</a>。</i></li>
-<li id="r03"><b>#03</b>Logits、Softmax 与 Temperature<i>最后一层输出的未归一化分数叫 Logits，经 Softmax(z / T) 变成概率。T 趋近 0 接近贪婪解码，T 增大则分布变平、随机性上升。参考：Hugging Face，<a href="https://huggingface.co/blog/how-to-generate">How to generate text</a>。</i></li>
-<li id="r04"><b>#04</b>Top-p / Nucleus Sampling<i>按概率从高到低累加，只保留累计概率首次达到 p 的最小候选集，再重新归一化采样。原始论文：Holtzman et al.，<a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a>。</i></li>
-<li id="r05"><b>#05</b>Hallucination<i>模型优化的是流畅度与似然，缺少外部事实锚定时，会以前面生成的错误内容为条件继续自洽地编下去。任何温度下都可能发生，高温会加剧。参考：Anthropic 文档，Reduce hallucinations。</i></li>
-<li id="r06"><b>#06</b>System Prompt<i>对话最顶层的全局指令。现代对话模型被训练为优先遵循它，用来锁定角色、风格和边界。参考：Anthropic 文档，System prompts。</i></li>
-<li id="r07"><b>#07</b>Structured Outputs 与 Constrained Decoding<i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。</i></li>
-<li id="r08"><b>#08</b>asyncio 与 I/O 并发<i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。</i></li>
+<li id="r01"><b>#01</b>Pre-training 与 Next-Token Prediction<i>模型在海量无标注文本上自监督训练，学的是给定前文预测下一个 Token 的条件概率。它没有事实数据库，统计规律被压缩在权重里。参考：Andrej Karpathy，Intro to Large Language Models（YouTube）。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener">Andrej Karpathy · [1hr Talk] Intro to Large Language Models</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1xmA2eMEFF/" target="_blank" rel="noopener">【中文字幕】3Blue1Brown 官方账号 · 大语言模型的简要解释（B站）</a></span> <span class="yt">▶ 中文视频：<a href="https://www.youtube.com/playlist?list=PLJV_el3uVTsPz6CTopeRp2L2t4aL_KgiI" target="_blank" rel="noopener">【中文】李宏毅 · 生成式AI导论 2024（YouTube，国语授课）</a></span></i></li>
+<li id="r02"><b>#02</b>Tokenization 与 BPE<i>文本先被切成子词单元并映射为整数 ID，这是 API 计费、上下文长度和“模型不擅长数字母”的共同根源。动手试：<a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>，<a href="https://github.com/openai/tiktoken">openai/tiktoken</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=zduSFxRajkE" target="_blank" rel="noopener">Andrej Karpathy · Let's build the GPT Tokenizer</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1Uy421z7pd/" target="_blank" rel="noopener">【中英字幕】Karpathy · Let's build the GPT Tokenizer（B站转载）</a></span></i></li>
+<li id="r03"><b>#03</b>Logits、Softmax 与 Temperature<i>最后一层输出的未归一化分数叫 Logits，经 Softmax(z / T) 变成概率。T 趋近 0 接近贪婪解码，T 增大则分布变平、随机性上升。参考：Hugging Face，<a href="https://huggingface.co/blog/how-to-generate">How to generate text</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener">3Blue1Brown · Transformers (how LLMs work) explained visually，22:22 起讲带温度的 Softmax</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1taSFBNEG4/" target="_blank" rel="noopener">【中文】Temperature & Top-p：掌控大模型的创造力开关（B站）</a></span></i></li>
+<li id="r04"><b>#04</b>Top-p / Nucleus Sampling<i>按概率从高到低累加，只保留累计概率首次达到 p 的最小候选集，再重新归一化采样。原始论文：Holtzman et al.，<a href="https://arxiv.org/abs/1904.09751">The Curious Case of Neural Text Degeneration</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=M4X07FFRKik" target="_blank" rel="noopener">Gentle Introduction to LLM Sampling: Greedy, Top-k, Top-p, and Temperature</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1nK421Y72d/" target="_blank" rel="noopener">【中文】10分钟搞明白如何设置大模型推理参数：top_k、top_p、temperature（B站）</a></span></i></li>
+<li id="r05"><b>#05</b>Hallucination<i>模型优化的是流畅度与似然，缺少外部事实锚定时，会以前面生成的错误内容为条件继续自洽地编下去。任何温度下都可能发生，高温会加剧。参考：Anthropic 文档，Reduce hallucinations。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=cfqtFvWOfg0" target="_blank" rel="noopener">IBM Technology · Why Large Language Models Hallucinate</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV15XL36hE7K/" target="_blank" rel="noopener">【中文】AI 幻觉：为什么大模型一定会「胡说八道」？（B站）</a></span></i></li>
+<li id="r06"><b>#06</b>System Prompt<i>对话最顶层的全局指令。现代对话模型被训练为优先遵循它，用来锁定角色、风格和边界。参考：Anthropic 文档，System prompts。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=ysPbXH0LpIE" target="_blank" rel="noopener">Anthropic · Prompting 101 | Code w/ Claude</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1gs4y1R7EJ/" target="_blank" rel="noopener">【中文字幕】吴恩达 & OpenAI · ChatGPT 提示工程课程，共 9 集（B站转载）</a></span></i></li>
+<li id="r07"><b>#07</b>Structured Outputs 与 Constrained Decoding<i>把 JSON Schema 编译成文法或状态机，每一步把不合法 Token 的分数置为负无穷，保证输出格式合法。它保证格式，不保证内容为真。参考：OpenAI，Structured Outputs Guide；Pydantic 官方文档。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=kE4BkATIl9c" target="_blank" rel="noopener">OpenAI · DevDay 2024 | Structured outputs for reliable applications</a></span></i></li>
+<li id="r08"><b>#08</b>asyncio 与 I/O 并发<i>调用远程模型是网络 I/O 等待。协程加事件循环可以在单线程内并发处理大量请求，总耗时接近最慢的那一个，而不是全部相加。参考：<a href="https://docs.python.org/3/library/asyncio.html">Python 官方文档 asyncio</a>。 <span class="yt">▶ 英文视频：<a href="https://www.youtube.com/watch?v=oAkLSJNr5zY" target="_blank" rel="noopener">Corey Schafer · Python Tutorial: AsyncIO, Complete Guide with Animations</a></span> <span class="yt">▶ 中文视频：<a href="https://www.bilibili.com/video/BV1oa411b7c9/" target="_blank" rel="noopener">【中文】码农高天 · asyncio 的理解与入门（B站）</a></span></i></li>
 </ul></details>
 <p class="backtoc-inline"><a href="#top">↑ 返回目录</a></p>
 </article>
@@ -270,7 +280,7 @@ task.cancel()</pre>
 <!-- ======================= #02 ======================= -->
 <article id="ep2" class="gone">
 <div class="soon">第二幕 · 待发布</div>
-<div class="ep">EPISODE 02 · MONTH 2</div>
+<div class="ep">第二幕</div>
 <h2>为什么渣男永远“记性不好”？</h2>
 <p class="deck">RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术</p>
 
@@ -278,7 +288,7 @@ task.cancel()</pre>
 <p>而此刻，这位在酒局上能把三年前纳斯达克某只妖股的 K 线背得分毫不差的男人，正露出一副清澈、无辜又略带委屈的表情：</p>
 <blockquote class="him">宝贝，钱我肯定认，但送表那事儿……我真这么说过吗？半年多了，咱俩天天聊几百条微信，我实在记不清哪天怎么说的了，你别揪着一句气话上纲上线行不行？</blockquote>
 <p>“记不清了。”在成年人的亲密关系修罗场里，这四个字是所有老油条的免死金牌。他们算准了一件事：碳基大脑的内存会溢出，聊天记录超过三个月就没人有力气一页页往上翻。只要时间拖得够久、废话聊得够多，所有的画饼和谎言都会自动沉底，变成一笔死无对证的糊涂账。</p>
-<p>可惜，他今晚遇到的是一个修完了 Month 2 的硅基驯兽师。这个月的课叫 RAG（Retrieval-Augmented Generation，检索增强生成）<sup class="r"><a href="#r11">#11</a></sup>。在向量数据库和混合检索流水线面前，人类那点可怜的选择性失忆，连三秒钟都撑不过去。把酒杯放下，今天拆解的是：怎么给你的大模型（以及你的人生）装一座私人地下档案馆，一秒之内把对方半年前的原话连同标点符号一起调出来。</p>
+<p>可惜，他今晚遇到的是一个看完了第二幕的硅基驯兽师。这一幕的戏码叫 RAG（Retrieval-Augmented Generation，检索增强生成）<sup class="r"><a href="#r11">#11</a></sup>。在向量数据库和混合检索流水线面前，人类那点可怜的选择性失忆，连三秒钟都撑不过去。把酒杯放下，今天拆解的是：怎么给你的大模型（以及你的人生）装一座私人地下档案馆，一秒之内把对方半年前的原话连同标点符号一起调出来。</p>
 
 <h3 id="e2s1">第一刀：为什么聊得越久，他反而越像个傻子？<small>Context Window、KV Cache 与中间遗忘症</small></h3>
 <p>很多刚入门的新手（以及刚陷入热恋的恋爱脑）都有一个天真的妄想：“只要我把我们从认识第一天起的所有聊天记录、日记、账单全塞进他脑子里，他就能永远懂我了吧？”</p>
@@ -340,7 +350,7 @@ task.cancel()</pre>
 </ul></details>
 </article>
 
-<footer><b>下一幕 · Month 3</b>戒掉恋爱脑：如何给伴侣做自动化 Evals 评测，以及防 PUA 安全护栏。</footer>
+<footer><b>下一幕 · 第二幕</b>为什么渣男永远“记性不好”？RAG 向量空间、混合检索与一秒之内翻旧账的降维艺术。</footer>
 </main>
 </div>
 
