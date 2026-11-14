@@ -160,6 +160,108 @@ footer b{color:var(--amber);font-family:var(--display);font-weight:600;font-size
 .hero h1 .en-h1{font-size:clamp(34px,5.4vw,56px);line-height:1.25;white-space:normal;letter-spacing:.02em}
 .nav-label{display:block}
 </style>
+<style id="typeset-v2">
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap');
+
+/* ============================================================
+   Playbook typesetting v2
+   1. English gets its own text face (it was borrowing the Kai font's Latin letters)
+   2. EN·中 mode: sidebar folds into a top strip, two aligned reading columns with a centre rule
+   3. Language switch stays reachable while reading
+   ============================================================ */
+:root{
+  --en:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;   /* English body and headings */
+  --en-display:"Bodoni Moda","Newsreader",Georgia,serif;                    /* English title only */
+  --gut:52px;                                                              /* half-gutter between the two columns */
+}
+
+/* ---------- 1. English typography (all modes) ---------- */
+.col-en{font-family:var(--en);font-size:19.5px;line-height:1.66;letter-spacing:0;font-optical-sizing:auto}
+.col-en p{margin:0 0 1.1em}
+.col-en strong{font-weight:600}
+.col-en em{font-style:italic}
+.col-en h3{font-family:var(--en);font-weight:500;font-size:27px;line-height:1.22;letter-spacing:-.005em}
+.col-en h3 small{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;margin-top:10px}
+.col-en h2{font-family:var(--en);font-weight:500;font-size:clamp(28px,4vw,38px);line-height:1.2;letter-spacing:-.01em}
+.col-en .deck{font-family:var(--en);font-style:italic;font-size:18px;letter-spacing:0}
+.col-en blockquote{font-family:var(--en);font-style:italic;font-weight:400;font-size:20.5px;line-height:1.55;letter-spacing:0}
+.col-en blockquote em{font-style:normal}
+.col-en blockquote.him{font-size:19.5px}
+.col-en .pull{font-family:var(--en);font-weight:500;font-size:clamp(22px,3vw,28px);line-height:1.35;letter-spacing:0}
+.col-en .opts{font-size:17.5px;line-height:1.5}
+.col-en .note,.col-en .box h5{letter-spacing:.02em}
+.col-en code{font-size:.8em}
+.col-en .mood{font-family:var(--en);font-weight:500;font-size:19px}
+.col-en .ep{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px}
+.hero h1 .en-h1{font-family:var(--en-display);font-weight:500;font-size:clamp(40px,6.6vw,74px);line-height:1.06;letter-spacing:-.01em}
+.tagline .lang-en,.hero p .lang-en,footer .lang-en{font-family:var(--en);letter-spacing:0}
+.tagline .lang-en{font-style:italic;font-size:1.08em}
+.hero p .lang-en{font-size:17px;line-height:1.6}
+footer .lang-en{font-size:17px;line-height:1.6;color:var(--ink)}
+.film .lang-en{font-family:var(--en);letter-spacing:0}
+
+/* ---------- 3. Language switch: always in reach ---------- */
+.lang-switch{position:fixed;top:14px;right:18px;z-index:20;margin:0}
+.lang-pill-dark{border-radius:99px;padding:.3rem .5rem;gap:.15rem;backdrop-filter:blur(6px)}
+.lang-opt{padding:.28rem .6rem;border-radius:99px;letter-spacing:.06em}
+.lang-opt.active{background:rgba(217,165,80,.16)}
+.lang-sep{display:none}
+main{padding-top:72px}
+
+/* ---------- 2. EN·中 side by side ---------- */
+[data-lang="bi"] .col-en{font-size:18.5px}
+[data-lang="bi"] .col-cn{font-size:17px;line-height:1.85}
+@media (min-width:861px){
+  /* sidebar becomes a top strip so each column gets a readable measure */
+  [data-lang="bi"] .wrap{grid-template-columns:minmax(0,1fr);max-width:1180px;gap:0;padding:0 32px}
+  [data-lang="bi"] nav{position:static;height:auto;overflow:visible;padding:26px 150px 18px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 30px}
+  [data-lang="bi"] nav .brand{font-size:17px;display:flex;gap:14px;align-items:baseline}
+  [data-lang="bi"] nav .sub,[data-lang="bi"] nav h4{display:none}
+  [data-lang="bi"] nav ul{flex-direction:row;flex-wrap:wrap;gap:6px 22px}
+  [data-lang="bi"] nav a{border:0;padding:0;display:inline-flex;gap:8px;font-size:13px}
+  [data-lang="bi"] nav a .tag{display:none}
+  [data-lang="bi"] nav a .lang-cn{display:none!important}
+  [data-lang="bi"] main{max-width:none;padding-top:44px}
+
+  /* two columns; English runs longer than Chinese, so it gets a little more width */
+  [data-lang="bi"] .bi-row{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);column-gap:0}
+  [data-lang="bi"] .bi-row>.col-en{padding-right:var(--gut)}
+  [data-lang="bi"] .bi-row>.col-cn{padding-left:var(--gut);border-left:1px solid var(--line)}
+
+  /* section headings: one shared baseline and one rule across both columns */
+  [data-lang="bi"] .bi-row:has(>div>h3){align-items:end;margin-top:72px;padding-bottom:16px;margin-bottom:26px;border-bottom:1px solid var(--line)}
+  [data-lang="bi"] .bi-row:has(>div>h3) .col-cn{border-left-color:transparent}
+  [data-lang="bi"] .bi-row h3{margin:0;padding:0;border:0}
+
+  /* hero lines sit on the same two-column grid */
+  [data-lang="bi"] .hero h1,[data-lang="bi"] .hero .tagline,[data-lang="bi"] .hero .issue,[data-lang="bi"] .hero .hero-en,[data-lang="bi"] .hero>p{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:end;max-width:none}
+  [data-lang="bi"] .hero :is(h1,.tagline,.issue,.hero-en,p)>.lang-en{padding-right:var(--gut)}
+  [data-lang="bi"] .hero :is(h1,.tagline,.issue,.hero-en,p)>.lang-cn{padding-left:var(--gut)}
+  [data-lang="bi"] .hero h1{white-space:normal}
+  [data-lang="bi"] .hero h1 .en-h1{font-size:clamp(36px,4.6vw,60px)}
+  [data-lang="bi"] .hero h1>.lang-cn{font-size:clamp(40px,5vw,64px);line-height:1.15}
+  [data-lang="bi"] .cover{margin-bottom:32px}
+  [data-lang="bi"] .box.film,[data-lang="bi"] details,[data-lang="bi"] footer,[data-lang="bi"] .backtoc-inline{max-width:760px;margin-left:auto;margin-right:auto}
+}
+/* stacked bilingual on phones: English first, Chinese set back a step */
+@media (max-width:860px){
+  [data-lang="bi"] .bi-row{row-gap:.2rem}
+  [data-lang="bi"] .col-cn{color:var(--mute);padding-left:14px;border-left:2px solid var(--line);margin-bottom:1.2em}
+  [data-lang="bi"] .col-cn h3{font-size:19px;margin-top:10px;border:0;padding-bottom:0}
+  [data-lang="bi"] .col-en h3{margin-bottom:6px;border:0;padding-bottom:0}
+  .lang-switch{top:8px;right:10px}
+}
+
+/* ---------- small fixes ---------- */
+.serve span span{border:0;padding:0;border-radius:0}            /* the pills were drawing a second pill inside themselves */
+.serve .lang-en,.serve .lang-cn{display:inline}
+[data-lang="bi"] .serve .lang-en::after{content:"  ·  ";color:var(--line)}
+[data-lang="bi"] .backtoc .lang-cn{display:none!important}
+[data-lang="bi"] .col-en h2{font-size:clamp(24px,2.7vw,31px);line-height:1.22}
+[data-lang="bi"] .col-cn h2{font-size:clamp(23px,2.5vw,29px);line-height:1.4}
+[data-lang="bi"] .bi-row:has(>div>h2){align-items:start}
+[data-lang="en"] main{max-width:650px}                           /* about 70 characters a line */
+</style>
 </head>
 <body>
 <div id="bar"></div>
